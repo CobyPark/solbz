@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="BSS : BZ SMB Settings - 윈도우 11 업데이트 이후 막힌 공유폴더 접근, 네트워크 자격 증명 입력 오류를 원클릭으로 해결하는 솔루션 비제트의 보안 설정 프로그램입니다.">
+  <title>BSS : BZ SMB Settings - 솔루션 비제트</title>
+  <link rel="stylesheet" href="./style.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+  <script src="https://code.jquery.com/jquery-latest.min.js"></script>
+  <!-- 파비콘 -->
+  <link rel="icon" type="image/png" sizes="32x32" href="images/logo2.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="images/logo2.png">
+</head>
+
+<body>
+  <!-- 헤더 (index.html과 동일) -->
+  <div class="container">
+    <header class="header">
+      <h1 class="logo"><a href="index.html">Solution BZ</a></h1>
+      <nav class="nav">
+        <ul>
+          <li class="nav-dropdown">
+            <span class="nav-dropdown-toggle">전체 프로그램</span>
+            <ul class="nav-dropdown-menu">
+              <li><a href="bss.html">BZ SMB Settings</a></li>
+              <li><a href="solar.html">Solar BZ</a></li>
+              <li><a>AI 포트폴리오 제작기(출시예정)</a></li>
+            </ul>
+          </li>
+          <li><a href="profile.html">대표 소개</a></li>
+          <li><a href="blog.html">블로그</a></li>
+          <li><a href="index.html#contact">제품 및 강의 문의</a></li>
+        </ul>
+      </nav>
+    </header>
+  </div>
+
+  <!-- 프로그램 상세 : BZ SMB Settings -->
+  <section class="program-detail" id="program-detail">
+    <div class="inner">
+      <div class="program-detail-hero">
+        <span class="program-detail-badge">신규 출시</span>
+        <h2>BZ SMB Settings <span class="program-detail-version">v1.0.0</span></h2>
+        <p class="program-detail-tagline">
+          윈도우 11 업데이트 이후 막혀버린 공유폴더 접근을 원클릭으로 되돌리는 보안 설정 프로그램
+        </p>
+        <div class="program-detail-btns">
+          <a href="https://github.com/solsolbz/SMB_Settings/releases/download/v1.0.0/SolutionBZ_SMB_Setting_Tool.zip" class="btn-primary" download>최신버전<br>다운로드</a>
+          <a href="#smb_all" class="btn-secondary">전체버전<br>확인하기</a>
+        </div>
+      </div>
+
+      <article class="program-detail-section">
+        <h3>혹시 이런 증상, 겪고 계신가요?</h3>
+        <ul>
+          <li>얼마 전까지 잘 열리던 공유폴더가 어느 날 갑자기 목록에서 사라졌다</li>
+          <li>공유폴더에 들어가려고 하면 "네트워크 자격 증명 입력" 창이 뜨고, 맞는 계정으로 입력해도 계속 실패한다</li>
+          <li>파일 탐색기의 '네트워크' 메뉴에서 같은 네트워크의 다른 PC 목록이 아예 안 뜨거나 한참을 기다려야 나타난다</li>
+        </ul>
+        <p>
+          이 증상은 대부분 윈도우 11을 최신 버전(24H2 등)으로 업데이트한 직후에 나타납니다.
+          PC가 고장 난 것이 아니라, 업데이트 과정에서 네트워크 공유 관련 보안 설정이 초기화되었기 때문입니다.
+        </p>
+      </article>
+
+      <article class="program-detail-section program-detail-notice">
+        <h3>사용 전 꼭 확인해 주세요</h3>
+        <p>
+          네트워크 공유를 허용하면 같은 네트워크에 연결된 다른 기기에서도 접근이 가능해집니다.
+          출처를 신뢰할 수 없는 공용 와이파이 등에서는 사용을 권장하지 않으며, 회사·가정 내부망처럼
+          신뢰할 수 있는 환경에서 실제로 공유폴더가 필요한 경우에만 적용하시길 권장합니다.
+          공유가 더 이상 필요하지 않다면 설정을 원래 상태로 되돌려 두는 것이 안전합니다.
+        </p>
+      </article>
+
+      <article class="program-detail-section">
+        <h3>사용 방법</h3>
+        <ol>
+          <li>BZ SMB Settings를 실행합니다</li>
+          <li>자동으로 진단된 현재 공유 설정 상태를 확인합니다</li>
+          <li>'원클릭 적용' 버튼을 클릭합니다</li>
+          <li>안내에 따라 PC를 재부팅합니다</li>
+          <li>재부팅 후 공유폴더가 정상적으로 열리는지 확인합니다</li>
+        </ol>
+      </article>
+
+      <div class="smb_all" id="smb_all">
+      </div>
+    </div>
+  </section>
+
+  <!-- 하단 : 사업자 정보 (index.html과 동일) -->
+  <footer class="footer">
+    <div class="inner">
+      <div>
+        <img class="ftr_logo" src="images/logo.png" alt="솔루션 비제트 로고" />
+      </div>
+      <div class="info">
+        <ul>
+          <li>회사명 : 솔루션 비제트</li>
+          <li>대표자 : 박영</li>
+          <li>주소 : 경남 김해시 삼계중앙로6번길 21-18 101호</li>
+          <li>이메일 : ytbiz048@gmail.com </li>
+        </ul>
+        <ul>
+          <li>팩스 : 0504-229-2760</li>
+          <li>사업자등록번호 : 123-65-20119</li>
+          <li>통신판매업신고 : 제 2024-경남김해-0729 호</li>
+        </ul>
+      </div>
+      <p>COPYRIGHT (c) 솔루션 비제트 ALL RIGHTS RESERVED.</p>
+      <p>저작권 관련 수정 필요 내용이 있을 경우 이메일 혹은 전화로 연락주시면 최대한 빠르게 수정 진행하겠습니다.</p>
+      <p class="footer-privacy">개인정보처리방침 안내 : 솔루션 비제트는 문의 응대 등 서비스 제공을 위해 이름·연락처·이메일 등 최소한의 개인정보를 필요한 기간 동안만 수집·보관하며, 관련 법령에 따라 안전하게 관리합니다. 서비스 개선 및 광고 제공을 위해 쿠키가 사용될 수 있으며, 자세한 사항은 이메일 또는 전화로 문의하실 수 있습니다.</p>
+    </div>
+  </footer>
+
+  <script src="./script.js"></script>
+</body>
+</html>

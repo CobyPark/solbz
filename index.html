@@ -22,225 +22,165 @@
       <h1 class="logo"><a href="index.html">Solution BZ</a></h1>
       <nav class="nav">
         <ul>
-          <li><a href="#services">Solution</a></li>
-          <li><a href="#why-nextgen">Why Us</a></li>
-          <li><a href="#software">Software</a></li>
-          <li><a href="#products">Product</a></li>
-          <li><a href="#portfolio">Portfolio</a></li>
-          <li><a href="#contact">Contact Us</a></li>
+          <li class="nav-dropdown">
+            <span class="nav-dropdown-toggle">전체 프로그램</span>
+            <ul class="nav-dropdown-menu">
+              <li><a href="bss.html">BZ SMB Settings</a></li>
+              <li><a href="solar.html">Solar BZ</a></li>
+              <li><a>AI 포트폴리오 제작기(출시예정)</a></li>
+            </ul>
+          </li>
+          <li><a href="profile.html">대표 소개</a></li>
+          <li><a href="blog.html">블로그</a></li>
+          <li><a href="#contact">제품 및 강의 문의</a></li>
         </ul>
       </nav>
+      
     </header>
-    <!-- 메인 비주얼 -->
-    <section class="main-visual">
-      <img src="images/visual.png" alt="메인 비주얼">
-      <div class="visual-text">
-        <h2><p></p><p></p></h2>
-        <p class="txt3"></p>
+    <!-- 메인 비주얼 (HERO SWIPER) -->
+     <BR><BR>
+    <section class="hero" id="hero">
+      <div class="swiper swiper-hero">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide hero-slide" style="background:linear-gradient(135deg,#0f2035 0%,#1a3a5c 100%)">
+            <div class="hero-content inner">
+              <div class="hero-text">
+                <span class="hero-badge">신규 출시</span>
+                <h2 class="hero-title">BZ SMB Settings</h2>
+                <p class="hero-version">v1.0.0</p>
+                <p class="hero-desc">윈도우 11 공유폴더 연결을 위한<br>보안설정 원클릭 서비스</p>
+                <div class="hero-btns">
+                  <a href="bss.html" class="btn-primary" onclick="window.open('https://github.com/solsolbz/SMB_Settings/releases/download/v1.0.0/SolutionBZ_SMB_Setting_Tool.zip','_blank')">다운로드</a>
+                  <a href="bss.html" class="btn-secondary">자세히 보기</a>
+                </div>
+              </div>
+              <div class="hero-image">
+                <div class="program-mockup">
+                  <div class="mockup-bar"><span></span><span></span><span></span></div>
+                  <div class="mockup-body"><img src="images/programs/smb_real.PNG" alt="BZ SMB Settings 실행화면"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="swiper-slide hero-slide" style="background:linear-gradient(135deg,#1a1035 0%,#2d1b5c 100%)">
+            <div class="hero-content inner">
+              <div class="hero-text">
+                <span class="hero-badge">인기</span>
+                <h2 class="hero-title">Solar BZ</h2>
+                <p class="hero-version">v1.2.13</p>
+                <p class="hero-desc">한국 공용 프로토콜<br>태양광 모니터링 프로그램<br>상업적 사용 가능</p>
+                <div class="hero-btns">
+                  <a href="solar.html" class="btn-primary" onclick="window.open('https://github.com/solsolbz/Solar_BZ/releases/download/program/SolarBZSetup-1.2.13.exe','_blank')">다운로드</a>
+                  <a href="solar.html" class="btn-secondary">자세히 보기</a>
+                </div>
+              </div>
+              <div class="hero-image">
+                <div class="program-mockup">
+                  <div class="mockup-bar"><span></span><span></span><span></span></div>
+                  <div class="mockup-body"><img src="images/programs/solar_real.png" alt="Solar BZ 실행 화면"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="swiper-slide hero-slide" style="background:linear-gradient(135deg,#0f3020 0%,#1a5c38 100%)">
+            <div class="hero-content inner">
+              <div class="hero-text">
+                <span class="hero-badge">출시예정</span>
+                <h2 class="hero-title">웹으로 만드는<br>포트폴리오</h2>
+                <p class="hero-version">v0.0.0</p>
+                <p class="hero-desc">웹 사이트를 통해<br>본인만의 포트폴리오를 공개해보세요</p>
+                <div class="hero-btns">
+                  <span class="btn-secondary is-disabled">출시 예정</span>
+                </div>
+              </div>
+              <div class="hero-image">
+                <div class="program-mockup">
+                  <div class="mockup-bar"><span></span><span></span><span></span></div>
+                  <div class="mockup-body"><img src="images/programs/bz-backup-screen.png" alt="BZ Backup 실행 화면"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="hero-controls">
+          <button type="button" class="swiper-button-prev" aria-label="이전 슬라이드"></button>
+          <button type="button" class="hero-playpause" aria-label="일시정지">❚❚</button>
+          <button type="button" class="swiper-button-next" aria-label="다음 슬라이드"></button>
+        </div>
       </div>
+      <br><br>
     </section>
   </div>
 
-  <!-- 서비스 -->
-  <section class="services" id="services">
+  <!-- 프로그램 목록 -->
+  <section class="programs" id="programs">
     <div class="inner">
-      <h2>솔루션 비제트는 고객 만족을 위해 끊임없이 도전합니다.</h2>
-      <div class="service-list">
-        <div class="service-item">
-          <img src="images/soultion_01.png" alt="기술 지원">
-          <h3>기업 맞춤 컨설팅</h3>
-          <p>각 기업의 특징을 분석하여<br />적절한 IT 솔루션을 제시합니다.</p>
-        </div>
-        <div class="service-item">
-          <img src="images/soultion_02.png" alt="정품 SW 제공">
-          <h3>공인 SW 사업자</h3>
-          <p>솔루션 비제트는 한국소프트웨어산업협회에서<br />공인하는 SW서비스 업체입니다.</p>
-        </div>
-        <div class="service-item">
-          <img src="images/soultion_05.png" alt="AS 지원">
-          <h3>다양한 데이터베이스</h3>
-          <p>많은 솔루션을 제공하며 생긴 노하우로<br />상황에 알맞는 정보를 제시합니다.</p>
+      <div class="section-header">
+        <h2 class="section-title">프로그램</h2>
+        <div class="filter-tabs">
+          <button class="filter-btn active" data-filter="all">전체</button>
+          <button class="filter-btn" data-filter="system">시스템 도구</button>
+          <button class="filter-btn" data-filter="business">개별 프로그램</button>
+          <button class="filter-btn" data-filter="util">유틸리티</button>
         </div>
       </div>
-    </div>
-  </section>
-
-  <!-- 왜 -->
-  <section class="why-nextgen" id="why-nextgen">
-    <div class="inner">
-      <h2>왜 솔루션 비제트인가요?</h2>
-      <div class="reason-list">
-        <div class="reason-item item01">
-          <h3>01. 믿을 수 있는 품질</h3>
-          <p>공인 디트리뷰터로 인증된 제품만 고집합니다.<br />
-            시스템 종류에 따라 이미 안정성이 확보된 제품들로<br />
-            고객님과 함께하겠습니다.</p>
-        </div>
-        <div class="reason-item item02">
-          <h3>02. 확실한 사후 확인</h3>
-          <p>단순히 물품을 판매하고 끝내지 않습니다.<br />
-            국내 공식 AS 지원되는 제품을 취급하며, AS 접수 대행도 가능합니다.<br />
-            공식 AS가 거절될 경우 사설 AS으로 직접 책임지겠습니다.</p>
-        </div>
-        <div class="reason-item item03">
-          <h3>03. 제반서비스의 꼼꼼한 전격 지원</h3>
-          <p>지속적으로 쌓아올린 데이터 베이스를 기반하여,<br />
-            고객님의 요청과 상황에 알맞는 제품을 추천 및 견적드립니다.<br />
-            납품은 제조사 정품공급확약서와 함께 합니다.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- 소프트웨어 -->
-  <section class="software" id="software">
-    <div class="inner">
-      <h2>소프트웨어</h2>
-      <div class="software-wrap">
-        <div class="swiper swiper-software">
-          <div class="swiper-wrapper">
-            <div class="swiper-slide"><img src="images/aut1.png" alt="소프트웨어 이미지 1"></div>
-            <div class="swiper-slide"><img src="images/aut2.png" alt="소프트웨어 이미지 2"></div>
-          </div>
-          <div class="swiper-button-prev"></div>
-          <div class="swiper-button-next"></div>
-        </div>
-        <div class="software-desc">
-          <h3>BZ SOFT</h3>
-          <p>
-            비젯 소프트는 비제트 솔루션의 소프트웨어 개발팀으로<br>
-            엔비디아 공식 개발 역량 인증,<br>
-            한국소프트웨어산업협회 공인 SW서비스 업체입니다.<br>
-            비젯 소프트는 자체 사이트를 통해 운영되고 있습니다.
-          </p>
-          <a href="https://bzsoft.kro.kr" class="btn-gradient">자세히 보기</a>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- 제품 -->
-  <section class="products" id="products">
-    <div class="inner">
-      <h2>상품</h2>
-      <div class="product-list">
-        <a href="samsung.html" class="product-item"><img src="images/product_01.jpg" alt="제품1" />
-          <p>삼성 기획전 (데스크탑, 모니터, 노트북, 태블릿)</p>
+      <div class="program-grid" id="programGrid">
+        <a href="bss.html" class="program-card" id="program-bz-smb-settings" data-category="system">
+          <div class="card-icon system"><img src="images/programs/smb_logo1.png" alt="SMB 로고"></div>
+          <div class="card-info"><h3>BZ SMB Settings</h3><p>공유폴더 원클릭 보안설정</p><span class="card-version">v1.0.0</span></div>
+          <span class="card-btn">자세히 보기</span>
         </a>
-        <a href="lg.html" class="product-item"><img src="images/product_02.jpg" alt="제품2" />
-          <p>LG 기획전  (데스크탑, 모니터, 노트북)</p>
+        <a href="solar.html" class="program-card" id="program-solar-bz" data-category="business">
+          <div class="card-icon business"><img src="images/programs/solarbz.png" alt="SOLAR 로고"></div>
+          <div class="card-info"><h3>Solar BZ</h3><p>태양광 모니터링 프로그램</p><span class="card-version">v1.2.13</span></div>
+          <span class="card-btn">자세히 보기</span>
         </a>
-        <a href="hp.html" class="product-item"><img src="images/product_03.jpg" alt="제품3" />
-          <p>HP 기획전 (데스크탑, 워크스테이션)</p>
-        </a>
-        <a class="product-item"><img src="images/product_04.jpg" alt="제품4" />
-          <p>조립형 데스크탑, 워크스테이션 기획전</p>
-        </a>
-      </div>
-    </div>
-  </section>
-
-  <!-- 포트폴리오 -->
-  <section class="portfolio" id="portfolio">
-    <div class="inner">
-      <h2>포트폴리오</h2>
-    </div>
-    <div class="portfolio-list">
-      <!-- Slider main container -->
-      <div class="swiper swiper-main">
-        <!-- Additional required wrapper -->
-        <div class="swiper-wrapper">
-          <!-- Slides -->
-          <div class="swiper-slide"><img src="images/port/1.jpg" alt="포트폴리오1"></div>
-          <div class="swiper-slide"><img src="images/port/2.jpg" alt="포트폴리오2"></div>
-          <div class="swiper-slide"><img src="images/port/3.jpg" alt="포트폴리오3"></div>
-          <div class="swiper-slide"><img src="images/port/4.jpg" alt="포트폴리오4"></div>
-          <div class="swiper-slide"><img src="images/port/5.jpg" alt="포트폴리오5"></div>
-          <div class="swiper-slide"><img src="images/port/6.jpg" alt="포트폴리오6"></div>
-          <div class="swiper-slide"><img src="images/port/7.jpg" alt="포트폴리오7"></div>
-          <div class="swiper-slide"><img src="images/port/8.jpg" alt="포트폴리오8"></div>
-          <div class="swiper-slide"><img src="images/port/9.jpg" alt="포트폴리오9"></div>
-          <div class="swiper-slide"><img src="images/port/10.jpg" alt="포트폴리오10"></div>
-          <div class="swiper-slide"><img src="images/port/11.jpg" alt="포트폴리오11"></div>
+        <div class="program-card" id="program-ai-portfolio" data-category="util">
+          <div class="card-icon util"><img src="images/programs/bz-backup.png" alt="BZ Backup 로고"></div>
+          <div class="card-info"><h3>AI 포트폴리오 제작기</h3><p>AI를 활용하여 웹으로<BR>포트폴리오를 개시해보세요</p><span class="card-version">v0.0.0</span></div>
+          <span class="card-btn is-disabled">출시예정</span>
         </div>
-
-        <!-- If we need pagination -->
-        <div class="swiper-pagination"></div>
-
-        <!-- If we need navigation buttons -->
-        <div class="swiper-button-prev"></div>
-        <div class="swiper-button-next"></div>
       </div>
     </div>
+    <br>
   </section>
 
   <!-- 문의 섹션 -->
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>반응형 iframe 예제</title>
-  <style>
-    /* 부모 컨테이너: 화면 너비에 따른 최대 800px, 중앙 정렬, overflow 숨김 */
-    .responsive-iframe-mask {
-      width: 100%;
-      max-width: 1200px;
-      height: 600px;
-      margin: 0 auto;
-      overflow: hidden;
-      position: relative;
-    }
-    /* 가상 요소로 보여질 영역의 높이를 결정 (예: 500px를 보여주려면 500/800 = 62.5%) */
-    .responsive-iframe-mask::before {
-      content: "";
-      display: block;
-      padding-top: 62.5%;
-    }
-    /* 내부 컨테이너는 mask 내에서 절대 위치를 차지 */
-    .responsive-iframe-wrapper {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-    }
-    /* iframe: 원본 800×1300 기준으로 크기 조정 (1300/800 = 162.5%) 및 상단 크롭 
-       - 상단 50px를 잘라내려면 50/800 = 6.25% 만큼 위로 이동 */
-    .responsive-iframe-wrapper iframe {
-      position: absolute;
-      top: -6.25%;
-      left: 1%;
-      width: 100%;
-      height: 162.5%;
-      border: none;
-    }
-  </style>
-</head>
-<body>
   <section class="contact" id="contact">
     <div class="hdr">
-      <h2>구매 및 상담 문의</h2>
-      <p class="sub-text">고객의 특성과 요청에 알맞는 솔루션을 제공해드립니다.</p>
+      <h2>제품 및 강의 문의</h2>
+      <p class="sub-text">문의 유형에 맞는 항목을 선택해 주세요.</p>
     </div>
-    <form class="contact-form">
+    <div class="inner">
       <div class="contact-text">
-        <p><span>TEL</span>: 010-5842-2760</p>
         <p><span>이메일: ytbiz048@gmail.com </span></p>
       </div>
-      <!-- 반응형 및 크롭 효과가 적용된 iframe 래퍼 -->
-      <div class="responsive-iframe-mask">
-        <div class="responsive-iframe-wrapper">
-          <iframe
-            src="https://moaform.com/q/2jPoXz"
-            frameborder="0"
-            marginheight="0"
-            marginwidth="0">
-            Loading…
-          </iframe>
+      <div class="contact-frame" id="contactFrame">
+        <div class="contact-options" id="contactOptions">
+          <button type="button" class="contact-option" data-form-url="https://tally.so/r/lbZkPX">
+            <span class="contact-option-icon contact-option-icon--error" aria-hidden="true">⚠</span>
+            <span class="contact-option-body">
+              <span class="contact-option-title">제품 오류 및 제안 제보</span>
+              <span class="contact-option-desc">제품 사용 중 발견한 오류나 개선 아이디어를 알려주세요.</span>
+            </span>
+          </button>
+          <button type="button" class="contact-option" data-form-url="https://tally.so/r/aQoqWW">
+            <span class="contact-option-icon contact-option-icon--lecture" aria-hidden="true">🎓</span>
+            <span class="contact-option-body">
+              <span class="contact-option-title">강의 문의</span>
+              <span class="contact-option-desc">AI·IT 강연 및 교육 관련 문의를 남겨주세요.</span>
+            </span>
+          </button>
+        </div>
+        <div class="contact-form-view" id="contactFormView" hidden>
+          <button type="button" class="contact-form-back" id="contactFormBack">← 다른 문의 유형 선택</button>
+          <div class="contact-form-mask">
+            <iframe id="contactFormFrame" class="contact-form-frame" title="문의 폼"></iframe>
+          </div>
         </div>
       </div>
-    </form>
+    </div>
   </section>
-</body>
-</html>
-
   <!-- 협력 업체 -->
   <div class="cooperation">
     <div class="swiper swiper_cooperation">
@@ -272,7 +212,6 @@
           <li>대표자 : 박영</li>
           <li>주소 : 경남 김해시 삼계중앙로6번길 21-18 101호</li>
           <li>이메일 : ytbiz048@gmail.com </li>
-          <li>전화 : 010-5842-2760</li>
         </ul>
         <ul>
           <li>팩스 : 0504-229-2760</li>
@@ -282,6 +221,7 @@
       </div>
       <p>COPYRIGHT (c) 솔루션 비제트 ALL RIGHTS RESERVED.</p>
       <p>저작권 관련 수정 필요 내용이 있을 경우 이메일 혹은 전화로 연락주시면 최대한 빠르게 수정 진행하겠습니다.</p>
+      <p class="footer-privacy">개인정보처리방침 안내 : 솔루션 비제트는 문의 응대 등 서비스 제공을 위해 이름·연락처·이메일 등 최소한의 개인정보를 필요한 기간 동안만 수집·보관하며, 관련 법령에 따라 안전하게 관리합니다. 서비스 개선 및 광고 제공을 위해 쿠키가 사용될 수 있으며, 자세한 사항은 이메일 또는 전화로 문의하실 수 있습니다.</p>
     </div>
   </footer>
 
