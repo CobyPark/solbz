@@ -194,6 +194,18 @@ body {
   margin-bottom: 16px;
 }
 
+.blog-post-figure {
+  margin: 0 0 28px;
+}
+
+.blog-post-figure img {
+  display: block;
+  width: 100%;
+  max-width: 360px;
+  height: auto;
+  margin: 0 auto;
+}
+
 @media (max-width: 768px) {
   .blog-post-page {
     padding: 40px 0 60px;
