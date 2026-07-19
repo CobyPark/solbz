@@ -132,7 +132,7 @@ $(document).ready(function () {
   const BLOG_PAGE_SIZE = 15;
 
   if (blogFilterBtns.length && blogItems.length && blogPagination) {
-    // 좌측 번호(화면 표시용)는 오래된 글부터 1번으로 매깁니다. 파일명(blog/241.html~)과는 별개이며,
+    // 좌측 번호(화면 표시용)는 오래된 글부터 1번으로 매깁니다. 글 파일명과는 별개이며,
     // 글이 삭제되면 남은 글 기준으로 자동 재계산됩니다.
     const BLOG_NUMBER_START = 1;
     const totalBlogItems = blogItems.length;
