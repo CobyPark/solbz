@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="윈도우 11 업데이트 이후 공유폴더 접속이 안 되거나 네트워크 자격 증명 문제가 생길 때 BZ SMB Settings로 해결하는 방법과 직접 적용 절차를 안내합니다.">
+  <title>윈도우11 공유폴더가 갑자기 작동 안될 때. (BSS v1.0.0 설명서) - 솔루션 비제트</title>
+  <link rel="stylesheet" href="../style.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+  <script src="https://code.jquery.com/jquery-latest.min.js"></script>
+  <!-- 파비콘 -->
+  <link rel="icon" type="image/png" sizes="32x32" href="../images/logo2.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="../images/logo2.png">
+</head>
+
+<body>
+  <!-- 헤더 (index.html과 동일, blog/ 하위 경로라 상대경로(../) 사용) -->
+  <div class="container">
+    <header class="header">
+      <h1 class="logo"><a href="../index.html">Solution BZ</a></h1>
+      <nav class="nav">
+        <ul>
+          <li class="nav-dropdown">
+            <span class="nav-dropdown-toggle">전체 프로그램</span>
+            <ul class="nav-dropdown-menu">
+              <li><a href="../bss.html">BZ SMB Settings</a></li>
+              <li><a href="../solar.html">Solar BZ</a></li>
+              <li><a>웹 기반 에이전트 AI(출시예정)</a></li>
+            </ul>
+          </li>
+          <li><a href="../profile.html">대표 소개</a></li>
+          <li><a href="../blog.html">블로그</a></li>
+          <li><a href="../index.html#contact">제품 및 강의 문의</a></li>
+        </ul>
+      </nav>
+    </header>
+  </div>
+
+  <section class="blog-post-page">
+    <div class="inner">
+      <a class="blog-post-back" href="../blog.html">목록으로 돌아가기</a>
+
+      <article>
+        <header class="blog-post-hdr">
+          <span class="blog-post-category-badge">소프트웨어</span>
+          <h2>윈도우11 공유폴더가 갑자기 작동 안될 때. (BSS v1.0.0 설명서)</h2>
+          <p class="blog-post-page-meta">솔루션 비제트 · 2026.07</p>
+        </header>
+
+        <div class="blog-post-body">
+          <p>안녕하세요 솔루션 비제트입니다.</p>
+          <p>윈도우 11 업데이트 시 네트워크 공유 불가, 네트워크 자격 증명 입력 문제로 잘 되던 윈도우 공유폴더가 안되는 경우가 종종 있습니다.</p>
+          <p>윈도우 11 24H2 버전 업데이트 이후 종종 나타나는 증상입니다.</p>
+
+          <figure class="blog-post-figure">
+            <img src="../images/blog/002/image1.png" alt="윈도우 네트워크 공유 오류 화면">
+          </figure>
+
+          <p>고급 설정 변경해도 자격 증명으로 진행되지 않는 경우도 생깁니다.</p>
+
+          <figure class="blog-post-figure">
+            <img src="../images/blog/002/image2.png" alt="윈도우 네트워크 자격 증명 입력 화면">
+          </figure>
+
+          <p>해당 문제를 해결 하기 위해서 윈도우 설정과 레지스트리 값을 변경해주어야합니다.</p>
+          <p>하지만 일반 사용자가 설정변경, 레지스트리변경을 진행하기는 어렵다고 생각하여,</p>
+          <p>저희 솔루션 비제트에서 BSS : BZ SMB Settings 프로그램을 만들었습니다.</p>
+          <p>하단 프로그램 다운로드 버튼을 통해 프로그램 실행 후</p>
+
+          <div class="blog-post-actions">
+            <a class="blog-post-action-btn" href="https://github.com/solsolbz/SMB_Settings/releases/download/v1.0.0/SolutionBZ_SMB_Setting_Tool.zip" download>프로그램 다운로드</a>
+          </div>
+
+          <figure class="blog-post-figure">
+            <img src="../images/blog/002/image3.png" alt="BZ SMB Settings 실행 화면">
+          </figure>
+
+          <p>하단의 정책 적용 클릭, 지금 다시 시작 클릭하시면 컴퓨터가 재부팅되고 정상적으로 공유폴더를 사용할 수 있게 됩니다.</p>
+          <p>*주의! 윈도우 공유폴터는 내부망 시스템을 통해 공유되는 윈도우 내장 서비스입니다. 보안 업데이트 진행으로 SMB 공유폴더 사용 불가하게 된 것이며, 해당 프로그램 작업 진행 시 보안이 약해질 수 있습니다. 해당 내용 인지 후 작업 부탁드리며, 해당 보안변경으로 인한 피해는 책임지지 않습니다. 감사합니다.</p>
+
+          <div class="blog-post-actions">
+            <button type="button" class="blog-post-toggle-btn" data-toggle-target="manualApplySection" aria-expanded="false">프로그램 안쓰고 직접 적용해보기</button>
+          </div>
+
+          <div class="blog-post-hidden-section" id="manualApplySection">
+            <h3>직접 적용하기.</h3>
+            <p>저희가 제공해드리는 보안 정책기 사용 불가하시거나 어려우신 경우 다음 순서를 따라 직접 작업하시면 됩니다.</p>
+            <p>우측 하단 네트워크 로고 우클릭</p>
+            <p>네트워크 및 인터넷 설정 버튼 클릭</p>
+
+            <figure class="blog-post-figure">
+              <img src="../images/blog/002/image4.png" alt="네트워크 및 인터넷 설정 메뉴">
+            </figure>
+
+            <p>이더넷 클릭</p>
+
+            <figure class="blog-post-figure">
+              <img src="../images/blog/002/image5.png" alt="이더넷 설정 화면">
+            </figure>
+
+            <p>개인 네트워크 클릭</p>
+            <p>뒤로가기 버튼</p>
+
+            <figure class="blog-post-figure">
+              <img src="../images/blog/002/image6.png" alt="네트워크 설정 뒤로가기 버튼">
+            </figure>
+
+            <p>고급 내트워크 설정 클릭</p>
+
+            <figure class="blog-post-figure">
+              <img src="../images/blog/002/image6.png" alt="고급 네트워크 설정 메뉴">
+            </figure>
+
+            <p>고급 공유 설정 클릭</p>
+
+            <figure class="blog-post-figure">
+              <img src="../images/blog/002/image6.png" alt="고급 공유 설정 메뉴">
+            </figure>
+
+            <p>다음 사진대로 설정 클릭.</p>
+
+            <figure class="blog-post-figure">
+              <img src="../images/blog/002/image7.png" alt="고급 공유 설정 화면">
+            </figure>
+
+            <p>윈도우키 + R 누르기</p>
+            <p>실행 창에 gpedit.msc 입력</p>
+
+            <figure class="blog-post-figure">
+              <img src="../images/blog/002/image8.png" alt="gpedit.msc 실행 화면">
+            </figure>
+
+            <p>해당 경로로 설정 변경</p>
+            <p>(컴퓨터 구성 &gt; Windows 설정 &gt; 보안 설정 &gt; 로컬 정책 &gt; 보안옵션 &gt; Microsoft 네트워크 클라이언트 : 디지털 서명통신(항상) - 사용안함</p>
+
+            <figure class="blog-post-figure">
+              <img src="../images/blog/002/image9.png" alt="로컬 보안 정책 설정 화면">
+            </figure>
+
+            <p>해당 경로로 설정 변경</p>
+            <p>(컴퓨터 구성 &gt; 관리 템플릿 &gt; 네트워크 &gt; Lanman 워크스테이션 &gt; 안전하지 않은 게스트 로그온 감사 - 사용)</p>
+            <p>(컴퓨터 구성 &gt; 관리 템플릿 &gt; 네트워크 &gt; Lanman 워크스테이션 &gt; 보안되지 않은 게스트 로그온 사용 - 사용)</p>
+
+            <figure class="blog-post-figure">
+              <img src="../images/blog/002/image10.png" alt="Lanman 워크스테이션 정책 설정 화면">
+            </figure>
+
+            <p>재부팅 후 공유폴더 사용 가능</p>
+          </div>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <!-- 하단 : 사업자 정보 (index.html과 동일, blog/ 하위 경로라 상대경로(../) 사용) -->
+  <footer class="footer">
+    <div class="inner">
+      <div>
+        <img class="ftr_logo" src="../images/logo.png" alt="솔루션 비제트 로고" />
+      </div>
+      <div class="info">
+        <ul>
+          <li>회사명 : 솔루션 비제트</li>
+          <li>대표자 : 박영</li>
+          <li>주소 : 경남 김해시 삼계중앙로6번길 21-18 101호</li>
+          <li>이메일 : ytbiz048@gmail.com </li>
+          <li>전화 : 010-5842-2760</li>
+        </ul>
+        <ul>
+          <li>팩스 : 0504-229-2760</li>
+          <li>사업자등록번호 : 123-65-20119</li>
+          <li>통신판매업신고 : 제 2024-경남김해-0729 호</li>
+        </ul>
+      </div>
+      <p>COPYRIGHT (c) 솔루션 비제트 ALL RIGHTS RESERVED.</p>
+      <p>저작권 관련 수정 필요 내용이 있을 경우 이메일 혹은 전화로 연락주시면 최대한 빠르게 수정 진행하겠습니다.</p>
+      <p class="footer-privacy">개인정보처리방침 안내 : 솔루션 비제트는 문의 응대 등 서비스 제공을 위해 이름·연락처·이메일 등 최소한의 개인정보를 필요한 기간 동안만 수집·보관하며, 관련 법령에 따라 안전하게 관리합니다. 서비스 개선 및 광고 제공을 위해 쿠키가 사용될 수 있으며, 자세한 사항은 이메일 또는 전화로 문의하실 수 있습니다.</p>
+    </div>
+  </footer>
+
+  <script src="../script.js"></script>
+</body>
+</html>

@@ -184,6 +184,19 @@ $(document).ready(function () {
     renderBlogList();
   }
 
+  // 블로그 상세 접힘 영역
+  document.querySelectorAll('.blog-post-toggle-btn').forEach(btn => {
+    const targetId = btn.dataset.toggleTarget;
+    const target = targetId ? document.getElementById(targetId) : null;
+    if (!target) return;
+
+    btn.addEventListener('click', () => {
+      const isOpen = target.classList.toggle('is-open');
+      btn.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+      btn.textContent = isOpen ? '직접 적용 방법 접기' : '프로그램 안쓰고 직접 적용해보기';
+    });
+  });
+
   // 문의 유형 선택 → 같은 프레임 안에서 선택 화면을 Tally 폼 화면으로 전환
   const contactOptions = document.querySelectorAll('.contact-option');
   const contactOptionsView = document.getElementById('contactOptions');
