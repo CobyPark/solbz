@@ -2149,6 +2149,10 @@ h2 {
 .blog-table-wrap th, .blog-table-wrap td { border: 1px solid #dce3e8; padding: 12px; text-align: left; vertical-align: top; min-width: 110px; }
 .blog-table-wrap th { background: #f1f6fa; }
 .blog-post .blog-sources, .blog-post .blog-related { font-size: .9rem; padding: 16px; background: #f7f9fb; border-radius: 6px; }
+.information-blog .blog-worked-example { margin: 24px 0; padding: 20px; border-left: 3px solid #2a7dac; background: #f5f9fc; border-radius: 0 8px 8px 0; }
+.information-blog .blog-worked-example h3 { margin-top: 0; }
+.information-blog .blog-worked-example p { margin-bottom: 0; }
+.information-blog .blog-post h2 { word-break: keep-all; overflow-wrap: anywhere; }
 @media (max-width: 768px) {
   .blog-guide-index { padding: 20px; }
   .blog-post pre { padding: 14px; font-size: .8rem; }
