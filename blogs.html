@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="솔루션 비제트 IT 정보글 62편. AI API·문서 활용, CSV·데이터 정리, Python 업무 자동화, 웹사이트 운영, 보안·장비 관리 방법을 예시와 기술 참고 자료로 안내합니다.">
+  <meta name="description" content="솔루션 비제트 IT 정보글 76편. OpenClaw 설치·초기 설정·Telegram·Discord·스킬·브라우저·예약 실행을 다룬 14편 시리즈와 AI API, 데이터 정리, Python 자동화, IT 운영 가이드를 제공합니다.">
   <title>블로그 - 솔루션 비제트</title>
   <link rel="stylesheet" href="./style.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
@@ -44,14 +44,33 @@
     <div class="inner">
       <div class="blog-page-hdr">
         <h2>솔루션 비제트 블로그</h2>
-        <p>AI 활용, 데이터 정리, 업무 자동화, 웹사이트 운영과 장비 관리까지 총 62편의 IT 정보를 정리합니다. 새 가이드는 기술 참고 자료와 설명용 예시를 함께 제공하며, 각 글에서 출처와 확인 날짜를 안내합니다.</p>
+        <p>AI 활용, 데이터 정리, 업무 자동화, 웹사이트 운영과 장비 관리까지 총 76편의 IT 정보를 정리합니다. 새 가이드는 기술 참고 자료와 설명용 예시를 함께 제공하며, 각 글에서 출처와 확인 날짜를 안내합니다.</p>
       </div>
 
 
-      <nav class="blog-guide-index" id="ai-guides" aria-label="전체 62편 정보글 목차">
-        <h2>IT 정보글 전체 목차 · 62편</h2>
-        <p>AI 활용, 데이터 정리, 업무 자동화, 웹 운영과 IT 관리 정보를 분야별로 찾아보세요. 분야 제목을 누르면 글 목록이 열립니다. 새 글 40편은 기술 참고 자료와 직접 적용할 예시·점검 항목을 함께 제공합니다.</p>
-        <details open><summary>AI 문서·업무 활용 · 8편</summary>
+      <nav class="blog-guide-index" id="ai-guides" aria-label="전체 76편 정보글 목차">
+        <h2>IT 정보글 전체 목차 · 76편</h2>
+        <p>AI 활용, 데이터 정리, 업무 자동화, 웹 운영과 IT 관리 정보를 분야별로 찾아보세요. 분야 제목을 누르면 글 목록이 열립니다. OpenClaw 14편 시리즈와 각 분야 가이드에서 기술 참고 자료, 적용 예시, 점검 항목을 함께 확인하세요.</p>
+        <details open id="openclaw-series"><summary>OpenClaw 설치·활용 시리즈 · 14편</summary>
+          <p>01~05편은 설치와 첫 대화, 06~11편은 설정·채널·도구 활용, 12~14편은 예약 실행과 운영 순서입니다. 처음에는 한 대의 PC와 본인 계정으로 작은 과제부터 진행하세요.</p>
+          <ol>
+            <li><a href="#post-openclaw-01">시작 전 이해하기: Gateway·모델·채널이 맡는 역할</a></li>
+            <li><a href="#post-openclaw-02">Windows 설치: 데스크톱 앱·PowerShell·WSL2 중 선택하기</a></li>
+            <li><a href="#post-openclaw-03">macOS·Linux 설치: 런타임 확인부터 CLI 준비까지</a></li>
+            <li><a href="#post-openclaw-04">초기 설정: 온보딩에서 모델 연결과 Gateway 실행 확인하기</a></li>
+            <li><a href="#post-openclaw-05">대시보드 사용: 첫 대화·세션 구분·결과 확인하기</a></li>
+            <li><a href="#post-openclaw-06">작업 공간과 메모리: AGENTS.md·SOUL.md를 관리하는 방법</a></li>
+            <li><a href="#post-openclaw-07">OpenRouter 모델 연결: 인증·모델 ID·비용을 따로 확인하기</a></li>
+            <li><a href="#post-openclaw-08">Telegram 연결: 봇 생성부터 첫 DM 페어링까지</a></li>
+            <li><a href="#post-openclaw-09">Discord 연결: 봇 권한·토큰·사용자 승인을 나누어 설정하기</a></li>
+            <li><a href="#post-openclaw-10">스킬 사용: 필요한 기능 찾기·설치 전 검토·동작 확인</a></li>
+            <li><a href="#post-openclaw-11">브라우저 활용: 전용 프로필에서 페이지 열기와 내용 확인하기</a></li>
+            <li><a href="#post-openclaw-12">예약 실행: 일회 알림부터 만들고 실행 이력 확인하기</a></li>
+            <li><a href="#post-openclaw-13">보안 설정: 페어링·도구 정책·샌드박스를 구분하기</a></li>
+            <li><a href="#post-openclaw-14">운영 마무리: 백업·업데이트·오류 진단 순서 정리</a></li>
+          </ol>
+        </details>
+        <details><summary>AI 문서·업무 활용 · 8편</summary>
           <ol>
             <li><a href="#post-prompt-brief">AI에 업무를 맡길 때 필요한 다섯 가지: 목적·자료·형식·제약·완료 기준</a></li>
             <li><a href="#post-meeting-actions">AI 회의록에서 결정 사항과 검토 의견을 구분하는 방법</a></li>
@@ -143,6 +162,349 @@
         </details>
       </nav>
 
+      <article class="blog-post" id="post-openclaw-01">
+        <span class="blog-post-category">OpenClaw 입문 시리즈 · 01/14</span>
+        <h2>OpenClaw 01. 시작 전 이해하기: Gateway·모델·채널이 맡는 역할</h2>
+        <p class="blog-post-meta">솔루션 비제트 · 공식 문서 기반 사용 안내 · <time datetime="2026-10-19">2026.10.19</time></p>
+        <p>OpenClaw는 채팅 화면에서 답변만 읽는 방식에서 나아가, 연결한 도구와 메시지 채널을 통해 작업을 수행하도록 구성하는 AI 어시스턴트 시스템입니다. 이 시리즈는 개인 실습 환경에서 설치하고 첫 대화를 확인한 다음 기능을 하나씩 추가하는 순서로 진행합니다. 먼저 어디서 프로그램이 실행되고 어떤 서비스가 답변을 만드는지 구분해 보세요.</p>
+        <h3>요청이 이동하는 경로를 그립니다</h3>
+<p>Gateway는 OpenClaw의 실행과 연결을 관리하는 중심 프로세스입니다. 브라우저의 Control UI나 메시지 채널에서 요청을 받으면 설정한 모델과 도구를 사용해 처리합니다. 모델 공급자는 실제 추론을 제공하고, Telegram·Discord 같은 채널은 대화가 들어오고 나가는 창구입니다.</p>
+<p>내 PC에 Gateway가 있다고 모델 추론까지 모두 PC 안에서 실행되는 것은 아닙니다. 외부 API를 선택했다면 입력이 해당 서비스로 전달됩니다. 프로그램 설치 비용과 모델 API·외부 도구 이용 비용도 별도로 확인해야 합니다.</p>
+<h3>첫 구성은 한 모델과 대화 화면으로 제한합니다</h3>
+<p>메신저 봇, 스킬, 예약 작업을 동시에 추가하면 실패한 구간을 구분하기 어렵습니다. 먼저 본인 계정으로 모델 하나를 연결하고 대시보드에서 짧은 답변을 받는 것을 첫 목표로 삼으세요. 실제 고객 문서 대신 새로 만든 가상 메모를 사용하면 연결 상태를 확인하기에 충분합니다.</p>
+<p>공식 문서와 설치한 릴리스의 기능이 다를 수 있으므로 버전과 도움말을 함께 확인합니다. 이 글의 명령어는 읽고 선택해서 실행할 예시입니다. 명령 블록 전체를 한 번에 복사하기보다 각 단계의 결과를 확인하며 진행하세요.</p>
+<pre tabindex="0" aria-label="명령어 또는 설정 예제"><code>openclaw --version
+openclaw --help</code></pre>
+<h3>실습 범위와 완료 기준을 정합니다</h3>
+<p>설치할 PC, 사용할 모델 계정, 허용할 폴더, 결과를 확인할 사람을 미리 정합니다. 첫 성공 기준은 “Gateway가 실행되고, 가상 메모 질문에 답하며, 종료 방법을 안다” 정도로 잡을 수 있습니다. 파일 변경이나 외부 발송은 그 다음에 별도로 시험하세요.</p>
+
+        <aside class="blog-worked-example" aria-label="설명용 실습 예시"><h3>따라 해볼 과제</h3><p>가상의 세 문장 메모를 준비하고 “확인된 사실과 다음 행동을 나눠 달라”고 요청하는 실습을 계획합니다. 메모 작성 → 모델 응답 → 사람 검토의 경로만 먼저 만들고, 자동 발송이나 실제 업무 파일 접근은 포함하지 않습니다.</p></aside>
+        <h3>다음 편으로 넘어가기 전 확인</h3>
+        <ul><li>Gateway·모델·채널의 차이를 설명할 수 있는가</li><li>설치 환경과 사용할 계정을 정했는가</li><li>첫 실습의 입력과 완료 기준이 있는가</li></ul>
+        <p class="blog-sources">공식 참고: <a href="https://docs.openclaw.ai/concepts/architecture">Gateway 구조</a> · <a href="https://docs.openclaw.ai/start/getting-started">시작 가이드</a>. 문서 확인: 2026.10.19. 명령과 화면은 설치 버전에 따라 달라질 수 있습니다. 예시는 설명용이며 실제 설치·연결·성능 시험 결과가 아닙니다.</p>
+        <nav class="blog-related" aria-label="OpenClaw 01편 탐색"><a href="#openclaw-series">시리즈 목차</a> · <a rel="next" href="#post-openclaw-02">다음 편</a> · <a href="#ai-guides">전체 목차</a></nav>
+      </article>
+
+      <article class="blog-post" id="post-openclaw-02">
+        <span class="blog-post-category">OpenClaw 입문 시리즈 · 02/14</span>
+        <h2>OpenClaw 02. Windows 설치: 데스크톱 앱·PowerShell·WSL2 중 선택하기</h2>
+        <p class="blog-post-meta">솔루션 비제트 · 공식 문서 기반 사용 안내 · <time datetime="2026-10-19">2026.10.19</time></p>
+        <p>Windows에서는 하나의 설치 방법만 있는 것이 아닙니다. 공식 문서는 Windows Hub 데스크톱 앱, 네이티브 PowerShell CLI, WSL2 경로를 안내합니다. 자신이 관리할 수 있는 환경을 하나 선택하고 그 경로의 설정·실행 위치를 일관되게 사용하는 것이 중요합니다.</p>
+        <h3>화면 중심으로 시작한다면 공식 앱을 확인합니다</h3>
+<p>공식 Windows 문서에서 연결한 Windows Hub 릴리스 페이지를 열고 PC 아키텍처에 맞는 설치 파일을 선택합니다. 설치 뒤 OpenClaw Companion을 실행해 로컬 설정 또는 기존 Gateway 연결을 선택합니다. 현재 Hub의 로컬 설정은 앱이 관리하는 WSL Gateway를 준비하는 방식이므로 단순히 기존 Ubuntu에 설치한 것과 구분해야 합니다.</p>
+<p>이미 사용 중인 Gateway가 있다면 새 로컬 인스턴스를 추가하기 전에 연결 대상을 확인하세요. 트레이가 연결 상태를 보여주더라도 모델 답변까지 검증된 것은 아니므로 이후 대화 시험을 진행합니다. 앱과 CLI는 버전 배포 주기가 다를 수 있습니다.</p>
+<h3>터미널 중심이라면 PowerShell 경로를 선택합니다</h3>
+<p>아래는 공식 설치 스크립트 명령입니다. 원격 스크립트를 가져와 실행하므로 공식 도메인과 스크립트 내용을 확인한 뒤 선택한 경로에서 실행하세요. 설치가 끝나면 같은 PowerShell에서 버전과 상태를 확인하고, 명령을 찾지 못하면 새 터미널과 PATH를 점검합니다.</p>
+<pre tabindex="0" aria-label="명령어 또는 설정 예제"><code>iwr -useb https://openclaw.ai/install.ps1 | iex
+openclaw --version
+openclaw gateway status</code></pre>
+<h3>WSL2에서는 Linux 안의 설치로 관리합니다</h3>
+<p>Linux 환경과의 호환성이 필요한 경우 공식 Windows 문서의 WSL2 절차를 따릅니다. 설치와 실행은 해당 배포판의 Linux 터미널에서 하고, PowerShell용 명령과 섞지 마세요. Windows와 WSL의 경로·환경변수·서비스는 구분해 관리해야 합니다. WSL2를 준비한 뒤에는 다음 편의 Linux 설치 흐름을 참고할 수 있습니다.</p>
+
+        <aside class="blog-worked-example" aria-label="설명용 실습 예시"><h3>따라 해볼 과제</h3><p>실습 기록에 “PowerShell 네이티브 설치”처럼 선택한 경로를 적고, 대시보드가 연결할 Gateway도 기록합니다. 나중에 앱을 추가할 때는 먼저 그 Gateway를 재사용할지 결정합니다. 같은 PC에 여러 환경을 설치해 둔 경우 실행기와 설정 위치를 함께 구분합니다.</p></aside>
+        <h3>다음 편으로 넘어가기 전 확인</h3>
+        <ul><li>선택한 설치 경로와 실행 터미널이 일치하는가</li><li>앱용 Gateway와 수동 설치 Gateway를 혼동하지 않는가</li><li>설치 후 버전과 실행 상태를 확인했는가</li></ul>
+        <p class="blog-sources">공식 참고: <a href="https://docs.openclaw.ai/platforms/windows">공식 Windows 설치 안내</a> · <a href="https://docs.openclaw.ai/install">설치 방식 비교</a>. 문서 확인: 2026.10.19. 명령과 화면은 설치 버전에 따라 달라질 수 있습니다. 예시는 설명용이며 실제 설치·연결·성능 시험 결과가 아닙니다.</p>
+        <nav class="blog-related" aria-label="OpenClaw 02편 탐색"><a rel="prev" href="#post-openclaw-01">이전 편</a> · <a href="#openclaw-series">시리즈 목차</a> · <a rel="next" href="#post-openclaw-03">다음 편</a> · <a href="#ai-guides">전체 목차</a></nav>
+      </article>
+
+      <article class="blog-post" id="post-openclaw-03">
+        <span class="blog-post-category">OpenClaw 입문 시리즈 · 03/14</span>
+        <h2>OpenClaw 03. macOS·Linux 설치: 런타임 확인부터 CLI 준비까지</h2>
+        <p class="blog-post-meta">솔루션 비제트 · 공식 문서 기반 사용 안내 · <time datetime="2026-10-19">2026.10.19</time></p>
+        <p>macOS와 Linux에서는 공식 설치 스크립트 또는 직접 관리하는 Node.js 환경을 이용할 수 있습니다. 여기서는 공식 스크립트 흐름을 중심으로 설명합니다. Windows의 WSL2를 선택했다면 아래 명령은 PowerShell이 아닌 WSL Linux 터미널에서 실행합니다.</p>
+        <h3>현재 Node.js와 공식 요구사항을 대조합니다</h3>
+<p>터미널에서 Node.js 버전을 확인합니다. 문서 확인일 기준 공식 설치 안내는 Node 24.16 이상 또는 26.1 이상 경로를 제시하고 Node 26을 권장합니다. 오래된 글의 “Node 22면 충분” 같은 조건을 그대로 적용하지 말고 설치할 릴리스의 요구사항을 다시 확인하세요.</p>
+<pre tabindex="0" aria-label="명령어 또는 설정 예제"><code>node --version</code></pre>
+<p>Node가 없는 경우 공식 설치 프로그램이 준비하는 방식과 운영체제 지원 범위를 설치 문서에서 확인합니다. 조직에서 런타임을 관리한다면 승인된 경로를 사용하세요. 소스 빌드용 도구를 처음부터 모두 설치할 필요는 없습니다.</p>
+<h3>공식 스크립트로 설치하고 결과를 봅니다</h3>
+<p>아래 명령은 공식 스크립트를 내려받아 실행합니다. 실행 전 주소와 내용을 확인하고, 진행 중 표시되는 설치 경로와 오류를 읽습니다. 보통 설치 후 초기 설정 흐름이 이어지므로 이미 설정을 끝냈다면 다음 편에서 중복 생성하지 않도록 현재 상태부터 확인하세요.</p>
+<pre tabindex="0" aria-label="명령어 또는 설정 예제"><code>curl -fsSL https://openclaw.ai/install.sh | bash
+openclaw --version</code></pre>
+<p>npm으로 직접 설치하는 방법도 있지만 npm 버전에 따라 패키지 설치 스크립트 허용 옵션이 다를 수 있습니다. 직접 설치를 선택했다면 현재 공식 npm 절차를 따르고, 여러 설치 방식을 한꺼번에 적용하지 마세요.</p>
+<h3>명령 검색 실패와 실행 실패를 구분합니다</h3>
+<p>openclaw를 찾지 못한다면 PATH와 새 터미널 적용 여부, 어떤 Node 환경에 설치했는지 확인합니다. 명령은 실행되는데 Gateway가 멈추는 경우는 다른 단계의 문제입니다. 무조건 관리자 권한으로 다시 설치하기보다 나온 오류와 설치 경로를 기록해 원인을 좁히세요.</p>
+
+        <aside class="blog-worked-example" aria-label="설명용 실습 예시"><h3>따라 해볼 과제</h3><p>설치 전후 Node 버전과 OpenClaw 버전을 작은 메모에 남깁니다. 가상 실습에서 터미널을 다시 열어도 명령을 찾을 수 있는지 확인하고, 초기 설정을 시작할 준비가 되면 다음 편으로 넘어갑니다. 설치 과정에서 발생한 오류는 비밀 값을 제외하고 기록합니다.</p></aside>
+        <h3>다음 편으로 넘어가기 전 확인</h3>
+        <ul><li>사용할 릴리스의 Node 요구사항을 확인했는가</li><li>선택한 설치 방식이 하나로 정리됐는가</li><li>새 터미널에서도 CLI 버전을 확인할 수 있는가</li></ul>
+        <p class="blog-sources">공식 참고: <a href="https://docs.openclaw.ai/install">공식 설치·npm 안내</a> · <a href="https://docs.openclaw.ai/install/node">Node.js 설정·문제 해결</a>. 문서 확인: 2026.10.19. 명령과 화면은 설치 버전에 따라 달라질 수 있습니다. 예시는 설명용이며 실제 설치·연결·성능 시험 결과가 아닙니다.</p>
+        <nav class="blog-related" aria-label="OpenClaw 03편 탐색"><a rel="prev" href="#post-openclaw-02">이전 편</a> · <a href="#openclaw-series">시리즈 목차</a> · <a rel="next" href="#post-openclaw-04">다음 편</a> · <a href="#ai-guides">전체 목차</a></nav>
+      </article>
+
+      <article class="blog-post" id="post-openclaw-04">
+        <span class="blog-post-category">OpenClaw 입문 시리즈 · 04/14</span>
+        <h2>OpenClaw 04. 초기 설정: 온보딩에서 모델 연결과 Gateway 실행 확인하기</h2>
+        <p class="blog-post-meta">솔루션 비제트 · 공식 문서 기반 사용 안내 · <time datetime="2026-10-19">2026.10.19</time></p>
+        <p>CLI가 설치됐어도 모델 인증과 Gateway 준비가 끝난 것은 아닙니다. 온보딩은 사용할 연결과 작업 환경을 정하는 단계입니다. 설정 저장, 모델 검증, Gateway 실행을 각각 확인해야 다음 단계에서 무엇이 실패했는지 알 수 있습니다.</p>
+        <h3>대화형 온보딩을 시작합니다</h3>
+<pre tabindex="0" aria-label="명령어 또는 설정 예제"><code>openclaw onboard</code></pre>
+<p>새 환경에서 Quick start와 Custom setup 같은 선택지가 나오면 필요한 설정 범위에 맞게 고릅니다. 자동 감지된 연결도 어떤 계정과 서비스인지 확인한 뒤 선택하세요. 접근 범위 등을 검토하고 싶다면 상세 설정을 따라가는 편이 좋습니다. 기존 설정이 있으면 화면 흐름이 다를 수 있습니다.</p>
+<p>현재 공식 흐름은 선택한 모델 연결을 실제 응답으로 검증할 수 있습니다. 이 검증도 공급자 이용량에 반영될 수 있습니다. “나중에 설정”으로 넘어가 준비만 저장한 상태와 실제 모델 연결이 성공한 상태를 구분해 기록합니다.</p>
+<h3>전경 실행과 백그라운드 서비스를 구분합니다</h3>
+<p>빠른 시작에서 Gateway가 현재 터미널의 전경 프로세스로 실행된다면 Ctrl+C로 멈출 수 있습니다. 계속 실행할 서비스가 필요할 때는 먼저 전경 Gateway를 멈춘 뒤 공식 서비스 설치 절차를 따릅니다. 같은 포트에 두 프로세스를 동시에 띄우지 않도록 하세요.</p>
+<pre tabindex="0" aria-label="명령어 또는 설정 예제"><code>openclaw gateway install
+openclaw gateway status</code></pre>
+<p>서비스 관리 방식은 macOS, Linux·WSL2, 네이티브 Windows가 다릅니다. 재부팅이나 로그아웃 후 동작은 설치 환경에 따라 확인해야 합니다. 상태 출력에서 실행 중인지 확인한 뒤 대시보드를 엽니다.</p>
+<h3>기본 연결 성공을 확인합니다</h3>
+<pre tabindex="0" aria-label="명령어 또는 설정 예제"><code>openclaw dashboard</code></pre>
+<p>대시보드가 열리고 짧은 질문에 답변이 오면 기본 경로를 확인한 것입니다. 채팅이 실패하면 모델 인증 문제인지 Gateway 연결 문제인지 나누어 봅니다. 공급자 변경은 온보딩으로, 추가 설정은 현재 버전의 configure 안내로 진행하며 설정을 통째로 지우지 않습니다.</p>
+
+        <aside class="blog-worked-example" aria-label="설명용 실습 예시"><h3>따라 해볼 과제</h3><p>외부 도구 없이 “한국어로 두 문장 인사를 작성해 줘” 같은 가상 요청을 한 번 보냅니다. 모델 답변, Gateway 상태, 종료·재시작 방법을 확인하고 기록합니다. 파일 작업이나 메신저 채널 추가는 아직 하지 않아도 됩니다.</p></aside>
+        <h3>다음 편으로 넘어가기 전 확인</h3>
+        <ul><li>설정 저장과 모델 응답 검증을 구분했는가</li><li>전경 프로세스와 서비스 중 무엇을 쓰는지 아는가</li><li>대시보드에서 첫 응답을 확인했는가</li></ul>
+        <p class="blog-sources">공식 참고: <a href="https://docs.openclaw.ai/start/wizard">CLI 온보딩</a> · <a href="https://docs.openclaw.ai/start/getting-started">서비스 설치와 첫 대화</a>. 문서 확인: 2026.10.19. 명령과 화면은 설치 버전에 따라 달라질 수 있습니다. 예시는 설명용이며 실제 설치·연결·성능 시험 결과가 아닙니다.</p>
+        <nav class="blog-related" aria-label="OpenClaw 04편 탐색"><a rel="prev" href="#post-openclaw-03">이전 편</a> · <a href="#openclaw-series">시리즈 목차</a> · <a rel="next" href="#post-openclaw-05">다음 편</a> · <a href="#ai-guides">전체 목차</a></nav>
+      </article>
+
+      <article class="blog-post" id="post-openclaw-05">
+        <span class="blog-post-category">OpenClaw 입문 시리즈 · 05/14</span>
+        <h2>OpenClaw 05. 대시보드 사용: 첫 대화·세션 구분·결과 확인하기</h2>
+        <p class="blog-post-meta">솔루션 비제트 · 공식 문서 기반 사용 안내 · <time datetime="2026-10-19">2026.10.19</time></p>
+        <p>Control UI는 Gateway가 제공하는 브라우저 화면입니다. 처음에는 채팅과 상태 확인만 익혀도 충분합니다. 세션을 업무별로 나누고 결과를 원문과 대조하는 습관을 들이면 대화가 길어졌을 때도 맥락을 관리하기 쉽습니다.</p>
+        <h3>연결된 Gateway와 현재 상태를 봅니다</h3>
+<pre tabindex="0" aria-label="명령어 또는 설정 예제"><code>openclaw gateway status
+openclaw dashboard</code></pre>
+<p>기본 로컬 주소는 보통 127.0.0.1:18789이지만 포트나 경로를 바꿨다면 실제 설정을 기준으로 합니다. 대시보드의 인증은 모델 공급자 API 키와 별개입니다. 연결이 끊긴 화면에 이전 데이터가 남아 있을 수 있으므로 표시된 상태도 함께 확인하세요.</p>
+<p>Gateway가 다른 PC에 있다면 내 브라우저의 localhost는 그 서버를 가리키지 않습니다. 원격 접속은 공식 원격 연결 절차를 사용하고, 처음 설치에서는 로컬 대시보드로 확인하는 편이 단순합니다.</p>
+<h3>새 주제는 별도 세션에서 시작합니다</h3>
+<p>세션은 대화의 맥락과 작업을 구분하는 단위입니다. 학습용 질문과 업무 초안 작성을 같은 대화에 무한히 이어가기보다 주제가 바뀌면 새 세션을 만들어 목적이 드러나는 이름을 붙여 보세요. 새 세션이 모든 장기 메모리나 연결 권한을 초기화하는 것은 아닙니다.</p>
+<p>지시문에는 입력 자료, 원하는 형식, 확인할 기준을 적습니다. “표로 정리”라고만 하기보다 열 이름과 모르는 값의 처리 방법을 정하면 결과 검토가 쉬워집니다. 파일을 바꾸거나 발송하는 요청은 단순 답변 생성과 구분해야 합니다.</p>
+<h3>결과와 실행 상태를 함께 검토합니다</h3>
+<p>자연스러운 답변이 실제 작업 성공을 뜻하지는 않습니다. 도구를 사용했다면 어떤 파일이나 화면을 확인했는지 보고 결과물을 직접 살펴보세요. 연결 오류가 났을 때는 같은 요청을 반복하기 전에 이전 요청이 완료됐는지도 확인합니다.</p>
+
+        <aside class="blog-worked-example" aria-label="설명용 실습 예시"><h3>따라 해볼 과제</h3><p>새 세션에 가상 메모 “점검 완료, 통신 확인 예정”을 넣고 “완료된 일과 예정된 일을 두 항목으로 구분”하도록 요청합니다. 통신까지 완료했다고 바꿔 썼는지 원문과 비교하고, 같은 입력에서 지시를 바꾼 결과도 대조해 봅니다.</p></aside>
+        <h3>다음 편으로 넘어가기 전 확인</h3>
+        <ul><li>대시보드가 어느 Gateway에 연결됐는지 아는가</li><li>주제별 세션과 장기 정보의 차이를 이해했는가</li><li>답변과 실제 결과물을 대조했는가</li></ul>
+        <p class="blog-sources">공식 참고: <a href="https://docs.openclaw.ai/web/control-ui">Control UI 화면과 연결 상태</a>. 문서 확인: 2026.10.19. 명령과 화면은 설치 버전에 따라 달라질 수 있습니다. 예시는 설명용이며 실제 설치·연결·성능 시험 결과가 아닙니다.</p>
+        <nav class="blog-related" aria-label="OpenClaw 05편 탐색"><a rel="prev" href="#post-openclaw-04">이전 편</a> · <a href="#openclaw-series">시리즈 목차</a> · <a rel="next" href="#post-openclaw-06">다음 편</a> · <a href="#ai-guides">전체 목차</a></nav>
+      </article>
+
+      <article class="blog-post" id="post-openclaw-06">
+        <span class="blog-post-category">OpenClaw 입문 시리즈 · 06/14</span>
+        <h2>OpenClaw 06. 작업 공간과 메모리: AGENTS.md·SOUL.md를 관리하는 방법</h2>
+        <p class="blog-post-meta">솔루션 비제트 · 공식 문서 기반 사용 안내 · <time datetime="2026-10-19">2026.10.19</time></p>
+        <p>대화할 때마다 같은 업무 규칙을 설명한다면 작업 공간의 지침을 정리할 수 있습니다. OpenClaw는 작업 공간 파일과 상태·인증 데이터를 구분합니다. 어떤 파일이 행동 안내이고 어떤 파일이 실행 상태인지 알아두면 수정과 백업 범위를 정하기 쉽습니다.</p>
+        <h3>실제로 사용하는 작업 공간부터 찾습니다</h3>
+<p>기본 작업 공간은 보통 ~/.openclaw/workspace이지만 프로필이나 환경변수, 에이전트 설정에 따라 달라집니다. Windows Hub·WSL2·원격 Gateway를 쓴다면 해당 Gateway 쪽의 경로를 확인하세요. 비슷한 이름의 예전 폴더를 수정해도 현재 에이전트에 반영되지 않을 수 있습니다.</p>
+<p>작업 공간은 도구가 사용하는 기본 폴더이며 그 자체가 강제 격리 경계는 아닙니다. 다른 폴더 접근을 기술적으로 제한하려면 샌드박스와 도구 정책을 별도로 설정해야 합니다. 지침 파일에 금지 문장을 쓰는 것만으로 파일 권한이 바뀌지는 않습니다.</p>
+<h3>운영 규칙과 말투를 나누어 씁니다</h3>
+<p>AGENTS.md에는 작업 순서와 확인 기준 같은 운영 규칙을, SOUL.md에는 말투와 응답 원칙을 정리할 수 있습니다. 대시보드에서 해당 파일 편집 기능을 제공하면 현재 작업 공간인지 확인한 뒤 수정하세요. 전체 템플릿을 덮어쓰기보다 필요한 항목만 바꾸고 사본을 남깁니다.</p>
+<pre tabindex="0" aria-label="명령어 또는 설정 예제"><code># 실습용 운영 규칙 예시
+- 실제 파일 변경 전에 대상과 계획을 보여준다.
+- 입력에 없는 날짜와 수량은 확인 필요로 표시한다.
+- 가상 메모와 실제 고객 자료를 구분한다.</code></pre>
+<h3>기억할 정보와 보관하지 않을 정보를 정합니다</h3>
+<p>MEMORY.md와 일별 메모 같은 파일은 목적에 맞게 관리하고, 비밀 키를 업무 지침에 적지 않습니다. 모든 대화가 영구적으로 완전하게 저장되거나 자동으로 회상된다고 가정하지 마세요. 메모리 기능과 저장 위치는 사용하는 버전의 공식 안내를 확인하고 오래된 규칙의 폐기 여부도 기록합니다.</p>
+
+        <aside class="blog-worked-example" aria-label="설명용 실습 예시"><h3>따라 해볼 과제</h3><p>가상의 점검 보고서 규칙으로 “완료·예정·미확인 세 구역을 유지”라는 한 항목을 추가합니다. 새 대화에서 가상 메모를 주고 규칙이 적용되는지 확인합니다. 적용되지 않으면 다른 폴더에 썼는지와 파일 로딩 범위를 먼저 점검합니다.</p></aside>
+        <h3>다음 편으로 넘어가기 전 확인</h3>
+        <ul><li>현재 Gateway의 활성 작업 공간을 확인했는가</li><li>지침과 기술적 접근 제한을 구분했는가</li><li>비밀 값 없이 간결한 운영 규칙을 관리하는가</li></ul>
+        <p class="blog-sources">공식 참고: <a href="https://docs.openclaw.ai/concepts/agent-workspace">작업 공간과 파일 역할</a> · <a href="https://docs.openclaw.ai/concepts/memory">메모리 개요</a>. 문서 확인: 2026.10.19. 명령과 화면은 설치 버전에 따라 달라질 수 있습니다. 예시는 설명용이며 실제 설치·연결·성능 시험 결과가 아닙니다.</p>
+        <nav class="blog-related" aria-label="OpenClaw 06편 탐색"><a rel="prev" href="#post-openclaw-05">이전 편</a> · <a href="#openclaw-series">시리즈 목차</a> · <a rel="next" href="#post-openclaw-07">다음 편</a> · <a href="#ai-guides">전체 목차</a></nav>
+      </article>
+
+      <article class="blog-post" id="post-openclaw-07">
+        <span class="blog-post-category">OpenClaw 입문 시리즈 · 07/14</span>
+        <h2>OpenClaw 07. OpenRouter 모델 연결: 인증·모델 ID·비용을 따로 확인하기</h2>
+        <p class="blog-post-meta">솔루션 비제트 · 공식 문서 기반 사용 안내 · <time datetime="2026-10-19">2026.10.19</time></p>
+        <p>기존 OpenRouter 실습을 OpenClaw에 연결하려면 키 발급만으로 끝나지 않습니다. 공급자 인증이 저장됐는지, 실제 선택 모델이 무엇인지, 요청 비용과 한도가 어떤지 각각 확인해야 합니다. 처음에는 모델 하나를 명시적으로 선택해 동작을 확인해 보세요.</p>
+        <h3>공식 API 키 온보딩을 사용합니다</h3>
+<p>OpenRouter 계정에서 본인의 키를 준비하고 아래 흐름에서 입력합니다. 키는 채팅이나 공개 설정 예제에 적지 말고 로컬 인증 입력 단계에서 다룹니다. 이 명령이 현재 릴리스에서 지원되는지 도움말과 공식 공급자 문서를 먼저 확인하세요.</p>
+<pre tabindex="0" aria-label="명령어 또는 설정 예제"><code>openclaw onboard --auth-choice openrouter-api-key
+openclaw models status
+openclaw models list</code></pre>
+<p>인증이 저장된 상태와 특정 모델이 정상 응답하는 상태는 다릅니다. 연결 후 현재 기본 모델을 확인하고 짧은 가상 질문으로 실제 응답까지 시험합니다. 오류가 나면 다른 공급자로 자동 전환됐는지도 확인하세요.</p>
+<h3>OpenClaw의 모델 참조 형식을 확인합니다</h3>
+<p>OpenRouter를 통한 모델 참조는 openrouter/&lt;provider&gt;/&lt;model&gt; 형태입니다. 아래 꺾쇠 부분은 실제 공급자와 모델 ID로 바꿔야 하며 그대로 실행하는 값이 아닙니다. 공식 목록에 존재하는 ID인지 확인한 뒤 모델을 선택합니다.</p>
+<pre tabindex="0" aria-label="명령어 또는 설정 예제"><code>openclaw models set openrouter/&lt;provider&gt;/&lt;model&gt;</code></pre>
+<p>무료 모델을 쓰려면 실제 무료 변형과 가격을 확인해야 합니다. openrouter/auto는 무료만 사용하겠다는 약속이 아닙니다. 모델 허용 목록이나 대체 모델이 있다면 그 경로의 가격도 함께 확인하세요.</p>
+<h3>사용량과 실패 원인을 연결해 봅니다</h3>
+<p>긴 대화, 스킬 설명, 도구 결과, 반복 작업은 입력과 출력량에 영향을 줍니다. OpenRouter 계정 사용 기록과 OpenClaw의 선택 모델을 대조하세요. 인증 실패와 429 요청 제한은 다른 문제이므로 재시도 전에 키·모델·잔여 한도를 나누어 확인합니다.</p>
+
+        <aside class="blog-worked-example" aria-label="설명용 실습 예시"><h3>따라 해볼 과제</h3><p>무료 모델 한 개를 시험할 계획이라면 현재 무료 모델 ID를 확인하고 OpenClaw 형식으로 선택합니다. 짧은 가상 질문 한 번을 보낸 뒤 응답 모델과 OpenRouter 사용 기록을 확인합니다. 무료 공급이 중단됐을 때의 대체 경로는 별도로 결정합니다.</p></aside>
+        <h3>다음 편으로 넘어가기 전 확인</h3>
+        <ul><li>모델 인증과 실제 응답 성공을 확인했는가</li><li>꺾쇠 자리표시자를 실제 ID로 교체했는가</li><li>기본·대체 경로의 가격과 한도를 확인했는가</li></ul>
+        <p class="blog-sources">공식 참고: <a href="https://docs.openclaw.ai/providers/openrouter">OpenClaw OpenRouter 연결</a> · <a href="https://docs.openclaw.ai/cli/models">모델 CLI</a> · <a href="https://openrouter.ai/collections/free-models">OpenRouter 무료 모델</a>. 문서 확인: 2026.10.19. 명령과 화면은 설치 버전에 따라 달라질 수 있습니다. 예시는 설명용이며 실제 설치·연결·성능 시험 결과가 아닙니다.</p>
+        <nav class="blog-related" aria-label="OpenClaw 07편 탐색"><a rel="prev" href="#post-openclaw-06">이전 편</a> · <a href="#openclaw-series">시리즈 목차</a> · <a rel="next" href="#post-openclaw-08">다음 편</a> · <a href="#ai-guides">전체 목차</a></nav>
+      </article>
+
+      <article class="blog-post" id="post-openclaw-08">
+        <span class="blog-post-category">OpenClaw 입문 시리즈 · 08/14</span>
+        <h2>OpenClaw 08. Telegram 연결: 봇 생성부터 첫 DM 페어링까지</h2>
+        <p class="blog-post-meta">솔루션 비제트 · 공식 문서 기반 사용 안내 · <time datetime="2026-10-19">2026.10.19</time></p>
+        <p>대시보드에서 기본 대화가 된다면 Telegram을 대화 창구로 추가할 수 있습니다. 봇 토큰 등록과 대화 상대 승인은 서로 다른 단계입니다. 처음에는 본인 DM만 연결하고 응답이 확인된 뒤 그룹 사용을 검토하세요.</p>
+        <h3>BotFather에서 봇을 만듭니다</h3>
+<p>Telegram에서 계정명이 정확히 @BotFather인지 확인하고 /newbot을 실행해 안내에 따라 이름과 사용자명을 정합니다. 발급된 토큰은 봇 제어에 필요한 비밀 값이므로 채팅 기록이나 화면 캡처로 공개하지 않습니다. 유출했다면 BotFather에서 교체 절차를 진행해야 합니다.</p>
+<p>OpenClaw의 채널 추가 흐름을 열어 Telegram을 선택하고 로컬 설정 단계에서 토큰을 등록합니다. 현재 버전의 입력 옵션은 도움말과 공식 설정 문서를 확인하세요. Telegram은 QR 로그인 채널처럼 channels login telegram을 사용하는 방식이 아닙니다.</p>
+<pre tabindex="0" aria-label="명령어 또는 설정 예제"><code>openclaw channels add
+openclaw channels status --probe</code></pre>
+<h3>본인 DM 요청을 승인합니다</h3>
+<p>Gateway가 실행 중인 상태에서 새 봇에 본인 Telegram 계정으로 메시지를 보냅니다. 페어링 정책에서는 연결 코드가 생성됩니다. Gateway가 있는 환경에서 요청 목록을 확인한 뒤 본인 요청만 승인하세요. 아래 &lt;CODE&gt;는 받은 실제 코드로 바꿉니다.</p>
+<pre tabindex="0" aria-label="명령어 또는 설정 예제"><code>openclaw pairing list telegram
+openclaw pairing approve telegram &lt;CODE&gt;</code></pre>
+<p>승인 후 다시 짧은 질문을 보내 응답을 확인합니다. 토큰이 정상이어도 모델 인증이 실패하면 답변은 오지 않을 수 있습니다. 채널 상태와 모델 상태를 별도 확인하고, 오래된 페어링 코드는 새 요청을 만들어 확인하세요.</p>
+<h3>그룹은 별도 접근 정책으로 설정합니다</h3>
+<p>개인 DM 승인만으로 모든 그룹을 허용한 것은 아닙니다. 그룹 ID, 허용 사용자, 멘션 조건과 Telegram Privacy Mode를 공식 문서에서 확인하세요. 모든 메시지를 읽게 하려고 바로 관리자 권한을 주기보다 필요한 대화 범위부터 정합니다. 처음 실습에서는 그룹 연결을 생략해도 됩니다.</p>
+
+        <aside class="blog-worked-example" aria-label="설명용 실습 예시"><h3>따라 해볼 과제</h3><p>본인 DM에서 가상의 작업 메모 두 문장을 정리하도록 요청합니다. 대시보드에서도 해당 실행의 결과를 확인하고, 허용하지 않은 계정의 요청은 처리되지 않는지 별도 시험할 수 있습니다. 그 시험에 실제 고객이나 제삼자의 자료를 사용하지 않습니다.</p></aside>
+        <h3>다음 편으로 넘어가기 전 확인</h3>
+        <ul><li>봇 토큰과 페어링 코드를 구분했는가</li><li>본인 요청만 승인했는가</li><li>DM과 그룹 허용 범위를 별도로 관리하는가</li></ul>
+        <p class="blog-sources">공식 참고: <a href="https://docs.openclaw.ai/channels/telegram/setup">Telegram 설정 절차</a> · <a href="https://docs.openclaw.ai/channels/pairing">페어링 개요</a>. 문서 확인: 2026.10.19. 명령과 화면은 설치 버전에 따라 달라질 수 있습니다. 예시는 설명용이며 실제 설치·연결·성능 시험 결과가 아닙니다.</p>
+        <nav class="blog-related" aria-label="OpenClaw 08편 탐색"><a rel="prev" href="#post-openclaw-07">이전 편</a> · <a href="#openclaw-series">시리즈 목차</a> · <a rel="next" href="#post-openclaw-09">다음 편</a> · <a href="#ai-guides">전체 목차</a></nav>
+      </article>
+
+      <article class="blog-post" id="post-openclaw-09">
+        <span class="blog-post-category">OpenClaw 입문 시리즈 · 09/14</span>
+        <h2>OpenClaw 09. Discord 연결: 봇 권한·토큰·사용자 승인을 나누어 설정하기</h2>
+        <p class="blog-post-meta">솔루션 비제트 · 공식 문서 기반 사용 안내 · <time datetime="2026-10-19">2026.10.19</time></p>
+        <p>Discord에서는 애플리케이션과 봇을 만든 뒤 서버 초대, 메시지 관련 설정, OpenClaw 인증을 연결합니다. 봇이 서버에 보이는 것과 메시지를 읽고 답할 수 있는 것은 다릅니다. 본인이 관리하는 시험 서버에서 필요한 권한만 준비하세요.</p>
+        <h3>공식 Developer Portal에서 봇을 준비합니다</h3>
+<p>Discord Developer Portal에서 새 애플리케이션을 만들고 Bot 설정을 확인합니다. 일반 서버 메시지를 처리하려면 공식 OpenClaw 안내의 Message Content Intent 조건을 검토하세요. 역할 기반 접근 등을 쓴다면 Server Members Intent 필요 여부도 확인합니다. 필요 없는 Presence 기능까지 일괄 활성화하지 않습니다.</p>
+<p>OAuth2 초대 설정에서는 bot과 applications.commands 범위, 채널 보기·메시지 보내기·기록 읽기 등 사용할 기능의 권한을 확인합니다. 관리자 전체 권한으로 해결하기보다 실제 사용할 시험 채널로 범위를 제한하세요.</p>
+<h3>토큰은 로컬 설정으로 전달합니다</h3>
+<p>봇 토큰은 대화로 에이전트에게 보내지 않고 OpenClaw의 채널 추가 흐름에서 입력합니다. 아래 명령에서 Discord를 선택하고 현재 안내에 따라 설정한 다음 연결 상태를 확인하세요. 직접 파일로 설정하려면 공식 Discord 설정 문서의 현재 형식을 참고합니다.</p>
+<pre tabindex="0" aria-label="명령어 또는 설정 예제"><code>openclaw channels add
+openclaw channels status --probe</code></pre>
+<p>환경변수로 토큰을 주입하는 경우 터미널과 백그라운드 서비스가 같은 값을 읽는지 확인해야 합니다. 셸에서만 설정한 값이 서비스에 자동 전달된다고 가정하지 마세요. 여러 봇을 연결한다면 토큰과 애플리케이션 ID의 대응도 구분합니다.</p>
+<h3>첫 DM과 서버 메시지를 각각 시험합니다</h3>
+<p>봇에게 DM을 보내 페어링 요청을 만든 뒤 본인 요청만 승인합니다. 다음으로 허용한 시험 채널에서 봇을 멘션해 응답을 확인하세요. DM은 되는데 서버에서 답하지 않으면 Intent, 채널 권한, 허용 목록, 멘션 조건을 차례로 확인합니다.</p>
+<pre tabindex="0" aria-label="명령어 또는 설정 예제"><code>openclaw pairing list discord
+openclaw pairing approve discord &lt;CODE&gt;</code></pre>
+
+        <aside class="blog-worked-example" aria-label="설명용 실습 예시"><h3>따라 해볼 과제</h3><p>시험 서버에 전용 채널 하나를 만들고 “테스트 메모의 완료 항목만 정리”하도록 요청합니다. 본인 DM과 시험 채널 양쪽에서 응답 경로를 확인합니다. 연결에 성공해도 실제 업무 채널 전체를 허용하기 전에는 자료 범위와 사용자를 다시 검토합니다.</p></aside>
+        <h3>다음 편으로 넘어가기 전 확인</h3>
+        <ul><li>봇 초대 권한과 Intent를 확인했는가</li><li>서비스에서 토큰을 읽을 수 있는가</li><li>DM 승인과 서버 채널 정책을 각각 시험했는가</li></ul>
+        <p class="blog-sources">공식 참고: <a href="https://docs.openclaw.ai/channels/discord/setup">Discord 봇 설치와 페어링</a> · <a href="https://docs.openclaw.ai/channels/discord">Discord 채널 안내</a>. 문서 확인: 2026.10.19. 명령과 화면은 설치 버전에 따라 달라질 수 있습니다. 예시는 설명용이며 실제 설치·연결·성능 시험 결과가 아닙니다.</p>
+        <nav class="blog-related" aria-label="OpenClaw 09편 탐색"><a rel="prev" href="#post-openclaw-08">이전 편</a> · <a href="#openclaw-series">시리즈 목차</a> · <a rel="next" href="#post-openclaw-10">다음 편</a> · <a href="#ai-guides">전체 목차</a></nav>
+      </article>
+
+      <article class="blog-post" id="post-openclaw-10">
+        <span class="blog-post-category">OpenClaw 입문 시리즈 · 10/14</span>
+        <h2>OpenClaw 10. 스킬 사용: 필요한 기능 찾기·설치 전 검토·동작 확인</h2>
+        <p class="blog-post-meta">솔루션 비제트 · 공식 문서 기반 사용 안내 · <time datetime="2026-10-19">2026.10.19</time></p>
+        <p>OpenClaw의 스킬은 특정 작업 방법을 에이전트에 알려주는 지침과 보조 파일의 묶음입니다. 스킬을 설치했다는 이유만으로 외부 도구나 계정 연결까지 모두 준비되는 것은 아닙니다. 먼저 현재 쓸 수 있는 스킬과 필요한 의존성을 확인하세요.</p>
+        <h3>현재 목록과 준비 상태를 확인합니다</h3>
+<pre tabindex="0" aria-label="명령어 또는 설정 예제"><code>openclaw skills list
+openclaw skills check</code></pre>
+<p>목록에 있어도 실행 프로그램이나 환경변수가 부족해 사용 대상에서 제외될 수 있습니다. 특정 스킬의 정보를 보려면 아래 &lt;name&gt;을 목록에 표시된 실제 이름으로 바꿉니다. 에이전트나 작업 공간이 여러 개라면 어느 환경의 목록인지도 확인하세요.</p>
+<pre tabindex="0" aria-label="명령어 또는 설정 예제"><code>openclaw skills info &lt;name&gt;</code></pre>
+<h3>ClawHub에서 후보를 찾고 내용을 읽습니다</h3>
+<p>ClawHub는 스킬과 플러그인을 찾는 공개 레지스트리입니다. 현재 CLI에서 지원한다면 검색 명령으로 후보를 찾을 수 있습니다. 스킬 이름뿐 아니라 제작자, 버전, SKILL.md와 포함 스크립트, 필요한 계정·권한을 읽어보세요. 검색 상위나 인기 표시가 동작과 안전성을 보증하지는 않습니다.</p>
+<pre tabindex="0" aria-label="명령어 또는 설정 예제"><code>openclaw skills search &quot;calendar&quot;</code></pre>
+<p>설치를 결정했다면 현재 명령 형식에 맞는 식별자와 버전을 지정합니다. 아래 @owner/&lt;slug&gt;와 &lt;version&gt;은 실제 값으로 바꿔야 합니다. 달력 기능이 필요하지 않다면 예시 검색 결과를 설치할 이유는 없습니다.</p>
+<pre tabindex="0" aria-label="명령어 또는 설정 예제"><code>openclaw skills install @owner/&lt;slug&gt; --version &lt;version&gt;</code></pre>
+<h3>설치와 작업 성공을 따로 확인합니다</h3>
+<p>설치 뒤 준비 상태를 다시 확인하고 가상 입력 한 건으로 원하는 동작을 시험합니다. 스킬 지침이 도구 정책을 우회하는 권한을 주는 것은 아닙니다. 업데이트할 때는 한 번에 전부 바꾸기보다 필요한 변경을 검토하고 기존 과제가 같은 결과를 내는지 확인하세요.</p>
+
+        <aside class="blog-worked-example" aria-label="설명용 실습 예시"><h3>따라 해볼 과제</h3><p>문서 정리 스킬을 검토한다면 “가상의 점검 메모를 세 구역으로 정리”하는 고정 입력을 준비합니다. 스킬 사용 전후 결과와 추가된 외부 접근을 비교해, 설치가 실제로 어떤 도움을 주는지 확인합니다. 실제 일정이나 메일 계정은 별도 승인된 범위에서 연결합니다.</p></aside>
+        <h3>다음 편으로 넘어가기 전 확인</h3>
+        <ul><li>목록 표시와 실행 준비 상태를 구분했는가</li><li>지침·보조 코드·의존성을 검토했는가</li><li>실제 식별자와 버전을 확인하고 시험했는가</li></ul>
+        <p class="blog-sources">공식 참고: <a href="https://docs.openclaw.ai/cli/skills">스킬 CLI</a> · <a href="https://docs.openclaw.ai/tools/clawhub">ClawHub 사용 안내</a>. 문서 확인: 2026.10.19. 명령과 화면은 설치 버전에 따라 달라질 수 있습니다. 예시는 설명용이며 실제 설치·연결·성능 시험 결과가 아닙니다.</p>
+        <nav class="blog-related" aria-label="OpenClaw 10편 탐색"><a rel="prev" href="#post-openclaw-09">이전 편</a> · <a href="#openclaw-series">시리즈 목차</a> · <a rel="next" href="#post-openclaw-11">다음 편</a> · <a href="#ai-guides">전체 목차</a></nav>
+      </article>
+
+      <article class="blog-post" id="post-openclaw-11">
+        <span class="blog-post-category">OpenClaw 입문 시리즈 · 11/14</span>
+        <h2>OpenClaw 11. 브라우저 활용: 전용 프로필에서 페이지 열기와 내용 확인하기</h2>
+        <p class="blog-post-meta">솔루션 비제트 · 공식 문서 기반 사용 안내 · <time datetime="2026-10-19">2026.10.19</time></p>
+        <p>OpenClaw의 브라우저 기능은 탭을 열고 페이지를 확인하거나 화면 요소를 조작하는 도구입니다. 처음에는 로그인 없는 공개 페이지에서 읽기 작업을 시험하세요. 개인 브라우저의 기존 세션을 바로 연결하는 것보다 전용 프로필의 동작을 이해하는 것이 먼저입니다.</p>
+        <h3>프로필과 브라우저 상태를 확인합니다</h3>
+<p>공식 예제의 openclaw 프로필은 자동화용 별도 프로필입니다. 일반적으로 사용하는 브라우저와 로그인 상태가 같다고 가정하지 마세요. 설치 위치가 WSL2나 원격 서버라면 브라우저도 어느 환경에서 실행되는지 확인해야 합니다.</p>
+<pre tabindex="0" aria-label="명령어 또는 설정 예제"><code>openclaw browser --browser-profile openclaw status
+openclaw browser --browser-profile openclaw start</code></pre>
+<h3>공개 페이지를 열고 스냅샷을 확인합니다</h3>
+<p>처음에는 example.com 같은 공개 시험 페이지를 엽니다. 스냅샷은 현재 페이지 내용을 확인하는 단계입니다. 페이지가 바뀐 뒤 예전 요소 참조를 그대로 사용하면 다른 동작을 할 수 있으므로 현재 화면을 다시 확인하고 다음 작업을 정합니다.</p>
+<pre tabindex="0" aria-label="명령어 또는 설정 예제"><code>openclaw browser --browser-profile openclaw open https://example.com
+openclaw browser --browser-profile openclaw snapshot</code></pre>
+<p>에이전트에게는 “페이지 제목과 본문에서 확인되는 내용만 정리하고 입력·전송은 하지 말라”처럼 작은 과제를 줍니다. 스크린샷이 필요하지 않은 텍스트 확인과 실제 버튼 조작을 구분하면 시험 범위가 명확해집니다.</p>
+<h3>도구가 없을 때는 허용 정책을 확인합니다</h3>
+<p>브라우저 명령이 없거나 도구가 비활성화돼 있다면 플러그인과 browser.enabled, 현재 도구 프로필을 공식 설정 문서에 따라 확인합니다. 설치돼 있어도 정책에서 제외되면 사용할 수 없습니다. 기존 허용 목록을 통째로 지우거나 모든 도구를 허용하는 방식으로 해결하지 마세요.</p>
+<p>로그인·인증·결제·외부 전송을 포함하는 작업은 해당 계정과 동작 범위를 따로 정해야 합니다. 전용 프로필도 로그인 뒤에는 접근 가능한 자료가 생기므로 자동화 가능 범위를 다시 검토합니다.</p>
+
+        <aside class="blog-worked-example" aria-label="설명용 실습 예시"><h3>따라 해볼 과제</h3><p>공개 페이지 한 곳에서 제목과 핵심 문장만 정리하도록 요청한 뒤 실제 페이지와 대조합니다. 다른 탭을 만들었다면 어느 탭을 대상으로 했는지도 확인합니다. 내용 읽기가 끝난 다음에야 시험 사이트에서 입력과 클릭을 별도 과제로 진행합니다.</p></aside>
+        <h3>다음 편으로 넘어가기 전 확인</h3>
+        <ul><li>브라우저 프로필과 실행 호스트를 아는가</li><li>현재 페이지를 확인한 뒤 다음 동작을 정하는가</li><li>비활성화 원인을 정책과 설치 문제로 나눠 보는가</li></ul>
+        <p class="blog-sources">공식 참고: <a href="https://docs.openclaw.ai/tools/browser/setup">브라우저 빠른 시작</a> · <a href="https://docs.openclaw.ai/tools/browser">브라우저 프로필과 기능</a>. 문서 확인: 2026.10.19. 명령과 화면은 설치 버전에 따라 달라질 수 있습니다. 예시는 설명용이며 실제 설치·연결·성능 시험 결과가 아닙니다.</p>
+        <nav class="blog-related" aria-label="OpenClaw 11편 탐색"><a rel="prev" href="#post-openclaw-10">이전 편</a> · <a href="#openclaw-series">시리즈 목차</a> · <a rel="next" href="#post-openclaw-12">다음 편</a> · <a href="#ai-guides">전체 목차</a></nav>
+      </article>
+
+      <article class="blog-post" id="post-openclaw-12">
+        <span class="blog-post-category">OpenClaw 입문 시리즈 · 12/14</span>
+        <h2>OpenClaw 12. 예약 실행: 일회 알림부터 만들고 실행 이력 확인하기</h2>
+        <p class="blog-post-meta">솔루션 비제트 · 공식 문서 기반 사용 안내 · <time datetime="2026-10-19">2026.10.19</time></p>
+        <p>반복 업무를 자동화하기 전에는 한 번만 실행하는 작은 알림부터 시험하는 편이 좋습니다. OpenClaw의 예약 작업은 Gateway의 스케줄러가 관리합니다. 작업 등록 성공과 실제 실행, 결과 전달 성공을 각각 확인해야 합니다.</p>
+        <h3>일회 작업으로 동작을 확인합니다</h3>
+<p>현재 공식 문서는 openclaw automations를 기본 관리 명령으로 안내하고 cron을 별칭으로 유지합니다. 설치한 버전에서 명령과 옵션을 먼저 확인하세요. 아래 예시는 약 10분 뒤 메인 세션에 실습 알림 이벤트를 넣는 한 줄 명령이며, 실제 고객 메시지를 발송하는 설정은 아닙니다.</p>
+<pre tabindex="0" aria-label="명령어 또는 설정 예제"><code>openclaw automations --help
+openclaw automations add --name &quot;실습 알림&quot; --at &quot;10m&quot; --session main --system-event &quot;실습 메모 확인 시간입니다.&quot; --wake now --delete-after-run</code></pre>
+<p>메인 세션 이벤트는 즉시 별도 대화를 시작하는 것과 다를 수 있습니다. 현재 대화나 처리 상태에 따라 수행 시점이 영향을 받을 수 있으므로 정확한 시각 보장이 필요한 업무에는 예약 기능의 동작 조건을 별도로 검토하세요.</p>
+<h3>등록 내용과 실행 이력을 확인합니다</h3>
+<pre tabindex="0" aria-label="명령어 또는 설정 예제"><code>openclaw automations list
+openclaw automations runs &lt;job-id&gt;</code></pre>
+<p>&lt;job-id&gt;는 생성 결과의 실제 ID로 바꿉니다. 목록에 있다는 사실만 보지 말고 실행 이력과 최종 응답을 확인하세요. 실행은 성공했지만 채널 전송이 실패하는 경우도 있으므로 외부 전달을 추가했다면 전달 상태도 따로 점검합니다. 시험을 중단하려면 현재 버전의 disable 명령으로 해당 ID만 비활성화합니다.</p>
+<h3>반복 일정과 Heartbeat를 목적에 맞게 구분합니다</h3>
+<p>정해진 일정의 작업과 대화 맥락을 보며 주기적으로 확인하는 Heartbeat는 사용 목적과 실행 조건이 다를 수 있습니다. 반복 작업에서는 시간대, 실행 빈도, 결과를 보낼 곳, 중복 실행 방지와 중단 조건을 정하세요. 오래된 HEARTBEAT.md 중심 설명을 그대로 적용하기보다 현재 문서를 확인합니다.</p>
+<p>한국 기준 일정을 원한다면 Asia/Seoul 같은 시간대를 명시할 수 있는지 확인합니다. 처음부터 짧은 간격의 무한 반복을 만들지 말고 일회 시험과 사용량 확인 뒤 필요한 빈도로 확대하세요. PC가 꺼지거나 Gateway가 중단된 동안의 처리도 운영 조건에 포함합니다.</p>
+
+        <aside class="blog-worked-example" aria-label="설명용 실습 예시"><h3>따라 해볼 과제</h3><p>가상의 개인 실습에서는 일회 알림 하나를 만들고 생성 ID, 예정 시각, 실제 처리 시각을 기록합니다. 알림이 끝나면 남아 있는 반복 작업이 없는지 확인합니다. 반복 보고서로 확대할 때는 결과 저장과 전송을 별도 시험합니다.</p></aside>
+        <h3>다음 편으로 넘어가기 전 확인</h3>
+        <ul><li>설치 버전의 예약 명령을 확인했는가</li><li>등록·실행·전달 상태를 구분했는가</li><li>시간대와 중단 조건을 정했는가</li></ul>
+        <p class="blog-sources">공식 참고: <a href="https://docs.openclaw.ai/automation/cron-jobs/managing-jobs">예약 작업 관리 명령</a> · <a href="https://docs.openclaw.ai/gateway/heartbeat">Heartbeat 동작</a>. 문서 확인: 2026.10.19. 명령과 화면은 설치 버전에 따라 달라질 수 있습니다. 예시는 설명용이며 실제 설치·연결·성능 시험 결과가 아닙니다.</p>
+        <nav class="blog-related" aria-label="OpenClaw 12편 탐색"><a rel="prev" href="#post-openclaw-11">이전 편</a> · <a href="#openclaw-series">시리즈 목차</a> · <a rel="next" href="#post-openclaw-13">다음 편</a> · <a href="#ai-guides">전체 목차</a></nav>
+      </article>
+
+      <article class="blog-post" id="post-openclaw-13">
+        <span class="blog-post-category">OpenClaw 입문 시리즈 · 13/14</span>
+        <h2>OpenClaw 13. 보안 설정: 페어링·도구 정책·샌드박스를 구분하기</h2>
+        <p class="blog-post-meta">솔루션 비제트 · 공식 문서 기반 사용 안내 · <time datetime="2026-10-19">2026.10.19</time></p>
+        <p>메신저와 도구가 늘어나면 누가 요청할 수 있고 어떤 작업이 가능한지 다시 확인해야 합니다. OpenClaw에서 대화 상대 승인, 도구 허용, 실행 격리는 서로 다른 설정입니다. 한 항목을 켰다고 나머지 경계까지 자동으로 정리되는 것은 아닙니다.</p>
+        <h3>대화 상대와 노출 주소를 확인합니다</h3>
+<p>일반 호스트 설치의 Gateway는 기본적으로 로컬 루프백에 연결하도록 안내되지만 컨테이너 등 설치 방식에는 예외가 있습니다. 현재 실제 바인딩 주소와 인증 방식을 확인하세요. 개인 실습에서 외부 공개 포트가 필요한지부터 판단합니다.</p>
+<p>채널의 페어링과 허용 목록은 누가 대화를 시작할 수 있는지 제어합니다. 봇에 접근할 수 있는 사람이 많아지면 모델 입력과 도구 요청의 범위도 달라집니다. 서로 신뢰하지 않는 사용자에게 같은 에이전트를 공유하는 환경은 단순 개인 봇과 동일하게 취급하면 안 됩니다.</p>
+<h3>도구 허용과 파일 격리를 따로 봅니다</h3>
+<p>도구 정책은 사용할 수 있는 기능을 정하고, 샌드박스는 허용된 도구 실행의 환경과 접근 범위를 제한합니다. 작업 공간 폴더가 있다는 이유만으로 다른 파일 접근이 막히는 것은 아닙니다. 공식 문서상 샌드박스는 기본 비활성 상태일 수 있으므로 실제 유효 설정을 확인해야 합니다.</p>
+<pre tabindex="0" aria-label="명령어 또는 설정 예제"><code>openclaw security audit
+openclaw sandbox explain</code></pre>
+<p>샌드박스를 켜려면 선택한 백엔드의 설치와 작업 공간 접근 방식을 준비해야 합니다. 설명 화면에서 실제 모드와 도구 정책을 확인하세요. 호스트 실행으로 벗어나는 elevated 같은 설정도 별도 범위이므로 격리됐다고 단정하지 않습니다.</p>
+<h3>검사 결과는 필요한 조치로 연결합니다</h3>
+<p>보안 감사 결과를 읽고 외부 노출, 인증, 도구 범위 중 어떤 항목이 문제인지 나눕니다. 자동 수정 옵션을 바로 실행하기보다 변경 내용을 검토하고 사본을 남기는 편이 좋습니다. 감사 통과가 모든 입력과 외부 스킬의 안전성을 보증하지는 않으므로 작은 가상 자료로 실제 경계도 시험하세요.</p>
+
+        <aside class="blog-worked-example" aria-label="설명용 실습 예시"><h3>따라 해볼 과제</h3><p>읽기 전용 문서 정리가 목적이라면 불필요한 실행·발송 도구를 연결하지 않는 구성부터 검토합니다. 실습용 폴더 밖의 더미 파일에 접근하려는 요청을 주고 유효 정책이 의도대로 거절하는지 확인합니다. 실제 비밀 파일을 시험 대상으로 쓰지 않습니다.</p></aside>
+        <h3>다음 편으로 넘어가기 전 확인</h3>
+        <ul><li>누가 접근할 수 있는지와 노출 주소를 확인했는가</li><li>도구 정책·작업 공간·샌드박스를 구분했는가</li><li>감사 결과와 실제 유효 설정을 함께 확인했는가</li></ul>
+        <p class="blog-sources">공식 참고: <a href="https://docs.openclaw.ai/gateway/security">공식 보안 가이드</a> · <a href="https://docs.openclaw.ai/gateway/sandboxing">샌드박스 동작과 진단</a>. 문서 확인: 2026.10.19. 명령과 화면은 설치 버전에 따라 달라질 수 있습니다. 예시는 설명용이며 실제 설치·연결·성능 시험 결과가 아닙니다.</p>
+        <nav class="blog-related" aria-label="OpenClaw 13편 탐색"><a rel="prev" href="#post-openclaw-12">이전 편</a> · <a href="#openclaw-series">시리즈 목차</a> · <a rel="next" href="#post-openclaw-14">다음 편</a> · <a href="#ai-guides">전체 목차</a></nav>
+      </article>
+
+      <article class="blog-post" id="post-openclaw-14">
+        <span class="blog-post-category">OpenClaw 입문 시리즈 · 14/14</span>
+        <h2>OpenClaw 14. 운영 마무리: 백업·업데이트·오류 진단 순서 정리</h2>
+        <p class="blog-post-meta">솔루션 비제트 · 공식 문서 기반 사용 안내 · <time datetime="2026-10-19">2026.10.19</time></p>
+        <p>설치와 기본 활용이 끝나면 다음 과제는 설정을 보존하고 문제가 생겼을 때 복구할 수 있게 만드는 것입니다. 업데이트 전후에 같은 실습 과제를 확인하면 무엇이 바뀌었는지 비교하기 쉽습니다. 설치 방식과 버전, 백업 위치부터 기록해 두세요.</p>
+        <h3>백업 범위를 미리 확인합니다</h3>
+<p>현재 CLI의 백업 기능을 지원하는지 확인하고 포함될 경로를 미리 봅니다. OpenClaw 상태 백업에는 설정과 인증 정보, 세션, 작업 공간이 포함될 수 있으므로 공개 저장소나 일반 공유 폴더에 그대로 올리지 마세요. 보관 위치와 접근 권한을 따로 정합니다.</p>
+<pre tabindex="0" aria-label="명령어 또는 설정 예제"><code>openclaw backup create --dry-run --json
+openclaw backup create --verify</code></pre>
+<p>백업 생성과 검증 결과를 확인한 뒤 실제 복원 절차도 공식 문서에서 검토합니다. 운영 환경에 무작정 복원하기보다 별도 시험 위치에서 필요한 자료를 확인하는 편이 좋습니다. workspace만 복사한 것은 전체 상태 백업과 다릅니다.</p>
+<h3>업데이트 계획을 보고 적용합니다</h3>
+<p>CLI·Gateway·데스크톱 앱의 설치 방식에 맞는 업데이트 경로를 선택합니다. 아래 dry-run은 적용 전 계획 확인용입니다. 백업과 서비스 중단 영향을 확인한 뒤 현재 공식 절차로 적용하고, 시작할 때 기록한 버전과 실제 실행기 경로를 다시 확인합니다.</p>
+<pre tabindex="0" aria-label="명령어 또는 설정 예제"><code>openclaw update --dry-run</code></pre>
+<p>업데이트 후 설정 형식이나 데이터 마이그레이션이 바뀌었다면 프로그램만 예전 버전으로 바꿔도 복구되지 않을 수 있습니다. 실패 시 공식 복구 안내에 따라 진행하고 새로운 설정과 예전 실행기를 임의로 섞지 않습니다.</p>
+<h3>오류를 실행·모델·채널로 나눠 진단합니다</h3>
+<pre tabindex="0" aria-label="명령어 또는 설정 예제"><code>openclaw status
+openclaw gateway status
+openclaw doctor
+openclaw channels status --probe</code></pre>
+<p>Gateway가 멈췄는지, 모델 인증이 실패했는지, 채널만 연결되지 않는지 구분합니다. 필요하면 logs --follow로 발생 시점의 오류를 확인하되 원문·토큰이 포함될 수 있는 로그를 그대로 공개하지 않습니다. doctor의 점검과 --fix 같은 변경 작업도 구분해 사용하세요.</p>
+
+        <aside class="blog-worked-example" aria-label="설명용 실습 예시"><h3>따라 해볼 과제</h3><p>가상의 운영 점검표에 버전, 백업 파일, 첫 대화, 연결 채널 한 건, 예약 작업 상태를 적습니다. 업데이트 뒤 동일 항목을 다시 확인하고 실패한 항목만 원인 분석을 이어갑니다. 모든 점검이 끝나면 실습용 예약과 불필요한 연결도 정리합니다.</p></aside>
+        <h3>다음 편으로 넘어가기 전 확인</h3>
+        <ul><li>백업에 비밀 값이 포함될 수 있음을 이해했는가</li><li>업데이트 전 계획과 복구 경로를 확인했는가</li><li>기본 대화·도구·채널을 같은 기준으로 재확인했는가</li></ul>
+        <p class="blog-sources">공식 참고: <a href="https://docs.openclaw.ai/cli/backup">백업 CLI</a> · <a href="https://docs.openclaw.ai/install/updating">업데이트와 복구</a> · <a href="https://docs.openclaw.ai/gateway/troubleshooting">오류 진단 순서</a>. 문서 확인: 2026.10.19. 명령과 화면은 설치 버전에 따라 달라질 수 있습니다. 예시는 설명용이며 실제 설치·연결·성능 시험 결과가 아닙니다.</p>
+        <nav class="blog-related" aria-label="OpenClaw 14편 탐색"><a rel="prev" href="#post-openclaw-13">이전 편</a> · <a href="#openclaw-series">시리즈 목차</a> · <a href="#ai-guides">전체 목차</a></nav>
+      </article>
+
       <article class="blog-post" id="post-prompt-brief">
         <span class="blog-post-category">AI 문서·업무 활용</span>
         <h2>AI에 업무를 맡길 때 필요한 다섯 가지: 목적·자료·형식·제약·완료 기준</h2>
@@ -159,7 +521,7 @@
         <h3>직접 점검할 항목</h3>
         <ul><li>누가 읽는 결과인지 설명했는가</li><li>원문에 없는 값의 처리 규칙이 있는가</li><li>완료 여부를 사람이 확인할 수 있는가</li></ul>
         <p class="blog-sources">기술 참고: <a href="https://platform.claude.com/docs/en/build-with-claude/prompt-engineering/claude-prompting-best-practices">Anthropic 명확한 지시와 예시 작성 안내</a>. 문서 확인: 2026.10.19. 작업 절차와 예시는 이 글을 위해 구성한 제안이며 실제 고객 사례·성능 측정값이 아닙니다.</p>
-        <p class="blog-related"><a href="#ai-guides">전체 62편 목차로 돌아가기</a></p>
+        <p class="blog-related"><a href="#ai-guides">전체 목차로 돌아가기</a></p>
       </article>
 
       <article class="blog-post" id="post-meeting-actions">
@@ -178,7 +540,7 @@
         <h3>직접 점검할 항목</h3>
         <ul><li>제안이 결정으로 바뀐 문장이 없는가</li><li>날짜와 담당자를 원문에서 찾을 수 있는가</li><li>확인 필요 항목이 배포 전에 검토됐는가</li></ul>
         <p class="blog-sources">기술 참고: <a href="https://platform.claude.com/docs/en/test-and-evaluate/strengthen-guardrails/reduce-hallucinations">Anthropic 근거 확인과 불확실성 처리 안내</a>. 문서 확인: 2026.10.19. 작업 절차와 예시는 이 글을 위해 구성한 제안이며 실제 고객 사례·성능 측정값이 아닙니다.</p>
-        <p class="blog-related"><a href="#ai-guides">전체 62편 목차로 돌아가기</a></p>
+        <p class="blog-related"><a href="#ai-guides">전체 목차로 돌아가기</a></p>
       </article>
 
       <article class="blog-post" id="post-long-document-chunks">
@@ -197,7 +559,7 @@
         <h3>직접 점검할 항목</h3>
         <ul><li>표와 예외 조항이 떨어져 전달되지 않았는가</li><li>요약에서 원문 절 번호로 돌아갈 수 있는가</li><li>종합 결론과 각 절의 적용 범위가 일치하는가</li></ul>
         <p class="blog-sources">기술 참고: <a href="https://learn.microsoft.com/en-us/azure/search/retrieval-augmented-generation-overview">Microsoft Learn RAG 문서 준비와 분할 설명</a>. 문서 확인: 2026.10.19. 작업 절차와 예시는 이 글을 위해 구성한 제안이며 실제 고객 사례·성능 측정값이 아닙니다.</p>
-        <p class="blog-related"><a href="#ai-guides">전체 62편 목차로 돌아가기</a></p>
+        <p class="blog-related"><a href="#ai-guides">전체 목차로 돌아가기</a></p>
       </article>
 
       <article class="blog-post" id="post-json-response-validation">
@@ -216,7 +578,7 @@
         <h3>직접 점검할 항목</h3>
         <ul><li>파싱 실패와 빈 결과를 구분하는가</li><li>필수 필드와 허용 자료형이 문서화됐는가</li><li>정상 형식이지만 업무상 틀린 예제를 검사했는가</li></ul>
         <p class="blog-sources">기술 참고: <a href="https://json-schema.org/understanding-json-schema/reference/object">JSON Schema 객체·필수 속성 명세</a>. 문서 확인: 2026.10.19. 작업 절차와 예시는 이 글을 위해 구성한 제안이며 실제 고객 사례·성능 측정값이 아닙니다.</p>
-        <p class="blog-related"><a href="#ai-guides">전체 62편 목차로 돌아가기</a></p>
+        <p class="blog-related"><a href="#ai-guides">전체 목차로 돌아가기</a></p>
       </article>
 
       <article class="blog-post" id="post-ocr-table-review">
@@ -235,7 +597,7 @@
         <h3>직접 점검할 항목</h3>
         <ul><li>표 제목과 단위가 추출 결과에 남아 있는가</li><li>병합 셀 아래의 행 연결을 확인했는가</li><li>수정한 값의 원본 위치를 찾을 수 있는가</li></ul>
         <p class="blog-sources">기술 참고: <a href="https://docs.mistral.ai/studio/document-processing/basic_ocr">Mistral OCR 문서·표 출력 형식 안내</a>. 문서 확인: 2026.10.19. 작업 절차와 예시는 이 글을 위해 구성한 제안이며 실제 고객 사례·성능 측정값이 아닙니다.</p>
-        <p class="blog-related"><a href="#ai-guides">전체 62편 목차로 돌아가기</a></p>
+        <p class="blog-related"><a href="#ai-guides">전체 목차로 돌아가기</a></p>
       </article>
 
       <article class="blog-post" id="post-rag-first-design">
@@ -254,7 +616,7 @@
         <h3>직접 점검할 항목</h3>
         <ul><li>문서 버전과 폐기 상태가 구분되는가</li><li>검색된 원문과 최종 답변을 따로 확인하는가</li><li>사용자 권한 변경이 검색 결과에도 반영되는가</li></ul>
         <p class="blog-sources">기술 참고: <a href="https://learn.microsoft.com/en-us/azure/search/retrieval-augmented-generation-overview">Microsoft Learn RAG 개요</a>. 문서 확인: 2026.10.19. 작업 절차와 예시는 이 글을 위해 구성한 제안이며 실제 고객 사례·성능 측정값이 아닙니다.</p>
-        <p class="blog-related"><a href="#ai-guides">전체 62편 목차로 돌아가기</a></p>
+        <p class="blog-related"><a href="#ai-guides">전체 목차로 돌아가기</a></p>
       </article>
 
       <article class="blog-post" id="post-prompt-injection-documents">
@@ -273,7 +635,7 @@
         <h3>직접 점검할 항목</h3>
         <ul><li>외부 문서에 실행 권한이 부여되지 않는가</li><li>모델 출력이 도구 실행 전에 검증되는가</li><li>테스트에서 실제 외부 전송이 발생하지 않는가</li></ul>
         <p class="blog-sources">기술 참고: <a href="https://cheatsheetseries.owasp.org/cheatsheets/LLM_Prompt_Injection_Prevention_Cheat_Sheet.html">OWASP 프롬프트 인젝션 방어 안내</a>. 문서 확인: 2026.10.19. 작업 절차와 예시는 이 글을 위해 구성한 제안이며 실제 고객 사례·성능 측정값이 아닙니다.</p>
-        <p class="blog-related"><a href="#ai-guides">전체 62편 목차로 돌아가기</a></p>
+        <p class="blog-related"><a href="#ai-guides">전체 목차로 돌아가기</a></p>
       </article>
 
       <article class="blog-post" id="post-ai-cost-sheet">
@@ -292,7 +654,7 @@
         <h3>직접 점검할 항목</h3>
         <ul><li>단가의 단위를 맞춰 계산했는가</li><li>재시도와 후속 단계의 요청을 포함했는가</li><li>가상 추정과 실제 청구 기록이 구분되는가</li></ul>
         <p class="blog-sources">기술 참고: <a href="https://openrouter.ai/pricing">OpenRouter 가격·모델 요금 안내</a>. 문서 확인: 2026.10.19. 작업 절차와 예시는 이 글을 위해 구성한 제안이며 실제 고객 사례·성능 측정값이 아닙니다.</p>
-        <p class="blog-related"><a href="#ai-guides">전체 62편 목차로 돌아가기</a></p>
+        <p class="blog-related"><a href="#ai-guides">전체 목차로 돌아가기</a></p>
       </article>
 
       <article class="blog-post" id="post-csv-identifiers">
@@ -311,7 +673,7 @@
         <h3>직접 점검할 항목</h3>
         <ul><li>식별자와 계산할 숫자를 구분했는가</li><li>가져오기 전에 텍스트 형식을 지정했는가</li><li>저장본을 다시 읽어 원본과 대조했는가</li></ul>
         <p class="blog-sources">기술 참고: <a href="https://support.microsoft.com/en-us/excel/keeping-leading-zeros-and-large-numbers">Microsoft Excel 앞자리 0과 긴 숫자 보존 안내</a>. 문서 확인: 2026.10.19. 작업 절차와 예시는 이 글을 위해 구성한 제안이며 실제 고객 사례·성능 측정값이 아닙니다.</p>
-        <p class="blog-related"><a href="#ai-guides">전체 62편 목차로 돌아가기</a></p>
+        <p class="blog-related"><a href="#ai-guides">전체 목차로 돌아가기</a></p>
       </article>
 
       <article class="blog-post" id="post-text-encoding">
@@ -330,7 +692,7 @@
         <h3>직접 점검할 항목</h3>
         <ul><li>깨진 상태로 원본을 덮어쓰지 않았는가</li><li>파일 생성 도구의 인코딩을 확인했는가</li><li>변환 후 글자 수와 주요 식별자가 보존됐는가</li></ul>
         <p class="blog-sources">기술 참고: <a href="https://docs.python.org/3/library/codecs.html">Python codecs 인코딩과 utf-8-sig 설명</a>. 문서 확인: 2026.10.19. 작업 절차와 예시는 이 글을 위해 구성한 제안이며 실제 고객 사례·성능 측정값이 아닙니다.</p>
-        <p class="blog-related"><a href="#ai-guides">전체 62편 목차로 돌아가기</a></p>
+        <p class="blog-related"><a href="#ai-guides">전체 목차로 돌아가기</a></p>
       </article>
 
       <article class="blog-post" id="post-duplicate-records">
@@ -349,7 +711,7 @@
         <h3>직접 점검할 항목</h3>
         <ul><li>하나의 사건을 구분하는 열이 정해졌는가</li><li>같은 식별자의 다른 값은 검토했는가</li><li>제거한 행을 복구할 목록이 있는가</li></ul>
         <p class="blog-sources">기술 참고: <a href="https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.drop_duplicates.html">pandas drop_duplicates 비교 열·행 선택 문서</a>. 문서 확인: 2026.10.19. 작업 절차와 예시는 이 글을 위해 구성한 제안이며 실제 고객 사례·성능 측정값이 아닙니다.</p>
-        <p class="blog-related"><a href="#ai-guides">전체 62편 목차로 돌아가기</a></p>
+        <p class="blog-related"><a href="#ai-guides">전체 목차로 돌아가기</a></p>
       </article>
 
       <article class="blog-post" id="post-timezone-records">
@@ -368,7 +730,7 @@
         <h3>직접 점검할 항목</h3>
         <ul><li>원본 시각의 시간대를 알고 있는가</li><li>하루의 시작과 끝 기준이 같은가</li><li>자정 전후 표본에서 날짜가 올바르게 변환되는가</li></ul>
         <p class="blog-sources">기술 참고: <a href="https://docs.python.org/3/library/datetime.html">Python datetime 시간대 정보 설명</a>. 문서 확인: 2026.10.19. 작업 절차와 예시는 이 글을 위해 구성한 제안이며 실제 고객 사례·성능 측정값이 아닙니다.</p>
-        <p class="blog-related"><a href="#ai-guides">전체 62편 목차로 돌아가기</a></p>
+        <p class="blog-related"><a href="#ai-guides">전체 목차로 돌아가기</a></p>
       </article>
 
       <article class="blog-post" id="post-missing-versus-zero">
@@ -387,7 +749,7 @@
         <h3>직접 점검할 항목</h3>
         <ul><li>0과 미수집 상태가 구분되는가</li><li>유효 관측 수가 결과에 표시되는가</li><li>가공값과 원본값을 분리해 보존하는가</li></ul>
         <p class="blog-sources">기술 참고: <a href="https://pandas.pydata.org/docs/user_guide/missing_data.html">pandas 결측값 처리 안내</a>. 문서 확인: 2026.10.19. 작업 절차와 예시는 이 글을 위해 구성한 제안이며 실제 고객 사례·성능 측정값이 아닙니다.</p>
-        <p class="blog-related"><a href="#ai-guides">전체 62편 목차로 돌아가기</a></p>
+        <p class="blog-related"><a href="#ai-guides">전체 목차로 돌아가기</a></p>
       </article>
 
       <article class="blog-post" id="post-power-energy-units">
@@ -406,7 +768,7 @@
         <h3>직접 점검할 항목</h3>
         <ul><li>각 열에 물리량과 단위가 표시되는가</li><li>순간·평균·누적값 중 무엇인지 아는가</li><li>초기화와 누락 구간의 집계 규칙이 있는가</li></ul>
         <p class="blog-sources">기술 참고: <a href="https://www.eia.gov/energyexplained/electricity/measuring-electricity.php">미국 EIA 전력·전기에너지 단위 설명</a>. 문서 확인: 2026.10.19. 작업 절차와 예시는 이 글을 위해 구성한 제안이며 실제 고객 사례·성능 측정값이 아닙니다.</p>
-        <p class="blog-related"><a href="#ai-guides">전체 62편 목차로 돌아가기</a></p>
+        <p class="blog-related"><a href="#ai-guides">전체 목차로 돌아가기</a></p>
       </article>
 
       <article class="blog-post" id="post-file-naming-rules">
@@ -425,7 +787,7 @@
         <h3>직접 점검할 항목</h3>
         <ul><li>날짜가 뜻하는 기준이 합의됐는가</li><li>금지 문자와 예약 이름을 피했는가</li><li>이름 변경으로 깨질 참조가 없는가</li></ul>
         <p class="blog-sources">기술 참고: <a href="https://learn.microsoft.com/en-us/windows/win32/fileio/naming-a-file">Microsoft Windows 파일·경로 이름 규칙</a>. 문서 확인: 2026.10.19. 작업 절차와 예시는 이 글을 위해 구성한 제안이며 실제 고객 사례·성능 측정값이 아닙니다.</p>
-        <p class="blog-related"><a href="#ai-guides">전체 62편 목차로 돌아가기</a></p>
+        <p class="blog-related"><a href="#ai-guides">전체 목차로 돌아가기</a></p>
       </article>
 
       <article class="blog-post" id="post-evaluation-samples">
@@ -444,7 +806,7 @@
         <h3>직접 점검할 항목</h3>
         <ul><li>통과와 거절 사례가 모두 있는가</li><li>기대 결과가 실행 전에 정해졌는가</li><li>규칙을 조정하지 않은 별도 표본이 있는가</li></ul>
         <p class="blog-sources">기술 참고: <a href="https://scikit-learn.org/stable/modules/generated/sklearn.model_selection.train_test_split.html">scikit-learn 학습·시험 표본 분리 도구 설명</a>. 문서 확인: 2026.10.19. 작업 절차와 예시는 이 글을 위해 구성한 제안이며 실제 고객 사례·성능 측정값이 아닙니다.</p>
-        <p class="blog-related"><a href="#ai-guides">전체 62편 목차로 돌아가기</a></p>
+        <p class="blog-related"><a href="#ai-guides">전체 목차로 돌아가기</a></p>
       </article>
 
       <article class="blog-post" id="post-python-venv">
@@ -463,7 +825,7 @@
         <h3>직접 점검할 항목</h3>
         <ul><li>생성과 실행에 쓴 Python 버전을 아는가</li><li>예약 작업도 같은 실행기를 사용하는가</li><li>새 PC에서 환경을 재생성할 설명이 있는가</li></ul>
         <p class="blog-sources">기술 참고: <a href="https://docs.python.org/3/library/venv.html">Python venv 가상환경 문서</a>. 문서 확인: 2026.10.19. 작업 절차와 예시는 이 글을 위해 구성한 제안이며 실제 고객 사례·성능 측정값이 아닙니다.</p>
-        <p class="blog-related"><a href="#ai-guides">전체 62편 목차로 돌아가기</a></p>
+        <p class="blog-related"><a href="#ai-guides">전체 목차로 돌아가기</a></p>
       </article>
 
       <article class="blog-post" id="post-pathlib-working-folder">
@@ -482,7 +844,7 @@
         <h3>직접 점검할 항목</h3>
         <ul><li>상대경로의 기준이 문서에 적혀 있는가</li><li>입력과 출력 경로가 분리됐는가</li><li>다른 작업 폴더에서도 시험했는가</li></ul>
         <p class="blog-sources">기술 참고: <a href="https://docs.python.org/3/library/pathlib.html">Python pathlib 경로 처리 문서</a>. 문서 확인: 2026.10.19. 작업 절차와 예시는 이 글을 위해 구성한 제안이며 실제 고객 사례·성능 측정값이 아닙니다.</p>
-        <p class="blog-related"><a href="#ai-guides">전체 62편 목차로 돌아가기</a></p>
+        <p class="blog-related"><a href="#ai-guides">전체 목차로 돌아가기</a></p>
       </article>
 
       <article class="blog-post" id="post-dry-run-file-changes">
@@ -501,7 +863,7 @@
         <h3>직접 점검할 항목</h3>
         <ul><li>대상 폴더와 하위 폴더 범위가 명확한가</li><li>목적지 충돌을 실행 전에 검사하는가</li><li>부분 성공과 복구 결과를 기록할 수 있는가</li></ul>
         <p class="blog-sources">기술 참고: <a href="https://docs.python.org/3/library/pathlib.html">Python pathlib 파일 경로·이름 변경 기능</a>. 문서 확인: 2026.10.19. 작업 절차와 예시는 이 글을 위해 구성한 제안이며 실제 고객 사례·성능 측정값이 아닙니다.</p>
-        <p class="blog-related"><a href="#ai-guides">전체 62편 목차로 돌아가기</a></p>
+        <p class="blog-related"><a href="#ai-guides">전체 목차로 돌아가기</a></p>
       </article>
 
       <article class="blog-post" id="post-log-rotation">
@@ -520,7 +882,7 @@
         <h3>직접 점검할 항목</h3>
         <ul><li>실행별 시작과 종료를 연결할 수 있는가</li><li>일부 실패가 최종 상태에 드러나는가</li><li>보관 크기와 민감 정보 제외 규칙이 있는가</li></ul>
         <p class="blog-sources">기술 참고: <a href="https://docs.python.org/3/library/logging.handlers.html">Python logging.handlers 로그 순환 기능</a>. 문서 확인: 2026.10.19. 작업 절차와 예시는 이 글을 위해 구성한 제안이며 실제 고객 사례·성능 측정값이 아닙니다.</p>
-        <p class="blog-related"><a href="#ai-guides">전체 62편 목차로 돌아가기</a></p>
+        <p class="blog-related"><a href="#ai-guides">전체 목차로 돌아가기</a></p>
       </article>
 
       <article class="blog-post" id="post-timeout-retry-design">
@@ -539,7 +901,7 @@
         <h3>직접 점검할 항목</h3>
         <ul><li>라이브러리의 제한 시간 의미를 확인했는가</li><li>재시도 횟수와 전체 시한이 있는가</li><li>중복 실행이 가능한 요청을 구분했는가</li></ul>
         <p class="blog-sources">기술 참고: <a href="https://docs.python.org/3/library/urllib.request.html">Python urllib.request 네트워크 호출 문서</a>. 문서 확인: 2026.10.19. 작업 절차와 예시는 이 글을 위해 구성한 제안이며 실제 고객 사례·성능 측정값이 아닙니다.</p>
-        <p class="blog-related"><a href="#ai-guides">전체 62편 목차로 돌아가기</a></p>
+        <p class="blog-related"><a href="#ai-guides">전체 목차로 돌아가기</a></p>
       </article>
 
       <article class="blog-post" id="post-idempotent-jobs">
@@ -558,7 +920,7 @@
         <h3>직접 점검할 항목</h3>
         <ul><li>같은 작업을 판단할 기준이 있는가</li><li>중간 실패와 동시 실행을 고려했는가</li><li>재실행 후 결과가 한 번만 반영되는가</li></ul>
         <p class="blog-sources">기술 참고: <a href="https://developer.mozilla.org/en-US/docs/Glossary/Idempotent">MDN 멱등성 용어 설명</a>. 문서 확인: 2026.10.19. 작업 절차와 예시는 이 글을 위해 구성한 제안이며 실제 고객 사례·성능 측정값이 아닙니다.</p>
-        <p class="blog-related"><a href="#ai-guides">전체 62편 목차로 돌아가기</a></p>
+        <p class="blog-related"><a href="#ai-guides">전체 목차로 돌아가기</a></p>
       </article>
 
       <article class="blog-post" id="post-toml-config">
@@ -577,7 +939,7 @@
         <h3>직접 점검할 항목</h3>
         <ul><li>기본값과 필수값이 구분됐는가</li><li>문법 외에 자료형과 범위를 검사하는가</li><li>적용된 설정을 비밀 값 없이 확인할 수 있는가</li></ul>
         <p class="blog-sources">기술 참고: <a href="https://docs.python.org/3/library/tomllib.html">Python tomllib TOML 읽기 문서</a>. 문서 확인: 2026.10.19. 작업 절차와 예시는 이 글을 위해 구성한 제안이며 실제 고객 사례·성능 측정값이 아닙니다.</p>
-        <p class="blog-related"><a href="#ai-guides">전체 62편 목차로 돌아가기</a></p>
+        <p class="blog-related"><a href="#ai-guides">전체 목차로 돌아가기</a></p>
       </article>
 
       <article class="blog-post" id="post-file-checksums">
@@ -596,7 +958,7 @@
         <h3>직접 점검할 항목</h3>
         <ul><li>같은 알고리즘과 동일한 원본 버전을 쓰는가</li><li>해시 기준을 얻은 경로가 신뢰할 만한가</li><li>일치 확인을 보안 보증으로 과장하지 않는가</li></ul>
         <p class="blog-sources">기술 참고: <a href="https://docs.python.org/3/library/hashlib.html">Python hashlib 해시 계산 문서</a>. 문서 확인: 2026.10.19. 작업 절차와 예시는 이 글을 위해 구성한 제안이며 실제 고객 사례·성능 측정값이 아닙니다.</p>
-        <p class="blog-related"><a href="#ai-guides">전체 62편 목차로 돌아가기</a></p>
+        <p class="blog-related"><a href="#ai-guides">전체 목차로 돌아가기</a></p>
       </article>
 
       <article class="blog-post" id="post-web-cache-check">
@@ -615,7 +977,7 @@
         <h3>직접 점검할 항목</h3>
         <ul><li>배포 대상 커밋이 기대한 변경인가</li><li>HTML과 CSS 주소가 모두 맞는가</li><li>실제 공개 응답에서 변경을 확인했는가</li></ul>
         <p class="blog-sources">기술 참고: <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Guides/Caching">MDN HTTP 캐싱 안내</a>. 문서 확인: 2026.10.19. 작업 절차와 예시는 이 글을 위해 구성한 제안이며 실제 고객 사례·성능 측정값이 아닙니다.</p>
-        <p class="blog-related"><a href="#ai-guides">전체 62편 목차로 돌아가기</a></p>
+        <p class="blog-related"><a href="#ai-guides">전체 목차로 돌아가기</a></p>
       </article>
 
       <article class="blog-post" id="post-query-fragment-links">
@@ -634,7 +996,7 @@
         <h3>직접 점검할 항목</h3>
         <ul><li>링크의 해시와 본문 ID가 같은가</li><li>ID가 한 문서에서 유일한가</li><li>공유 주소에 비밀 값이 포함되지 않았는가</li></ul>
         <p class="blog-sources">기술 참고: <a href="https://developer.mozilla.org/en-US/docs/Web/URI/Reference/Fragment">MDN URI 프래그먼트 설명</a>. 문서 확인: 2026.10.19. 작업 절차와 예시는 이 글을 위해 구성한 제안이며 실제 고객 사례·성능 측정값이 아닙니다.</p>
-        <p class="blog-related"><a href="#ai-guides">전체 62편 목차로 돌아가기</a></p>
+        <p class="blog-related"><a href="#ai-guides">전체 목차로 돌아가기</a></p>
       </article>
 
       <article class="blog-post" id="post-domain-connection-triage">
@@ -653,7 +1015,7 @@
         <h3>직접 점검할 항목</h3>
         <ul><li>실패한 정확한 주소와 시각이 있는가</li><li>오류가 발생한 단계를 구분했는가</li><li>한 기기와 여러 기기의 결과를 비교했는가</li></ul>
         <p class="blog-sources">기술 참고: <a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Howto/Web_mechanics/What_is_a_domain_name">MDN 도메인 이름과 DNS 설명</a>. 문서 확인: 2026.10.19. 작업 절차와 예시는 이 글을 위해 구성한 제안이며 실제 고객 사례·성능 측정값이 아닙니다.</p>
-        <p class="blog-related"><a href="#ai-guides">전체 62편 목차로 돌아가기</a></p>
+        <p class="blog-related"><a href="#ai-guides">전체 목차로 돌아가기</a></p>
       </article>
 
       <article class="blog-post" id="post-static-site-boundaries">
@@ -672,7 +1034,7 @@
         <h3>직접 점검할 항목</h3>
         <ul><li>방문 시 실행할 서버 코드가 필요한가</li><li>공개 코드에 비밀 값이 없는가</li><li>버튼 동작 뒤 실제 처리까지 확인했는가</li></ul>
         <p class="blog-sources">기술 참고: <a href="https://docs.github.com/en/pages/getting-started-with-github-pages/what-is-github-pages">GitHub Pages 공식 소개</a>. 문서 확인: 2026.10.19. 작업 절차와 예시는 이 글을 위해 구성한 제안이며 실제 고객 사례·성능 측정값이 아닙니다.</p>
-        <p class="blog-related"><a href="#ai-guides">전체 62편 목차로 돌아가기</a></p>
+        <p class="blog-related"><a href="#ai-guides">전체 목차로 돌아가기</a></p>
       </article>
 
       <article class="blog-post" id="post-mobile-data-tables">
@@ -691,7 +1053,7 @@
         <h3>직접 점검할 항목</h3>
         <ul><li>필수 열과 상세 설명이 구분됐는가</li><li>페이지 전체 대신 표 안에서 이동하는가</li><li>확대·키보드·마지막 열 접근을 확인했는가</li></ul>
         <p class="blog-sources">기술 참고: <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/overflow-x">MDN CSS overflow-x 문서</a>. 문서 확인: 2026.10.19. 작업 절차와 예시는 이 글을 위해 구성한 제안이며 실제 고객 사례·성능 측정값이 아닙니다.</p>
-        <p class="blog-related"><a href="#ai-guides">전체 62편 목차로 돌아가기</a></p>
+        <p class="blog-related"><a href="#ai-guides">전체 목차로 돌아가기</a></p>
       </article>
 
       <article class="blog-post" id="post-form-labels">
@@ -710,7 +1072,7 @@
         <h3>직접 점검할 항목</h3>
         <ul><li>입력칸과 이름표가 정확히 연결되는가</li><li>필수 조건과 오류 이유를 글로 알리는가</li><li>키보드로 작성·수정·제출할 수 있는가</li></ul>
         <p class="blog-sources">기술 참고: <a href="https://www.w3.org/WAI/tutorials/forms/labels/">W3C WAI 폼 컨트롤 이름표 안내</a>. 문서 확인: 2026.10.19. 작업 절차와 예시는 이 글을 위해 구성한 제안이며 실제 고객 사례·성능 측정값이 아닙니다.</p>
-        <p class="blog-related"><a href="#ai-guides">전체 62편 목차로 돌아가기</a></p>
+        <p class="blog-related"><a href="#ai-guides">전체 목차로 돌아가기</a></p>
       </article>
 
       <article class="blog-post" id="post-image-alt-text">
@@ -729,7 +1091,7 @@
         <h3>직접 점검할 항목</h3>
         <ul><li>장식·정보·기능 이미지 역할을 구분했는가</li><li>복잡한 내용은 본문 설명이 있는가</li><li>같은 설명이 불필요하게 반복되지 않는가</li></ul>
         <p class="blog-sources">기술 참고: <a href="https://www.w3.org/WAI/tutorials/images/decision-tree/">W3C WAI 이미지 대체 텍스트 결정 안내</a>. 문서 확인: 2026.10.19. 작업 절차와 예시는 이 글을 위해 구성한 제안이며 실제 고객 사례·성능 측정값이 아닙니다.</p>
-        <p class="blog-related"><a href="#ai-guides">전체 62편 목차로 돌아가기</a></p>
+        <p class="blog-related"><a href="#ai-guides">전체 목차로 돌아가기</a></p>
       </article>
 
       <article class="blog-post" id="post-external-link-review">
@@ -748,7 +1110,7 @@
         <h3>직접 점검할 항목</h3>
         <ul><li>문구만 보고 열릴 자료를 알 수 있는가</li><li>공유 주소에 개인 값이 없는가</li><li>문서 제목과 내용까지 확인했는가</li></ul>
         <p class="blog-sources">기술 참고: <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/a">MDN HTML 링크 요소와 관련 속성</a>. 문서 확인: 2026.10.19. 작업 절차와 예시는 이 글을 위해 구성한 제안이며 실제 고객 사례·성능 측정값이 아닙니다.</p>
-        <p class="blog-related"><a href="#ai-guides">전체 62편 목차로 돌아가기</a></p>
+        <p class="blog-related"><a href="#ai-guides">전체 목차로 돌아가기</a></p>
       </article>
 
       <article class="blog-post" id="post-backup-restore-drill">
@@ -767,7 +1129,7 @@
         <h3>직접 점검할 항목</h3>
         <ul><li>원본을 덮어쓰지 않는 시험 위치인가</li><li>필요한 계정과 복구 키에 접근할 수 있는가</li><li>파일 열기 외에 업무 사용까지 확인했는가</li></ul>
         <p class="blog-sources">기술 참고: <a href="https://www.cisa.gov/sites/default/files/2023-10/StopRansomware-Guide-508C-v3_1.pdf">CISA StopRansomware 백업·복구 권고</a>. 문서 확인: 2026.10.19. 작업 절차와 예시는 이 글을 위해 구성한 제안이며 실제 고객 사례·성능 측정값이 아닙니다.</p>
-        <p class="blog-related"><a href="#ai-guides">전체 62편 목차로 돌아가기</a></p>
+        <p class="blog-related"><a href="#ai-guides">전체 목차로 돌아가기</a></p>
       </article>
 
       <article class="blog-post" id="post-wifi-network-isolation">
@@ -786,7 +1148,7 @@
         <h3>직접 점검할 항목</h3>
         <ul><li>한 기기와 전체 망의 증상을 나눴는가</li><li>실패한 주소와 오류 문구를 기록했는가</li><li>조치 후 원래 업무 기능을 다시 확인했는가</li></ul>
         <p class="blog-sources">기술 참고: <a href="https://support.microsoft.com/en-us/windows/experience/connectivity-networking/fix-wi-fi-connection-issues-in-windows">Microsoft Windows Wi-Fi 연결 문제 해결 안내</a>. 문서 확인: 2026.10.19. 작업 절차와 예시는 이 글을 위해 구성한 제안이며 실제 고객 사례·성능 측정값이 아닙니다.</p>
-        <p class="blog-related"><a href="#ai-guides">전체 62편 목차로 돌아가기</a></p>
+        <p class="blog-related"><a href="#ai-guides">전체 목차로 돌아가기</a></p>
       </article>
 
       <article class="blog-post" id="post-disk-space-review">
@@ -805,7 +1167,7 @@
         <h3>직접 점검할 항목</h3>
         <ul><li>부족한 드라이브와 큰 범주를 확인했는가</li><li>삭제할 파일의 보관 책임을 확인했는가</li><li>정리 후 재발 원인도 점검했는가</li></ul>
         <p class="blog-sources">기술 참고: <a href="https://support.microsoft.com/en-us/windows/experience/storage-filemanagement/free-up-drive-space-in-windows">Microsoft Windows 저장 공간 확보 안내</a>. 문서 확인: 2026.10.19. 작업 절차와 예시는 이 글을 위해 구성한 제안이며 실제 고객 사례·성능 측정값이 아닙니다.</p>
-        <p class="blog-related"><a href="#ai-guides">전체 62편 목차로 돌아가기</a></p>
+        <p class="blog-related"><a href="#ai-guides">전체 목차로 돌아가기</a></p>
       </article>
 
       <article class="blog-post" id="post-update-recovery-plan">
@@ -824,7 +1186,7 @@
         <h3>직접 점검할 항목</h3>
         <ul><li>변경 전 버전과 정상 동작 기준이 있는가</li><li>실제로 가능한 복구 방법을 확인했는가</li><li>복구 후 업무·보안 상태를 다시 확인하는가</li></ul>
         <p class="blog-sources">기술 참고: <a href="https://support.microsoft.com/en-us/windows/deployment/updates-lifecycle/how-to-uninstall-a-windows-update">Microsoft Windows 업데이트 제거 안내</a>. 문서 확인: 2026.10.19. 작업 절차와 예시는 이 글을 위해 구성한 제안이며 실제 고객 사례·성능 측정값이 아닙니다.</p>
-        <p class="blog-related"><a href="#ai-guides">전체 62편 목차로 돌아가기</a></p>
+        <p class="blog-related"><a href="#ai-guides">전체 목차로 돌아가기</a></p>
       </article>
 
       <article class="blog-post" id="post-access-review-workflow">
@@ -843,7 +1205,7 @@
         <h3>직접 점검할 항목</h3>
         <ul><li>그룹·외부·자동화 계정도 포함했는가</li><li>각 권한에 현재 업무상의 이유가 있는가</li><li>회수 결정과 실제 적용을 모두 기록했는가</li></ul>
         <p class="blog-sources">기술 참고: <a href="https://learn.microsoft.com/en-us/entra/id-governance/access-reviews-overview">Microsoft Entra 접근 검토 개요</a>. 문서 확인: 2026.10.19. 작업 절차와 예시는 이 글을 위해 구성한 제안이며 실제 고객 사례·성능 측정값이 아닙니다.</p>
-        <p class="blog-related"><a href="#ai-guides">전체 62편 목차로 돌아가기</a></p>
+        <p class="blog-related"><a href="#ai-guides">전체 목차로 돌아가기</a></p>
       </article>
 
       <article class="blog-post" id="post-incident-handoff">
@@ -862,7 +1224,7 @@
         <h3>직접 점검할 항목</h3>
         <ul><li>관측 사실과 원인 가설이 구분됐는가</li><li>각 조치의 시각과 결과가 있는가</li><li>현재 상태와 다음 담당자를 알 수 있는가</li></ul>
         <p class="blog-sources">기술 참고: <a href="https://csrc.nist.gov/pubs/sp/800/61/r3/final">NIST SP 800-61 Rev.3 사고 대응 권고</a>. 문서 확인: 2026.10.19. 작업 절차와 예시는 이 글을 위해 구성한 제안이며 실제 고객 사례·성능 측정값이 아닙니다.</p>
-        <p class="blog-related"><a href="#ai-guides">전체 62편 목차로 돌아가기</a></p>
+        <p class="blog-related"><a href="#ai-guides">전체 목차로 돌아가기</a></p>
       </article>
 
       <article class="blog-post" id="post-device-inventory">
@@ -881,7 +1243,7 @@
         <h3>직접 점검할 항목</h3>
         <ul><li>모든 장비에 구분 가능한 관리 번호가 있는가</li><li>위치·담당자·확인 날짜가 기록되는가</li><li>교체와 폐기 시 대장도 갱신되는가</li></ul>
         <p class="blog-sources">기술 참고: <a href="https://www.cisecurity.org/controls/inventory-and-control-of-enterprise-assets">CIS Control 1 기업 자산 목록·관리</a>. 문서 확인: 2026.10.19. 작업 절차와 예시는 이 글을 위해 구성한 제안이며 실제 고객 사례·성능 측정값이 아닙니다.</p>
-        <p class="blog-related"><a href="#ai-guides">전체 62편 목차로 돌아가기</a></p>
+        <p class="blog-related"><a href="#ai-guides">전체 목차로 돌아가기</a></p>
       </article>
 
       <article class="blog-post" id="post-service-data-export">
@@ -900,7 +1262,7 @@
         <h3>직접 점검할 항목</h3>
         <ul><li>표·첨부·이력·관계 정보의 범위를 정했는가</li><li>지원하지 않는 항목을 공식 문서에서 확인했는가</li><li>새 환경에서 필요한 업무를 실제로 시험했는가</li></ul>
         <p class="blog-sources">기술 참고: <a href="https://learn.microsoft.com/en-us/power-apps/maker/data-platform/data-platform-import-export">Microsoft Power Apps 데이터 가져오기·CSV 내보내기 안내</a>. 문서 확인: 2026.10.19. 작업 절차와 예시는 이 글을 위해 구성한 제안이며 실제 고객 사례·성능 측정값이 아닙니다.</p>
-        <p class="blog-related"><a href="#ai-guides">전체 62편 목차로 돌아가기</a></p>
+        <p class="blog-related"><a href="#ai-guides">전체 목차로 돌아가기</a></p>
       </article>
 
       <article class="blog-post" id="post-ai-free-start">
