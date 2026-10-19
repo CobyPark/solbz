@@ -2153,6 +2153,8 @@ h2 {
 .information-blog .blog-worked-example h3 { margin-top: 0; }
 .information-blog .blog-worked-example p { margin-bottom: 0; }
 .information-blog .blog-post h2 { word-break: keep-all; overflow-wrap: anywhere; }
+.information-blog #codex-series,
+.information-blog #chatgpt-series,
 .information-blog #openclaw-series { scroll-margin-top: calc(var(--header-height, 100px) + 24px); }
 @media (max-width: 768px) {
   .blog-guide-index { padding: 20px; }
