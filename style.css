@@ -489,6 +489,7 @@ body {
 }
 
 .program-detail-section {
+  scroll-margin-top: calc(var(--header-height) + 24px);
   margin-bottom: 44px;
 }
 
