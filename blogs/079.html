@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="파일 해시로 복사 결과 확인하기: 같다는 것과 안전하다는 것의 차이 - 솔루션 비제트 IT 정보글">
+  <title>파일 해시로 복사 결과 확인하기: 같다는 것과 안전하다는 것의 차이 - 솔루션 비제트</title>
+  <link rel="stylesheet" href="../style.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+  <script src="https://code.jquery.com/jquery-latest.min.js"></script>
+  <!-- 파비콘 -->
+  <link rel="icon" type="image/png" sizes="32x32" href="../images/logo2.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="../images/logo2.png">
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8588372040849412"
+    crossorigin="anonymous"></script>
+</head>
+
+<body class="information-blog">
+  <!-- 헤더 (index.html과 동일) -->
+  <div class="container">
+    <header class="header">
+      <h1 class="logo"><a href="../index.html">Solution BZ</a></h1>
+      <nav class="nav">
+        <ul>
+          <li class="nav-dropdown">
+            <span class="nav-dropdown-toggle">전체 프로그램</span>
+            <ul class="nav-dropdown-menu">
+              <li><a href="../bss.html">BZ SMB Settings</a></li>
+              <li><a href="../solar.html">Solar BZ</a></li>
+              <li><a href="../ssolzip.html">쏠집(SSolZip)</a></li>
+              <li><a href="../ssolview.html">쏠뷰(SSolView)</a></li>
+              <li><a>웹 기반 에이전트 AI(출시 예정)</a></li>
+            </ul>
+          </li>
+          <li><a href="../profile.html">대표 소개</a></li>
+          <li><a href="../blogs.html">블로그</a></li>
+          <li><a href="../index.html#contact">제품 및 강의 문의</a></li>
+        </ul>
+      </nav>
+    </header>
+  </div>
+
+  <section class="blog-page">
+    <div class="inner">
+      <article class="blog-post" id="post-file-checksums">
+        <a class="blog-post-back" href="../blogs.html#post-file-checksums">목록으로 돌아가기</a>
+        <span class="blog-post-category">Python·업무 자동화</span>
+        <h2>파일 해시로 복사 결과 확인하기: 같다는 것과 안전하다는 것의 차이</h2>
+        <p class="blog-post-meta">솔루션 비제트 · 활용 가이드 · <time datetime="2026-10-19">2026.10.19</time></p>
+        <p>복사한 파일의 이름과 크기가 같아도 내용이 같은지는 별도 확인이 필요합니다. 해시값을 비교하면 도움이 되지만, 비교 기준을 어디서 가져왔는지도 봐야 합니다. 내용 일치와 파일의 안전성은 같은 판단이 아닙니다.</p>
+        <h3>원본과 사본을 같은 알고리즘으로</h3>
+<p>SHA-256 같은 해시 알고리즘을 정하고 두 파일을 같은 방식으로 계산합니다. Python hashlib은 이런 해시 계산 기능을 제공합니다. 큰 파일은 한 번에 모두 메모리에 읽기보다 일정 크기로 나눠 처리할 수 있습니다.</p>
+<h3>믿을 수 있는 비교 기준</h3>
+<p>파일과 같은 곳에서 아무 설명 없이 받은 해시값은 공격자가 함께 바꿀 수도 있습니다. 공식 배포 경로에서 제공한 값인지, 전자서명 같은 별도 확인 수단이 있는지 살펴보세요. 내용이 일치한다는 확인과 파일이 악성인지 아닌지의 판단은 다릅니다.</p>
+<p>원본이 계산 중 변경되면 일관된 기준을 만들기 어렵습니다. 복사 전에 변경을 멈추거나 버전이 고정된 사본에서 계산하는 방법을 검토하세요. 파일명과 해시만이 아니라 크기·버전·계산 시각을 함께 남기면 추적하기 쉽습니다.</p>
+<h3>해시가 다르게 나왔을 때</h3>
+<p>전송 손상, 다른 버전, 줄바꿈이나 인코딩 변환이 원인일 수 있습니다. 문서가 화면상 같아도 바이트가 다르면 해시가 달라질 수 있으므로 곧바로 악성 변조로 단정하지 않습니다. 원본 버전과 전송 과정의 변환 여부부터 확인하세요.</p>
+        <aside class="blog-worked-example" aria-label="설명용 예시"><h3>배포 파일의 SHA-256 비교</h3><p>프로그램 배포 파일을 복사한 뒤 공식 릴리스의 SHA-256과 비교합니다. 값이 다르면 실행하기 전에 버전과 다운로드 상태를 확인합니다. 자체 생성 문서의 복사 검증이라면 원본을 고정한 뒤 원본·복사본의 해시를 같은 기록에 남깁니다.</p></aside>
+        <h3>해시 결과를 해석할 때</h3>
+        <ul><li>같은 알고리즘과 동일한 원본 버전을 쓰는가</li><li>해시 기준을 얻은 경로가 신뢰할 만한가</li><li>일치 확인을 보안 보증으로 과장하지 않는가</li></ul>
+        <p class="blog-sources">기술 참고: <a href="https://docs.python.org/3/library/hashlib.html">Python hashlib 해시 계산 문서</a>. 문서 확인: 2026.10.19.</p>
+        <p class="blog-related"><a href="../blogs.html#ai-guides">전체 목차로 돌아가기</a></p>
+      </article>
+    </div>
+  </section>
+
+  <!-- 하단 : 사업자 정보 (index.html과 동일) -->
+  <footer class="footer">
+    <div class="inner">
+      <div>
+        <img class="ftr_logo" src="../images/logo.png" alt="솔루션 비제트 로고" />
+      </div>
+      <div class="info">
+        <ul>
+          <li>회사명 : 솔루션 비제트</li>
+          <li>대표자 : 박영</li>
+          <li>주소 : 경남 김해시 삼계중앙로6번길 21-18 101호</li>
+          <li>이메일 : ytbiz048@gmail.com </li>
+        </ul>
+        <ul>
+          <li>팩스 : 0504-229-2760</li>
+          <li>사업자등록번호 : 123-65-20119</li>
+          <li>통신판매업신고 : 제 2024-경남김해-0729 호</li>
+        </ul>
+      </div>
+      <p>COPYRIGHT (c) 솔루션 비제트 ALL RIGHTS RESERVED.</p>
+      <p>저작권 관련 수정 필요 내용이 있을 경우 이메일 혹은 전화로 연락 주시면 최대한 빠르게 수정 진행하겠습니다.</p>
+      <p><a href="../privacy.html">개인정보처리방침 전문 보기</a></p>
+      <p class="footer-privacy">개인정보처리방침 안내 : 솔루션 비제트는 문의 응대 등 서비스 제공을 위해 이름·연락처·이메일 등 최소한의 개인정보를 필요한 기간 동안만 수집·보관하며, 관련 법령에 따라 안전하게 관리합니다. 서비스 개선 및 광고 제공을 위해 쿠키가 사용될 수 있으며, 자세한 사항은 이메일 또는 전화로 문의하실 수 있습니다.</p>
+    </div>
+  </footer>
+
+  <script src="../script.js"></script>
+</body>
+</html>

@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Claude 02. 질문을 고칠 때는 빠진 조건부터 찾기 - 솔루션 비제트 IT 정보글">
+  <title>Claude 02. 질문을 고칠 때는 빠진 조건부터 찾기 - 솔루션 비제트</title>
+  <link rel="stylesheet" href="../style.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+  <script src="https://code.jquery.com/jquery-latest.min.js"></script>
+  <!-- 파비콘 -->
+  <link rel="icon" type="image/png" sizes="32x32" href="../images/logo2.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="../images/logo2.png">
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8588372040849412"
+    crossorigin="anonymous"></script>
+</head>
+
+<body class="information-blog">
+  <!-- 헤더 (index.html과 동일) -->
+  <div class="container">
+    <header class="header">
+      <h1 class="logo"><a href="../index.html">Solution BZ</a></h1>
+      <nav class="nav">
+        <ul>
+          <li class="nav-dropdown">
+            <span class="nav-dropdown-toggle">전체 프로그램</span>
+            <ul class="nav-dropdown-menu">
+              <li><a href="../bss.html">BZ SMB Settings</a></li>
+              <li><a href="../solar.html">Solar BZ</a></li>
+              <li><a href="../ssolzip.html">쏠집(SSolZip)</a></li>
+              <li><a href="../ssolview.html">쏠뷰(SSolView)</a></li>
+              <li><a>웹 기반 에이전트 AI(출시 예정)</a></li>
+            </ul>
+          </li>
+          <li><a href="../profile.html">대표 소개</a></li>
+          <li><a href="../blogs.html">블로그</a></li>
+          <li><a href="../index.html#contact">제품 및 강의 문의</a></li>
+        </ul>
+      </nav>
+    </header>
+  </div>
+
+  <section class="blog-page">
+    <div class="inner">
+      <article class="blog-post" id="post-claude-02">
+        <a class="blog-post-back" href="../blogs.html#post-claude-02">목록으로 돌아가기</a>
+        <span class="blog-post-category">Claude 활용 시리즈 · 02/13</span>
+        <h2>Claude 02. 질문을 고칠 때는 빠진 조건부터 찾기</h2>
+        <p class="blog-post-meta">솔루션 비제트 · Anthropic 공식 문서 참고 가이드 · <time datetime="2026-10-28">2026.10.28</time></p>
+        <p>“고객에게 보낼 안내문을 써 줘”라고 하면 매끈한 글은 나올 수 있습니다. 하지만 읽는 사람이 신규 고객인지 기존 이용자인지, 무엇을 안내하는지에 따라 필요한 내용은 달라집니다. 답변이 엉뚱할 때는 문장을 더 공손하게 바꾸기 전에 빠뜨린 업무 조건부터 찾아보세요.</p>
+<h3>요청 한 줄에 모든 배경을 넣을 필요는 없다</h3>
+<p>배경 설명은 이번 결과를 바꾸는 정보면 됩니다. 납품 일정 안내라면 수신자, 변경 전후 날짜, 변경 사유, 회신이 필요한지가 해당합니다. 회사의 연혁이나 제품의 모든 기능을 붙이면 정작 날짜와 요청 사항이 묻힐 수 있습니다.</p>
+<p>원문으로 제공한 내용과 작성 지시를 줄바꿈으로 나눠 적어도 읽기 쉬워집니다. 아래 요청은 일정 변경이라는 한 가지 상황에 한정했습니다. 모든 이메일에 적용할 양식은 아닙니다.</p>
+<pre tabindex="0" aria-label="납품 일정 안내문 작성 예시"><code>기존 고객에게 보낼 일정 변경 이메일 초안을 써 줘.
+제목 한 줄과 본문 세 문단으로 작성해 줘.
+
+확정된 사실:
+- 납품일은 11월 4일에서 11월 6일로 변경
+- 사유는 부품 입고 지연
+- 고객에게 변경 일정으로 진행 가능한지 회신 요청
+
+보상이나 할인은 아직 정하지 않았으니 약속하지 말아 줘.</code></pre>
+<h3>틀린 답을 보고 조건을 보충한다</h3>
+<p>초안이 변경 사유를 길게 설명한다면 “사유는 한 문장으로 줄여 줘”라고 고칩니다. 고객의 동의가 이미 끝난 것처럼 쓰였다면 “일정 확정 통보가 아니라 가능 여부를 묻는 메일”이라고 바로잡습니다. 두 문제를 한꺼번에 ‘자연스럽게 수정’하라고 하면 무엇이 잘못됐는지 흐려집니다.</p>
+<p>원하는 표현의 예가 있다면 짧게 붙여도 됩니다. 다만 기존 메일 전체를 복사하기보다 인사말이나 회신 요청처럼 필요한 부분만 보여 주세요. 받는 사람 이름과 계약 정보가 이번 연습에 꼭 필요한지도 생각해 볼 만합니다.</p>
+<h3>문체보다 먼저 날짜와 약속을 읽는다</h3>
+<p>수정한 초안에서 날짜가 둘 다 맞는지, 보상 약속이 들어가지 않았는지, 회신 요청이 남아 있는지부터 읽습니다. 글이 마음에 든다는 감상과 실제로 보낼 수 있다는 판단은 다릅니다. 사실과 조건이 맞은 뒤 말투를 다듬으면 수정 과정도 짧아집니다.</p>
+<p>Anthropic의 요청 작성 문서도 결과를 평가할 기준을 먼저 정하도록 안내합니다. 여기서 기준은 거창한 점수표가 아니라 ‘변경 전후 날짜가 정확하고 승인받지 않은 약속이 없다’ 정도로 잡을 수 있습니다.</p>
+        <p class="blog-sources">공식 참고: <a href="https://platform.claude.com/docs/en/build-with-claude/prompt-engineering/overview">요청 작성과 결과 평가</a>. 문서 확인: 2026.10.28.</p>
+        <nav class="blog-related" aria-label="Claude 02편 탐색"><a rel="prev" href="001.html#post-claude-01">이전 편</a> · <a href="../blogs.html#claude-series">시리즈 목차</a> · <a rel="next" href="003.html#post-claude-03">다음 편</a> · <a href="../blogs.html#ai-guides">전체 목차</a></nav>
+      </article>
+    </div>
+  </section>
+
+  <!-- 하단 : 사업자 정보 (index.html과 동일) -->
+  <footer class="footer">
+    <div class="inner">
+      <div>
+        <img class="ftr_logo" src="../images/logo.png" alt="솔루션 비제트 로고" />
+      </div>
+      <div class="info">
+        <ul>
+          <li>회사명 : 솔루션 비제트</li>
+          <li>대표자 : 박영</li>
+          <li>주소 : 경남 김해시 삼계중앙로6번길 21-18 101호</li>
+          <li>이메일 : ytbiz048@gmail.com </li>
+        </ul>
+        <ul>
+          <li>팩스 : 0504-229-2760</li>
+          <li>사업자등록번호 : 123-65-20119</li>
+          <li>통신판매업신고 : 제 2024-경남김해-0729 호</li>
+        </ul>
+      </div>
+      <p>COPYRIGHT (c) 솔루션 비제트 ALL RIGHTS RESERVED.</p>
+      <p>저작권 관련 수정 필요 내용이 있을 경우 이메일 혹은 전화로 연락 주시면 최대한 빠르게 수정 진행하겠습니다.</p>
+      <p><a href="../privacy.html">개인정보처리방침 전문 보기</a></p>
+      <p class="footer-privacy">개인정보처리방침 안내 : 솔루션 비제트는 문의 응대 등 서비스 제공을 위해 이름·연락처·이메일 등 최소한의 개인정보를 필요한 기간 동안만 수집·보관하며, 관련 법령에 따라 안전하게 관리합니다. 서비스 개선 및 광고 제공을 위해 쿠키가 사용될 수 있으며, 자세한 사항은 이메일 또는 전화로 문의하실 수 있습니다.</p>
+    </div>
+  </footer>
+
+  <script src="../script.js"></script>
+</body>
+</html>

@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="계정 권한 정기 점검: 사용자 목록보다 권한을 받은 이유 확인하기 - 솔루션 비제트 IT 정보글">
+  <title>계정 권한 정기 점검: 사용자 목록보다 권한을 받은 이유 확인하기 - 솔루션 비제트</title>
+  <link rel="stylesheet" href="../style.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+  <script src="https://code.jquery.com/jquery-latest.min.js"></script>
+  <!-- 파비콘 -->
+  <link rel="icon" type="image/png" sizes="32x32" href="../images/logo2.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="../images/logo2.png">
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8588372040849412"
+    crossorigin="anonymous"></script>
+</head>
+
+<body class="information-blog">
+  <!-- 헤더 (index.html과 동일) -->
+  <div class="container">
+    <header class="header">
+      <h1 class="logo"><a href="../index.html">Solution BZ</a></h1>
+      <nav class="nav">
+        <ul>
+          <li class="nav-dropdown">
+            <span class="nav-dropdown-toggle">전체 프로그램</span>
+            <ul class="nav-dropdown-menu">
+              <li><a href="../bss.html">BZ SMB Settings</a></li>
+              <li><a href="../solar.html">Solar BZ</a></li>
+              <li><a href="../ssolzip.html">쏠집(SSolZip)</a></li>
+              <li><a href="../ssolview.html">쏠뷰(SSolView)</a></li>
+              <li><a>웹 기반 에이전트 AI(출시 예정)</a></li>
+            </ul>
+          </li>
+          <li><a href="../profile.html">대표 소개</a></li>
+          <li><a href="../blogs.html">블로그</a></li>
+          <li><a href="../index.html#contact">제품 및 강의 문의</a></li>
+        </ul>
+      </nav>
+    </header>
+  </div>
+
+  <section class="blog-page">
+    <div class="inner">
+      <article class="blog-post" id="post-access-review-workflow">
+        <a class="blog-post-back" href="../blogs.html#post-access-review-workflow">목록으로 돌아가기</a>
+        <span class="blog-post-category">IT 운영·장비 관리</span>
+        <h2>계정 권한 정기 점검: 사용자 목록보다 권한을 받은 이유 확인하기</h2>
+        <p class="blog-post-meta">솔루션 비제트 · 활용 가이드 · <time datetime="2026-10-19">2026.10.19</time></p>
+        <p>계정 목록에 이름이 있다는 것만으로 그 권한이 지금도 필요한지는 알 수 없습니다. 부서 이동이나 프로젝트 종료 뒤에도 남은 접근이 있을 수 있습니다. 누가 어떤 자료를 왜 읽거나 수정해야 하는지 현재 업무와 맞춰보세요.</p>
+        <h3>직접 권한과 그룹 권한</h3>
+<p>사용자에게 직접 준 권한 외에 그룹이나 역할을 통해 받은 접근도 확인합니다. 외부 협업자와 공용 계정, 자동화용 계정도 목록에 포함하세요. 사람이 쓰지 않는 계정이라고 점검 대상에서 제외하면 중요한 접근 경로가 빠질 수 있습니다.</p>
+<h3>현재 담당자가 답할 수 있는 이유</h3>
+<p>이 사람이 왜 이 자료를 읽거나 수정해야 하는지 담당자가 답할 수 있어야 합니다. 부서 이동과 프로젝트 종료가 있었다면 예전 접근이 남아 있는지 확인하세요. “예전에도 있었다”는 사실만으로 계속 유지할 근거가 되지는 않습니다.</p>
+<p>Microsoft Entra의 접근 검토처럼 제품 기능을 사용할 수 있지만 제공 범위와 라이선스 조건은 현재 문서를 확인해야 합니다. 도구가 없어도 목록과 담당자 확인으로 시작할 수 있으나 실제 적용 결과까지 확인하는 절차가 필요합니다.</p>
+<h3>권한 회수 뒤의 영향</h3>
+<p>불필요한 권한을 없앤 뒤 필수 업무가 정상인지 확인합니다. 역할을 바꾸기 전에 공용 자동화나 서비스가 해당 계정에 의존하는지도 살펴보세요. 제거 결정, 적용 시각, 확인자를 남겨 다음 점검에서 같은 질문을 반복하지 않게 합니다.</p>
+        <aside class="blog-worked-example" aria-label="설명용 예시"><h3>끝난 프로젝트의 외부 협업자</h3><p>외부 협업자가 프로젝트 완료 후에도 공유 폴더 수정 권한을 갖고 있다면 현재 담당자에게 유지 이유를 확인합니다. 필요가 없으면 회수하고 결과를 점검합니다. 새 협업이 시작되면 과거 권한을 그대로 복원하기보다 필요한 범위를 다시 승인합니다.</p></aside>
+        <h3>접근 권한 검토 기록</h3>
+        <ul><li>그룹·외부·자동화 계정도 포함했는가</li><li>각 권한에 현재 업무상의 이유가 있는가</li><li>회수 결정과 실제 적용을 모두 기록했는가</li></ul>
+        <p class="blog-sources">기술 참고: <a href="https://learn.microsoft.com/en-us/entra/id-governance/access-reviews-overview">Microsoft Entra 접근 검토 개요</a>. 문서 확인: 2026.10.19.</p>
+        <p class="blog-related"><a href="../blogs.html#ai-guides">전체 목차로 돌아가기</a></p>
+      </article>
+    </div>
+  </section>
+
+  <!-- 하단 : 사업자 정보 (index.html과 동일) -->
+  <footer class="footer">
+    <div class="inner">
+      <div>
+        <img class="ftr_logo" src="../images/logo.png" alt="솔루션 비제트 로고" />
+      </div>
+      <div class="info">
+        <ul>
+          <li>회사명 : 솔루션 비제트</li>
+          <li>대표자 : 박영</li>
+          <li>주소 : 경남 김해시 삼계중앙로6번길 21-18 101호</li>
+          <li>이메일 : ytbiz048@gmail.com </li>
+        </ul>
+        <ul>
+          <li>팩스 : 0504-229-2760</li>
+          <li>사업자등록번호 : 123-65-20119</li>
+          <li>통신판매업신고 : 제 2024-경남김해-0729 호</li>
+        </ul>
+      </div>
+      <p>COPYRIGHT (c) 솔루션 비제트 ALL RIGHTS RESERVED.</p>
+      <p>저작권 관련 수정 필요 내용이 있을 경우 이메일 혹은 전화로 연락 주시면 최대한 빠르게 수정 진행하겠습니다.</p>
+      <p><a href="../privacy.html">개인정보처리방침 전문 보기</a></p>
+      <p class="footer-privacy">개인정보처리방침 안내 : 솔루션 비제트는 문의 응대 등 서비스 제공을 위해 이름·연락처·이메일 등 최소한의 개인정보를 필요한 기간 동안만 수집·보관하며, 관련 법령에 따라 안전하게 관리합니다. 서비스 개선 및 광고 제공을 위해 쿠키가 사용될 수 있으며, 자세한 사항은 이메일 또는 전화로 문의하실 수 있습니다.</p>
+    </div>
+  </footer>
+
+  <script src="../script.js"></script>
+</body>
+</html>

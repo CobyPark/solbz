@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Claude 06. Artifacts로 작은 계산 화면을 만들고 숫자 대조하기 - 솔루션 비제트 IT 정보글">
+  <title>Claude 06. Artifacts로 작은 계산 화면을 만들고 숫자 대조하기 - 솔루션 비제트</title>
+  <link rel="stylesheet" href="../style.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+  <script src="https://code.jquery.com/jquery-latest.min.js"></script>
+  <!-- 파비콘 -->
+  <link rel="icon" type="image/png" sizes="32x32" href="../images/logo2.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="../images/logo2.png">
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8588372040849412"
+    crossorigin="anonymous"></script>
+</head>
+
+<body class="information-blog">
+  <!-- 헤더 (index.html과 동일) -->
+  <div class="container">
+    <header class="header">
+      <h1 class="logo"><a href="../index.html">Solution BZ</a></h1>
+      <nav class="nav">
+        <ul>
+          <li class="nav-dropdown">
+            <span class="nav-dropdown-toggle">전체 프로그램</span>
+            <ul class="nav-dropdown-menu">
+              <li><a href="../bss.html">BZ SMB Settings</a></li>
+              <li><a href="../solar.html">Solar BZ</a></li>
+              <li><a href="../ssolzip.html">쏠집(SSolZip)</a></li>
+              <li><a href="../ssolview.html">쏠뷰(SSolView)</a></li>
+              <li><a>웹 기반 에이전트 AI(출시 예정)</a></li>
+            </ul>
+          </li>
+          <li><a href="../profile.html">대표 소개</a></li>
+          <li><a href="../blogs.html">블로그</a></li>
+          <li><a href="../index.html#contact">제품 및 강의 문의</a></li>
+        </ul>
+      </nav>
+    </header>
+  </div>
+
+  <section class="blog-page">
+    <div class="inner">
+      <article class="blog-post" id="post-claude-06">
+        <a class="blog-post-back" href="../blogs.html#post-claude-06">목록으로 돌아가기</a>
+        <span class="blog-post-category">Claude 활용 시리즈 · 06/13</span>
+        <h2>Claude 06. Artifacts로 작은 계산 화면을 만들고 숫자 대조하기</h2>
+        <p class="blog-post-meta">솔루션 비제트 · Anthropic 공식 문서 참고 가이드 · <time datetime="2026-10-28">2026.10.28</time></p>
+        <p>문장으로 설명하기 어려운 계산은 입력칸 몇 개가 있는 화면으로 보면 이해하기 쉽습니다. Claude의 Artifacts는 대화 옆에서 결과물을 보고 수정하는 데 쓰는 기능입니다. 처음에는 회원 가입이나 외부 데이터 연결 없이 작동하는 작은 도구부터 만들어 보세요.</p>
+<h3>납품비 계산기로 범위를 줄여 보기</h3>
+<p>연습 주제는 수량과 단가, 배송비를 넣으면 합계를 보여 주는 계산기입니다. 실제 견적서가 아니라 계산 흐름을 확인하는 예제이므로 세금, 할인, 환율은 이번 범위에서 빼겠습니다. 화면을 그리기 전에 계산식을 먼저 정해 두면 수정할 때 기준이 생깁니다.</p>
+<pre tabindex="0" aria-label="Artifacts 계산 화면 요청 예시"><code>수량, 단가, 배송비를 입력하는 계산 화면을 Artifact로 만들어 줘.
+합계 = 수량 × 단가 + 배송비로 계산하고 원 단위로 표시해 줘.
+빈 입력과 음수는 합계를 내지 말고 안내를 보여 줘.
+회원 가입, 결제, 외부 서버 연결, 데이터 저장은 넣지 말아 줘.
+휴대전화에서도 입력칸과 결과가 잘리지 않게 배치해 줘.</code></pre>
+<p>공식 안내에 따르면 Artifacts를 쓰려면 파일 생성·편집에 해당하는 기능이 켜져 있어야 합니다. 결과가 일반 채팅 답변으로만 나오면 계정의 기능 설정과 현재 지원 범위를 살펴보세요. 템플릿과 공유 기능은 결과 종류와 요금제에 따라 다를 수 있습니다.</p>
+<h3>그럴듯한 화면과 맞는 계산은 따로 본다</h3>
+<p>수량 3, 단가 12,000원, 배송비 3,000원을 넣었다면 합계는 39,000원입니다. 이 값을 먼저 대조한 뒤 입력을 비우거나 수량을 음수로 바꿔 봅니다. 안내가 뜬 상태에서 직전 합계가 그대로 남아 오해를 주지 않는지도 살펴볼 수 있습니다.</p>
+<p>금액에 쉼표를 넣었을 때, 배송비를 0으로 입력했을 때, 화면 폭을 줄였을 때도 확인합니다. 잘못된 값이 나오면 “계산이 틀린다” 대신 입력한 값과 기대한 합계를 알려 주세요. 색상 수정과 계산 오류 수정을 한꺼번에 맡기지 않으면 바뀐 이유를 따라가기 쉽습니다.</p>
+<h3>링크를 보내기 전에 담긴 내용을 읽는다</h3>
+<p>공유할 수 있는 결과라도 바로 공개할 필요는 없습니다. 연습용 수치 대신 고객 단가나 내부 조건을 넣었다면 먼저 지우고 공유 설정을 읽습니다. 링크가 열리는지와 받는 사람이 보게 되는 내용은 별도 창이나 허용된 다른 계정에서 점검할 수 있습니다.</p>
+<p>예제 계산기를 업무에 쓰려면 소수점 처리, 세금, 최대 입력값 같은 추가 규칙이 필요합니다. 화면이 만들어졌다는 이유만으로 견적 계산이 검증됐다고 볼 수는 없습니다. 여기서는 위에 정한 계산식과 입력 조건까지만 확인합니다.</p>
+        <p class="blog-sources">공식 참고: <a href="https://support.claude.com/en/articles/17153992-what-are-artifacts-and-how-do-i-use-them">Artifacts 사용 안내</a>. 문서 확인: 2026.10.28.</p>
+        <nav class="blog-related" aria-label="Claude 06편 탐색"><a rel="prev" href="005.html#post-claude-05">이전 편</a> · <a href="../blogs.html#claude-series">시리즈 목차</a> · <a rel="next" href="007.html#post-claude-07">다음 편</a> · <a href="../blogs.html#ai-guides">전체 목차</a></nav>
+      </article>
+    </div>
+  </section>
+
+  <!-- 하단 : 사업자 정보 (index.html과 동일) -->
+  <footer class="footer">
+    <div class="inner">
+      <div>
+        <img class="ftr_logo" src="../images/logo.png" alt="솔루션 비제트 로고" />
+      </div>
+      <div class="info">
+        <ul>
+          <li>회사명 : 솔루션 비제트</li>
+          <li>대표자 : 박영</li>
+          <li>주소 : 경남 김해시 삼계중앙로6번길 21-18 101호</li>
+          <li>이메일 : ytbiz048@gmail.com </li>
+        </ul>
+        <ul>
+          <li>팩스 : 0504-229-2760</li>
+          <li>사업자등록번호 : 123-65-20119</li>
+          <li>통신판매업신고 : 제 2024-경남김해-0729 호</li>
+        </ul>
+      </div>
+      <p>COPYRIGHT (c) 솔루션 비제트 ALL RIGHTS RESERVED.</p>
+      <p>저작권 관련 수정 필요 내용이 있을 경우 이메일 혹은 전화로 연락 주시면 최대한 빠르게 수정 진행하겠습니다.</p>
+      <p><a href="../privacy.html">개인정보처리방침 전문 보기</a></p>
+      <p class="footer-privacy">개인정보처리방침 안내 : 솔루션 비제트는 문의 응대 등 서비스 제공을 위해 이름·연락처·이메일 등 최소한의 개인정보를 필요한 기간 동안만 수집·보관하며, 관련 법령에 따라 안전하게 관리합니다. 서비스 개선 및 광고 제공을 위해 쿠키가 사용될 수 있으며, 자세한 사항은 이메일 또는 전화로 문의하실 수 있습니다.</p>
+    </div>
+  </footer>
+
+  <script src="../script.js"></script>
+</body>
+</html>

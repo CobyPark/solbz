@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="윈도우 11 공유폴더, 네트워크와 계정 권한 점검하기 - 솔루션 비제트 IT 정보글">
+  <title>윈도우 11 공유폴더, 네트워크와 계정 권한 점검하기 - 솔루션 비제트</title>
+  <link rel="stylesheet" href="../style.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+  <script src="https://code.jquery.com/jquery-latest.min.js"></script>
+  <!-- 파비콘 -->
+  <link rel="icon" type="image/png" sizes="32x32" href="../images/logo2.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="../images/logo2.png">
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8588372040849412"
+    crossorigin="anonymous"></script>
+</head>
+
+<body class="information-blog">
+  <!-- 헤더 (index.html과 동일) -->
+  <div class="container">
+    <header class="header">
+      <h1 class="logo"><a href="../index.html">Solution BZ</a></h1>
+      <nav class="nav">
+        <ul>
+          <li class="nav-dropdown">
+            <span class="nav-dropdown-toggle">전체 프로그램</span>
+            <ul class="nav-dropdown-menu">
+              <li><a href="../bss.html">BZ SMB Settings</a></li>
+              <li><a href="../solar.html">Solar BZ</a></li>
+              <li><a href="../ssolzip.html">쏠집(SSolZip)</a></li>
+              <li><a href="../ssolview.html">쏠뷰(SSolView)</a></li>
+              <li><a>웹 기반 에이전트 AI(출시 예정)</a></li>
+            </ul>
+          </li>
+          <li><a href="../profile.html">대표 소개</a></li>
+          <li><a href="../blogs.html">블로그</a></li>
+          <li><a href="../index.html#contact">제품 및 강의 문의</a></li>
+        </ul>
+      </nav>
+    </header>
+  </div>
+
+  <section class="blog-page">
+    <div class="inner">
+      <article class="blog-post" id="post-smb-security">
+        <a class="blog-post-back" href="../blogs.html#post-smb-security">목록으로 돌아가기</a>
+        <span class="blog-post-category">보안 설정</span>
+        <h2>윈도우 11 공유폴더, 네트워크와 계정 권한 점검하기</h2>
+        <p class="blog-post-meta">솔루션 비제트 · IT 인프라 노트</p>
+
+        <p>사무실에서 공유폴더가 잘 열린다고 권한 설정까지 적절한 것은 아닙니다. 어느 네트워크에서 열리는지, 누가 쓰기 권한을 갖는지부터 살펴보세요. 윈도우 11에서 점검할 네 가지를 정리했습니다.</p>
+
+        <h3>1. 신뢰하는 네트워크에서만 공유</h3>
+        <p>
+          윈도우 11의 네트워크 프로필을 공용(Public)이 아닌 개인(Private)으로 정확히 설정하고,
+          네트워크 검색·파일 및 프린터 공유 기능은 신뢰된 사설망에서만 켜두는 것이 기본입니다.
+          카페나 외부 공유 와이파이에 노트북을 연결할 때 공용 프로필로 자동 전환되는지 반드시 확인해야 합니다.
+        </p>
+
+        <h3>2. SMBv1 사용 여부</h3>
+        <p>
+          과거 대규모 랜섬웨어 확산에 악용됐던 구형 프로토콜인 SMBv1은 특별한 legacy 장비 연동 목적이 아니라면
+          꺼두는 것이 원칙입니다. '제어판 → 프로그램 → Windows 기능 켜기/끄기'에서 SMB 1.0/CIFS 파일 공유 지원 항목을
+          해제하면 됩니다.
+        </p>
+
+        <h3>3. 계정별 공유 권한과 NTFS 권한</h3>
+        <p>
+          모두가 모든 폴더에 접근할 수 있도록 'Everyone'에게 전체 읽기/쓰기 권한을 주는 방식은 편리하지만,
+          한 계정이 뚫리면 회사 전체 자료가 함께 위험해집니다. 부서·직무별로 필요한 폴더에만 접근하도록
+          공유 권한과 NTFS 권한을 분리해서 관리하고, 퇴사자 계정은 즉시 회수하는 절차를 마련해야 합니다.
+        </p>
+
+        <h3>4. 접근 로그와 남은 권한</h3>
+        <p>
+          누가 언제 어떤 파일에 접근했는지 감사 로그를 남기면, 이상 징후(대량 파일 이동, 새벽 시간대 접근 등)를
+          빠르게 발견할 수 있습니다. 소규모 조직이라도 분기에 한 번은 공유 권한 목록을 전체 점검해
+          더 이상 필요 없는 접근 권한이 남아있지 않은지 확인하는 것을 권장합니다.
+        </p>
+
+        <p>공유 설정을 PC마다 반복해서 점검하기 번거로울 때 <strong>BZ SMB Settings</strong>를 활용할 수 있습니다. 도구를 쓰더라도 허용할 네트워크와 계정, 필요한 권한은 사용 환경에 맞게 정해야 합니다.</p>
+      </article>
+    </div>
+  </section>
+
+  <!-- 하단 : 사업자 정보 (index.html과 동일) -->
+  <footer class="footer">
+    <div class="inner">
+      <div>
+        <img class="ftr_logo" src="../images/logo.png" alt="솔루션 비제트 로고" />
+      </div>
+      <div class="info">
+        <ul>
+          <li>회사명 : 솔루션 비제트</li>
+          <li>대표자 : 박영</li>
+          <li>주소 : 경남 김해시 삼계중앙로6번길 21-18 101호</li>
+          <li>이메일 : ytbiz048@gmail.com </li>
+        </ul>
+        <ul>
+          <li>팩스 : 0504-229-2760</li>
+          <li>사업자등록번호 : 123-65-20119</li>
+          <li>통신판매업신고 : 제 2024-경남김해-0729 호</li>
+        </ul>
+      </div>
+      <p>COPYRIGHT (c) 솔루션 비제트 ALL RIGHTS RESERVED.</p>
+      <p>저작권 관련 수정 필요 내용이 있을 경우 이메일 혹은 전화로 연락 주시면 최대한 빠르게 수정 진행하겠습니다.</p>
+      <p><a href="../privacy.html">개인정보처리방침 전문 보기</a></p>
+      <p class="footer-privacy">개인정보처리방침 안내 : 솔루션 비제트는 문의 응대 등 서비스 제공을 위해 이름·연락처·이메일 등 최소한의 개인정보를 필요한 기간 동안만 수집·보관하며, 관련 법령에 따라 안전하게 관리합니다. 서비스 개선 및 광고 제공을 위해 쿠키가 사용될 수 있으며, 자세한 사항은 이메일 또는 전화로 문의하실 수 있습니다.</p>
+    </div>
+  </footer>
+
+  <script src="../script.js"></script>
+</body>
+</html>

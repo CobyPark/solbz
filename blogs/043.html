@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="OpenClaw 02. Windows 설치: 데스크톱 앱·PowerShell·WSL2 중 선택하기 - 솔루션 비제트 IT 정보글">
+  <title>OpenClaw 02. Windows 설치: 데스크톱 앱·PowerShell·WSL2 중 선택하기 - 솔루션 비제트</title>
+  <link rel="stylesheet" href="../style.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+  <script src="https://code.jquery.com/jquery-latest.min.js"></script>
+  <!-- 파비콘 -->
+  <link rel="icon" type="image/png" sizes="32x32" href="../images/logo2.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="../images/logo2.png">
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8588372040849412"
+    crossorigin="anonymous"></script>
+</head>
+
+<body class="information-blog">
+  <!-- 헤더 (index.html과 동일) -->
+  <div class="container">
+    <header class="header">
+      <h1 class="logo"><a href="../index.html">Solution BZ</a></h1>
+      <nav class="nav">
+        <ul>
+          <li class="nav-dropdown">
+            <span class="nav-dropdown-toggle">전체 프로그램</span>
+            <ul class="nav-dropdown-menu">
+              <li><a href="../bss.html">BZ SMB Settings</a></li>
+              <li><a href="../solar.html">Solar BZ</a></li>
+              <li><a href="../ssolzip.html">쏠집(SSolZip)</a></li>
+              <li><a href="../ssolview.html">쏠뷰(SSolView)</a></li>
+              <li><a>웹 기반 에이전트 AI(출시 예정)</a></li>
+            </ul>
+          </li>
+          <li><a href="../profile.html">대표 소개</a></li>
+          <li><a href="../blogs.html">블로그</a></li>
+          <li><a href="../index.html#contact">제품 및 강의 문의</a></li>
+        </ul>
+      </nav>
+    </header>
+  </div>
+
+  <section class="blog-page">
+    <div class="inner">
+      <article class="blog-post" id="post-openclaw-02">
+        <a class="blog-post-back" href="../blogs.html#post-openclaw-02">목록으로 돌아가기</a>
+        <span class="blog-post-category">OpenClaw 입문 시리즈 · 02/14</span>
+        <h2>OpenClaw 02. Windows 설치: 데스크톱 앱·PowerShell·WSL2 중 선택하기</h2>
+        <p class="blog-post-meta">솔루션 비제트 · 공식 문서 기반 사용 안내 · <time datetime="2026-10-19">2026.10.19</time></p>
+        <p>Windows 설치 문서를 보면 앱, PowerShell, WSL2가 함께 나옵니다. 세 가지를 전부 설치하라는 뜻은 아닙니다. 관리하기 편한 경로 하나를 고르고, 설정과 Gateway가 어느 환경에 생기는지 알아두세요.</p>
+        <h3>화면으로 시작하는 Windows Hub</h3>
+<p>공식 Windows 문서에서 연결한 Windows Hub 릴리스 페이지를 열고 PC 아키텍처에 맞는 설치 파일을 선택합니다. 설치 뒤 OpenClaw Companion을 실행해 로컬 설정 또는 기존 Gateway 연결을 선택합니다. 현재 Hub의 로컬 설정은 앱이 관리하는 WSL Gateway를 준비하는 방식이므로 단순히 기존 Ubuntu에 설치한 것과 구분해야 합니다.</p>
+<p>이미 사용 중인 Gateway가 있다면 새 로컬 인스턴스를 추가하기 전에 연결 대상을 확인하세요. 트레이가 연결 상태를 보여주더라도 모델 답변까지 검증된 것은 아니므로 이후 대화 시험을 진행합니다. 앱과 CLI는 버전 배포 주기가 다를 수 있습니다.</p>
+<h3>PowerShell에서 CLI 설치</h3>
+<p>아래는 공식 설치 스크립트 명령입니다. 원격 스크립트를 가져와 실행하므로 공식 도메인과 스크립트 내용을 확인한 뒤 선택한 경로에서 실행하세요. 설치가 끝나면 같은 PowerShell에서 버전과 상태를 확인하고, 명령을 찾지 못하면 새 터미널과 PATH를 점검합니다.</p>
+<pre tabindex="0" aria-label="명령어 또는 설정 예제"><code>iwr -useb https://openclaw.ai/install.ps1 | iex
+openclaw --version
+openclaw gateway status</code></pre>
+<h3>Linux 환경을 쓰려면 WSL2</h3>
+<p>Linux 환경과의 호환성이 필요한 경우 공식 Windows 문서의 WSL2 절차를 따릅니다. 설치와 실행은 해당 배포판의 Linux 터미널에서 하고, PowerShell용 명령과 섞지 마세요. Windows와 WSL의 경로·환경변수·서비스는 구분해 관리해야 합니다. WSL2를 준비한 뒤에는 다음 편의 Linux 설치 흐름을 참고할 수 있습니다.</p>
+
+        <aside class="blog-worked-example" aria-label="설명용 실습 예시"><h3>설치 경로 메모해 두기</h3><p>실습 기록에 “PowerShell 네이티브 설치”처럼 선택한 경로를 적고, 대시보드가 연결할 Gateway도 기록합니다. 나중에 앱을 추가할 때는 먼저 그 Gateway를 재사용할지 결정합니다. 같은 PC에 여러 환경을 설치해 둔 경우 실행기와 설정 위치를 함께 구분합니다.</p></aside>
+        <h3>Windows 설치가 끝났다면</h3>
+        <ul><li>선택한 설치 경로와 실행 터미널이 일치하는가</li><li>앱용 Gateway와 수동 설치 Gateway를 혼동하지 않는가</li><li>설치 후 버전과 실행 상태를 확인했는가</li></ul>
+        <p class="blog-sources">공식 참고: <a href="https://docs.openclaw.ai/platforms/windows">공식 Windows 설치 안내</a> · <a href="https://docs.openclaw.ai/install">설치 방식 비교</a>. 문서 확인: 2026.10.19.</p>
+        <nav class="blog-related" aria-label="OpenClaw 02편 탐색"><a rel="prev" href="042.html#post-openclaw-01">이전 편</a> · <a href="../blogs.html#openclaw-series">시리즈 목차</a> · <a rel="next" href="044.html#post-openclaw-03">다음 편</a> · <a href="../blogs.html#ai-guides">전체 목차</a></nav>
+      </article>
+    </div>
+  </section>
+
+  <!-- 하단 : 사업자 정보 (index.html과 동일) -->
+  <footer class="footer">
+    <div class="inner">
+      <div>
+        <img class="ftr_logo" src="../images/logo.png" alt="솔루션 비제트 로고" />
+      </div>
+      <div class="info">
+        <ul>
+          <li>회사명 : 솔루션 비제트</li>
+          <li>대표자 : 박영</li>
+          <li>주소 : 경남 김해시 삼계중앙로6번길 21-18 101호</li>
+          <li>이메일 : ytbiz048@gmail.com </li>
+        </ul>
+        <ul>
+          <li>팩스 : 0504-229-2760</li>
+          <li>사업자등록번호 : 123-65-20119</li>
+          <li>통신판매업신고 : 제 2024-경남김해-0729 호</li>
+        </ul>
+      </div>
+      <p>COPYRIGHT (c) 솔루션 비제트 ALL RIGHTS RESERVED.</p>
+      <p>저작권 관련 수정 필요 내용이 있을 경우 이메일 혹은 전화로 연락 주시면 최대한 빠르게 수정 진행하겠습니다.</p>
+      <p><a href="../privacy.html">개인정보처리방침 전문 보기</a></p>
+      <p class="footer-privacy">개인정보처리방침 안내 : 솔루션 비제트는 문의 응대 등 서비스 제공을 위해 이름·연락처·이메일 등 최소한의 개인정보를 필요한 기간 동안만 수집·보관하며, 관련 법령에 따라 안전하게 관리합니다. 서비스 개선 및 광고 제공을 위해 쿠키가 사용될 수 있으며, 자세한 사항은 이메일 또는 전화로 문의하실 수 있습니다.</p>
+    </div>
+  </footer>
+
+  <script src="../script.js"></script>
+</body>
+</html>

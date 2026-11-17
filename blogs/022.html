@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Codex 09. 코드 리뷰 요청하기: 변경 요약보다 재현 가능한 문제 찾기 - 솔루션 비제트 IT 정보글">
+  <title>Codex 09. 코드 리뷰 요청하기: 변경 요약보다 재현 가능한 문제 찾기 - 솔루션 비제트</title>
+  <link rel="stylesheet" href="../style.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+  <script src="https://code.jquery.com/jquery-latest.min.js"></script>
+  <!-- 파비콘 -->
+  <link rel="icon" type="image/png" sizes="32x32" href="../images/logo2.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="../images/logo2.png">
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8588372040849412"
+    crossorigin="anonymous"></script>
+</head>
+
+<body class="information-blog">
+  <!-- 헤더 (index.html과 동일) -->
+  <div class="container">
+    <header class="header">
+      <h1 class="logo"><a href="../index.html">Solution BZ</a></h1>
+      <nav class="nav">
+        <ul>
+          <li class="nav-dropdown">
+            <span class="nav-dropdown-toggle">전체 프로그램</span>
+            <ul class="nav-dropdown-menu">
+              <li><a href="../bss.html">BZ SMB Settings</a></li>
+              <li><a href="../solar.html">Solar BZ</a></li>
+              <li><a href="../ssolzip.html">쏠집(SSolZip)</a></li>
+              <li><a href="../ssolview.html">쏠뷰(SSolView)</a></li>
+              <li><a>웹 기반 에이전트 AI(출시 예정)</a></li>
+            </ul>
+          </li>
+          <li><a href="../profile.html">대표 소개</a></li>
+          <li><a href="../blogs.html">블로그</a></li>
+          <li><a href="../index.html#contact">제품 및 강의 문의</a></li>
+        </ul>
+      </nav>
+    </header>
+  </div>
+
+  <section class="blog-page">
+    <div class="inner">
+      <article class="blog-post" id="post-codex-09">
+        <a class="blog-post-back" href="../blogs.html#post-codex-09">목록으로 돌아가기</a>
+        <span class="blog-post-category">Codex 활용 시리즈 · 09/13</span>
+        <h2>Codex 09. 코드 리뷰 요청하기: 변경 요약보다 재현 가능한 문제 찾기</h2>
+        <p class="blog-post-meta">솔루션 비제트 · OpenAI 공식 문서 기반 가이드 · <time datetime="2026-10-19">2026.10.19</time></p>
+        <p>변경 내용을 요약하는 일과 버그를 찾는 리뷰는 다릅니다. Codex에 리뷰를 맡길 때는 비교할 브랜치나 커밋을 정하고, 어떤 입력에서 문제가 생기는지 근거를 달라고 요청하세요. 파일 수정이나 외부 댓글 게시도 함께 할지는 따로 정하면 됩니다.</p>
+        <h3>어떤 변경을 리뷰할지</h3>
+<p>커밋되지 않은 변경, 특정 커밋, 기준 브랜치와의 차이 중 무엇을 볼지 정합니다. PR을 검토한다면 실제 링크와 현재 변경 상태를 확인하세요. 로컬 검토와 외부 PR 댓글 게시를 별도 행동으로 구분할 수 있습니다.</p>
+<h3>조건과 영향이 있는 지적</h3>
+<p>실행 조건, 잘못되는 결과, 관련 코드 위치를 포함해 달라고 요청합니다. 취향이나 일반적인 개선 의견보다 현재 변경이 만든 문제를 우선하도록 정할 수 있습니다. 발견 사항이 없더라도 모든 위험이 없다는 보장은 아니므로 어디까지 살펴봤는지도 읽어보세요.</p>
+<pre tabindex="0" aria-label="실습용 명령 또는 요청 예시"><code>현재 변경을 기준 브랜치와 비교해 리뷰해 줘.
+재현 조건과 영향이 있는 문제를 우선하고 근거 코드 위치를 알려줘.
+지금은 파일 수정이나 외부 댓글 게시 없이 발견 사항만 정리해 줘.</code></pre>
+<h3>수정한 뒤 다시 재현</h3>
+<p>각 발견 사항이 실제 코드에서 성립하는지 확인한 뒤 수정 여부를 정합니다. 수정 후에는 해당 문제가 해결됐는지와 다른 경로에 영향이 없는지를 다시 검증하세요. 처음 리뷰와 다른 커밋을 보고 있다면 비교 대상을 갱신해야 합니다.</p>
+<p>공식 Code Review 기능과 외부 저장소 연동은 계정·연결·저장소 접근 권한이 필요할 수 있습니다. 자동 리뷰가 활성화됐는지와 요청한 채팅 리뷰가 실행됐는지도 구분해서 확인합니다.</p>
+
+        <aside class="blog-worked-example" aria-label="설명용 적용 과제"><h3>날짜 필터 리뷰의 질문</h3><p>날짜 필터 변경을 리뷰하며 “시간대 경계의 누락”을 중점으로 봅니다. 발견 사항이 나오면 자정 전후 입력으로 재현하고, 수정 뒤 같은 표본으로 확인합니다. 재현되지 않는 지적은 근거를 추가로 확인합니다.</p></aside>
+        <h3>발견 사항을 읽는 기준</h3><ul><li>현재 비교 기준과 대상 커밋이 명확한가</li><li>발견 사항에 조건·영향·위치가 있는가</li><li>리뷰 결과와 수정 후 검증을 구분했는가</li></ul>
+        <p class="blog-sources">공식 참고: <a href="https://learn.chatgpt.com/docs/code-review">Code Review 공식 안내</a>. 문서 확인: 2026.10.19.</p>
+        <nav class="blog-related" aria-label="Codex 09편 탐색"><a rel="prev" href="021.html#post-codex-08">이전 편</a> · <a href="../blogs.html#codex-series">시리즈 목차</a> · <a rel="next" href="023.html#post-codex-10">다음 편</a> · <a href="../blogs.html#ai-guides">전체 목차</a></nav>
+      </article>
+    </div>
+  </section>
+
+  <!-- 하단 : 사업자 정보 (index.html과 동일) -->
+  <footer class="footer">
+    <div class="inner">
+      <div>
+        <img class="ftr_logo" src="../images/logo.png" alt="솔루션 비제트 로고" />
+      </div>
+      <div class="info">
+        <ul>
+          <li>회사명 : 솔루션 비제트</li>
+          <li>대표자 : 박영</li>
+          <li>주소 : 경남 김해시 삼계중앙로6번길 21-18 101호</li>
+          <li>이메일 : ytbiz048@gmail.com </li>
+        </ul>
+        <ul>
+          <li>팩스 : 0504-229-2760</li>
+          <li>사업자등록번호 : 123-65-20119</li>
+          <li>통신판매업신고 : 제 2024-경남김해-0729 호</li>
+        </ul>
+      </div>
+      <p>COPYRIGHT (c) 솔루션 비제트 ALL RIGHTS RESERVED.</p>
+      <p>저작권 관련 수정 필요 내용이 있을 경우 이메일 혹은 전화로 연락 주시면 최대한 빠르게 수정 진행하겠습니다.</p>
+      <p><a href="../privacy.html">개인정보처리방침 전문 보기</a></p>
+      <p class="footer-privacy">개인정보처리방침 안내 : 솔루션 비제트는 문의 응대 등 서비스 제공을 위해 이름·연락처·이메일 등 최소한의 개인정보를 필요한 기간 동안만 수집·보관하며, 관련 법령에 따라 안전하게 관리합니다. 서비스 개선 및 광고 제공을 위해 쿠키가 사용될 수 있으며, 자세한 사항은 이메일 또는 전화로 문의하실 수 있습니다.</p>
+    </div>
+  </footer>
+
+  <script src="../script.js"></script>
+</body>
+</html>

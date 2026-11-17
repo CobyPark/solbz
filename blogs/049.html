@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="OpenClaw 08. Telegram 연결: 봇 생성부터 첫 DM 페어링까지 - 솔루션 비제트 IT 정보글">
+  <title>OpenClaw 08. Telegram 연결: 봇 생성부터 첫 DM 페어링까지 - 솔루션 비제트</title>
+  <link rel="stylesheet" href="../style.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+  <script src="https://code.jquery.com/jquery-latest.min.js"></script>
+  <!-- 파비콘 -->
+  <link rel="icon" type="image/png" sizes="32x32" href="../images/logo2.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="../images/logo2.png">
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8588372040849412"
+    crossorigin="anonymous"></script>
+</head>
+
+<body class="information-blog">
+  <!-- 헤더 (index.html과 동일) -->
+  <div class="container">
+    <header class="header">
+      <h1 class="logo"><a href="../index.html">Solution BZ</a></h1>
+      <nav class="nav">
+        <ul>
+          <li class="nav-dropdown">
+            <span class="nav-dropdown-toggle">전체 프로그램</span>
+            <ul class="nav-dropdown-menu">
+              <li><a href="../bss.html">BZ SMB Settings</a></li>
+              <li><a href="../solar.html">Solar BZ</a></li>
+              <li><a href="../ssolzip.html">쏠집(SSolZip)</a></li>
+              <li><a href="../ssolview.html">쏠뷰(SSolView)</a></li>
+              <li><a>웹 기반 에이전트 AI(출시 예정)</a></li>
+            </ul>
+          </li>
+          <li><a href="../profile.html">대표 소개</a></li>
+          <li><a href="../blogs.html">블로그</a></li>
+          <li><a href="../index.html#contact">제품 및 강의 문의</a></li>
+        </ul>
+      </nav>
+    </header>
+  </div>
+
+  <section class="blog-page">
+    <div class="inner">
+      <article class="blog-post" id="post-openclaw-08">
+        <a class="blog-post-back" href="../blogs.html#post-openclaw-08">목록으로 돌아가기</a>
+        <span class="blog-post-category">OpenClaw 입문 시리즈 · 08/14</span>
+        <h2>OpenClaw 08. Telegram 연결: 봇 생성부터 첫 DM 페어링까지</h2>
+        <p class="blog-post-meta">솔루션 비제트 · 공식 문서 기반 사용 안내 · <time datetime="2026-10-19">2026.10.19</time></p>
+        <p>대시보드에서 답변을 받았다면 Telegram 봇을 연결해 볼 차례입니다. 토큰은 봇을 연결하는 값이고, 페어링은 대화 상대를 승인하는 절차입니다. 처음에는 본인 DM만 열고 그룹 설정은 나중에 다루겠습니다.</p>
+        <h3>BotFather에서 토큰 받기</h3>
+<p>Telegram에서 계정명이 정확히 @BotFather인지 확인하고 /newbot을 실행해 안내에 따라 이름과 사용자명을 정합니다. 발급된 토큰은 봇 제어에 필요한 비밀 값이므로 채팅 기록이나 화면 캡처로 공개하지 않습니다. 유출했다면 BotFather에서 교체 절차를 진행해야 합니다.</p>
+<p>OpenClaw의 채널 추가 흐름을 열어 Telegram을 선택하고 로컬 설정 단계에서 토큰을 등록합니다. 현재 버전의 입력 옵션은 도움말과 공식 설정 문서를 확인하세요. Telegram은 QR 로그인 채널처럼 channels login telegram을 사용하는 방식이 아닙니다.</p>
+<pre tabindex="0" aria-label="명령어 또는 설정 예제"><code>openclaw channels add
+openclaw channels status --probe</code></pre>
+<h3>첫 DM의 페어링 승인</h3>
+<p>Gateway가 실행 중인 상태에서 새 봇에 본인 Telegram 계정으로 메시지를 보냅니다. 페어링 정책에서는 연결 코드가 생성됩니다. Gateway가 있는 환경에서 요청 목록을 확인한 뒤 본인 요청만 승인하세요. 아래 &lt;CODE&gt;는 받은 실제 코드로 바꿉니다.</p>
+<pre tabindex="0" aria-label="명령어 또는 설정 예제"><code>openclaw pairing list telegram
+openclaw pairing approve telegram &lt;CODE&gt;</code></pre>
+<p>승인 후 다시 짧은 질문을 보내 응답을 확인합니다. 토큰이 정상이어도 모델 인증이 실패하면 답변은 오지 않을 수 있습니다. 채널 상태와 모델 상태를 별도 확인하고, 오래된 페어링 코드는 새 요청을 만들어 확인하세요.</p>
+<h3>그룹에 넣을 때의 별도 설정</h3>
+<p>개인 DM 승인만으로 모든 그룹을 허용한 것은 아닙니다. 그룹 ID, 허용 사용자, 멘션 조건과 Telegram Privacy Mode를 공식 문서에서 확인하세요. 모든 메시지를 읽게 하려고 바로 관리자 권한을 주기보다 필요한 대화 범위부터 정합니다. 처음 실습에서는 그룹 연결을 생략해도 됩니다.</p>
+
+        <aside class="blog-worked-example" aria-label="설명용 실습 예시"><h3>본인 DM으로 메모 보내기</h3><p>본인 DM에서 작업 메모 두 문장을 정리하도록 요청합니다. 대시보드에서도 해당 실행의 결과를 확인하고, 허용하지 않은 계정의 요청은 처리되지 않는지 별도 시험할 수 있습니다. 그 시험에 실제 고객이나 제삼자의 자료를 사용하지 않습니다.</p></aside>
+        <h3>Telegram 연결 후</h3>
+        <ul><li>봇 토큰과 페어링 코드를 구분했는가</li><li>본인 요청만 승인했는가</li><li>DM과 그룹 허용 범위를 별도로 관리하는가</li></ul>
+        <p class="blog-sources">공식 참고: <a href="https://docs.openclaw.ai/channels/telegram/setup">Telegram 설정 절차</a> · <a href="https://docs.openclaw.ai/channels/pairing">페어링 개요</a>. 문서 확인: 2026.10.19.</p>
+        <nav class="blog-related" aria-label="OpenClaw 08편 탐색"><a rel="prev" href="048.html#post-openclaw-07">이전 편</a> · <a href="../blogs.html#openclaw-series">시리즈 목차</a> · <a rel="next" href="050.html#post-openclaw-09">다음 편</a> · <a href="../blogs.html#ai-guides">전체 목차</a></nav>
+      </article>
+    </div>
+  </section>
+
+  <!-- 하단 : 사업자 정보 (index.html과 동일) -->
+  <footer class="footer">
+    <div class="inner">
+      <div>
+        <img class="ftr_logo" src="../images/logo.png" alt="솔루션 비제트 로고" />
+      </div>
+      <div class="info">
+        <ul>
+          <li>회사명 : 솔루션 비제트</li>
+          <li>대표자 : 박영</li>
+          <li>주소 : 경남 김해시 삼계중앙로6번길 21-18 101호</li>
+          <li>이메일 : ytbiz048@gmail.com </li>
+        </ul>
+        <ul>
+          <li>팩스 : 0504-229-2760</li>
+          <li>사업자등록번호 : 123-65-20119</li>
+          <li>통신판매업신고 : 제 2024-경남김해-0729 호</li>
+        </ul>
+      </div>
+      <p>COPYRIGHT (c) 솔루션 비제트 ALL RIGHTS RESERVED.</p>
+      <p>저작권 관련 수정 필요 내용이 있을 경우 이메일 혹은 전화로 연락 주시면 최대한 빠르게 수정 진행하겠습니다.</p>
+      <p><a href="../privacy.html">개인정보처리방침 전문 보기</a></p>
+      <p class="footer-privacy">개인정보처리방침 안내 : 솔루션 비제트는 문의 응대 등 서비스 제공을 위해 이름·연락처·이메일 등 최소한의 개인정보를 필요한 기간 동안만 수집·보관하며, 관련 법령에 따라 안전하게 관리합니다. 서비스 개선 및 광고 제공을 위해 쿠키가 사용될 수 있으며, 자세한 사항은 이메일 또는 전화로 문의하실 수 있습니다.</p>
+    </div>
+  </footer>
+
+  <script src="../script.js"></script>
+</body>
+</html>

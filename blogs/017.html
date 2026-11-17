@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Codex 04. IDE 확장에서 열린 파일과 선택 영역을 맥락으로 전달하기 - 솔루션 비제트 IT 정보글">
+  <title>Codex 04. IDE 확장에서 열린 파일과 선택 영역을 맥락으로 전달하기 - 솔루션 비제트</title>
+  <link rel="stylesheet" href="../style.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+  <script src="https://code.jquery.com/jquery-latest.min.js"></script>
+  <!-- 파비콘 -->
+  <link rel="icon" type="image/png" sizes="32x32" href="../images/logo2.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="../images/logo2.png">
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8588372040849412"
+    crossorigin="anonymous"></script>
+</head>
+
+<body class="information-blog">
+  <!-- 헤더 (index.html과 동일) -->
+  <div class="container">
+    <header class="header">
+      <h1 class="logo"><a href="../index.html">Solution BZ</a></h1>
+      <nav class="nav">
+        <ul>
+          <li class="nav-dropdown">
+            <span class="nav-dropdown-toggle">전체 프로그램</span>
+            <ul class="nav-dropdown-menu">
+              <li><a href="../bss.html">BZ SMB Settings</a></li>
+              <li><a href="../solar.html">Solar BZ</a></li>
+              <li><a href="../ssolzip.html">쏠집(SSolZip)</a></li>
+              <li><a href="../ssolview.html">쏠뷰(SSolView)</a></li>
+              <li><a>웹 기반 에이전트 AI(출시 예정)</a></li>
+            </ul>
+          </li>
+          <li><a href="../profile.html">대표 소개</a></li>
+          <li><a href="../blogs.html">블로그</a></li>
+          <li><a href="../index.html#contact">제품 및 강의 문의</a></li>
+        </ul>
+      </nav>
+    </header>
+  </div>
+
+  <section class="blog-page">
+    <div class="inner">
+      <article class="blog-post" id="post-codex-04">
+        <a class="blog-post-back" href="../blogs.html#post-codex-04">목록으로 돌아가기</a>
+        <span class="blog-post-category">Codex 활용 시리즈 · 04/13</span>
+        <h2>Codex 04. IDE 확장에서 열린 파일과 선택 영역을 맥락으로 전달하기</h2>
+        <p class="blog-post-meta">솔루션 비제트 · OpenAI 공식 문서 기반 가이드 · <time datetime="2026-10-19">2026.10.19</time></p>
+        <p>IDE 확장은 코드를 보면서 바로 질문하기에 편합니다. 다만 함수 몇 줄을 선택했다고 필요한 배경까지 모두 전달되는 것은 아닙니다. 실패한 입력과 호출부를 함께 알려주면 어디까지 조사해야 할지 훨씬 분명해집니다.</p>
+        <h3>편집기에서 Codex 패널 열기</h3>
+<p>공식 IDE 안내에서 사용하는 편집기의 설치 방법을 확인합니다. VS Code 계열과 다른 IDE의 통합 경로는 다를 수 있습니다. 프로젝트를 연 뒤 Codex 패널에서 로그인과 현재 작업 루트를 확인하세요. 다중 루트 작업 공간이라면 대상 폴더를 명확히 선택합니다.</p>
+<h3>선택한 코드에 증상 덧붙이기</h3>
+<p>문제가 발생하는 함수와 호출 위치, 오류 메시지, 기대 결과를 전달합니다. 선택 영역이 짧아도 의존하는 타입이나 설정이 다른 파일에 있을 수 있습니다. Codex가 관련 파일을 확인하도록 허용할 범위와 외부 동작을 바꿔도 되는지를 설명하세요.</p>
+<pre tabindex="0" aria-label="실습용 명령 또는 요청 예시"><code>선택한 함수에서 빈 목록 입력이 실패하는 원인을 찾아줘.
+호출부를 함께 확인하고 공개 함수 인자와 반환 형식은 유지해 줘.
+수정 뒤 빈 목록과 일반 입력을 검증해 줘.</code></pre>
+<h3>바뀐 함수와 호출부 함께 보기</h3>
+<p>요약을 읽은 뒤 변경된 함수와 호출부를 함께 확인합니다. 같은 채팅에서 후속 수정이 가능하더라도 이미 검증한 범위를 무작정 넓히지 않습니다. IDE가 보여주는 변경과 실제 저장소 diff가 같은지도 확인하세요.</p>
+<p>확장에서 지원하지 않는 플러그인이나 앱 기능이 있을 수 있습니다. 다른 화면의 기능을 사용할 때는 해당 클라이언트의 지원 여부를 공식 문서에서 확인하고, 편집기 확장이 모든 앱 기능을 포함한다고 가정하지 않습니다.</p>
+
+        <aside class="blog-worked-example" aria-label="설명용 적용 과제"><h3>빈 목록에서 실패하는 함수</h3><p>가상 목록 처리 함수의 선택 영역과 실패 입력을 전달합니다. 수정 뒤 호출부의 반환값 사용 방식이 유지되는지 확인하고, 편집기에서 직접 테스트 결과와 변경 줄을 대조합니다.</p></aside>
+        <h3>수정 결과를 볼 때</h3><ul><li>대상 작업 루트와 관련 파일이 명확한가</li><li>기대 동작과 유지할 인터페이스를 설명했는가</li><li>변경된 코드와 검증 결과를 함께 확인했는가</li></ul>
+        <p class="blog-sources">공식 참고: <a href="https://learn.chatgpt.com/docs/codex/ide">Codex IDE 시작 안내</a>. 문서 확인: 2026.10.19.</p>
+        <nav class="blog-related" aria-label="Codex 04편 탐색"><a rel="prev" href="016.html#post-codex-03">이전 편</a> · <a href="../blogs.html#codex-series">시리즈 목차</a> · <a rel="next" href="018.html#post-codex-05">다음 편</a> · <a href="../blogs.html#ai-guides">전체 목차</a></nav>
+      </article>
+    </div>
+  </section>
+
+  <!-- 하단 : 사업자 정보 (index.html과 동일) -->
+  <footer class="footer">
+    <div class="inner">
+      <div>
+        <img class="ftr_logo" src="../images/logo.png" alt="솔루션 비제트 로고" />
+      </div>
+      <div class="info">
+        <ul>
+          <li>회사명 : 솔루션 비제트</li>
+          <li>대표자 : 박영</li>
+          <li>주소 : 경남 김해시 삼계중앙로6번길 21-18 101호</li>
+          <li>이메일 : ytbiz048@gmail.com </li>
+        </ul>
+        <ul>
+          <li>팩스 : 0504-229-2760</li>
+          <li>사업자등록번호 : 123-65-20119</li>
+          <li>통신판매업신고 : 제 2024-경남김해-0729 호</li>
+        </ul>
+      </div>
+      <p>COPYRIGHT (c) 솔루션 비제트 ALL RIGHTS RESERVED.</p>
+      <p>저작권 관련 수정 필요 내용이 있을 경우 이메일 혹은 전화로 연락 주시면 최대한 빠르게 수정 진행하겠습니다.</p>
+      <p><a href="../privacy.html">개인정보처리방침 전문 보기</a></p>
+      <p class="footer-privacy">개인정보처리방침 안내 : 솔루션 비제트는 문의 응대 등 서비스 제공을 위해 이름·연락처·이메일 등 최소한의 개인정보를 필요한 기간 동안만 수집·보관하며, 관련 법령에 따라 안전하게 관리합니다. 서비스 개선 및 광고 제공을 위해 쿠키가 사용될 수 있으며, 자세한 사항은 이메일 또는 전화로 문의하실 수 있습니다.</p>
+    </div>
+  </footer>
+
+  <script src="../script.js"></script>
+</body>
+</html>

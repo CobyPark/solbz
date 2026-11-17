@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Claude 12. 코드 수정 맡기기: 재현 입력에서 변경 검토까지 - 솔루션 비제트 IT 정보글">
+  <title>Claude 12. 코드 수정 맡기기: 재현 입력에서 변경 검토까지 - 솔루션 비제트</title>
+  <link rel="stylesheet" href="../style.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+  <script src="https://code.jquery.com/jquery-latest.min.js"></script>
+  <!-- 파비콘 -->
+  <link rel="icon" type="image/png" sizes="32x32" href="../images/logo2.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="../images/logo2.png">
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8588372040849412"
+    crossorigin="anonymous"></script>
+</head>
+
+<body class="information-blog">
+  <!-- 헤더 (index.html과 동일) -->
+  <div class="container">
+    <header class="header">
+      <h1 class="logo"><a href="../index.html">Solution BZ</a></h1>
+      <nav class="nav">
+        <ul>
+          <li class="nav-dropdown">
+            <span class="nav-dropdown-toggle">전체 프로그램</span>
+            <ul class="nav-dropdown-menu">
+              <li><a href="../bss.html">BZ SMB Settings</a></li>
+              <li><a href="../solar.html">Solar BZ</a></li>
+              <li><a href="../ssolzip.html">쏠집(SSolZip)</a></li>
+              <li><a href="../ssolview.html">쏠뷰(SSolView)</a></li>
+              <li><a>웹 기반 에이전트 AI(출시 예정)</a></li>
+            </ul>
+          </li>
+          <li><a href="../profile.html">대표 소개</a></li>
+          <li><a href="../blogs.html">블로그</a></li>
+          <li><a href="../index.html#contact">제품 및 강의 문의</a></li>
+        </ul>
+      </nav>
+    </header>
+  </div>
+
+  <section class="blog-page">
+    <div class="inner">
+      <article class="blog-post" id="post-claude-12">
+        <a class="blog-post-back" href="../blogs.html#post-claude-12">목록으로 돌아가기</a>
+        <span class="blog-post-category">Claude 활용 시리즈 · 12/13</span>
+        <h2>Claude 12. 코드 수정 맡기기: 재현 입력에서 변경 검토까지</h2>
+        <p class="blog-post-meta">솔루션 비제트 · Anthropic 공식 문서 참고 가이드 · <time datetime="2026-10-28">2026.10.28</time></p>
+        <p>“검색 오류를 고쳐 줘”라는 요청만으로는 어떤 상태가 정상인지 알기 어렵습니다. 빈 검색어에서만 실패하는지, 특정 글자에서 실패하는지부터 좁혀야 합니다. Claude Code에도 같은 입력과 기대 결과를 주면 수정 뒤 무엇을 다시 확인할지가 분명해집니다.</p>
+<h3>오류가 나는 순서를 적는다</h3>
+<p>현재 브랜치와 커밋하지 않은 변경을 확인하고 시작합니다. 이미 수정 중인 파일이 있다면 그 목적도 알려 주세요. 재현 정보에는 화면 또는 명령, 입력값, 실제 결과, 기대 결과가 들어가면 됩니다. 로그 전체보다 오류와 직접 관련된 부분을 골라 주는 편이 읽기 쉽습니다.</p>
+<pre tabindex="0" aria-label="빈 검색어 오류 수정 요청 예시"><code>검색 화면에서 입력칸을 비운 채 조회하면 오류가 발생해.
+기대 결과는 오류 없이 빈 검색어 안내를 보여 주는 것이야.
+일반 검색과 기존 API 응답 형식은 유지해 줘.
+먼저 관련 코드를 찾고 원인을 설명한 뒤 필요한 부분을 수정해 줘.
+빈 입력과 일반 입력을 검증하고 실행한 명령과 결과를 알려 줘.
+커밋과 푸시는 아직 하지 말아 줘.</code></pre>
+<p>원인 설명에 나온 파일과 실제 변경 파일이 이어지는지 봅니다. 단순 입력 오류를 고치면서 인증이나 데이터 형식까지 바뀌었다면 왜 필요한지 검토해야 합니다. 수정 범위를 줄이되 같은 원인에서 생기는 오류까지 놓치지 않도록 관련 호출부를 함께 살펴봅니다.</p>
+<h3>권한 요청은 실행할 일을 읽는 기회</h3>
+<p>Claude Code의 동작은 권한 모드와 허용 규칙의 영향을 받습니다. 명령 실행이나 파일 변경을 요청받으면 대상과 이유를 읽으세요. 계획을 세워 달라는 요청과 실제 편집·배포까지 맡기는 요청은 범위가 다릅니다. 작업 지침에 적었다는 이유만으로 실행 권한이 설정되는 것도 아닙니다.</p>
+<h3>통과했다고 적힌 검사만 보지 않기</h3>
+<p>테스트가 통과했더라도 빈 입력을 실제로 다루는 검사인지 봅니다. 실행하지 못한 검사는 통과한 검사와 따로 남겨야 합니다. 화면 문제라면 브라우저에서 오류 문구와 입력 유지 여부를 직접 볼 필요도 있습니다.</p>
+<p>마지막에는 <code>git diff</code>로 요청과 관계없는 수정이 섞였는지 읽습니다. 테스트를 위해 만든 임시 자료나 로그가 전달 파일에 포함되지 않았는지도 봅니다. 검토할 기준은 최종 요약의 자신감보다 재현 조건, 변경된 코드, 실행 결과가 서로 맞는지입니다.</p>
+<p>변경을 확정할 때는 검토한 파일을 커밋하고, 원격 반영과 배포는 요청한 범위에 따라 진행합니다. 로컬에서 고쳤다는 사실만으로 공개 서비스까지 바뀐 것은 아닙니다.</p>
+        <p class="blog-sources">공식 참고: <a href="https://code.claude.com/docs/en/best-practices">Claude Code 작업과 검증</a> · <a href="https://code.claude.com/docs/en/permissions">Claude Code 권한 설정</a>. 문서 확인: 2026.10.28.</p>
+        <nav class="blog-related" aria-label="Claude 12편 탐색"><a rel="prev" href="011.html#post-claude-11">이전 편</a> · <a href="../blogs.html#claude-series">시리즈 목차</a> · <a rel="next" href="013.html#post-claude-13">다음 편</a> · <a href="../blogs.html#ai-guides">전체 목차</a></nav>
+      </article>
+    </div>
+  </section>
+
+  <!-- 하단 : 사업자 정보 (index.html과 동일) -->
+  <footer class="footer">
+    <div class="inner">
+      <div>
+        <img class="ftr_logo" src="../images/logo.png" alt="솔루션 비제트 로고" />
+      </div>
+      <div class="info">
+        <ul>
+          <li>회사명 : 솔루션 비제트</li>
+          <li>대표자 : 박영</li>
+          <li>주소 : 경남 김해시 삼계중앙로6번길 21-18 101호</li>
+          <li>이메일 : ytbiz048@gmail.com </li>
+        </ul>
+        <ul>
+          <li>팩스 : 0504-229-2760</li>
+          <li>사업자등록번호 : 123-65-20119</li>
+          <li>통신판매업신고 : 제 2024-경남김해-0729 호</li>
+        </ul>
+      </div>
+      <p>COPYRIGHT (c) 솔루션 비제트 ALL RIGHTS RESERVED.</p>
+      <p>저작권 관련 수정 필요 내용이 있을 경우 이메일 혹은 전화로 연락 주시면 최대한 빠르게 수정 진행하겠습니다.</p>
+      <p><a href="../privacy.html">개인정보처리방침 전문 보기</a></p>
+      <p class="footer-privacy">개인정보처리방침 안내 : 솔루션 비제트는 문의 응대 등 서비스 제공을 위해 이름·연락처·이메일 등 최소한의 개인정보를 필요한 기간 동안만 수집·보관하며, 관련 법령에 따라 안전하게 관리합니다. 서비스 개선 및 광고 제공을 위해 쿠키가 사용될 수 있으며, 자세한 사항은 이메일 또는 전화로 문의하실 수 있습니다.</p>
+    </div>
+  </footer>
+
+  <script src="../script.js"></script>
+</body>
+</html>

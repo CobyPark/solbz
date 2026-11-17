@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="CSV를 열었더니 앞자리 0이 사라졌다면: 식별자 열을 보존하는 법 - 솔루션 비제트 IT 정보글">
+  <title>CSV를 열었더니 앞자리 0이 사라졌다면: 식별자 열을 보존하는 법 - 솔루션 비제트</title>
+  <link rel="stylesheet" href="../style.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+  <script src="https://code.jquery.com/jquery-latest.min.js"></script>
+  <!-- 파비콘 -->
+  <link rel="icon" type="image/png" sizes="32x32" href="../images/logo2.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="../images/logo2.png">
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8588372040849412"
+    crossorigin="anonymous"></script>
+</head>
+
+<body class="information-blog">
+  <!-- 헤더 (index.html과 동일) -->
+  <div class="container">
+    <header class="header">
+      <h1 class="logo"><a href="../index.html">Solution BZ</a></h1>
+      <nav class="nav">
+        <ul>
+          <li class="nav-dropdown">
+            <span class="nav-dropdown-toggle">전체 프로그램</span>
+            <ul class="nav-dropdown-menu">
+              <li><a href="../bss.html">BZ SMB Settings</a></li>
+              <li><a href="../solar.html">Solar BZ</a></li>
+              <li><a href="../ssolzip.html">쏠집(SSolZip)</a></li>
+              <li><a href="../ssolview.html">쏠뷰(SSolView)</a></li>
+              <li><a>웹 기반 에이전트 AI(출시 예정)</a></li>
+            </ul>
+          </li>
+          <li><a href="../profile.html">대표 소개</a></li>
+          <li><a href="../blogs.html">블로그</a></li>
+          <li><a href="../index.html#contact">제품 및 강의 문의</a></li>
+        </ul>
+      </nav>
+    </header>
+  </div>
+
+  <section class="blog-page">
+    <div class="inner">
+      <article class="blog-post" id="post-csv-identifiers">
+        <a class="blog-post-back" href="../blogs.html#post-csv-identifiers">목록으로 돌아가기</a>
+        <span class="blog-post-category">데이터·파일 정리</span>
+        <h2>CSV를 열었더니 앞자리 0이 사라졌다면: 식별자 열을 보존하는 법</h2>
+        <p class="blog-post-meta">솔루션 비제트 · 활용 가이드 · <time datetime="2026-10-19">2026.10.19</time></p>
+        <p>제품 코드 00123이 123으로 바뀌면 다른 시스템에서 같은 제품을 찾지 못할 수 있습니다. 숫자처럼 생겼어도 계산하지 않는 값은 텍스트로 가져와야 할 때가 있습니다. CSV는 원본을 남겨두고 열 형식부터 보겠습니다.</p>
+        <h3>수량인가, 식별자인가</h3>
+<p>수량과 단가는 계산 대상이지만 제품 코드와 계좌 번호는 보통 식별 대상입니다. 형식을 정하기 전에 각 열이 무엇을 뜻하는지 작은 목록을 만드세요. 모든 숫자 모양의 열을 숫자로 변환하는 규칙은 데이터의 의미를 잃게 할 수 있습니다.</p>
+<h3>가져오기 화면에서 텍스트 지정</h3>
+<p>Excel의 텍스트·CSV 가져오기에서는 열 형식을 조정할 수 있습니다. 식별자 열은 텍스트로 지정하고 실제 값이 어떻게 읽히는지 미리 확인하세요. 메뉴와 자동 변환 설정의 제공 범위는 제품 버전에 따라 다르므로 사용하는 버전의 공식 안내를 확인합니다.</p>
+<p>이미 값이 숫자로 변환된 뒤 표시 형식만 바꾸면 원래 자릿수를 완전히 복구할 수 없는 경우가 있습니다. 모든 코드가 다섯 자리라는 확실한 규칙이 없다면 임의로 0을 붙이지 말고 원본과 대조해야 합니다.</p>
+<h3>저장 후 다시 읽기</h3>
+<p>작업 화면에서 올바르게 보여도 CSV로 내보낸 뒤 다시 열면 자동 변환이 재발할 수 있습니다. 저장본의 첫 행과 마지막 행, 앞자리 0이 있는 행을 확인하고 받는 사람에게 열 형식도 전달하세요. 원본과 변환본은 별도 파일로 관리하는 편이 복구에 유리합니다.</p>
+        <aside class="blog-worked-example" aria-label="설명용 예시"><h3>네 자리 장비 코드 보존</h3><p>가상 장비 코드 0007과 0070이 있다면 두 값 모두 네 자리 문자열로 보존합니다. 변환 전후 코드 목록과 고유 코드 개수를 비교하고, 파일을 다시 가져온 뒤에도 같은지 확인합니다. 자릿수가 제각각인 코드는 별도 규칙을 확인하기 전까지 그대로 둡니다.</p></aside>
+        <h3>CSV를 전달하기 전에</h3>
+        <ul><li>식별자와 계산할 숫자를 구분했는가</li><li>가져오기 전에 텍스트 형식을 지정했는가</li><li>저장본을 다시 읽어 원본과 대조했는가</li></ul>
+        <p class="blog-sources">기술 참고: <a href="https://support.microsoft.com/en-us/excel/keeping-leading-zeros-and-large-numbers">Microsoft Excel 앞자리 0과 긴 숫자 보존 안내</a>. 문서 확인: 2026.10.19.</p>
+        <p class="blog-related"><a href="../blogs.html#ai-guides">전체 목차로 돌아가기</a></p>
+      </article>
+    </div>
+  </section>
+
+  <!-- 하단 : 사업자 정보 (index.html과 동일) -->
+  <footer class="footer">
+    <div class="inner">
+      <div>
+        <img class="ftr_logo" src="../images/logo.png" alt="솔루션 비제트 로고" />
+      </div>
+      <div class="info">
+        <ul>
+          <li>회사명 : 솔루션 비제트</li>
+          <li>대표자 : 박영</li>
+          <li>주소 : 경남 김해시 삼계중앙로6번길 21-18 101호</li>
+          <li>이메일 : ytbiz048@gmail.com </li>
+        </ul>
+        <ul>
+          <li>팩스 : 0504-229-2760</li>
+          <li>사업자등록번호 : 123-65-20119</li>
+          <li>통신판매업신고 : 제 2024-경남김해-0729 호</li>
+        </ul>
+      </div>
+      <p>COPYRIGHT (c) 솔루션 비제트 ALL RIGHTS RESERVED.</p>
+      <p>저작권 관련 수정 필요 내용이 있을 경우 이메일 혹은 전화로 연락 주시면 최대한 빠르게 수정 진행하겠습니다.</p>
+      <p><a href="../privacy.html">개인정보처리방침 전문 보기</a></p>
+      <p class="footer-privacy">개인정보처리방침 안내 : 솔루션 비제트는 문의 응대 등 서비스 제공을 위해 이름·연락처·이메일 등 최소한의 개인정보를 필요한 기간 동안만 수집·보관하며, 관련 법령에 따라 안전하게 관리합니다. 서비스 개선 및 광고 제공을 위해 쿠키가 사용될 수 있으며, 자세한 사항은 이메일 또는 전화로 문의하실 수 있습니다.</p>
+    </div>
+  </footer>
+
+  <script src="../script.js"></script>
+</body>
+</html>

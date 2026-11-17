@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="AI API가 멈췄을 때: 401·402·403·429 오류를 나누어 확인하는 법 - 솔루션 비제트 IT 정보글">
+  <title>AI API가 멈췄을 때: 401·402·403·429 오류를 나누어 확인하는 법 - 솔루션 비제트</title>
+  <link rel="stylesheet" href="../style.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+  <script src="https://code.jquery.com/jquery-latest.min.js"></script>
+  <!-- 파비콘 -->
+  <link rel="icon" type="image/png" sizes="32x32" href="../images/logo2.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="../images/logo2.png">
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8588372040849412"
+    crossorigin="anonymous"></script>
+</head>
+
+<body class="information-blog">
+  <!-- 헤더 (index.html과 동일) -->
+  <div class="container">
+    <header class="header">
+      <h1 class="logo"><a href="../index.html">Solution BZ</a></h1>
+      <nav class="nav">
+        <ul>
+          <li class="nav-dropdown">
+            <span class="nav-dropdown-toggle">전체 프로그램</span>
+            <ul class="nav-dropdown-menu">
+              <li><a href="../bss.html">BZ SMB Settings</a></li>
+              <li><a href="../solar.html">Solar BZ</a></li>
+              <li><a href="../ssolzip.html">쏠집(SSolZip)</a></li>
+              <li><a href="../ssolview.html">쏠뷰(SSolView)</a></li>
+              <li><a>웹 기반 에이전트 AI(출시 예정)</a></li>
+            </ul>
+          </li>
+          <li><a href="../profile.html">대표 소개</a></li>
+          <li><a href="../blogs.html">블로그</a></li>
+          <li><a href="../index.html#contact">제품 및 강의 문의</a></li>
+        </ul>
+      </nav>
+    </header>
+  </div>
+
+  <section class="blog-page">
+    <div class="inner">
+      <article class="blog-post" id="post-ai-api-errors">
+        <a class="blog-post-back" href="../blogs.html#post-ai-api-errors">목록으로 돌아가기</a>
+        <span class="blog-post-category">AI API · 문제 해결</span>
+        <h2>AI API가 멈췄을 때: 401·402·403·429 오류를 나누어 확인하는 법</h2>
+        <p class="blog-post-meta">솔루션 비제트 · 문제 해결 가이드 · <time datetime="2026-10-19">2026.10.19</time></p>
+        <p>API가 멈추면 오류 코드부터 남겨두세요. 키가 틀린 문제에 재시도를 반복해도 답은 오지 않습니다. 401·402·403·429가 나왔을 때 무엇을 먼저 볼지 정리했습니다. 세부 의미는 해당 서비스의 응답 본문과 문서로 확인해야 합니다.</p>
+        <div class="blog-table-wrap" role="region" aria-label="API 오류 점검표" tabindex="0"><table>
+        <caption>오류에 따라 다음 행동을 다르게 정하기</caption><thead><tr><th scope="col">증상</th><th scope="col">먼저 볼 항목</th><th scope="col">다음 행동</th></tr></thead><tbody>
+        <tr><th scope="row">401</th><td>키 누락, 만료, 잘못된 인증 대상</td><td>현재 요청 주소와 키 발급 서비스를 대조</td></tr>
+        <tr><th scope="row">402</th><td>잔액, 키별 비용 한도, 실행 중 요청의 예상 비용</td><td>계정과 오류 메타데이터를 확인</td></tr>
+        <tr><th scope="row">403</th><td>접근 정책, 권한, 조직 예산 제한</td><td>차단 사유에 맞는 설정 점검</td></tr>
+        <tr><th scope="row">429</th><td>분당·일일 한도, 공급자 처리 용량</td><td>재시도 안내와 한도 초기화 시각 확인</td></tr>
+        <tr><th scope="row">시간 초과</th><td>네트워크, 응답 시간, 요청 크기</td><td>작은 입력으로 한 번만 분리 점검</td></tr>
+        </tbody></table></div>
+        <h3>인증 키와 요청 주소</h3>
+        <p>발급받은 키가 정상이어도 다른 서비스 주소로 요청하면 인증에 실패합니다. 게이트웨이를 쓸 때는 공급자용 키와 게이트웨이용 키를 혼동하기도 합니다. 로그에 키 원문을 출력하는 대신 요청 호스트, HTTP 상태, 호출 시각을 기록하세요. 키의 앞뒤 공백과 환경변수 이름 오타를 확인하고, 새 키를 발급했다면 실행 중인 프로그램이 새 값을 읽는지도 봅니다.</p>
+        <h3>402·403의 제한 주체</h3>
+        <p>OpenRouter 문서는 계정 잔액과 키별 한도뿐 아니라 실행 중인 유료 요청의 예상 비용에 따른 제한도 설명합니다. 조직이 설정한 예산 제한은 403으로 보고될 수 있습니다. 같은 상태 코드라도 오류 메타데이터가 가리키는 제한 주체를 확인해야 합니다. 잔액이 보인다는 이유만으로 계정 전체를 정상이라고 판단하지 마세요.</p>
+        <p>업무 기록에 “잔액 부족”이라고만 적으면 키 한도를 올렸는지, 동시 요청을 줄였는지 나중에 구분할 수 없습니다. 비밀 값을 제거한 오류 종류, 당시 실행 개수, 출력 상한, 계정 화면의 제한 항목을 함께 남겨보세요. 다른 사람이 같은 문제를 재현하지 않고도 조치 이유를 이해할 수 있습니다.</p>
+        <h3>429에서 기다릴 때와 멈출 때</h3>
+        <p>분당 요청 수 초과와 일일 한도 소진은 모두 이용량과 관련되지만 기다려야 하는 시간이 다릅니다. 응답에 <code>Retry-After</code>가 있으면 그 안내를 확인하세요. 일일 한도를 다 쓴 상태라면 몇 초 간격으로 반복해도 해결되지 않습니다. 서비스의 계정 화면이나 한도 API에서 재개 가능한 시점을 확인하고 작업을 중단하는 편이 좋습니다.</p>
+        <p>자동 처리가 꼭 필요하다면 “최대 세 번만 재시도하고, 실패한 작업은 별도 목록에 저장한다”처럼 종료 조건을 정합니다. 대기 간격을 늘리는 재시도는 일시적인 혼잡을 위한 것이지 인증 실패를 해결하는 방법은 아닙니다. 공급자별 문서에서 실패 요청의 집계 기준도 확인하세요.</p>
+        <h3>시간 초과 뒤 중복 요청</h3>
+        <p>클라이언트가 기다리다 멈췄다고 서버의 작업도 반드시 취소된 것은 아닙니다. 자동으로 같은 요청을 연속 전송하기 전에 사용 기록을 확인하세요. 파일별로 작업 ID와 완료 여부를 기록하면 답변을 두 번 저장하는 일을 줄일 수 있습니다. 이메일 발송 같은 후속 동작이 있다면 답변 생성과 실행 승인을 분리해 두는 편이 점검하기 쉽습니다.</p>
+        <p>재현용 입력은 개인정보가 없는 짧은 문장으로 바꿉니다. 같은 입력이 단일 요청에서는 성공하고 동시 요청에서만 실패한다면 동시 실행 수를 줄이는 실험부터 시작하세요. 설정은 하나씩 바꾸고 결과를 적어두세요.</p>
+        <p class="blog-sources">서비스별 확인 자료: <a href="https://openrouter.ai/docs/api/reference/limits">OpenRouter 잔액·예산·요청 제한 문서</a> · <a href="https://docs.api.nvidia.com/nim/docs/faq">NVIDIA API FAQ</a>. 문서 확인: 2026.10.19.</p>
+        <p class="blog-related">함께 읽기: <a href="097.html#post-openrouter-first-call">단일 요청 예제</a> · <a href="099.html#post-omniroute-basics">게이트웨이 연결 구간</a> · <a href="../blogs.html#ai-guides">목차로 돌아가기</a></p>
+      </article>
+    </div>
+  </section>
+
+  <!-- 하단 : 사업자 정보 (index.html과 동일) -->
+  <footer class="footer">
+    <div class="inner">
+      <div>
+        <img class="ftr_logo" src="../images/logo.png" alt="솔루션 비제트 로고" />
+      </div>
+      <div class="info">
+        <ul>
+          <li>회사명 : 솔루션 비제트</li>
+          <li>대표자 : 박영</li>
+          <li>주소 : 경남 김해시 삼계중앙로6번길 21-18 101호</li>
+          <li>이메일 : ytbiz048@gmail.com </li>
+        </ul>
+        <ul>
+          <li>팩스 : 0504-229-2760</li>
+          <li>사업자등록번호 : 123-65-20119</li>
+          <li>통신판매업신고 : 제 2024-경남김해-0729 호</li>
+        </ul>
+      </div>
+      <p>COPYRIGHT (c) 솔루션 비제트 ALL RIGHTS RESERVED.</p>
+      <p>저작권 관련 수정 필요 내용이 있을 경우 이메일 혹은 전화로 연락 주시면 최대한 빠르게 수정 진행하겠습니다.</p>
+      <p><a href="../privacy.html">개인정보처리방침 전문 보기</a></p>
+      <p class="footer-privacy">개인정보처리방침 안내 : 솔루션 비제트는 문의 응대 등 서비스 제공을 위해 이름·연락처·이메일 등 최소한의 개인정보를 필요한 기간 동안만 수집·보관하며, 관련 법령에 따라 안전하게 관리합니다. 서비스 개선 및 광고 제공을 위해 쿠키가 사용될 수 있으며, 자세한 사항은 이메일 또는 전화로 문의하실 수 있습니다.</p>
+    </div>
+  </footer>
+
+  <script src="../script.js"></script>
+</body>
+</html>

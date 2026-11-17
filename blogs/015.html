@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Codex 02. Windows 앱에서 프로젝트를 열고 첫 작업 시작하기 - 솔루션 비제트 IT 정보글">
+  <title>Codex 02. Windows 앱에서 프로젝트를 열고 첫 작업 시작하기 - 솔루션 비제트</title>
+  <link rel="stylesheet" href="../style.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+  <script src="https://code.jquery.com/jquery-latest.min.js"></script>
+  <!-- 파비콘 -->
+  <link rel="icon" type="image/png" sizes="32x32" href="../images/logo2.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="../images/logo2.png">
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8588372040849412"
+    crossorigin="anonymous"></script>
+</head>
+
+<body class="information-blog">
+  <!-- 헤더 (index.html과 동일) -->
+  <div class="container">
+    <header class="header">
+      <h1 class="logo"><a href="../index.html">Solution BZ</a></h1>
+      <nav class="nav">
+        <ul>
+          <li class="nav-dropdown">
+            <span class="nav-dropdown-toggle">전체 프로그램</span>
+            <ul class="nav-dropdown-menu">
+              <li><a href="../bss.html">BZ SMB Settings</a></li>
+              <li><a href="../solar.html">Solar BZ</a></li>
+              <li><a href="../ssolzip.html">쏠집(SSolZip)</a></li>
+              <li><a href="../ssolview.html">쏠뷰(SSolView)</a></li>
+              <li><a>웹 기반 에이전트 AI(출시 예정)</a></li>
+            </ul>
+          </li>
+          <li><a href="../profile.html">대표 소개</a></li>
+          <li><a href="../blogs.html">블로그</a></li>
+          <li><a href="../index.html#contact">제품 및 강의 문의</a></li>
+        </ul>
+      </nav>
+    </header>
+  </div>
+
+  <section class="blog-page">
+    <div class="inner">
+      <article class="blog-post" id="post-codex-02">
+        <a class="blog-post-back" href="../blogs.html#post-codex-02">목록으로 돌아가기</a>
+        <span class="blog-post-category">Codex 활용 시리즈 · 02/13</span>
+        <h2>Codex 02. Windows 앱에서 프로젝트를 열고 첫 작업 시작하기</h2>
+        <p class="blog-post-meta">솔루션 비제트 · OpenAI 공식 문서 기반 가이드 · <time datetime="2026-10-19">2026.10.19</time></p>
+        <p>Windows 앱을 설치했다면 바로 큰 수정을 맡기기보다 작은 파일 하나로 시작해 보세요. 로그인한 계정과 프로젝트 폴더가 맞는지 보고, 오탈자 한 곳을 고쳐 보면 요청부터 변경 검토까지의 흐름을 익힐 수 있습니다.</p>
+        <h3>앱에서 프로젝트 열기</h3>
+<p>설치 후 계정으로 로그인하고 새 채팅에서 Codex를 선택합니다. 메뉴 이름과 위치는 버전에 따라 달라질 수 있습니다. 프로젝트나 폴더를 열 때는 상위 문서 폴더 전체보다 이번 작업에 필요한 저장소를 선택하는 편이 범위를 이해하기 쉽습니다.</p>
+<p>회사나 학교의 관리 계정에서는 일부 기능이 정책으로 제한될 수 있습니다. 메뉴가 보이지 않는다고 별도 설치 파일을 무작정 실행하기보다 앱 버전과 계정·관리 설정을 먼저 확인하세요.</p>
+<h3>첫 요청에 수정 범위 적기</h3>
+<p>“프로젝트를 알아서 고쳐줘”보다 수정할 화면, 현재 문제, 기대 동작을 구체적으로 설명합니다. 변경 전 저장소의 미완료 작업이 있다면 함께 알려주세요. 읽기 설명만 원할 때와 실제 파일 수정을 원할 때도 요청에서 구분할 수 있습니다.</p>
+<pre tabindex="0" aria-label="실습용 명령 또는 요청 예시"><code>이 프로젝트의 페이지 구조와 확인 방법을 설명해 줘.
+그다음 메인 제목의 오탈자 한 곳을 수정하고 변경 파일과 확인 결과를 알려줘.</code></pre>
+<h3>저장과 배포는 다른 단계</h3>
+<p>최종 요약뿐 아니라 변경된 줄과 실제 페이지를 확인합니다. GitHub에 연결돼 있어도 로컬 수정, 커밋, 푸시, 사이트 배포는 서로 다른 단계입니다. 어느 단계까지 요청했는지와 실제 완료된 단계를 대조하세요.</p>
+
+        <aside class="blog-worked-example" aria-label="설명용 적용 과제"><h3>오탈자 한 곳 고쳐 보기</h3><p>정적 사이트에서 제목 오탈자를 수정한 뒤 앱의 변경 검토와 브라우저 미리보기를 비교합니다. 다른 페이지에 의도하지 않은 변경이 없는지 확인하고, 외부 공개가 필요하면 대상 브랜치와 배포 경로를 따로 정합니다.</p></aside>
+        <h3>프로젝트를 열었다면</h3><ul><li>현재 계정과 작업 폴더를 확인했는가</li><li>읽기·수정·배포 범위를 정했는가</li><li>요약과 실제 변경이 일치하는가</li></ul>
+        <p class="blog-sources">공식 참고: <a href="https://learn.chatgpt.com/docs/quickstart">공식 빠른 시작</a> · <a href="https://learn.chatgpt.com/docs/windows/windows-app">Windows 앱 안내</a>. 문서 확인: 2026.10.19.</p>
+        <nav class="blog-related" aria-label="Codex 02편 탐색"><a rel="prev" href="014.html#post-codex-01">이전 편</a> · <a href="../blogs.html#codex-series">시리즈 목차</a> · <a rel="next" href="016.html#post-codex-03">다음 편</a> · <a href="../blogs.html#ai-guides">전체 목차</a></nav>
+      </article>
+    </div>
+  </section>
+
+  <!-- 하단 : 사업자 정보 (index.html과 동일) -->
+  <footer class="footer">
+    <div class="inner">
+      <div>
+        <img class="ftr_logo" src="../images/logo.png" alt="솔루션 비제트 로고" />
+      </div>
+      <div class="info">
+        <ul>
+          <li>회사명 : 솔루션 비제트</li>
+          <li>대표자 : 박영</li>
+          <li>주소 : 경남 김해시 삼계중앙로6번길 21-18 101호</li>
+          <li>이메일 : ytbiz048@gmail.com </li>
+        </ul>
+        <ul>
+          <li>팩스 : 0504-229-2760</li>
+          <li>사업자등록번호 : 123-65-20119</li>
+          <li>통신판매업신고 : 제 2024-경남김해-0729 호</li>
+        </ul>
+      </div>
+      <p>COPYRIGHT (c) 솔루션 비제트 ALL RIGHTS RESERVED.</p>
+      <p>저작권 관련 수정 필요 내용이 있을 경우 이메일 혹은 전화로 연락 주시면 최대한 빠르게 수정 진행하겠습니다.</p>
+      <p><a href="../privacy.html">개인정보처리방침 전문 보기</a></p>
+      <p class="footer-privacy">개인정보처리방침 안내 : 솔루션 비제트는 문의 응대 등 서비스 제공을 위해 이름·연락처·이메일 등 최소한의 개인정보를 필요한 기간 동안만 수집·보관하며, 관련 법령에 따라 안전하게 관리합니다. 서비스 개선 및 광고 제공을 위해 쿠키가 사용될 수 있으며, 자세한 사항은 이메일 또는 전화로 문의하실 수 있습니다.</p>
+    </div>
+  </footer>
+
+  <script src="../script.js"></script>
+</body>
+</html>

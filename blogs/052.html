@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="OpenClaw 11. 브라우저 활용: 전용 프로필에서 페이지 열기와 내용 확인하기 - 솔루션 비제트 IT 정보글">
+  <title>OpenClaw 11. 브라우저 활용: 전용 프로필에서 페이지 열기와 내용 확인하기 - 솔루션 비제트</title>
+  <link rel="stylesheet" href="../style.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+  <script src="https://code.jquery.com/jquery-latest.min.js"></script>
+  <!-- 파비콘 -->
+  <link rel="icon" type="image/png" sizes="32x32" href="../images/logo2.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="../images/logo2.png">
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8588372040849412"
+    crossorigin="anonymous"></script>
+</head>
+
+<body class="information-blog">
+  <!-- 헤더 (index.html과 동일) -->
+  <div class="container">
+    <header class="header">
+      <h1 class="logo"><a href="../index.html">Solution BZ</a></h1>
+      <nav class="nav">
+        <ul>
+          <li class="nav-dropdown">
+            <span class="nav-dropdown-toggle">전체 프로그램</span>
+            <ul class="nav-dropdown-menu">
+              <li><a href="../bss.html">BZ SMB Settings</a></li>
+              <li><a href="../solar.html">Solar BZ</a></li>
+              <li><a href="../ssolzip.html">쏠집(SSolZip)</a></li>
+              <li><a href="../ssolview.html">쏠뷰(SSolView)</a></li>
+              <li><a>웹 기반 에이전트 AI(출시 예정)</a></li>
+            </ul>
+          </li>
+          <li><a href="../profile.html">대표 소개</a></li>
+          <li><a href="../blogs.html">블로그</a></li>
+          <li><a href="../index.html#contact">제품 및 강의 문의</a></li>
+        </ul>
+      </nav>
+    </header>
+  </div>
+
+  <section class="blog-page">
+    <div class="inner">
+      <article class="blog-post" id="post-openclaw-11">
+        <a class="blog-post-back" href="../blogs.html#post-openclaw-11">목록으로 돌아가기</a>
+        <span class="blog-post-category">OpenClaw 입문 시리즈 · 11/14</span>
+        <h2>OpenClaw 11. 브라우저 활용: 전용 프로필에서 페이지 열기와 내용 확인하기</h2>
+        <p class="blog-post-meta">솔루션 비제트 · 공식 문서 기반 사용 안내 · <time datetime="2026-10-19">2026.10.19</time></p>
+        <p>브라우저 기능은 로그인 없는 공개 페이지에서 시험해 보는 것이 간단합니다. OpenClaw 전용 프로필을 열고 페이지 내용이 읽히는지부터 보세요. 평소 쓰는 브라우저와 로그인 상태가 같을 것이라고 생각하면 연결 과정이 헷갈릴 수 있습니다.</p>
+        <h3>어느 프로필을 여는지</h3>
+<p>공식 예제의 openclaw 프로필은 자동화용 별도 프로필입니다. 일반적으로 사용하는 브라우저와 로그인 상태가 같다고 가정하지 마세요. 설치 위치가 WSL2나 원격 서버라면 브라우저도 어느 환경에서 실행되는지 확인해야 합니다.</p>
+<pre tabindex="0" aria-label="명령어 또는 설정 예제"><code>openclaw browser --browser-profile openclaw status
+openclaw browser --browser-profile openclaw start</code></pre>
+<h3>페이지 열기와 스냅샷</h3>
+<p>처음에는 example.com 같은 공개 시험 페이지를 엽니다. 스냅샷은 현재 페이지 내용을 확인하는 단계입니다. 페이지가 바뀐 뒤 예전 요소 참조를 그대로 사용하면 다른 동작을 할 수 있으므로 현재 화면을 다시 확인하고 다음 작업을 정합니다.</p>
+<pre tabindex="0" aria-label="명령어 또는 설정 예제"><code>openclaw browser --browser-profile openclaw open https://example.com
+openclaw browser --browser-profile openclaw snapshot</code></pre>
+<p>에이전트에게는 “페이지 제목과 본문에서 확인되는 내용만 정리하고 입력·전송은 하지 말라”처럼 작은 과제를 줍니다. 스크린샷이 필요하지 않은 텍스트 확인과 실제 버튼 조작을 구분하면 시험 범위가 명확해집니다.</p>
+<h3>브라우저 도구가 보이지 않을 때</h3>
+<p>브라우저 명령이 없거나 도구가 비활성화돼 있다면 플러그인과 browser.enabled, 현재 도구 프로필을 공식 설정 문서에 따라 확인합니다. 설치돼 있어도 정책에서 제외되면 사용할 수 없습니다. 기존 허용 목록을 통째로 지우거나 모든 도구를 허용하는 방식으로 해결하지 마세요.</p>
+<p>로그인·인증·결제·외부 전송을 포함하는 작업은 해당 계정과 동작 범위를 따로 정해야 합니다. 전용 프로필도 로그인 뒤에는 접근 가능한 자료가 생기므로 자동화 가능 범위를 다시 검토합니다.</p>
+
+        <aside class="blog-worked-example" aria-label="설명용 실습 예시"><h3>공개 페이지의 제목 읽기</h3><p>공개 페이지 한 곳에서 제목과 핵심 문장만 정리하도록 요청한 뒤 실제 페이지와 대조합니다. 다른 탭을 만들었다면 어느 탭을 대상으로 했는지도 확인합니다. 내용 읽기가 끝난 다음에야 시험 사이트에서 입력과 클릭을 별도 과제로 진행합니다.</p></aside>
+        <h3>브라우저 시험 뒤</h3>
+        <ul><li>브라우저 프로필과 실행 호스트를 아는가</li><li>현재 페이지를 확인한 뒤 다음 동작을 정하는가</li><li>비활성화 원인을 정책과 설치 문제로 나눠 보는가</li></ul>
+        <p class="blog-sources">공식 참고: <a href="https://docs.openclaw.ai/tools/browser/setup">브라우저 빠른 시작</a> · <a href="https://docs.openclaw.ai/tools/browser">브라우저 프로필과 기능</a>. 문서 확인: 2026.10.19.</p>
+        <nav class="blog-related" aria-label="OpenClaw 11편 탐색"><a rel="prev" href="051.html#post-openclaw-10">이전 편</a> · <a href="../blogs.html#openclaw-series">시리즈 목차</a> · <a rel="next" href="053.html#post-openclaw-12">다음 편</a> · <a href="../blogs.html#ai-guides">전체 목차</a></nav>
+      </article>
+    </div>
+  </section>
+
+  <!-- 하단 : 사업자 정보 (index.html과 동일) -->
+  <footer class="footer">
+    <div class="inner">
+      <div>
+        <img class="ftr_logo" src="../images/logo.png" alt="솔루션 비제트 로고" />
+      </div>
+      <div class="info">
+        <ul>
+          <li>회사명 : 솔루션 비제트</li>
+          <li>대표자 : 박영</li>
+          <li>주소 : 경남 김해시 삼계중앙로6번길 21-18 101호</li>
+          <li>이메일 : ytbiz048@gmail.com </li>
+        </ul>
+        <ul>
+          <li>팩스 : 0504-229-2760</li>
+          <li>사업자등록번호 : 123-65-20119</li>
+          <li>통신판매업신고 : 제 2024-경남김해-0729 호</li>
+        </ul>
+      </div>
+      <p>COPYRIGHT (c) 솔루션 비제트 ALL RIGHTS RESERVED.</p>
+      <p>저작권 관련 수정 필요 내용이 있을 경우 이메일 혹은 전화로 연락 주시면 최대한 빠르게 수정 진행하겠습니다.</p>
+      <p><a href="../privacy.html">개인정보처리방침 전문 보기</a></p>
+      <p class="footer-privacy">개인정보처리방침 안내 : 솔루션 비제트는 문의 응대 등 서비스 제공을 위해 이름·연락처·이메일 등 최소한의 개인정보를 필요한 기간 동안만 수집·보관하며, 관련 법령에 따라 안전하게 관리합니다. 서비스 개선 및 광고 제공을 위해 쿠키가 사용될 수 있으며, 자세한 사항은 이메일 또는 전화로 문의하실 수 있습니다.</p>
+    </div>
+  </footer>
+
+  <script src="../script.js"></script>
+</body>
+</html>

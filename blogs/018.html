@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Codex 05. 개발 요청서 쓰기: 재현 조건과 완료 기준을 함께 전달하기 - 솔루션 비제트 IT 정보글">
+  <title>Codex 05. 개발 요청서 쓰기: 재현 조건과 완료 기준을 함께 전달하기 - 솔루션 비제트</title>
+  <link rel="stylesheet" href="../style.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+  <script src="https://code.jquery.com/jquery-latest.min.js"></script>
+  <!-- 파비콘 -->
+  <link rel="icon" type="image/png" sizes="32x32" href="../images/logo2.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="../images/logo2.png">
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8588372040849412"
+    crossorigin="anonymous"></script>
+</head>
+
+<body class="information-blog">
+  <!-- 헤더 (index.html과 동일) -->
+  <div class="container">
+    <header class="header">
+      <h1 class="logo"><a href="../index.html">Solution BZ</a></h1>
+      <nav class="nav">
+        <ul>
+          <li class="nav-dropdown">
+            <span class="nav-dropdown-toggle">전체 프로그램</span>
+            <ul class="nav-dropdown-menu">
+              <li><a href="../bss.html">BZ SMB Settings</a></li>
+              <li><a href="../solar.html">Solar BZ</a></li>
+              <li><a href="../ssolzip.html">쏠집(SSolZip)</a></li>
+              <li><a href="../ssolview.html">쏠뷰(SSolView)</a></li>
+              <li><a>웹 기반 에이전트 AI(출시 예정)</a></li>
+            </ul>
+          </li>
+          <li><a href="../profile.html">대표 소개</a></li>
+          <li><a href="../blogs.html">블로그</a></li>
+          <li><a href="../index.html#contact">제품 및 강의 문의</a></li>
+        </ul>
+      </nav>
+    </header>
+  </div>
+
+  <section class="blog-page">
+    <div class="inner">
+      <article class="blog-post" id="post-codex-05">
+        <a class="blog-post-back" href="../blogs.html#post-codex-05">목록으로 돌아가기</a>
+        <span class="blog-post-category">Codex 활용 시리즈 · 05/13</span>
+        <h2>Codex 05. 개발 요청서 쓰기: 재현 조건과 완료 기준을 함께 전달하기</h2>
+        <p class="blog-post-meta">솔루션 비제트 · OpenAI 공식 문서 기반 가이드 · <time datetime="2026-10-19">2026.10.19</time></p>
+        <p>“검색이 안 됩니다”만으로는 같은 문제를 재현하기 어렵습니다. 어떤 값을 넣고 무슨 버튼을 눌렀는지, 실제로 무엇이 나왔는지를 적어 보세요. 기대한 결과까지 있으면 Codex에 맡길 수정 범위도 좁아집니다.</p>
+        <h3>실패하는 입력부터</h3>
+<p>실패하는 입력과 페이지·명령, 발생 환경을 설명합니다. 로그는 필요한 오류 부분을 선택하고 키나 개인정보는 제거하세요. 언제부터 실패했는지와 최근 변경도 알고 있다면 덧붙입니다. 추정 원인은 사실과 구분해 표현합니다.</p>
+<h3>바꾸면 안 되는 부분과 그 이유</h3>
+<p>호환성을 유지해야 하는 함수, 데이터 형식, 사용자가 익숙한 화면을 명시합니다. “어떤 파일도 바꾸지 말라”는 조건과 “수정해 달라”는 요청처럼 충돌하는 지시를 피하세요. 필요한 파일을 조사하고 해결책을 제안할 여지도 남겨둡니다.</p>
+<pre tabindex="0" aria-label="실습용 명령 또는 요청 예시"><code>재현: 검색어 없이 조회하면 오류가 납니다.
+기대: 빈 결과 안내를 보여주고 입력은 유지합니다.
+제약: API 응답 형식과 다른 검색 조건은 유지합니다.
+완료: 빈 검색·일반 검색을 확인하고 변경과 남은 제한을 알려주세요.</code></pre>
+<h3>끝났다는 판단의 근거</h3>
+<p>수정 파일, 검사 방법과 결과, 실행하지 못한 검사를 알려 달라고 요청합니다. 테스트를 실행하지 못한 상태와 통과한 상태를 혼동하지 않는 것이 중요합니다. 추후 발견한 조건은 같은 작업에 추가하되 기존 완료 기준과 충돌하는지 확인하세요.</p>
+<p>작업이 커지면 먼저 조사 결과와 구현 범위를 정리하도록 할 수 있습니다. 계획이 있다는 사실보다 각 단계가 어떤 문제를 해결하고 무엇으로 검증할지 이해할 수 있어야 합니다.</p>
+
+        <aside class="blog-worked-example" aria-label="설명용 적용 과제"><h3>빈 검색어 오류를 설명한다면</h3><p>검색 화면 오류를 한 가지 입력으로 재현한 뒤 요청서를 작성합니다. 수정 후 같은 입력과 정상 검색을 비교하고, 검색 결과가 비어 있을 때의 화면 문구도 직접 읽어봅니다.</p></aside>
+        <h3>요청서를 보내기 전에</h3><ul><li>실제 결과와 기대 결과가 분리됐는가</li><li>유지할 조건이 서로 충돌하지 않는가</li><li>검증 증거와 미실행 항목을 확인하는가</li></ul>
+        <p class="blog-sources">공식 참고: <a href="https://learn.chatgpt.com/docs/prompting">OpenAI 요청 작성 안내</a> · <a href="https://learn.chatgpt.com/docs/long-running-work">긴 작업의 완료 기준</a>. 문서 확인: 2026.10.19.</p>
+        <nav class="blog-related" aria-label="Codex 05편 탐색"><a rel="prev" href="017.html#post-codex-04">이전 편</a> · <a href="../blogs.html#codex-series">시리즈 목차</a> · <a rel="next" href="019.html#post-codex-06">다음 편</a> · <a href="../blogs.html#ai-guides">전체 목차</a></nav>
+      </article>
+    </div>
+  </section>
+
+  <!-- 하단 : 사업자 정보 (index.html과 동일) -->
+  <footer class="footer">
+    <div class="inner">
+      <div>
+        <img class="ftr_logo" src="../images/logo.png" alt="솔루션 비제트 로고" />
+      </div>
+      <div class="info">
+        <ul>
+          <li>회사명 : 솔루션 비제트</li>
+          <li>대표자 : 박영</li>
+          <li>주소 : 경남 김해시 삼계중앙로6번길 21-18 101호</li>
+          <li>이메일 : ytbiz048@gmail.com </li>
+        </ul>
+        <ul>
+          <li>팩스 : 0504-229-2760</li>
+          <li>사업자등록번호 : 123-65-20119</li>
+          <li>통신판매업신고 : 제 2024-경남김해-0729 호</li>
+        </ul>
+      </div>
+      <p>COPYRIGHT (c) 솔루션 비제트 ALL RIGHTS RESERVED.</p>
+      <p>저작권 관련 수정 필요 내용이 있을 경우 이메일 혹은 전화로 연락 주시면 최대한 빠르게 수정 진행하겠습니다.</p>
+      <p><a href="../privacy.html">개인정보처리방침 전문 보기</a></p>
+      <p class="footer-privacy">개인정보처리방침 안내 : 솔루션 비제트는 문의 응대 등 서비스 제공을 위해 이름·연락처·이메일 등 최소한의 개인정보를 필요한 기간 동안만 수집·보관하며, 관련 법령에 따라 안전하게 관리합니다. 서비스 개선 및 광고 제공을 위해 쿠키가 사용될 수 있으며, 자세한 사항은 이메일 또는 전화로 문의하실 수 있습니다.</p>
+    </div>
+  </footer>
+
+  <script src="../script.js"></script>
+</body>
+</html>

@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="OpenClaw 09. Discord 연결: 봇 권한·토큰·사용자 승인을 나누어 설정하기 - 솔루션 비제트 IT 정보글">
+  <title>OpenClaw 09. Discord 연결: 봇 권한·토큰·사용자 승인을 나누어 설정하기 - 솔루션 비제트</title>
+  <link rel="stylesheet" href="../style.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+  <script src="https://code.jquery.com/jquery-latest.min.js"></script>
+  <!-- 파비콘 -->
+  <link rel="icon" type="image/png" sizes="32x32" href="../images/logo2.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="../images/logo2.png">
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8588372040849412"
+    crossorigin="anonymous"></script>
+</head>
+
+<body class="information-blog">
+  <!-- 헤더 (index.html과 동일) -->
+  <div class="container">
+    <header class="header">
+      <h1 class="logo"><a href="../index.html">Solution BZ</a></h1>
+      <nav class="nav">
+        <ul>
+          <li class="nav-dropdown">
+            <span class="nav-dropdown-toggle">전체 프로그램</span>
+            <ul class="nav-dropdown-menu">
+              <li><a href="../bss.html">BZ SMB Settings</a></li>
+              <li><a href="../solar.html">Solar BZ</a></li>
+              <li><a href="../ssolzip.html">쏠집(SSolZip)</a></li>
+              <li><a href="../ssolview.html">쏠뷰(SSolView)</a></li>
+              <li><a>웹 기반 에이전트 AI(출시 예정)</a></li>
+            </ul>
+          </li>
+          <li><a href="../profile.html">대표 소개</a></li>
+          <li><a href="../blogs.html">블로그</a></li>
+          <li><a href="../index.html#contact">제품 및 강의 문의</a></li>
+        </ul>
+      </nav>
+    </header>
+  </div>
+
+  <section class="blog-page">
+    <div class="inner">
+      <article class="blog-post" id="post-openclaw-09">
+        <a class="blog-post-back" href="../blogs.html#post-openclaw-09">목록으로 돌아가기</a>
+        <span class="blog-post-category">OpenClaw 입문 시리즈 · 09/14</span>
+        <h2>OpenClaw 09. Discord 연결: 봇 권한·토큰·사용자 승인을 나누어 설정하기</h2>
+        <p class="blog-post-meta">솔루션 비제트 · 공식 문서 기반 사용 안내 · <time datetime="2026-10-19">2026.10.19</time></p>
+        <p>Discord 서버에 봇이 보이는데 답을 하지 않는다면 초대만 끝난 상태일 수 있습니다. 메시지 권한과 Intent, OpenClaw 토큰 설정, 사용자 승인을 차례로 보세요. 시험 서버의 채널 하나로 시작하면 원인을 찾기 쉽습니다.</p>
+        <h3>봇 생성과 초대 권한</h3>
+<p>Discord Developer Portal에서 새 애플리케이션을 만들고 Bot 설정을 확인합니다. 일반 서버 메시지를 처리하려면 공식 OpenClaw 안내의 Message Content Intent 조건을 검토하세요. 역할 기반 접근 등을 쓴다면 Server Members Intent 필요 여부도 확인합니다. 필요 없는 Presence 기능까지 일괄 활성화하지 않습니다.</p>
+<p>OAuth2 초대 설정에서는 bot과 applications.commands 범위, 채널 보기·메시지 보내기·기록 읽기 등 사용할 기능의 권한을 확인합니다. 관리자 전체 권한으로 해결하기보다 실제 사용할 시험 채널로 범위를 제한하세요.</p>
+<h3>OpenClaw에 토큰 등록</h3>
+<p>봇 토큰은 대화로 에이전트에게 보내지 않고 OpenClaw의 채널 추가 흐름에서 입력합니다. 아래 명령에서 Discord를 선택하고 현재 안내에 따라 설정한 다음 연결 상태를 확인하세요. 직접 파일로 설정하려면 공식 Discord 설정 문서의 현재 형식을 참고합니다.</p>
+<pre tabindex="0" aria-label="명령어 또는 설정 예제"><code>openclaw channels add
+openclaw channels status --probe</code></pre>
+<p>환경변수로 토큰을 주입하는 경우 터미널과 백그라운드 서비스가 같은 값을 읽는지 확인해야 합니다. 셸에서만 설정한 값이 서비스에 자동 전달된다고 가정하지 마세요. 여러 봇을 연결한다면 토큰과 애플리케이션 ID의 대응도 구분합니다.</p>
+<h3>DM과 서버 채널을 따로 시험</h3>
+<p>봇에게 DM을 보내 페어링 요청을 만든 뒤 본인 요청만 승인합니다. 다음으로 허용한 시험 채널에서 봇을 멘션해 응답을 확인하세요. DM은 되는데 서버에서 답하지 않으면 Intent, 채널 권한, 허용 목록, 멘션 조건을 차례로 확인합니다.</p>
+<pre tabindex="0" aria-label="명령어 또는 설정 예제"><code>openclaw pairing list discord
+openclaw pairing approve discord &lt;CODE&gt;</code></pre>
+
+        <aside class="blog-worked-example" aria-label="설명용 실습 예시"><h3>전용 채널에서 첫 응답</h3><p>시험 서버에 전용 채널 하나를 만들고 “테스트 메모의 완료 항목만 정리”하도록 요청합니다. 본인 DM과 시험 채널 양쪽에서 응답 경로를 확인합니다. 연결에 성공해도 실제 업무 채널 전체를 허용하기 전에는 자료 범위와 사용자를 다시 검토합니다.</p></aside>
+        <h3>Discord 연결 후</h3>
+        <ul><li>봇 초대 권한과 Intent를 확인했는가</li><li>서비스에서 토큰을 읽을 수 있는가</li><li>DM 승인과 서버 채널 정책을 각각 시험했는가</li></ul>
+        <p class="blog-sources">공식 참고: <a href="https://docs.openclaw.ai/channels/discord/setup">Discord 봇 설치와 페어링</a> · <a href="https://docs.openclaw.ai/channels/discord">Discord 채널 안내</a>. 문서 확인: 2026.10.19.</p>
+        <nav class="blog-related" aria-label="OpenClaw 09편 탐색"><a rel="prev" href="049.html#post-openclaw-08">이전 편</a> · <a href="../blogs.html#openclaw-series">시리즈 목차</a> · <a rel="next" href="051.html#post-openclaw-10">다음 편</a> · <a href="../blogs.html#ai-guides">전체 목차</a></nav>
+      </article>
+    </div>
+  </section>
+
+  <!-- 하단 : 사업자 정보 (index.html과 동일) -->
+  <footer class="footer">
+    <div class="inner">
+      <div>
+        <img class="ftr_logo" src="../images/logo.png" alt="솔루션 비제트 로고" />
+      </div>
+      <div class="info">
+        <ul>
+          <li>회사명 : 솔루션 비제트</li>
+          <li>대표자 : 박영</li>
+          <li>주소 : 경남 김해시 삼계중앙로6번길 21-18 101호</li>
+          <li>이메일 : ytbiz048@gmail.com </li>
+        </ul>
+        <ul>
+          <li>팩스 : 0504-229-2760</li>
+          <li>사업자등록번호 : 123-65-20119</li>
+          <li>통신판매업신고 : 제 2024-경남김해-0729 호</li>
+        </ul>
+      </div>
+      <p>COPYRIGHT (c) 솔루션 비제트 ALL RIGHTS RESERVED.</p>
+      <p>저작권 관련 수정 필요 내용이 있을 경우 이메일 혹은 전화로 연락 주시면 최대한 빠르게 수정 진행하겠습니다.</p>
+      <p><a href="../privacy.html">개인정보처리방침 전문 보기</a></p>
+      <p class="footer-privacy">개인정보처리방침 안내 : 솔루션 비제트는 문의 응대 등 서비스 제공을 위해 이름·연락처·이메일 등 최소한의 개인정보를 필요한 기간 동안만 수집·보관하며, 관련 법령에 따라 안전하게 관리합니다. 서비스 개선 및 광고 제공을 위해 쿠키가 사용될 수 있으며, 자세한 사항은 이메일 또는 전화로 문의하실 수 있습니다.</p>
+    </div>
+  </footer>
+
+  <script src="../script.js"></script>
+</body>
+</html>

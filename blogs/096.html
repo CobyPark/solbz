@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="무료 AI를 고르기 전에: 웹 채팅, API, 로컬 게이트웨이의 차이 - 솔루션 비제트 IT 정보글">
+  <title>무료 AI를 고르기 전에: 웹 채팅, API, 로컬 게이트웨이의 차이 - 솔루션 비제트</title>
+  <link rel="stylesheet" href="../style.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+  <script src="https://code.jquery.com/jquery-latest.min.js"></script>
+  <!-- 파비콘 -->
+  <link rel="icon" type="image/png" sizes="32x32" href="../images/logo2.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="../images/logo2.png">
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8588372040849412"
+    crossorigin="anonymous"></script>
+</head>
+
+<body class="information-blog">
+  <!-- 헤더 (index.html과 동일) -->
+  <div class="container">
+    <header class="header">
+      <h1 class="logo"><a href="../index.html">Solution BZ</a></h1>
+      <nav class="nav">
+        <ul>
+          <li class="nav-dropdown">
+            <span class="nav-dropdown-toggle">전체 프로그램</span>
+            <ul class="nav-dropdown-menu">
+              <li><a href="../bss.html">BZ SMB Settings</a></li>
+              <li><a href="../solar.html">Solar BZ</a></li>
+              <li><a href="../ssolzip.html">쏠집(SSolZip)</a></li>
+              <li><a href="../ssolview.html">쏠뷰(SSolView)</a></li>
+              <li><a>웹 기반 에이전트 AI(출시 예정)</a></li>
+            </ul>
+          </li>
+          <li><a href="../profile.html">대표 소개</a></li>
+          <li><a href="../blogs.html">블로그</a></li>
+          <li><a href="../index.html#contact">제품 및 강의 문의</a></li>
+        </ul>
+      </nav>
+    </header>
+  </div>
+
+  <section class="blog-page">
+    <div class="inner">
+      <article class="blog-post" id="post-ai-free-start">
+        <a class="blog-post-back" href="../blogs.html#post-ai-free-start">목록으로 돌아가기</a>
+        <span class="blog-post-category">AI API · 시작하기</span>
+        <h2>무료 AI를 고르기 전에: 웹 채팅, API, 로컬 게이트웨이의 차이</h2>
+        <p class="blog-post-meta">솔루션 비제트 · 문서 기반 활용 가이드 · <time datetime="2026-10-19">2026.10.19</time></p>
+        <p>무료 AI를 찾더라도 메모 한 장을 정리할 때와 문서 백 개를 자동 처리할 때 필요한 도구는 다릅니다. 웹 채팅으로 충분한지, API가 필요한지부터 정해 보세요. OpenRouter, NVIDIA Build, OmniRoute의 역할도 여기서 갈립니다.</p>
+        <h3>웹 채팅과 API 호출</h3>
+        <p>회의 메모 한 장을 정리하려면 웹 채팅 화면이 간편합니다. 반면 파일이 들어올 때마다 같은 형식으로 요약하려면 프로그램에서 호출하는 API를 검토하게 됩니다. 채팅에서 무료로 쓸 수 있다는 안내가 같은 서비스의 API 무료 사용까지 의미하지는 않습니다. 가입 화면보다 실제 이용할 API의 가격표와 계정 한도를 먼저 확인하세요.</p>
+        <p>API 실험에는 세 가지 값이 필요합니다. 요청을 보낼 주소, 본인 계정의 API 키, 사용할 모델 ID입니다. 모델의 화면 표시 이름과 요청에 넣는 ID는 다를 수 있습니다. 검색 결과에 나온 옛 이름을 그대로 입력하기보다 현재 모델 상세 화면에서 ID를 복사하면 불필요한 오류를 줄일 수 있습니다.</p>
+        <h3>세 도구가 맡는 일</h3>
+        <div class="blog-table-wrap" role="region" aria-label="AI 연결 방식 비교" tabindex="0">
+          <table><caption>도구를 선택할 때 먼저 확인할 차이</caption><thead><tr><th scope="col">구분</th><th scope="col">주된 역할</th><th scope="col">첫 확인 항목</th></tr></thead><tbody>
+          <tr><th scope="row">OpenRouter</th><td>여러 공급자의 모델에 접근하는 API 서비스</td><td>모델별 가격, 무료 변형, 데이터 처리 설정</td></tr>
+          <tr><th scope="row">NVIDIA Build</th><td>모델 카탈로그에서 예제를 보고 호스팅 API를 시험하는 출발점</td><td>모델 페이지의 이용 조건과 API 예제</td></tr>
+          <tr><th scope="row">OmniRoute</th><td>연결한 공급자로 요청을 전달하는 오픈소스 게이트웨이</td><td>프로젝트 신원, 연결할 계정, 실제 공급자 비용</td></tr>
+          </tbody></table>
+        </div>
+        <p>게이트웨이는 연결을 관리하는 도구입니다. 설치 자체가 무료여도 연결한 공급자의 추론 요금까지 없어지는 것은 아닙니다. 또한 게이트웨이를 내 PC에서 실행하더라도 연결 대상이 외부 API라면 입력 내용은 외부로 전달됩니다. “로컬에서 실행”과 “모든 추론이 내 컴퓨터 안에서 실행”을 별도 항목으로 확인해야 합니다.</p>
+        <h3>한 모델에 질문 하나 보내기</h3>
+        <p>가상의 업무 메모 세 문장을 만들고 “담당자와 마감일을 표로 정리하라”처럼 결과를 확인할 수 있는 질문을 준비하세요. 처음에는 파일 업로드, 자동 재시도, 여러 모델 연결을 추가하지 않습니다. 답변 하나가 정상적으로 돌아오면 그때 입력 길이와 처리 개수를 늘립니다. 실패했을 때 어느 단계에서 문제가 났는지 설명할 수 있는 구성이 좋습니다.</p>
+        <p>작업 기록에는 모델 ID, 실행 날짜, 입력 분량, 응답 시간, 수정한 부분을 적습니다. 무료 모델의 공급 상태나 조건이 달라져도 같은 과제를 다시 실행해 비교할 수 있습니다. 특정 모델이 항상 최고라고 정하기보다 “이 업무의 초안을 검토 가능한 형태로 만들어 주는가”를 성공 기준으로 삼으세요.</p>
+        <p class="blog-sources">공식 참고: <a href="https://openrouter.ai/docs/quickstart">OpenRouter 시작 문서</a> · <a href="https://docs.api.nvidia.com/nim/docs/api-quickstart">NVIDIA API 시작 문서</a> · <a href="https://github.com/diegosouzapw/OmniRoute">OmniRoute 저장소</a>. 문서 확인: 2026.10.19. 제공 모델과 이용 조건은 실행 전에 다시 확인하세요.</p>
+        <p class="blog-related">다음 단계: <a href="097.html#post-openrouter-first-call">OpenRouter 첫 요청 보내기</a> · <a href="098.html#post-nvidia-build">NVIDIA Build에서 모델 확인하기</a> · <a href="../blogs.html#ai-guides">목차로 돌아가기</a></p>
+      </article>
+    </div>
+  </section>
+
+  <!-- 하단 : 사업자 정보 (index.html과 동일) -->
+  <footer class="footer">
+    <div class="inner">
+      <div>
+        <img class="ftr_logo" src="../images/logo.png" alt="솔루션 비제트 로고" />
+      </div>
+      <div class="info">
+        <ul>
+          <li>회사명 : 솔루션 비제트</li>
+          <li>대표자 : 박영</li>
+          <li>주소 : 경남 김해시 삼계중앙로6번길 21-18 101호</li>
+          <li>이메일 : ytbiz048@gmail.com </li>
+        </ul>
+        <ul>
+          <li>팩스 : 0504-229-2760</li>
+          <li>사업자등록번호 : 123-65-20119</li>
+          <li>통신판매업신고 : 제 2024-경남김해-0729 호</li>
+        </ul>
+      </div>
+      <p>COPYRIGHT (c) 솔루션 비제트 ALL RIGHTS RESERVED.</p>
+      <p>저작권 관련 수정 필요 내용이 있을 경우 이메일 혹은 전화로 연락 주시면 최대한 빠르게 수정 진행하겠습니다.</p>
+      <p><a href="../privacy.html">개인정보처리방침 전문 보기</a></p>
+      <p class="footer-privacy">개인정보처리방침 안내 : 솔루션 비제트는 문의 응대 등 서비스 제공을 위해 이름·연락처·이메일 등 최소한의 개인정보를 필요한 기간 동안만 수집·보관하며, 관련 법령에 따라 안전하게 관리합니다. 서비스 개선 및 광고 제공을 위해 쿠키가 사용될 수 있으며, 자세한 사항은 이메일 또는 전화로 문의하실 수 있습니다.</p>
+    </div>
+  </footer>
+
+  <script src="../script.js"></script>
+</body>
+</html>

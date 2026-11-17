@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="ChatGPT 05. 파일 읽기와 비교: 원문 위치를 남기는 검토 요청 - 솔루션 비제트 IT 정보글">
+  <title>ChatGPT 05. 파일 읽기와 비교: 원문 위치를 남기는 검토 요청 - 솔루션 비제트</title>
+  <link rel="stylesheet" href="../style.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+  <script src="https://code.jquery.com/jquery-latest.min.js"></script>
+  <!-- 파비콘 -->
+  <link rel="icon" type="image/png" sizes="32x32" href="../images/logo2.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="../images/logo2.png">
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8588372040849412"
+    crossorigin="anonymous"></script>
+</head>
+
+<body class="information-blog">
+  <!-- 헤더 (index.html과 동일) -->
+  <div class="container">
+    <header class="header">
+      <h1 class="logo"><a href="../index.html">Solution BZ</a></h1>
+      <nav class="nav">
+        <ul>
+          <li class="nav-dropdown">
+            <span class="nav-dropdown-toggle">전체 프로그램</span>
+            <ul class="nav-dropdown-menu">
+              <li><a href="../bss.html">BZ SMB Settings</a></li>
+              <li><a href="../solar.html">Solar BZ</a></li>
+              <li><a href="../ssolzip.html">쏠집(SSolZip)</a></li>
+              <li><a href="../ssolview.html">쏠뷰(SSolView)</a></li>
+              <li><a>웹 기반 에이전트 AI(출시 예정)</a></li>
+            </ul>
+          </li>
+          <li><a href="../profile.html">대표 소개</a></li>
+          <li><a href="../blogs.html">블로그</a></li>
+          <li><a href="../index.html#contact">제품 및 강의 문의</a></li>
+        </ul>
+      </nav>
+    </header>
+  </div>
+
+  <section class="blog-page">
+    <div class="inner">
+      <article class="blog-post" id="post-chatgpt-05">
+        <a class="blog-post-back" href="../blogs.html#post-chatgpt-05">목록으로 돌아가기</a>
+        <span class="blog-post-category">ChatGPT 활용 시리즈 · 05/15</span>
+        <h2>ChatGPT 05. 파일 읽기와 비교: 원문 위치를 남기는 검토 요청</h2>
+        <p class="blog-post-meta">솔루션 비제트 · OpenAI 공식 문서 기반 가이드 · <time datetime="2026-10-19">2026.10.19</time></p>
+        <p>문서 두 개를 올리고 “비교해 줘”라고 하면 원하는 차이가 빠질 수 있습니다. 점검 주기를 볼지, 담당 범위를 볼지 질문을 좁혀 주세요. 답변 옆에 원문 위치를 남기게 하면 틀린 요약을 찾아 고치기도 수월합니다.</p>
+        <h3>파일의 역할과 버전 설명</h3>
+<p>이전본과 수정본, 본문과 부록처럼 자료의 관계를 적습니다. 원하는 비교 대상이 내용인지 숫자인지 형식인지도 정하세요. 읽기 어려운 스캔이나 이미지가 있다면 해당 부분을 확인할 수 있었는지 별도로 보고하도록 요청합니다.</p>
+<h3>답변 옆에 원문 위치</h3>
+<p>주요 차이와 답변 옆에 문서명, 절·페이지·표 번호를 함께 적도록 할 수 있습니다. 표시한 위치도 틀릴 수 있으므로 중요한 항목은 원문을 열어 대조하세요. 서로 다른 문서의 문장을 하나의 확정 사실처럼 합치지 않도록 합니다.</p>
+<pre tabindex="0" aria-label="실습용 명령 또는 요청 예시"><code>두 가상 문서에서 점검 주기와 담당 범위만 비교해 줘.
+차이마다 문서명과 근거 위치를 적고, 읽지 못한 부분은 따로 알려줘.</code></pre>
+<h3>숫자와 예외 조항 재확인</h3>
+<p>문서가 길면 적용 범위와 예외가 요약에서 빠질 수 있습니다. 핵심 숫자, 날짜, 제외 조건을 확인 목록으로 만들고 원문과 대조합니다. 처리 한도는 기능과 계정에 따라 달라지므로 파일을 무한히 추가하기보다 의미 단위로 나눌 수 있는지도 봅니다.</p>
+<p>업무 자료를 외부 서비스에 전달해도 되는지 조직 기준을 확인하고 실습에는 가상 자료를 사용합니다. 결과물로 표나 문서를 만들 경우 원본과 가공본을 구분하고 어떤 자료에서 왔는지 남깁니다.</p>
+
+        <aside class="blog-worked-example" aria-label="설명용 적용 과제"><h3>점검 주기가 달라진 문서</h3><p>점검 안내문 두 버전에서 “월별 점검”이 “분기 점검”으로 바뀐 부분을 찾습니다. 적용 장비가 달라졌는지도 함께 확인하고, 요약표의 각 항목에서 원문 위치로 돌아갈 수 있는지 시험합니다.</p></aside>
+        <h3>요약표를 믿기 전에</h3><ul><li>비교할 파일 역할과 범위가 명확한가</li><li>중요 주장에 원문 위치가 있는가</li><li>누락·수치·예외를 직접 대조했는가</li></ul>
+        <p class="blog-sources">공식 참고: <a href="https://learn.chatgpt.com/docs/artifacts-viewer">파일 작업과 검토</a> · <a href="https://learn.chatgpt.com/docs/use-chatgpt">자료를 활용한 작업</a>. 문서 확인: 2026.10.19.</p>
+        <nav class="blog-related" aria-label="ChatGPT 05편 탐색"><a rel="prev" href="030.html#post-chatgpt-04">이전 편</a> · <a href="../blogs.html#chatgpt-series">시리즈 목차</a> · <a rel="next" href="032.html#post-chatgpt-06">다음 편</a> · <a href="../blogs.html#ai-guides">전체 목차</a></nav>
+      </article>
+    </div>
+  </section>
+
+  <!-- 하단 : 사업자 정보 (index.html과 동일) -->
+  <footer class="footer">
+    <div class="inner">
+      <div>
+        <img class="ftr_logo" src="../images/logo.png" alt="솔루션 비제트 로고" />
+      </div>
+      <div class="info">
+        <ul>
+          <li>회사명 : 솔루션 비제트</li>
+          <li>대표자 : 박영</li>
+          <li>주소 : 경남 김해시 삼계중앙로6번길 21-18 101호</li>
+          <li>이메일 : ytbiz048@gmail.com </li>
+        </ul>
+        <ul>
+          <li>팩스 : 0504-229-2760</li>
+          <li>사업자등록번호 : 123-65-20119</li>
+          <li>통신판매업신고 : 제 2024-경남김해-0729 호</li>
+        </ul>
+      </div>
+      <p>COPYRIGHT (c) 솔루션 비제트 ALL RIGHTS RESERVED.</p>
+      <p>저작권 관련 수정 필요 내용이 있을 경우 이메일 혹은 전화로 연락 주시면 최대한 빠르게 수정 진행하겠습니다.</p>
+      <p><a href="../privacy.html">개인정보처리방침 전문 보기</a></p>
+      <p class="footer-privacy">개인정보처리방침 안내 : 솔루션 비제트는 문의 응대 등 서비스 제공을 위해 이름·연락처·이메일 등 최소한의 개인정보를 필요한 기간 동안만 수집·보관하며, 관련 법령에 따라 안전하게 관리합니다. 서비스 개선 및 광고 제공을 위해 쿠키가 사용될 수 있으며, 자세한 사항은 이메일 또는 전화로 문의하실 수 있습니다.</p>
+    </div>
+  </footer>
+
+  <script src="../script.js"></script>
+</body>
+</html>

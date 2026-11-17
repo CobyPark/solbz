@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="ChatGPT 09. 이미지 읽기: 스크린샷과 도표에서 무엇을 확인할지 알려주기 - 솔루션 비제트 IT 정보글">
+  <title>ChatGPT 09. 이미지 읽기: 스크린샷과 도표에서 무엇을 확인할지 알려주기 - 솔루션 비제트</title>
+  <link rel="stylesheet" href="../style.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+  <script src="https://code.jquery.com/jquery-latest.min.js"></script>
+  <!-- 파비콘 -->
+  <link rel="icon" type="image/png" sizes="32x32" href="../images/logo2.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="../images/logo2.png">
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8588372040849412"
+    crossorigin="anonymous"></script>
+</head>
+
+<body class="information-blog">
+  <!-- 헤더 (index.html과 동일) -->
+  <div class="container">
+    <header class="header">
+      <h1 class="logo"><a href="../index.html">Solution BZ</a></h1>
+      <nav class="nav">
+        <ul>
+          <li class="nav-dropdown">
+            <span class="nav-dropdown-toggle">전체 프로그램</span>
+            <ul class="nav-dropdown-menu">
+              <li><a href="../bss.html">BZ SMB Settings</a></li>
+              <li><a href="../solar.html">Solar BZ</a></li>
+              <li><a href="../ssolzip.html">쏠집(SSolZip)</a></li>
+              <li><a href="../ssolview.html">쏠뷰(SSolView)</a></li>
+              <li><a>웹 기반 에이전트 AI(출시 예정)</a></li>
+            </ul>
+          </li>
+          <li><a href="../profile.html">대표 소개</a></li>
+          <li><a href="../blogs.html">블로그</a></li>
+          <li><a href="../index.html#contact">제품 및 강의 문의</a></li>
+        </ul>
+      </nav>
+    </header>
+  </div>
+
+  <section class="blog-page">
+    <div class="inner">
+      <article class="blog-post" id="post-chatgpt-09">
+        <a class="blog-post-back" href="../blogs.html#post-chatgpt-09">목록으로 돌아가기</a>
+        <span class="blog-post-category">ChatGPT 활용 시리즈 · 09/15</span>
+        <h2>ChatGPT 09. 이미지 읽기: 스크린샷과 도표에서 무엇을 확인할지 알려주기</h2>
+        <p class="blog-post-meta">솔루션 비제트 · OpenAI 공식 문서 기반 가이드 · <time datetime="2026-10-19">2026.10.19</time></p>
+        <p>스크린샷을 올릴 때는 어디를 봐야 하는지도 알려주세요. 오류 문구를 읽는 일과 두 화면의 간격을 비교하는 일은 다른 요청입니다. 여러 장이라면 수정 전후를 표시하고, 잘 안 보이는 글자는 추측하지 않도록 합니다.</p>
+        <h3>잘리지 않은 이미지 준비</h3>
+<p>관련 부분이 잘리지 않은 이미지를 첨부하고 여러 장이면 각각의 이름과 관계를 설명합니다. 캡처에는 계정 정보나 다른 사람의 메시지가 포함될 수 있으므로 공유할 범위를 먼저 정리하세요. 원본을 보존하고 실습에는 가상 화면을 쓰는 편이 좋습니다.</p>
+<h3>보이는 사실과 추정 나누기</h3>
+<p>실제로 보이는 오류 문구와 화면 요소를 먼저 정리하고 가능한 원인은 별도 항목으로 요청합니다. 읽기 어려운 숫자는 추정해 채우지 말고 확인이 필요하다고 표시하게 하세요. 도표는 제목, 단위, 축, 범례를 함께 확인해야 합니다.</p>
+<pre tabindex="0" aria-label="실습용 명령 또는 요청 예시"><code>이미지 A는 수정 전, B는 수정 후 화면입니다.
+메뉴 간격과 제목 잘림만 비교하고, 보이지 않는 기능은 추정하지 마.
+정확히 읽기 어려운 문구는 따로 알려줘.</code></pre>
+<h3>고친 화면으로 다시 비교</h3>
+<p>시각적 차이를 찾았다면 실제 화면에서 같은 상태를 재현해 확인합니다. 이미지에서 기능이 정상이라고 보이는 것과 실제 버튼이 동작하는 것은 다릅니다. 인터랙션은 별도 시험이 필요합니다.</p>
+<p>이미지 분석과 새 이미지 생성은 다른 요청입니다. 기존 화면을 설명하려는 것인지 디자인을 새로 만들려는 것인지 명확히 말하세요. 결과에 따라 원본 크기와 대비를 조정해 다시 확인할 수 있습니다.</p>
+
+        <aside class="blog-worked-example" aria-label="설명용 적용 과제"><h3>모바일 메뉴 두 장 비교</h3><p>모바일 메뉴 화면 두 장을 비교해 제목 줄바꿈과 버튼 간격을 확인합니다. 바뀐 항목을 실제 페이지에서 재현하고, 이미지로 확인할 수 없는 클릭 동작은 별도 검증 항목으로 남깁니다.</p></aside>
+        <h3>이미지 답변에서 확인할 점</h3><ul><li>이미지 이름·관계·확인 영역을 설명했는가</li><li>읽은 사실과 추정을 나누었는가</li><li>시각 비교와 실제 동작 검증을 구분했는가</li></ul>
+        <p class="blog-sources">공식 참고: <a href="https://learn.chatgpt.com/docs/image-inputs">이미지 입력 공식 안내</a>. 문서 확인: 2026.10.19.</p>
+        <nav class="blog-related" aria-label="ChatGPT 09편 탐색"><a rel="prev" href="034.html#post-chatgpt-08">이전 편</a> · <a href="../blogs.html#chatgpt-series">시리즈 목차</a> · <a rel="next" href="036.html#post-chatgpt-10">다음 편</a> · <a href="../blogs.html#ai-guides">전체 목차</a></nav>
+      </article>
+    </div>
+  </section>
+
+  <!-- 하단 : 사업자 정보 (index.html과 동일) -->
+  <footer class="footer">
+    <div class="inner">
+      <div>
+        <img class="ftr_logo" src="../images/logo.png" alt="솔루션 비제트 로고" />
+      </div>
+      <div class="info">
+        <ul>
+          <li>회사명 : 솔루션 비제트</li>
+          <li>대표자 : 박영</li>
+          <li>주소 : 경남 김해시 삼계중앙로6번길 21-18 101호</li>
+          <li>이메일 : ytbiz048@gmail.com </li>
+        </ul>
+        <ul>
+          <li>팩스 : 0504-229-2760</li>
+          <li>사업자등록번호 : 123-65-20119</li>
+          <li>통신판매업신고 : 제 2024-경남김해-0729 호</li>
+        </ul>
+      </div>
+      <p>COPYRIGHT (c) 솔루션 비제트 ALL RIGHTS RESERVED.</p>
+      <p>저작권 관련 수정 필요 내용이 있을 경우 이메일 혹은 전화로 연락 주시면 최대한 빠르게 수정 진행하겠습니다.</p>
+      <p><a href="../privacy.html">개인정보처리방침 전문 보기</a></p>
+      <p class="footer-privacy">개인정보처리방침 안내 : 솔루션 비제트는 문의 응대 등 서비스 제공을 위해 이름·연락처·이메일 등 최소한의 개인정보를 필요한 기간 동안만 수집·보관하며, 관련 법령에 따라 안전하게 관리합니다. 서비스 개선 및 광고 제공을 위해 쿠키가 사용될 수 있으며, 자세한 사항은 이메일 또는 전화로 문의하실 수 있습니다.</p>
+    </div>
+  </footer>
+
+  <script src="../script.js"></script>
+</body>
+</html>

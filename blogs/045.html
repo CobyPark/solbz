@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="OpenClaw 04. 초기 설정: 온보딩에서 모델 연결과 Gateway 실행 확인하기 - 솔루션 비제트 IT 정보글">
+  <title>OpenClaw 04. 초기 설정: 온보딩에서 모델 연결과 Gateway 실행 확인하기 - 솔루션 비제트</title>
+  <link rel="stylesheet" href="../style.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+  <script src="https://code.jquery.com/jquery-latest.min.js"></script>
+  <!-- 파비콘 -->
+  <link rel="icon" type="image/png" sizes="32x32" href="../images/logo2.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="../images/logo2.png">
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8588372040849412"
+    crossorigin="anonymous"></script>
+</head>
+
+<body class="information-blog">
+  <!-- 헤더 (index.html과 동일) -->
+  <div class="container">
+    <header class="header">
+      <h1 class="logo"><a href="../index.html">Solution BZ</a></h1>
+      <nav class="nav">
+        <ul>
+          <li class="nav-dropdown">
+            <span class="nav-dropdown-toggle">전체 프로그램</span>
+            <ul class="nav-dropdown-menu">
+              <li><a href="../bss.html">BZ SMB Settings</a></li>
+              <li><a href="../solar.html">Solar BZ</a></li>
+              <li><a href="../ssolzip.html">쏠집(SSolZip)</a></li>
+              <li><a href="../ssolview.html">쏠뷰(SSolView)</a></li>
+              <li><a>웹 기반 에이전트 AI(출시 예정)</a></li>
+            </ul>
+          </li>
+          <li><a href="../profile.html">대표 소개</a></li>
+          <li><a href="../blogs.html">블로그</a></li>
+          <li><a href="../index.html#contact">제품 및 강의 문의</a></li>
+        </ul>
+      </nav>
+    </header>
+  </div>
+
+  <section class="blog-page">
+    <div class="inner">
+      <article class="blog-post" id="post-openclaw-04">
+        <a class="blog-post-back" href="../blogs.html#post-openclaw-04">목록으로 돌아가기</a>
+        <span class="blog-post-category">OpenClaw 입문 시리즈 · 04/14</span>
+        <h2>OpenClaw 04. 초기 설정: 온보딩에서 모델 연결과 Gateway 실행 확인하기</h2>
+        <p class="blog-post-meta">솔루션 비제트 · 공식 문서 기반 사용 안내 · <time datetime="2026-10-19">2026.10.19</time></p>
+        <p>설치 뒤에는 온보딩에서 모델 계정과 작업 환경을 연결합니다. 설정이 저장됐다고 모델 응답까지 된 것은 아닐 수 있습니다. 모델 검증 결과를 보고 Gateway가 실행 중인지 확인한 다음 대시보드를 열어보겠습니다.</p>
+        <h3>대화형 초기 설정</h3>
+<pre tabindex="0" aria-label="명령어 또는 설정 예제"><code>openclaw onboard</code></pre>
+<p>새 환경에서 Quick start와 Custom setup 같은 선택지가 나오면 필요한 설정 범위에 맞게 고릅니다. 자동 감지된 연결도 어떤 계정과 서비스인지 확인한 뒤 선택하세요. 접근 범위 등을 검토하고 싶다면 상세 설정을 따라가는 편이 좋습니다. 기존 설정이 있으면 화면 흐름이 다를 수 있습니다.</p>
+<p>현재 공식 흐름은 선택한 모델 연결을 실제 응답으로 검증할 수 있습니다. 이 검증도 공급자 이용량에 반영될 수 있습니다. “나중에 설정”으로 넘어가 준비만 저장한 상태와 실제 모델 연결이 성공한 상태를 구분해 기록합니다.</p>
+<h3>전경 실행과 서비스 설치</h3>
+<p>빠른 시작에서 Gateway가 현재 터미널의 전경 프로세스로 실행된다면 Ctrl+C로 멈출 수 있습니다. 계속 실행할 서비스가 필요할 때는 먼저 전경 Gateway를 멈춘 뒤 공식 서비스 설치 절차를 따릅니다. 같은 포트에 두 프로세스를 동시에 띄우지 않도록 하세요.</p>
+<pre tabindex="0" aria-label="명령어 또는 설정 예제"><code>openclaw gateway install
+openclaw gateway status</code></pre>
+<p>서비스 관리 방식은 macOS, Linux·WSL2, 네이티브 Windows가 다릅니다. 재부팅이나 로그아웃 후 동작은 설치 환경에 따라 확인해야 합니다. 상태 출력에서 실행 중인지 확인한 뒤 대시보드를 엽니다.</p>
+<h3>대시보드에서 첫 답변 받기</h3>
+<pre tabindex="0" aria-label="명령어 또는 설정 예제"><code>openclaw dashboard</code></pre>
+<p>대시보드가 열리고 짧은 질문에 답변이 오면 기본 경로를 확인한 것입니다. 채팅이 실패하면 모델 인증 문제인지 Gateway 연결 문제인지 나누어 봅니다. 공급자 변경은 온보딩으로, 추가 설정은 현재 버전의 configure 안내로 진행하며 설정을 통째로 지우지 않습니다.</p>
+
+        <aside class="blog-worked-example" aria-label="설명용 실습 예시"><h3>외부 도구 없이 질문 하나</h3><p>외부 도구 없이 “한국어로 두 문장 인사를 작성해 줘” 같은 가상 요청을 한 번 보냅니다. 모델 답변, Gateway 상태, 종료·재시작 방법을 확인하고 기록합니다. 파일 작업이나 메신저 채널 추가는 아직 하지 않아도 됩니다.</p></aside>
+        <h3>첫 대화가 끝났다면</h3>
+        <ul><li>설정 저장과 모델 응답 검증을 구분했는가</li><li>전경 프로세스와 서비스 중 무엇을 쓰는지 아는가</li><li>대시보드에서 첫 응답을 확인했는가</li></ul>
+        <p class="blog-sources">공식 참고: <a href="https://docs.openclaw.ai/start/wizard">CLI 온보딩</a> · <a href="https://docs.openclaw.ai/start/getting-started">서비스 설치와 첫 대화</a>. 문서 확인: 2026.10.19.</p>
+        <nav class="blog-related" aria-label="OpenClaw 04편 탐색"><a rel="prev" href="044.html#post-openclaw-03">이전 편</a> · <a href="../blogs.html#openclaw-series">시리즈 목차</a> · <a rel="next" href="046.html#post-openclaw-05">다음 편</a> · <a href="../blogs.html#ai-guides">전체 목차</a></nav>
+      </article>
+    </div>
+  </section>
+
+  <!-- 하단 : 사업자 정보 (index.html과 동일) -->
+  <footer class="footer">
+    <div class="inner">
+      <div>
+        <img class="ftr_logo" src="../images/logo.png" alt="솔루션 비제트 로고" />
+      </div>
+      <div class="info">
+        <ul>
+          <li>회사명 : 솔루션 비제트</li>
+          <li>대표자 : 박영</li>
+          <li>주소 : 경남 김해시 삼계중앙로6번길 21-18 101호</li>
+          <li>이메일 : ytbiz048@gmail.com </li>
+        </ul>
+        <ul>
+          <li>팩스 : 0504-229-2760</li>
+          <li>사업자등록번호 : 123-65-20119</li>
+          <li>통신판매업신고 : 제 2024-경남김해-0729 호</li>
+        </ul>
+      </div>
+      <p>COPYRIGHT (c) 솔루션 비제트 ALL RIGHTS RESERVED.</p>
+      <p>저작권 관련 수정 필요 내용이 있을 경우 이메일 혹은 전화로 연락 주시면 최대한 빠르게 수정 진행하겠습니다.</p>
+      <p><a href="../privacy.html">개인정보처리방침 전문 보기</a></p>
+      <p class="footer-privacy">개인정보처리방침 안내 : 솔루션 비제트는 문의 응대 등 서비스 제공을 위해 이름·연락처·이메일 등 최소한의 개인정보를 필요한 기간 동안만 수집·보관하며, 관련 법령에 따라 안전하게 관리합니다. 서비스 개선 및 광고 제공을 위해 쿠키가 사용될 수 있으며, 자세한 사항은 이메일 또는 전화로 문의하실 수 있습니다.</p>
+    </div>
+  </footer>
+
+  <script src="../script.js"></script>
+</body>
+</html>

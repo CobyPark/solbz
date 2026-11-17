@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="ChatGPT 03. 초안 다듬기: 사실 수정과 말투 수정을 분리하는 대화법 - 솔루션 비제트 IT 정보글">
+  <title>ChatGPT 03. 초안 다듬기: 사실 수정과 말투 수정을 분리하는 대화법 - 솔루션 비제트</title>
+  <link rel="stylesheet" href="../style.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+  <script src="https://code.jquery.com/jquery-latest.min.js"></script>
+  <!-- 파비콘 -->
+  <link rel="icon" type="image/png" sizes="32x32" href="../images/logo2.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="../images/logo2.png">
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8588372040849412"
+    crossorigin="anonymous"></script>
+</head>
+
+<body class="information-blog">
+  <!-- 헤더 (index.html과 동일) -->
+  <div class="container">
+    <header class="header">
+      <h1 class="logo"><a href="../index.html">Solution BZ</a></h1>
+      <nav class="nav">
+        <ul>
+          <li class="nav-dropdown">
+            <span class="nav-dropdown-toggle">전체 프로그램</span>
+            <ul class="nav-dropdown-menu">
+              <li><a href="../bss.html">BZ SMB Settings</a></li>
+              <li><a href="../solar.html">Solar BZ</a></li>
+              <li><a href="../ssolzip.html">쏠집(SSolZip)</a></li>
+              <li><a href="../ssolview.html">쏠뷰(SSolView)</a></li>
+              <li><a>웹 기반 에이전트 AI(출시 예정)</a></li>
+            </ul>
+          </li>
+          <li><a href="../profile.html">대표 소개</a></li>
+          <li><a href="../blogs.html">블로그</a></li>
+          <li><a href="../index.html#contact">제품 및 강의 문의</a></li>
+        </ul>
+      </nav>
+    </header>
+  </div>
+
+  <section class="blog-page">
+    <div class="inner">
+      <article class="blog-post" id="post-chatgpt-03">
+        <a class="blog-post-back" href="../blogs.html#post-chatgpt-03">목록으로 돌아가기</a>
+        <span class="blog-post-category">ChatGPT 활용 시리즈 · 03/15</span>
+        <h2>ChatGPT 03. 초안 다듬기: 사실 수정과 말투 수정을 분리하는 대화법</h2>
+        <p class="blog-post-meta">솔루션 비제트 · OpenAI 공식 문서 기반 가이드 · <time datetime="2026-10-19">2026.10.19</time></p>
+        <p>초안을 받았는데 마음에 들지 않는다면 어느 부분이 문제인지 짚는 편이 빠릅니다. 틀린 날짜를 고치는 일과 문장을 짧게 만드는 일은 따로 요청해도 됩니다. 이미 확인한 표나 숫자는 유지할 부분으로 적어 주세요.</p>
+        <h3>틀린 사실 먼저 고치기</h3>
+<p>숫자·날짜·이름이 틀렸다면 정답과 근거 위치를 함께 알려줍니다. 문장이 어색한 문제와 사실이 틀린 문제는 다르므로 먼저 사실 관계를 정리하세요. 서로 다른 원문이 충돌한다면 임의로 하나를 고르게 하기보다 차이를 설명하도록 요청합니다.</p>
+<h3>바꿀 곳과 남길 곳</h3>
+<p>제목만 바꿀지, 두 번째 문단만 줄일지 범위를 지정합니다. 전체 재작성은 필요할 때 선택하고, 이미 확인한 숫자와 표는 유지하도록 할 수 있습니다. 결과가 여러 파일이면 대상 파일과 페이지도 명확히 적으세요.</p>
+<pre tabindex="0" aria-label="실습용 명령 또는 요청 예시"><code>두 번째 문단만 절반 길이로 줄여줘.
+표의 수치와 마지막 확인 질문은 유지해 줘.
+확정되지 않은 일정을 확정 표현으로 바꾸지 마.</code></pre>
+<h3>최종본을 원문과 대조하기</h3>
+<p>수정이 여러 번 이어지면 이전에 확인한 내용이 다시 바뀌었는지 봅니다. 원문과 최종본을 대조하고 독자가 실제로 해야 할 일이 분명한지 확인하세요. 문장 품질 개선이 사실 정확성을 자동으로 높여주는 것은 아닙니다.</p>
+<p>수정 이유를 짧게 남겨두면 다음 문서에서 같은 요청을 재사용할 수 있습니다. 일회성 취향인지 지속적인 작성 규칙인지도 구분하세요. 장기 규칙은 프로젝트 지침이나 개인화 설정으로 정리할 수 있습니다.</p>
+
+        <aside class="blog-worked-example" aria-label="설명용 적용 과제"><h3>일정 표현은 그대로 두고 수정</h3><p>가상 고객 안내문에서 일정은 “검토 중”으로 유지한 채 전문 용어만 풀어쓰도록 요청합니다. 새 버전에서 확정 표현이 생기지 않았는지 대조하고, 최종본만 별도 파일로 정리할지 결정합니다.</p></aside>
+        <h3>다듬은 글을 읽을 때</h3><ul><li>사실 오류와 표현 수정을 나눴는가</li><li>유지할 부분과 수정 범위를 설명했는가</li><li>최종본을 원문과 다시 비교했는가</li></ul>
+        <p class="blog-sources">공식 참고: <a href="https://learn.chatgpt.com/docs/prompting">대화형 요청과 수정</a> · <a href="https://learn.chatgpt.com/docs/artifacts-viewer">파일 부분 수정</a>. 문서 확인: 2026.10.19.</p>
+        <nav class="blog-related" aria-label="ChatGPT 03편 탐색"><a rel="prev" href="028.html#post-chatgpt-02">이전 편</a> · <a href="../blogs.html#chatgpt-series">시리즈 목차</a> · <a rel="next" href="030.html#post-chatgpt-04">다음 편</a> · <a href="../blogs.html#ai-guides">전체 목차</a></nav>
+      </article>
+    </div>
+  </section>
+
+  <!-- 하단 : 사업자 정보 (index.html과 동일) -->
+  <footer class="footer">
+    <div class="inner">
+      <div>
+        <img class="ftr_logo" src="../images/logo.png" alt="솔루션 비제트 로고" />
+      </div>
+      <div class="info">
+        <ul>
+          <li>회사명 : 솔루션 비제트</li>
+          <li>대표자 : 박영</li>
+          <li>주소 : 경남 김해시 삼계중앙로6번길 21-18 101호</li>
+          <li>이메일 : ytbiz048@gmail.com </li>
+        </ul>
+        <ul>
+          <li>팩스 : 0504-229-2760</li>
+          <li>사업자등록번호 : 123-65-20119</li>
+          <li>통신판매업신고 : 제 2024-경남김해-0729 호</li>
+        </ul>
+      </div>
+      <p>COPYRIGHT (c) 솔루션 비제트 ALL RIGHTS RESERVED.</p>
+      <p>저작권 관련 수정 필요 내용이 있을 경우 이메일 혹은 전화로 연락 주시면 최대한 빠르게 수정 진행하겠습니다.</p>
+      <p><a href="../privacy.html">개인정보처리방침 전문 보기</a></p>
+      <p class="footer-privacy">개인정보처리방침 안내 : 솔루션 비제트는 문의 응대 등 서비스 제공을 위해 이름·연락처·이메일 등 최소한의 개인정보를 필요한 기간 동안만 수집·보관하며, 관련 법령에 따라 안전하게 관리합니다. 서비스 개선 및 광고 제공을 위해 쿠키가 사용될 수 있으며, 자세한 사항은 이메일 또는 전화로 문의하실 수 있습니다.</p>
+    </div>
+  </footer>
+
+  <script src="../script.js"></script>
+</body>
+</html>

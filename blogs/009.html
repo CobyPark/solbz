@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Claude 09. 외부 서비스 연결: 검색과 발송을 나눠서 맡기기 - 솔루션 비제트 IT 정보글">
+  <title>Claude 09. 외부 서비스 연결: 검색과 발송을 나눠서 맡기기 - 솔루션 비제트</title>
+  <link rel="stylesheet" href="../style.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+  <script src="https://code.jquery.com/jquery-latest.min.js"></script>
+  <!-- 파비콘 -->
+  <link rel="icon" type="image/png" sizes="32x32" href="../images/logo2.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="../images/logo2.png">
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8588372040849412"
+    crossorigin="anonymous"></script>
+</head>
+
+<body class="information-blog">
+  <!-- 헤더 (index.html과 동일) -->
+  <div class="container">
+    <header class="header">
+      <h1 class="logo"><a href="../index.html">Solution BZ</a></h1>
+      <nav class="nav">
+        <ul>
+          <li class="nav-dropdown">
+            <span class="nav-dropdown-toggle">전체 프로그램</span>
+            <ul class="nav-dropdown-menu">
+              <li><a href="../bss.html">BZ SMB Settings</a></li>
+              <li><a href="../solar.html">Solar BZ</a></li>
+              <li><a href="../ssolzip.html">쏠집(SSolZip)</a></li>
+              <li><a href="../ssolview.html">쏠뷰(SSolView)</a></li>
+              <li><a>웹 기반 에이전트 AI(출시 예정)</a></li>
+            </ul>
+          </li>
+          <li><a href="../profile.html">대표 소개</a></li>
+          <li><a href="../blogs.html">블로그</a></li>
+          <li><a href="../index.html#contact">제품 및 강의 문의</a></li>
+        </ul>
+      </nav>
+    </header>
+  </div>
+
+  <section class="blog-page">
+    <div class="inner">
+      <article class="blog-post" id="post-claude-09">
+        <a class="blog-post-back" href="../blogs.html#post-claude-09">목록으로 돌아가기</a>
+        <span class="blog-post-category">Claude 활용 시리즈 · 09/13</span>
+        <h2>Claude 09. 외부 서비스 연결: 검색과 발송을 나눠서 맡기기</h2>
+        <p class="blog-post-meta">솔루션 비제트 · Anthropic 공식 문서 참고 가이드 · <time datetime="2026-10-28">2026.10.28</time></p>
+        <p>일정을 읽어 달라는 요청과 참석자에게 초대를 보내 달라는 요청은 결과가 다릅니다. Claude의 커넥터는 외부 서비스에서 자료를 찾거나 작업을 하는 연결 수단입니다. 연결 버튼을 누르기 전에 이번에 필요한 일이 읽기인지 실제 변경인지 정해 두면 권한 설명도 이해하기 쉽습니다.</p>
+<h3>연결할 계정과 서비스부터</h3>
+<p>커넥터 목록에서 제공자, 읽기·쓰기 기능, 이용 가능한 환경을 읽습니다. 로그인 안내에서 회사 계정과 개인 계정 중 어느 것을 연결하는지 살펴보세요. 서비스에 따라 조직 관리자가 연결을 허용해야 하거나 각 사용자가 별도로 인증해야 할 수 있습니다.</p>
+<p>공식 문서에 따르면 일반적으로 연결된 서비스에서 사용자가 가진 권한이 접근 범위에 반영됩니다. 공용 자격 증명을 쓰는 커스텀 커넥터는 그 자격 증명의 범위를 따릅니다. “내 계정으로 로그인했다”는 말만으로 모든 연결의 범위가 같다고 생각하면 안 됩니다.</p>
+<h3>첫 요청은 찾은 자료를 보여 주는 데까지</h3>
+<pre tabindex="0" aria-label="연결된 자료 검색 요청 예시"><code>연결한 문서 서비스에서 제품 안내문 초안을 찾아 줘.
+파일 제목, 수정일, 링크를 먼저 목록으로 보여 줘.
+이번 요청은 찾기만 하고 파일 수정이나 메시지 발송은 하지 말아 줘.
+같은 제목이 여러 개면 임의로 최종본을 정하지 말고 모두 알려 줘.</code></pre>
+<p>검색 결과에서 원본 링크가 열리는지 확인한 뒤 필요한 파일을 지정합니다. 이어서 이메일 초안을 만들더라도 발송할 때는 받는 사람, 본문, 첨부파일, 보내는 계정을 별도로 볼 수 있게 요청하세요. 초안을 만들었다는 설명이 발송 완료를 뜻하지는 않습니다.</p>
+<h3>연결 해제와 이미 만든 결과</h3>
+<p>작업이 끝나면 더 이상 필요 없는 연결을 유지할지 판단합니다. 연결을 끊는 것과 이전 대화에 복사된 내용이나 이미 만든 문서를 지우는 것은 별개입니다. 자료를 잘못 가져왔다면 어떤 대화와 출력 파일에 포함됐는지 함께 살펴야 합니다.</p>
+<p>개인용 Claude의 모델 개선 설정은 설정의 개인정보 항목에서 변경할 수 있습니다. 이 설정과 외부 서비스 접근 권한도 서로 다른 문제입니다. 회사 자료라면 회사가 허용한 계정과 연결 방식을 먼저 따르세요. 모델 개선 설정만 바꿨다고 사내 문서를 임의로 올려도 되는 것은 아닙니다.</p>
+<p>처음부터 메일함 전체나 모든 문서를 대상으로 시험할 필요는 없습니다. 공개해도 되는 연습 파일 하나를 두고 검색 결과와 원문을 대조하면 연결이 어떻게 작동하는지 살펴볼 수 있습니다.</p>
+        <p class="blog-sources">공식 참고: <a href="https://support.claude.com/en/articles/11176164-use-connectors-to-extend-claude-s-capabilities">커넥터 연결과 권한</a> · <a href="https://privacy.claude.com/en/articles/12109829-how-do-i-change-my-model-improvement-privacy-settings">개인 계정의 모델 개선 설정</a>. 문서 확인: 2026.10.28.</p>
+        <nav class="blog-related" aria-label="Claude 09편 탐색"><a rel="prev" href="008.html#post-claude-08">이전 편</a> · <a href="../blogs.html#claude-series">시리즈 목차</a> · <a rel="next" href="010.html#post-claude-10">다음 편</a> · <a href="../blogs.html#ai-guides">전체 목차</a></nav>
+      </article>
+    </div>
+  </section>
+
+  <!-- 하단 : 사업자 정보 (index.html과 동일) -->
+  <footer class="footer">
+    <div class="inner">
+      <div>
+        <img class="ftr_logo" src="../images/logo.png" alt="솔루션 비제트 로고" />
+      </div>
+      <div class="info">
+        <ul>
+          <li>회사명 : 솔루션 비제트</li>
+          <li>대표자 : 박영</li>
+          <li>주소 : 경남 김해시 삼계중앙로6번길 21-18 101호</li>
+          <li>이메일 : ytbiz048@gmail.com </li>
+        </ul>
+        <ul>
+          <li>팩스 : 0504-229-2760</li>
+          <li>사업자등록번호 : 123-65-20119</li>
+          <li>통신판매업신고 : 제 2024-경남김해-0729 호</li>
+        </ul>
+      </div>
+      <p>COPYRIGHT (c) 솔루션 비제트 ALL RIGHTS RESERVED.</p>
+      <p>저작권 관련 수정 필요 내용이 있을 경우 이메일 혹은 전화로 연락 주시면 최대한 빠르게 수정 진행하겠습니다.</p>
+      <p><a href="../privacy.html">개인정보처리방침 전문 보기</a></p>
+      <p class="footer-privacy">개인정보처리방침 안내 : 솔루션 비제트는 문의 응대 등 서비스 제공을 위해 이름·연락처·이메일 등 최소한의 개인정보를 필요한 기간 동안만 수집·보관하며, 관련 법령에 따라 안전하게 관리합니다. 서비스 개선 및 광고 제공을 위해 쿠키가 사용될 수 있으며, 자세한 사항은 이메일 또는 전화로 문의하실 수 있습니다.</p>
+    </div>
+  </footer>
+
+  <script src="../script.js"></script>
+</body>
+</html>

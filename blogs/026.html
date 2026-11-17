@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Codex 13. 문제 해결과 설정 점검: 버전·폴더·인증·네트워크 나누기 - 솔루션 비제트 IT 정보글">
+  <title>Codex 13. 문제 해결과 설정 점검: 버전·폴더·인증·네트워크 나누기 - 솔루션 비제트</title>
+  <link rel="stylesheet" href="../style.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+  <script src="https://code.jquery.com/jquery-latest.min.js"></script>
+  <!-- 파비콘 -->
+  <link rel="icon" type="image/png" sizes="32x32" href="../images/logo2.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="../images/logo2.png">
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8588372040849412"
+    crossorigin="anonymous"></script>
+</head>
+
+<body class="information-blog">
+  <!-- 헤더 (index.html과 동일) -->
+  <div class="container">
+    <header class="header">
+      <h1 class="logo"><a href="../index.html">Solution BZ</a></h1>
+      <nav class="nav">
+        <ul>
+          <li class="nav-dropdown">
+            <span class="nav-dropdown-toggle">전체 프로그램</span>
+            <ul class="nav-dropdown-menu">
+              <li><a href="../bss.html">BZ SMB Settings</a></li>
+              <li><a href="../solar.html">Solar BZ</a></li>
+              <li><a href="../ssolzip.html">쏠집(SSolZip)</a></li>
+              <li><a href="../ssolview.html">쏠뷰(SSolView)</a></li>
+              <li><a>웹 기반 에이전트 AI(출시 예정)</a></li>
+            </ul>
+          </li>
+          <li><a href="../profile.html">대표 소개</a></li>
+          <li><a href="../blogs.html">블로그</a></li>
+          <li><a href="../index.html#contact">제품 및 강의 문의</a></li>
+        </ul>
+      </nav>
+    </header>
+  </div>
+
+  <section class="blog-page">
+    <div class="inner">
+      <article class="blog-post" id="post-codex-13">
+        <a class="blog-post-back" href="../blogs.html#post-codex-13">목록으로 돌아가기</a>
+        <span class="blog-post-category">Codex 활용 시리즈 · 13/13</span>
+        <h2>Codex 13. 문제 해결과 설정 점검: 버전·폴더·인증·네트워크 나누기</h2>
+        <p class="blog-post-meta">솔루션 비제트 · OpenAI 공식 문서 기반 가이드 · <time datetime="2026-10-19">2026.10.19</time></p>
+        <p>앱에서는 되는데 CLI에서는 안 되거나, 한 저장소에서만 실패한다면 그 차이가 단서입니다. 설정을 전부 지우기 전에 버전, 폴더, 계정, 오류 문구를 남겨 보세요. 무엇이 달랐는지 알면 불필요한 재설치를 줄일 수 있습니다.</p>
+        <h3>버전과 오류 문구부터 기록</h3>
+<p>클라이언트 버전, 운영체제, 작업 폴더, 실행 방식, 오류 문구를 적습니다. 앱에서 성공하고 CLI에서 실패한다면 인증이나 실행 경로 차이가 단서가 될 수 있습니다. 반대로 특정 저장소에서만 실패하면 지침·의존성·권한을 함께 살펴보세요.</p>
+<pre tabindex="0" aria-label="실습용 명령 또는 요청 예시"><code>codex --version
+codex --help</code></pre>
+<h3>실제로 적용된 설정 찾기</h3>
+<p>로컬 Codex 설정은 사용자·프로젝트·관리 설정 등의 영향을 받을 수 있습니다. 실제 유효 값과 어떤 파일에서 왔는지 확인하세요. 예전 예제의 옵션을 최신 설정에 그대로 붙여 넣거나 전체 파일을 덮어쓰는 것은 피합니다.</p>
+<p>인증 오류, 요청 한도, 네트워크 차단, 도구 실행 실패는 해결 방법이 다릅니다. 모델 요청과 외부 명령의 네트워크 경로도 같다고 가정하지 않습니다. 오류를 공유할 때는 토큰·비밀 키·고객 자료를 제외합니다.</p>
+<h3>작은 요청으로 다시 시험</h3>
+<p>문제와 관계없는 플러그인이나 긴 입력을 제외한 최소 요청으로 비교합니다. 한 번에 여러 설정을 바꾸면 어떤 변화가 해결했는지 알기 어렵습니다. 변경한 값과 결과를 기록하고 원래 상태로 복구할 방법을 준비하세요.</p>
+<p>업데이트나 기능 제공 여부는 공식 문서와 현재 계정 화면을 함께 확인합니다. 해결되지 않은 경우에는 재현 순서와 확인한 범위가 있는 상태로 지원·관리 담당자에게 전달하는 편이 유용합니다.</p>
+
+        <aside class="blog-worked-example" aria-label="설명용 적용 과제"><h3>CLI 인증 실패 기록</h3><p>CLI 인증 실패 기록에 버전, 폴더, 오류 종류와 실패 시각을 남깁니다. 키 원문을 제외한 짧은 설명 요청으로 다시 시험하고, 앱과 CLI의 계정·네트워크 차이를 대조합니다. 성공 후 같은 저장소의 원래 과제로 돌아갑니다.</p></aside>
+        <h3>지원 요청에 담을 내용</h3><ul><li>증상과 현재 환경을 재현 가능하게 기록했는가</li><li>설정·인증·네트워크·도구 오류를 나눴는가</li><li>변경한 설정과 해결 결과를 남겼는가</li></ul>
+        <p class="blog-sources">공식 참고: <a href="https://learn.chatgpt.com/docs/config-file/config-basic">설정 기본 구조</a> · <a href="https://learn.chatgpt.com/docs/reference/troubleshooting">공식 문제 해결</a>. 문서 확인: 2026.10.19.</p>
+        <nav class="blog-related" aria-label="Codex 13편 탐색"><a rel="prev" href="025.html#post-codex-12">이전 편</a> · <a href="../blogs.html#codex-series">시리즈 목차</a> · <a href="../blogs.html#ai-guides">전체 목차</a></nav>
+      </article>
+    </div>
+  </section>
+
+  <!-- 하단 : 사업자 정보 (index.html과 동일) -->
+  <footer class="footer">
+    <div class="inner">
+      <div>
+        <img class="ftr_logo" src="../images/logo.png" alt="솔루션 비제트 로고" />
+      </div>
+      <div class="info">
+        <ul>
+          <li>회사명 : 솔루션 비제트</li>
+          <li>대표자 : 박영</li>
+          <li>주소 : 경남 김해시 삼계중앙로6번길 21-18 101호</li>
+          <li>이메일 : ytbiz048@gmail.com </li>
+        </ul>
+        <ul>
+          <li>팩스 : 0504-229-2760</li>
+          <li>사업자등록번호 : 123-65-20119</li>
+          <li>통신판매업신고 : 제 2024-경남김해-0729 호</li>
+        </ul>
+      </div>
+      <p>COPYRIGHT (c) 솔루션 비제트 ALL RIGHTS RESERVED.</p>
+      <p>저작권 관련 수정 필요 내용이 있을 경우 이메일 혹은 전화로 연락 주시면 최대한 빠르게 수정 진행하겠습니다.</p>
+      <p><a href="../privacy.html">개인정보처리방침 전문 보기</a></p>
+      <p class="footer-privacy">개인정보처리방침 안내 : 솔루션 비제트는 문의 응대 등 서비스 제공을 위해 이름·연락처·이메일 등 최소한의 개인정보를 필요한 기간 동안만 수집·보관하며, 관련 법령에 따라 안전하게 관리합니다. 서비스 개선 및 광고 제공을 위해 쿠키가 사용될 수 있으며, 자세한 사항은 이메일 또는 전화로 문의하실 수 있습니다.</p>
+    </div>
+  </footer>
+
+  <script src="../script.js"></script>
+</body>
+</html>
