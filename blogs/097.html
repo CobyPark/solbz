@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="OpenRouter 무료 모델 첫 호출: 모델 선택부터 Python 응답 확인까지 - 솔루션 비제트 IT 정보글">
-  <title>OpenRouter 무료 모델 첫 호출: 모델 선택부터 Python 응답 확인까지 - 솔루션 비제트</title>
+  <meta name="description" content="Python에서 짧은 질문 하나를 보내 OpenRouter 연결을 시험해 보겠습니다. 준비할 것은 API 키와 현재 제공되는 무료 모델의 ID입니다. 아래 예제는 Python 표준 라이브러리로 요청을 보내므로 별도 HTTP 패키지를 설치하지 않아도 됩니다.">
+  <title>OpenRouter 무료 모델에 Python으로 요청 보내기 - 솔루션 비제트</title>
   <link rel="stylesheet" href="../style.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
   <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
@@ -46,17 +46,17 @@
       <article class="blog-post" id="post-openrouter-first-call">
         <a class="blog-post-back" href="../blogs.html#post-openrouter-first-call">목록으로 돌아가기</a>
         <span class="blog-post-category">AI API · OpenRouter</span>
-        <h2>OpenRouter 무료 모델 첫 호출: 모델 선택부터 Python 응답 확인까지</h2>
+        <h2>OpenRouter 무료 모델에 Python으로 요청 보내기</h2>
         <p class="blog-post-meta">솔루션 비제트 · 문서 기반 활용 가이드 · <time datetime="2026-10-19">2026.10.19</time></p>
-        <p>OpenRouter 연결은 짧은 질문 하나로 시작하겠습니다. 별도 패키지를 설치하지 않고 Python 표준 라이브러리로 요청을 보내는 예제입니다. 준비할 값은 본인 API 키와 현재 목록에서 고른 무료 모델 ID입니다.</p>
-        <h3>1. 사용 가능한 무료 모델 고르기</h3>
+        <p>Python에서 짧은 질문 하나를 보내 OpenRouter 연결을 시험해 보겠습니다. 준비할 것은 API 키와 현재 제공되는 무료 모델의 ID입니다. 아래 예제는 Python 표준 라이브러리로 요청을 보내므로 별도 HTTP 패키지를 설치하지 않아도 됩니다.</p>
+        <h3>사용 가능한 무료 모델 고르기</h3>
         <p>OpenRouter의 무료 모델 목록을 열고 모델 상세 화면에서 ID와 입력·출력 가격을 확인합니다. 무료 변형은 ID의 <code>:free</code> 접미사로 구분할 수 있습니다. 같은 계열이라도 접미사가 다른 ID는 가격이 다를 수 있으므로 전체 문자열을 확인하세요. 무료 목록은 고정되지 않기 때문에 이 예제에는 특정 모델명을 박아 넣지 않았습니다.</p>
         <p>모델이 텍스트 입력을 지원하는지 확인한 뒤, 계정에서 API 키를 생성합니다. 무료 모델에도 요청 횟수 제한과 공급자 수용량 문제가 있을 수 있습니다. 계정의 잔액·키 한도·일일 이용량을 먼저 확인하고, 처음부터 여러 작업을 동시에 보내지 마세요.</p>
-        <h3>2. PowerShell에 키와 모델 ID 설정</h3>
+        <h3>PowerShell에 키와 모델 ID 설정</h3>
         <p>다음 명령은 Windows PowerShell용입니다. 첫 줄의 입력창에 본인 키를 붙여 넣으면 명령문 자체에 키를 직접 적지 않아도 됩니다. 환경변수는 암호 저장소가 아니므로 화면 공유, 로그 수집, 다른 프로그램 실행 시 취급에 주의하세요. 모델 ID는 방금 확인한 무료 변형으로 바꿉니다.</p>
         <pre><code>$env:OPENROUTER_API_KEY = Read-Host "본인 OpenRouter API 키"
 $env:OPENROUTER_MODEL = "공식_목록에서_확인한_모델_ID:free"</code></pre>
-        <h3>3. first_call.py 저장 후 실행</h3>
+        <h3>first_call.py 저장 후 실행</h3>
         <pre><code>import json
 import os
 import urllib.error
@@ -95,9 +95,9 @@ except urllib.error.HTTPError as error:
 except (urllib.error.URLError, TimeoutError):
     print("연결 또는 시간 초과 오류: 네트워크와 서비스 상태를 확인하세요.")</code></pre>
         <p><code>python first_call.py</code>로 실행합니다. 답변과 사용량이 나오면 기본적인 요청·응답 흐름을 확인한 것입니다. 모델에 따라 출력 한도를 추론 토큰에 소비해 본문이 짧거나 비어 있을 수 있습니다. 이때 한도만 계속 높이기보다 모델 문서와 응답 상태를 먼저 확인하세요. 한 번의 성공이 장시간 자동 처리의 안정성을 보장하지는 않습니다.</p>
-        <h3>4. 응답이 오지 않을 때</h3>
+        <h3>응답이 오지 않을 때</h3>
         <p><code>KeyError</code>는 환경변수가 현재 Python 프로세스에 전달되지 않았을 때 발생할 수 있습니다. 값을 설정한 같은 터미널에서 실행했는지 확인하세요. HTTP 오류가 나오면 Python 설치부터 다시 하기보다 상태 코드를 기준으로 키 인증, 잔액, 모델 이용 가능 여부를 나누어 점검합니다. 모델 ID 끝에 무료 접미사를 임의로 붙인다고 존재하지 않는 무료 모델이 생기지는 않습니다.</p>
-        <p>실습이 끝나면 아래 명령으로 이 세션의 값을 제거합니다. 코드를 다른 사람에게 전달할 때는 실제 키와 실행 로그를 제외하고, 설정해야 하는 변수 이름만 안내하세요.</p>
+        <p>응답이 왔다면 모델 ID와 사용량 기록을 확인해 보세요. 같은 코드를 다시 쓸 때도 해당 모델이 계속 제공되는지 살펴야 합니다. 입력 파일을 붙이는 작업은 짧은 요청이 정상으로 끝난 뒤에 이어갈 수 있습니다.</p>
         <pre><code>Remove-Item Env:OPENROUTER_API_KEY
 Remove-Item Env:OPENROUTER_MODEL</code></pre>
         <p class="blog-sources">공식 참고: <a href="https://openrouter.ai/collections/free-models">무료 모델 목록</a> · <a href="https://openrouter.ai/docs/guides/routing/model-variants/free">무료 변형 설명</a> · <a href="https://openrouter.ai/docs/quickstart">요청 형식</a> · <a href="https://openrouter.ai/docs/api/reference/limits">계정 한도</a>. 문서 확인: 2026.10.19.</p>

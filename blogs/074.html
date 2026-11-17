@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="파일 일괄 변경 자동화에 미리보기 단계를 넣는 방법 - 솔루션 비제트 IT 정보글">
-  <title>파일 일괄 변경 자동화에 미리보기 단계를 넣는 방법 - 솔루션 비제트</title>
+  <meta name="description" content="파일 수백 개를 바꾸는 스크립트라면 실행 전에 변경 목록부터 보여 주는 편이 좋습니다. 원래 이름과 새 이름을 나란히 적고, 두 파일이 같은 이름이 되는 경우를 찾아보세요. 실제 변경 전에 잡을 수 있는 오류입니다.">
+  <title>파일 이름 일괄 변경에 미리보기 붙이기 - 솔루션 비제트</title>
   <link rel="stylesheet" href="../style.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
   <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
@@ -46,9 +46,9 @@
       <article class="blog-post" id="post-dry-run-file-changes">
         <a class="blog-post-back" href="../blogs.html#post-dry-run-file-changes">목록으로 돌아가기</a>
         <span class="blog-post-category">Python·업무 자동화</span>
-        <h2>파일 일괄 변경 자동화에 미리보기 단계를 넣는 방법</h2>
+        <h2>파일 이름 일괄 변경에 미리보기 붙이기</h2>
         <p class="blog-post-meta">솔루션 비제트 · 활용 가이드 · <time datetime="2026-10-19">2026.10.19</time></p>
-        <p>파일 이름 수백 개를 바꾸기 전에 새 이름 목록부터 보고 싶을 수 있습니다. 실제 변경 없이 원래 경로와 목적지를 보여주는 미리보기를 두면 됩니다. 중복 목적지와 범위를 검사하고, 적용 직전에도 상태를 다시 보세요.</p>
+        <p>파일 수백 개를 바꾸는 스크립트라면 실행 전에 변경 목록부터 보여 주는 편이 좋습니다. 원래 이름과 새 이름을 나란히 적고, 두 파일이 같은 이름이 되는 경우를 찾아보세요. 실제 변경 전에 잡을 수 있는 오류입니다.</p>
         <h3>원래 이름과 새 이름 목록</h3>
 <p>대상 폴더를 명시하고 원래 경로, 새 경로, 변경 사유를 목록으로 출력합니다. 하위 폴더 포함 여부와 확장자 조건을 정해 범위를 제한하세요. 파일을 찾았다고 즉시 변경하지 말고 계획 생성과 적용 단계를 나눕니다.</p>
 <h3>목적지 충돌과 범위 검사</h3>
@@ -56,9 +56,7 @@
 <p>미리보기 후 다른 사람이 파일을 변경할 수도 있습니다. 적용 직전에 원본의 존재와 목적지 상태를 다시 확인하세요. 복구를 위해 옛 이름과 새 이름의 대응표를 남기되, 실행 도중 일부만 성공한 경우도 구분할 수 있어야 합니다.</p>
 <h3>복사본에서 변경·복구 시험</h3>
 <p>실제 자료의 복사본 몇 개로 계획과 결과를 비교합니다. 원복은 단순히 새 이름을 옛 이름으로 바꾸는 것만으로 충분한지 확인하세요. 중간에 같은 이름이 생기면 원복도 충돌할 수 있으므로 원본 백업과 대응표를 별도로 보존해 두세요.</p>
-        <aside class="blog-worked-example" aria-label="설명용 예시"><h3>두 파일이 같은 이름이 된다면</h3><p>가상 파일 A_report.txt와 B_report.txt를 모두 report.txt로 바꾸는 규칙이라면 실행 전에 충돌로 표시해야 합니다. 미리보기에서 두 줄이 나왔다는 사실만으로 안전한 계획이 되지는 않습니다. 중복 목적지 검사에 통과한 계획만 적용합니다.</p></aside>
-        <h3>일괄 변경을 실행하기 전에</h3>
-        <ul><li>대상 폴더와 하위 폴더 범위가 명확한가</li><li>목적지 충돌을 실행 전에 검사하는가</li><li>부분 성공과 복구 결과를 기록할 수 있는가</li></ul>
+        <p>A_report.txt와 B_report.txt를 모두 report.txt로 바꾸는 규칙은 목적지가 겹칩니다. 변경 목록에 두 줄이 보여도 그대로 실행하면 덮어쓸 수 있습니다. 같은 목적지와 이미 존재하는 파일을 검사해 충돌을 먼저 알려야 합니다.</p>
         <p class="blog-sources">기술 참고: <a href="https://docs.python.org/3/library/pathlib.html">Python pathlib 파일 경로·이름 변경 기능</a>. 문서 확인: 2026.10.19.</p>
         <p class="blog-related"><a href="../blogs.html#ai-guides">전체 목차로 돌아가기</a></p>
       </article>

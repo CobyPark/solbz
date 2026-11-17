@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="문의 폼의 이름표 만들기: placeholder만으로 부족한 이유 - 솔루션 비제트 IT 정보글">
-  <title>문의 폼의 이름표 만들기: placeholder만으로 부족한 이유 - 솔루션 비제트</title>
+  <meta name="description" content="입력칸 안의 안내 문구는 글을 쓰기 시작하면 사라집니다. 여러 칸을 채우다 보면 지금 적는 것이 이름인지 회사명인지 헷갈릴 수 있습니다. 칸 바깥에 label을 두고 입력칸과 연결하면 이름표가 계속 남습니다.">
+  <title>문의 폼에 placeholder만 두면 불편한 이유 - 솔루션 비제트</title>
   <link rel="stylesheet" href="../style.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
   <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
@@ -46,9 +46,9 @@
       <article class="blog-post" id="post-form-labels">
         <a class="blog-post-back" href="../blogs.html#post-form-labels">목록으로 돌아가기</a>
         <span class="blog-post-category">웹사이트 운영·접근성</span>
-        <h2>문의 폼의 이름표 만들기: placeholder만으로 부족한 이유</h2>
+        <h2>문의 폼에 placeholder만 두면 불편한 이유</h2>
         <p class="blog-post-meta">솔루션 비제트 · 활용 가이드 · <time datetime="2026-10-19">2026.10.19</time></p>
-        <p>입력칸 안의 안내 문구는 타이핑을 시작하면 사라집니다. 여러 항목을 채우다 보면 지금 어떤 칸인지 헷갈릴 수 있습니다. 칸 밖에 이름표를 두고 연결하면 다시 읽거나 고치기가 편해집니다.</p>
+        <p>입력칸 안의 안내 문구는 글을 쓰기 시작하면 사라집니다. 여러 칸을 채우다 보면 지금 적는 것이 이름인지 회사명인지 헷갈릴 수 있습니다. 칸 바깥에 label을 두고 입력칸과 연결하면 이름표가 계속 남습니다.</p>
         <h3>입력칸과 label 연결</h3>
 <p>HTML의 label을 입력 요소와 연결하면 항목의 의미를 전달할 수 있습니다. for와 id를 대응시키고 ID를 중복하지 않도록 확인하세요. placeholder는 예시나 보조 안내로 쓸 수 있지만 지속적으로 보이는 이름표를 대체하는 방식에 의존하지 않는 것이 좋습니다.</p>
 <h3>필수 여부와 오류 이유</h3>
@@ -56,9 +56,7 @@
 <p>오류는 “잘못됐습니다”보다 어느 항목을 어떻게 고칠지 알려주는 문장으로 작성합니다. 색만으로 오류를 표시하지 않고 오류 문구와 입력칸의 관계를 전달해야 합니다. 수정할 때 기존 입력이 모두 지워지지 않는지도 확인하세요.</p>
 <h3>마우스 없이 작성해 보기</h3>
 <p>이름표를 눌렀을 때 해당 입력칸으로 이동하는지, Tab으로 순서대로 작성할 수 있는지 확인합니다. 제출 중 상태와 성공·실패 메시지도 읽을 수 있어야 합니다. 입력 화면만 잘 보이고 실제 접수가 실패하는 상황은 따로 점검합니다.</p>
-        <aside class="blog-worked-example" aria-label="설명용 예시"><h3>이메일 칸의 이름표</h3><p>문의 폼에서 “연락받을 이메일”은 상시 보이는 이름표로 두고 placeholder에는 sample@example.com 같은 예시만 둡니다. 주소가 비어 있다면 “답변을 받을 이메일을 입력해 주세요”라고 안내하고 해당 칸으로 쉽게 돌아가게 합니다.</p></aside>
-        <h3>폼을 공개하기 전에</h3>
-        <ul><li>입력칸과 이름표가 정확히 연결되는가</li><li>필수 조건과 오류 이유를 글로 알리는가</li><li>키보드로 작성·수정·제출할 수 있는가</li></ul>
+        <p>“연락받을 이메일”을 칸 바깥 이름표로 두고 입력칸 안에는 sample@example.com 같은 예시를 넣을 수 있습니다. 비워 둔 채 제출했다면 “답변받을 이메일을 입력해 주세요”라고 해당 칸에서 안내합니다.</p>
         <p class="blog-sources">기술 참고: <a href="https://www.w3.org/WAI/tutorials/forms/labels/">W3C WAI 폼 컨트롤 이름표 안내</a>. 문서 확인: 2026.10.19.</p>
         <p class="blog-related"><a href="../blogs.html#ai-guides">전체 목차로 돌아가기</a></p>
       </article>

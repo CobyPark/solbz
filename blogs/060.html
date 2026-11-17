@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="스캔 문서를 표로 바꿀 때 OCR 결과에서 먼저 확인할 곳 - 솔루션 비제트 IT 정보글">
-  <title>스캔 문서를 표로 바꿀 때 OCR 결과에서 먼저 확인할 곳 - 솔루션 비제트</title>
+  <meta name="description" content="OCR로 옮긴 수량표의 합계가 맞는데 품목별 수량은 틀릴 수 있습니다. 한 품목의 숫자가 다음 행으로 밀려도 전체 합은 같기 때문입니다. 원본 이미지와 추출한 표를 나란히 놓고 품목과 숫자가 제대로 이어지는지 살펴보세요.">
+  <title>OCR 표에서 합계가 맞아도 틀릴 수 있는 값 - 솔루션 비제트</title>
   <link rel="stylesheet" href="../style.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
   <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
@@ -46,9 +46,9 @@
       <article class="blog-post" id="post-ocr-table-review">
         <a class="blog-post-back" href="../blogs.html#post-ocr-table-review">목록으로 돌아가기</a>
         <span class="blog-post-category">AI 문서·업무 활용</span>
-        <h2>스캔 문서를 표로 바꿀 때 OCR 결과에서 먼저 확인할 곳</h2>
+        <h2>OCR 표에서 합계가 맞아도 틀릴 수 있는 값</h2>
         <p class="blog-post-meta">솔루션 비제트 · 활용 가이드 · <time datetime="2026-10-19">2026.10.19</time></p>
-        <p>OCR로 표를 옮겼는데 숫자가 옆 행에 붙어도 합계는 맞을 수 있습니다. 인식한 숫자만 훑기보다 품목과 값이 제대로 연결됐는지 봐야 합니다. 스캔 원본을 옆에 놓고 행·열과 단위를 먼저 맞춰보겠습니다.</p>
+        <p>OCR로 옮긴 수량표의 합계가 맞는데 품목별 수량은 틀릴 수 있습니다. 한 품목의 숫자가 다음 행으로 밀려도 전체 합은 같기 때문입니다. 원본 이미지와 추출한 표를 나란히 놓고 품목과 숫자가 제대로 이어지는지 살펴보세요.</p>
         <h3>원본에서 제목과 머리글 확인</h3>
 <p>회전, 그림자, 접힌 선, 잘린 머리글이 있으면 추출이 불안정할 수 있습니다. 원본을 보존한 채 페이지 방향과 해상도를 확인하고, 표의 제목과 단위가 보이는지 살펴보세요. 촬영본을 다시 만들 수 있다면 내용을 잘라내지 않는 것이 우선입니다.</p>
 <h3>숫자보다 행·열 연결 먼저</h3>
@@ -56,9 +56,7 @@
 <p>소수점, 음수 부호, 0과 문자 O, 1과 문자 I는 따로 비교할 항목으로 정합니다. 빈칸은 원본이 비어 있는지 인식이 실패한 것인지 구분해야 합니다. 숫자가 없어졌다고 바로 0을 넣으면 실제 누락이 숨겨질 수 있습니다.</p>
 <h3>수정한 셀의 원본 위치</h3>
 <p>수정한 셀에는 페이지와 행 정보를 남기고 원본 이미지와 나란히 확인합니다. 합계 검사는 도움이 되지만 서로 상쇄되는 오류를 놓칠 수 있으므로 중요한 식별자와 금액은 개별 대조가 필요합니다. 개인정보가 있는 문서는 사용 도구의 전송·저장 조건도 확인하세요.</p>
-        <aside class="blog-worked-example" aria-label="설명용 예시"><h3>합계로 잡히지 않는 행 밀림</h3><p>수량표에서 품목 A의 10이 품목 B 행으로 이동했다면 전체 합은 그대로일 수 있습니다. 합계만 맞추는 대신 “품목명 / 원본 행 / 인식 수량 / 검토 수량”을 만들어 행 연결을 확인한 뒤 최종 표에 반영합니다.</p></aside>
-        <h3>변환표를 확정하기 전에</h3>
-        <ul><li>표 제목과 단위가 추출 결과에 남아 있는가</li><li>병합 셀 아래의 행 연결을 확인했는가</li><li>수정한 값의 원본 위치를 찾을 수 있는가</li></ul>
+        <p>품목 A의 수량 10이 B 행으로 밀리면 합계는 여전히 10일 수 있습니다. 품목명, 원본 행, 인식 수량, 검토 수량을 나란히 놓으면 합계에서 안 보이던 오류를 찾기 쉽습니다.</p>
         <p class="blog-sources">기술 참고: <a href="https://docs.mistral.ai/studio/document-processing/basic_ocr">Mistral OCR 문서·표 출력 형식 안내</a>. 문서 확인: 2026.10.19.</p>
         <p class="blog-related"><a href="../blogs.html#ai-guides">전체 목차로 돌아가기</a></p>
       </article>

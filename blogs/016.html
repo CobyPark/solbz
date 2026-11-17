@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Codex 03. CLI 설치와 로그인: 프로젝트 폴더에서 실행하는 순서 - 솔루션 비제트 IT 정보글">
-  <title>Codex 03. CLI 설치와 로그인: 프로젝트 폴더에서 실행하는 순서 - 솔루션 비제트</title>
+  <meta name="description" content="Codex CLI는 터미널에서 실행합니다. 설치와 로그인을 마친 뒤에는 프로젝트 폴더로 이동해 실행하세요. 실행한 위치에 따라 읽을 파일과 적용되는 지침이 달라질 수 있습니다.">
+  <title>Codex 03. CLI 설치와 첫 로그인 - 솔루션 비제트</title>
   <link rel="stylesheet" href="../style.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
   <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
@@ -46,9 +46,9 @@
       <article class="blog-post" id="post-codex-03">
         <a class="blog-post-back" href="../blogs.html#post-codex-03">목록으로 돌아가기</a>
         <span class="blog-post-category">Codex 활용 시리즈 · 03/13</span>
-        <h2>Codex 03. CLI 설치와 로그인: 프로젝트 폴더에서 실행하는 순서</h2>
+        <h2>Codex 03. CLI 설치와 첫 로그인</h2>
         <p class="blog-post-meta">솔루션 비제트 · OpenAI 공식 문서 기반 가이드 · <time datetime="2026-10-19">2026.10.19</time></p>
-        <p>터미널에서 작업하는 시간이 많다면 Codex CLI가 익숙할 수 있습니다. 설치 후에는 어느 폴더에서 실행했는지를 꼭 보세요. Codex가 읽을 프로젝트를 정하는 기준이기 때문입니다. 아래에서는 npm 설치와 첫 로그인을 다룹니다.</p>
+        <p>Codex CLI는 터미널에서 실행합니다. 설치와 로그인을 마친 뒤에는 프로젝트 폴더로 이동해 실행하세요. 실행한 위치에 따라 읽을 파일과 적용되는 지침이 달라질 수 있습니다.</p>
         <h3>설치 방식은 하나로</h3>
 <p>공식 문서는 운영체제별 설치 프로그램과 npm·Homebrew 경로를 안내합니다. 이미 Node.js와 npm을 관리한다면 아래 npm 방식도 선택할 수 있습니다. 다른 방식으로 이미 설치했다면 실행 경로가 겹치는지 먼저 확인하고 설치 방법을 섞지 마세요.</p>
 <pre tabindex="0" aria-label="실습용 명령 또는 요청 예시"><code>npm install -g @openai/codex
@@ -60,8 +60,7 @@ codex --version</code></pre>
 <h3>명령을 찾지 못할 때</h3>
 <p>codex를 찾지 못하면 설치 성공 여부와 PATH, 새 터미널 반영을 확인합니다. 명령은 실행되지만 요청이 실패하면 인증과 연결 문제를 따로 봅니다. 업데이트도 처음 선택한 방식의 공식 절차를 따르고 버전과 중요한 설정을 기록해 두세요.</p>
 
-        <aside class="blog-worked-example" aria-label="설명용 적용 과제"><h3>연습 저장소에서 첫 대화</h3><p>연습 저장소에서 CLI를 열고 “코드는 수정하지 말고 폴더 구조와 테스트 명령을 설명”하도록 요청합니다. 설명한 파일이 실제로 존재하는지 확인하고, 다음 작업에서 수정 범위를 좁혀 사용합니다.</p></aside>
-        <h3>터미널을 닫기 전에</h3><ul><li>설치 방식과 실행 경로가 명확한가</li><li>프로젝트 폴더에서 실행했는가</li><li>인증 성공과 실제 요청 성공을 확인했는가</li></ul>
+        <p>첫 요청은 “폴더 구조와 테스트 명령을 설명해 줘” 정도로 할 수 있습니다. 답변에 나온 경로를 열어 보면 지금 선택한 저장소가 맞는지도 알 수 있습니다.</p>
         <p class="blog-sources">공식 참고: <a href="https://learn.chatgpt.com/docs/codex/cli">Codex CLI 설치·로그인</a> · <a href="https://learn.chatgpt.com/docs/artifacts-viewer">파일 결과 확인 방식</a>. 문서 확인: 2026.10.19.</p>
         <nav class="blog-related" aria-label="Codex 03편 탐색"><a rel="prev" href="015.html#post-codex-02">이전 편</a> · <a href="../blogs.html#codex-series">시리즈 목차</a> · <a rel="next" href="017.html#post-codex-04">다음 편</a> · <a href="../blogs.html#ai-guides">전체 목차</a></nav>
       </article>

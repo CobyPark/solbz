@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="서버 기록과 업무 시간이 다를 때: 날짜·시간대·집계 기준 맞추기 - 솔루션 비제트 IT 정보글">
-  <title>서버 기록과 업무 시간이 다를 때: 날짜·시간대·집계 기준 맞추기 - 솔루션 비제트</title>
+  <meta name="description" content="한국 시간으로 자정이 조금 지난 기록이 서버에서는 전날로 보일 수 있습니다. UTC로 저장한 시각을 그대로 날짜로 잘랐기 때문입니다. 일별 보고서를 만들기 전에 어느 시간대의 자정을 기준으로 묶을지 정해야 합니다.">
+  <title>서버 시각과 한국 날짜가 다르게 집계될 때 - 솔루션 비제트</title>
   <link rel="stylesheet" href="../style.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
   <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
@@ -46,9 +46,9 @@
       <article class="blog-post" id="post-timezone-records">
         <a class="blog-post-back" href="../blogs.html#post-timezone-records">목록으로 돌아가기</a>
         <span class="blog-post-category">데이터·파일 정리</span>
-        <h2>서버 기록과 업무 시간이 다를 때: 날짜·시간대·집계 기준 맞추기</h2>
+        <h2>서버 시각과 한국 날짜가 다르게 집계될 때</h2>
         <p class="blog-post-meta">솔루션 비제트 · 활용 가이드 · <time datetime="2026-10-19">2026.10.19</time></p>
-        <p>한국에서는 오늘 한 작업인데 서버 로그에는 어제 날짜가 찍힐 수 있습니다. 시간대가 다르면 가능한 일입니다. 여러 장비의 자료를 합칠 때는 시각 값만 모으지 말고 어느 시간대이며 하루를 어디서 끊는지 함께 정해야 합니다.</p>
+        <p>한국 시간으로 자정이 조금 지난 기록이 서버에서는 전날로 보일 수 있습니다. UTC로 저장한 시각을 그대로 날짜로 잘랐기 때문입니다. 일별 보고서를 만들기 전에 어느 시간대의 자정을 기준으로 묶을지 정해야 합니다.</p>
         <h3>시각 값에 시간대가 있는지</h3>
 <p>2026-10-19 09:00처럼 시간대가 없는 문자열은 어느 지역 시각인지 알 수 없습니다. UTC인지 현지 시각인지 원본 설명을 확인하고 시간대 정보가 있는 값으로 다루세요. Python datetime 문서는 시간대 정보의 유무에 따라 값을 구분합니다.</p>
 <h3>일별 집계는 어느 자정 기준인가</h3>
@@ -56,9 +56,7 @@
 <p>지역마다 일광절약시간제 적용 여부와 과거 규칙이 다를 수 있습니다. 여러 국가의 기록을 처리한다면 단순히 일정 시간을 더하는 방식보다 해당 지역의 시간대 규칙을 다루는 도구를 검토하세요. 원본 시각은 별도 열로 보존해 두세요.</p>
 <h3>저장 시각과 표시 시각</h3>
 <p>저장과 비교에는 일관된 기준을 사용하고 화면에서는 사용자가 이해할 지역 시각을 표시할 수 있습니다. 변환이 이미 된 자료에 다시 오프셋을 더하지 않도록 열 이름과 메타데이터를 명확히 하세요. 자정 전후의 표본을 포함해 변환 결과를 확인합니다.</p>
-        <aside class="blog-worked-example" aria-label="설명용 예시"><h3>자정 직후의 한국 시각</h3><p>장비 점검이 한국 시각 10월 19일 00:10에 발생했다면 UTC로는 10월 18일 15:10입니다. 한국 기준 일보에는 19일로 넣되 원본 UTC 시각도 남깁니다. 두 표에 다른 날짜가 표시되는 이유를 설명할 수 있어야 합니다.</p></aside>
-        <h3>날짜를 집계하기 전에</h3>
-        <ul><li>원본 시각의 시간대를 알고 있는가</li><li>하루의 시작과 끝 기준이 같은가</li><li>자정 전후 표본에서 날짜가 올바르게 변환되는가</li></ul>
+        <p>한국 시각 10월 19일 00시 10분은 UTC로 10월 18일 15시 10분입니다. 한국 기준 일보에 넣는 날짜는 19일이지만 원본 시각은 그대로 남겨 둘 수 있습니다. 집계할 때 시간대를 적용한 뒤 날짜를 나누어야 합니다.</p>
         <p class="blog-sources">기술 참고: <a href="https://docs.python.org/3/library/datetime.html">Python datetime 시간대 정보 설명</a>. 문서 확인: 2026.10.19.</p>
         <p class="blog-related"><a href="../blogs.html#ai-guides">전체 목차로 돌아가기</a></p>
       </article>

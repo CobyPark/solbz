@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="네트워크 자동화의 시간 초과 설정: 재시도 횟수와 전체 대기 시간 정하기 - 솔루션 비제트 IT 정보글">
-  <title>네트워크 자동화의 시간 초과 설정: 재시도 횟수와 전체 대기 시간 정하기 - 솔루션 비제트</title>
+  <meta name="description" content="응답을 무한히 기다리는 자동화는 다음 작업도 멈춰 세웁니다. 요청 하나의 제한 시간과 재시도 횟수를 정하고 전체 대기 시간도 계산해 보세요. 실패한 요청을 다시 보내도 되는 작업인지에 따라 설계가 달라집니다.">
+  <title>네트워크 요청은 얼마나 기다려야 할까 - 솔루션 비제트</title>
   <link rel="stylesheet" href="../style.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
   <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
@@ -46,9 +46,9 @@
       <article class="blog-post" id="post-timeout-retry-design">
         <a class="blog-post-back" href="../blogs.html#post-timeout-retry-design">목록으로 돌아가기</a>
         <span class="blog-post-category">Python·업무 자동화</span>
-        <h2>네트워크 자동화의 시간 초과 설정: 재시도 횟수와 전체 대기 시간 정하기</h2>
+        <h2>네트워크 요청은 얼마나 기다려야 할까</h2>
         <p class="blog-post-meta">솔루션 비제트 · 활용 가이드 · <time datetime="2026-10-19">2026.10.19</time></p>
-        <p>외부 요청 하나가 끝나지 않아 다음 작업까지 밀릴 수 있습니다. 요청별 대기 시간과 작업 전체의 마감 시간을 따로 정해두세요. 재시도도 언제, 몇 번까지 할지 정해야 일시적인 장애를 처리하다 무한 반복에 빠지지 않습니다.</p>
+        <p>응답을 무한히 기다리는 자동화는 다음 작업도 멈춰 세웁니다. 요청 하나의 제한 시간과 재시도 횟수를 정하고 전체 대기 시간도 계산해 보세요. 실패한 요청을 다시 보내도 되는 작업인지에 따라 설계가 달라집니다.</p>
         <h3>요청 하나를 얼마나 기다릴지</h3>
 <p>짧은 상태 조회와 큰 파일 다운로드는 필요한 시간이 다릅니다. 정상 처리 시간의 범위를 확인한 뒤 응답을 기다릴 한도를 정하세요. 사용하는 라이브러리의 timeout이 연결·읽기·전체 처리 중 어느 범위를 뜻하는지 공식 문서를 확인해야 합니다.</p>
 <h3>다시 보내도 되는 오류인지</h3>
@@ -56,9 +56,7 @@
 <p>한 번의 시도가 30초이고 세 번 실행한다면 대기 간격까지 포함해 총 시간이 더 길어집니다. 다음 예약 실행과 겹치지 않도록 작업 전체의 한도도 계산하세요. 제한 시간이 지났을 때 현재 작업을 어떻게 표시할지 정해둡니다.</p>
 <h3>응답이 없어도 서버는 처리했을 수 있다</h3>
 <p>서버가 작업을 끝냈는데 응답만 끊겼을 수도 있습니다. 상태를 바꾸는 요청이라면 작업 ID나 조회 기능으로 결과를 확인한 뒤 재전송해야 합니다. 실패한 항목을 목록으로 남기면 전체 작업을 처음부터 반복하는 일을 줄일 수 있습니다.</p>
-        <aside class="blog-worked-example" aria-label="설명용 예시"><h3>전체 70초로 정한 조회 작업</h3><p>상태 조회는 최대 두 번 시도하고 전체 70초를 넘으면 확인 대기로 남기도록 정할 수 있습니다. 이는 예시 정책입니다. 결제나 메일 발송처럼 중복 실행이 문제가 되는 작업은 같은 정책을 그대로 적용하지 않고 처리 여부 확인 절차를 먼저 설계합니다.</p></aside>
-        <h3>재시도 설정의 기준</h3>
-        <ul><li>라이브러리의 제한 시간 의미를 확인했는가</li><li>재시도 횟수와 전체 시한이 있는가</li><li>중복 실행이 가능한 요청을 구분했는가</li></ul>
+        <p>조회 작업이라면 “전체 70초 안에 두 번까지 시도하고 실패 목록에 남긴다”는 정책을 정할 수 있습니다. 이는 하나의 설정 예시입니다. 메일 발송처럼 중복 결과가 생기는 작업은 처리 상태를 조회할 방법부터 마련해야 합니다.</p>
         <p class="blog-sources">기술 참고: <a href="https://docs.python.org/3/library/urllib.request.html">Python urllib.request 네트워크 호출 문서</a>. 문서 확인: 2026.10.19.</p>
         <p class="blog-related"><a href="../blogs.html#ai-guides">전체 목차로 돌아가기</a></p>
       </article>

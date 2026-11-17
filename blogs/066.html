@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="중복 데이터 삭제 전 정해야 할 것: 같은 행과 같은 사건의 차이 - 솔루션 비제트 IT 정보글">
-  <title>중복 데이터 삭제 전 정해야 할 것: 같은 행과 같은 사건의 차이 - 솔루션 비제트</title>
+  <meta name="description" content="주문번호가 같다고 모두 중복은 아닙니다. 한 주문에 여러 품목이 있거나 수정 이력이 쌓인 표일 수 있습니다. 삭제하기 전에 어떤 열 조합이 같은 사건을 뜻하는지 정해 보세요.">
+  <title>중복 행을 지우기 전에 정할 기준 - 솔루션 비제트</title>
   <link rel="stylesheet" href="../style.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
   <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
@@ -46,9 +46,9 @@
       <article class="blog-post" id="post-duplicate-records">
         <a class="blog-post-back" href="../blogs.html#post-duplicate-records">목록으로 돌아가기</a>
         <span class="blog-post-category">데이터·파일 정리</span>
-        <h2>중복 데이터 삭제 전 정해야 할 것: 같은 행과 같은 사건의 차이</h2>
+        <h2>중복 행을 지우기 전에 정할 기준</h2>
         <p class="blog-post-meta">솔루션 비제트 · 활용 가이드 · <time datetime="2026-10-19">2026.10.19</time></p>
-        <p>같은 고객의 주문이 두 줄 있다고 한 줄을 지우면 정상 주문까지 없어질 수 있습니다. 중복 제거 버튼보다 먼저 필요한 것은 “한 기록”의 정의입니다. 어떤 열을 묶어 같은 사건으로 볼지 정해 보겠습니다.</p>
+        <p>주문번호가 같다고 모두 중복은 아닙니다. 한 주문에 여러 품목이 있거나 수정 이력이 쌓인 표일 수 있습니다. 삭제하기 전에 어떤 열 조합이 같은 사건을 뜻하는지 정해 보세요.</p>
         <h3>중복 판단에 쓸 열</h3>
 <p>모든 열이 같은 행과 일부 식별자만 같은 행은 다릅니다. 주문 번호, 상세 항목, 발생 시각처럼 사건을 구분하는 열을 조합하세요. pandas의 drop_duplicates도 비교할 열과 남길 행을 선택할 수 있으므로 기본 설정을 바로 적용하기보다 기준을 명시하는 편이 좋습니다.</p>
 <h3>값이 다른 행은 별도 검토</h3>
@@ -56,9 +56,7 @@
 <p>앞뒤 공백이나 대소문자 차이를 정규화할지는 별도 규칙으로 둡니다. 코드에서 대소문자가 의미를 갖는 업무라면 무조건 소문자로 바꾸면 안 됩니다. 정규화 전후 값을 보관하면 잘못 합쳐진 항목을 찾을 수 있습니다.</p>
 <h3>지운 행과 합계 남기기</h3>
 <p>원본 행 수, 중복 후보 수, 최종 행 수를 남기고 제거된 행도 별도 목록으로 보존하세요. 전체 수량이나 금액이 줄었다면 예상한 변화인지 확인합니다. “중복이 줄었다”는 결과만으로 데이터 품질이 좋아졌다고 판단하지 않습니다.</p>
-        <aside class="blog-worked-example" aria-label="설명용 예시"><h3>주문 번호만 같을 때</h3><p>가상 주문 101번에 A품목과 B품목이 각각 한 줄씩 있다면 주문 번호 하나만 기준으로 중복 제거하면 한 품목이 사라집니다. 주문 번호와 품목 순번을 함께 기준으로 삼되, 수정 이력이라면 버전 관리 규칙을 먼저 확인합니다.</p></aside>
-        <h3>중복 제거를 적용하기 전에</h3>
-        <ul><li>하나의 사건을 구분하는 열이 정해졌는가</li><li>같은 식별자의 다른 값은 검토했는가</li><li>제거한 행을 복구할 목록이 있는가</li></ul>
+        <p>주문 101번에 A품목과 B품목이 한 줄씩 있다면 주문번호로만 중복 제거할 때 한 품목이 사라집니다. 주문번호와 품목 순번이 필요한 자료인지 살펴보세요. 수정 이력을 쌓은 표라면 어떤 버전을 남길지도 정해야 합니다.</p>
         <p class="blog-sources">기술 참고: <a href="https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.drop_duplicates.html">pandas drop_duplicates 비교 열·행 선택 문서</a>. 문서 확인: 2026.10.19.</p>
         <p class="blog-related"><a href="../blogs.html#ai-guides">전체 목차로 돌아가기</a></p>
       </article>

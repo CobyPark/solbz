@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Claude 12. 코드 수정 맡기기: 재현 입력에서 변경 검토까지 - 솔루션 비제트 IT 정보글">
-  <title>Claude 12. 코드 수정 맡기기: 재현 입력에서 변경 검토까지 - 솔루션 비제트</title>
+  <meta name="description" content="“검색창에 A를 넣고 Enter를 누르면 결과가 비지만 검색 버튼을 누르면 나온다”처럼 실패하는 순서를 적어 보세요. 검색이 안 된다는 설명에 재현 조건이 붙으면 Claude Code가 수정 후 다시 시험할 지점도 뚜렷해집니다.">
+  <title>Claude 12. 재현되는 버그부터 코드 수정 맡기기 - 솔루션 비제트</title>
   <link rel="stylesheet" href="../style.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
   <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
@@ -46,9 +46,9 @@
       <article class="blog-post" id="post-claude-12">
         <a class="blog-post-back" href="../blogs.html#post-claude-12">목록으로 돌아가기</a>
         <span class="blog-post-category">Claude 활용 시리즈 · 12/13</span>
-        <h2>Claude 12. 코드 수정 맡기기: 재현 입력에서 변경 검토까지</h2>
+        <h2>Claude 12. 재현되는 버그부터 코드 수정 맡기기</h2>
         <p class="blog-post-meta">솔루션 비제트 · Anthropic 공식 문서 참고 가이드 · <time datetime="2026-10-28">2026.10.28</time></p>
-        <p>“검색 오류를 고쳐 줘”라는 요청만으로는 어떤 상태가 정상인지 알기 어렵습니다. 빈 검색어에서만 실패하는지, 특정 글자에서 실패하는지부터 좁혀야 합니다. Claude Code에도 같은 입력과 기대 결과를 주면 수정 뒤 무엇을 다시 확인할지가 분명해집니다.</p>
+        <p>“검색창에 A를 넣고 Enter를 누르면 결과가 비지만 검색 버튼을 누르면 나온다”처럼 실패하는 순서를 적어 보세요. 검색이 안 된다는 설명에 재현 조건이 붙으면 Claude Code가 수정 후 다시 시험할 지점도 뚜렷해집니다.</p>
 <h3>오류가 나는 순서를 적는다</h3>
 <p>현재 브랜치와 커밋하지 않은 변경을 확인하고 시작합니다. 이미 수정 중인 파일이 있다면 그 목적도 알려 주세요. 재현 정보에는 화면 또는 명령, 입력값, 실제 결과, 기대 결과가 들어가면 됩니다. 로그 전체보다 오류와 직접 관련된 부분을 골라 주는 편이 읽기 쉽습니다.</p>
 <pre tabindex="0" aria-label="빈 검색어 오류 수정 요청 예시"><code>검색 화면에서 입력칸을 비운 채 조회하면 오류가 발생해.
@@ -63,7 +63,7 @@
 <h3>통과했다고 적힌 검사만 보지 않기</h3>
 <p>테스트가 통과했더라도 빈 입력을 실제로 다루는 검사인지 봅니다. 실행하지 못한 검사는 통과한 검사와 따로 남겨야 합니다. 화면 문제라면 브라우저에서 오류 문구와 입력 유지 여부를 직접 볼 필요도 있습니다.</p>
 <p>마지막에는 <code>git diff</code>로 요청과 관계없는 수정이 섞였는지 읽습니다. 테스트를 위해 만든 임시 자료나 로그가 전달 파일에 포함되지 않았는지도 봅니다. 검토할 기준은 최종 요약의 자신감보다 재현 조건, 변경된 코드, 실행 결과가 서로 맞는지입니다.</p>
-<p>변경을 확정할 때는 검토한 파일을 커밋하고, 원격 반영과 배포는 요청한 범위에 따라 진행합니다. 로컬에서 고쳤다는 사실만으로 공개 서비스까지 바뀐 것은 아닙니다.</p>
+<p>수정 후에는 처음 실패했던 입력을 다시 넣습니다. 버튼과 Enter 입력이 모두 되는지, 검색 결과가 없을 때 화면은 어떤지도 이어서 보세요. 한 경로를 고치면서 다른 경로를 깨뜨리지 않았는지 확인할 수 있습니다.</p>
         <p class="blog-sources">공식 참고: <a href="https://code.claude.com/docs/en/best-practices">Claude Code 작업과 검증</a> · <a href="https://code.claude.com/docs/en/permissions">Claude Code 권한 설정</a>. 문서 확인: 2026.10.28.</p>
         <nav class="blog-related" aria-label="Claude 12편 탐색"><a rel="prev" href="011.html#post-claude-11">이전 편</a> · <a href="../blogs.html#claude-series">시리즈 목차</a> · <a rel="next" href="013.html#post-claude-13">다음 편</a> · <a href="../blogs.html#ai-guides">전체 목차</a></nav>
       </article>

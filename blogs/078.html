@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="자동화 설정을 코드 밖으로 꺼낼 때: 기본값과 잘못된 값 검증하기 - 솔루션 비제트 IT 정보글">
-  <title>자동화 설정을 코드 밖으로 꺼낼 때: 기본값과 잘못된 값 검증하기 - 솔루션 비제트</title>
+  <meta name="description" content="출력 폴더와 처리 개수 같은 값을 설정 파일로 빼 두면 코드를 고치지 않고 바꿀 수 있습니다. 대신 잘못 적은 값도 들어올 수 있습니다. 실행 초기에 필요한 항목과 값의 범위를 검사해 오류를 알려 주세요.">
+  <title>설정 파일의 잘못된 값은 언제 걸러야 할까 - 솔루션 비제트</title>
   <link rel="stylesheet" href="../style.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
   <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
@@ -46,9 +46,9 @@
       <article class="blog-post" id="post-toml-config">
         <a class="blog-post-back" href="../blogs.html#post-toml-config">목록으로 돌아가기</a>
         <span class="blog-post-category">Python·업무 자동화</span>
-        <h2>자동화 설정을 코드 밖으로 꺼낼 때: 기본값과 잘못된 값 검증하기</h2>
+        <h2>설정 파일의 잘못된 값은 언제 걸러야 할까</h2>
         <p class="blog-post-meta">솔루션 비제트 · 활용 가이드 · <time datetime="2026-10-19">2026.10.19</time></p>
-        <p>입력 폴더를 바꾸려고 코드를 열다가 처리 규칙까지 건드릴 수 있습니다. 자주 바꾸는 값은 설정 파일로 꺼내두면 편합니다. 대신 파일을 읽는 것에서 끝내지 말고 항목 이름, 자료형, 허용 범위까지 검사해야 합니다.</p>
+        <p>출력 폴더와 처리 개수 같은 값을 설정 파일로 빼 두면 코드를 고치지 않고 바꿀 수 있습니다. 대신 잘못 적은 값도 들어올 수 있습니다. 실행 초기에 필요한 항목과 값의 범위를 검사해 오류를 알려 주세요.</p>
         <h3>필수값과 기본값</h3>
 <p>폴더 경로는 문자열, 재시도 횟수는 음수가 아닌 정수처럼 규칙을 적습니다. 기본값을 사용할 수 있는 항목과 반드시 입력해야 하는 항목을 구분하세요. 잘못된 입력을 무조건 기본값으로 바꾸면 담당자가 설정 실패를 모른 채 실행할 수 있습니다.</p>
 <h3>문법이 맞아도 값은 틀릴 수 있다</h3>
@@ -56,9 +56,7 @@
 <p>설정 파일의 상대경로는 어느 폴더를 기준으로 해석하는지 명시하세요. 비밀 값은 공유하는 설정 예제에 포함하지 않고 환경변수 등 별도 경로로 전달할 수 있습니다. 경로를 나눴다는 이유만으로 접근 통제가 자동으로 이뤄지지는 않습니다.</p>
 <h3>이번 실행에 적용된 설정</h3>
 <p>키를 제외한 입력·출력 위치, 처리 모드, 규칙 버전을 확인할 수 있게 합니다. 설정 파일을 수정해도 실행 중인 작업이 즉시 바뀌는지 다음 실행부터 바뀌는지 설명하세요. 운영 중 값이 절반만 적용되는 상황을 피하려면 읽는 시점을 일관되게 두는 편이 좋습니다.</p>
-        <aside class="blog-worked-example" aria-label="설명용 예시"><h3>dry_run을 잘못 적었다면</h3><p>설정에 retry_count=2와 dry_run=true를 넣었다면 “최대 재시도 2회, 실제 변경 없음”이라고 시작 로그에 표시합니다. dryrun처럼 잘못 쓴 항목이 있으면 기본 실행으로 넘어가지 않고 잘못된 항목명을 알려주도록 설계합니다.</p></aside>
-        <h3>설정 파일을 읽은 뒤</h3>
-        <ul><li>기본값과 필수값이 구분됐는가</li><li>문법 외에 자료형과 범위를 검사하는가</li><li>적용된 설정을 비밀 값 없이 확인할 수 있는가</li></ul>
+        <p>retry_count=2, dry_run=true로 시작한다면 로그에 “최대 재시도 2회, 실제 변경 없음”을 표시할 수 있습니다. dryrun처럼 항목명을 잘못 썼을 때는 오류를 내야 합니다. 알 수 없는 설정을 무시하고 실제 변경을 시작하면 위험할 수 있습니다.</p>
         <p class="blog-sources">기술 참고: <a href="https://docs.python.org/3/library/tomllib.html">Python tomllib TOML 읽기 문서</a>. 문서 확인: 2026.10.19.</p>
         <p class="blog-related"><a href="../blogs.html#ai-guides">전체 목차로 돌아가기</a></p>
       </article>

@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="AI에 업무를 맡길 때 필요한 다섯 가지: 목적·자료·형식·제약·완료 기준 - 솔루션 비제트 IT 정보글">
-  <title>AI에 업무를 맡길 때 필요한 다섯 가지: 목적·자료·형식·제약·완료 기준 - 솔루션 비제트</title>
+  <meta name="description" content="점검 메모를 안내문으로 바꿀 때 AI는 누가 읽을 글인지 알 수 없습니다. 고객에게 보낼 것인지 담당자끼리 돌려볼 것인지 적어 주세요. 여기에 참고 자료와 원하는 분량을 붙이면 요청의 윤곽이 잡힙니다.">
+  <title>AI 업무 요청에 빠뜨리기 쉬운 설명 - 솔루션 비제트</title>
   <link rel="stylesheet" href="../style.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
   <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
@@ -46,9 +46,9 @@
       <article class="blog-post" id="post-prompt-brief">
         <a class="blog-post-back" href="../blogs.html#post-prompt-brief">목록으로 돌아가기</a>
         <span class="blog-post-category">AI 문서·업무 활용</span>
-        <h2>AI에 업무를 맡길 때 필요한 다섯 가지: 목적·자료·형식·제약·완료 기준</h2>
+        <h2>AI 업무 요청에 빠뜨리기 쉬운 설명</h2>
         <p class="blog-post-meta">솔루션 비제트 · 활용 가이드 · <time datetime="2026-10-19">2026.10.19</time></p>
-        <p>“보고서를 써줘”에는 빠진 조건이 꽤 많습니다. 누가 읽는지, 어디에 쓸지, 무엇을 근거로 써야 하는지를 AI는 모를 수 있습니다. 업무를 설명할 때 필요한 다섯 가지를 짧은 요청서로 정리해 보겠습니다.</p>
+        <p>점검 메모를 안내문으로 바꿀 때 AI는 누가 읽을 글인지 알 수 없습니다. 고객에게 보낼 것인지 담당자끼리 돌려볼 것인지 적어 주세요. 여기에 참고 자료와 원하는 분량을 붙이면 요청의 윤곽이 잡힙니다.</p>
         <h3>목적과 참고 자료</h3>
 <p>첫 문장에는 결과를 누가 어디에 사용할지 적습니다. 이어서 참고할 자료를 별도 구역에 넣고 그 자료 밖의 사실을 추가해도 되는지 정하세요. 사용 목적을 설명하면 문체를 고르는 데 도움이 되지만, 목적 설명만으로 사실의 근거가 생기지는 않습니다.</p>
 <p>입력에 없는 날짜나 금액은 “미정”으로 적도록 지정합니다. 담당자도 원문에서 확인할 수 있을 때만 표시하게 하면 검토자는 누락된 입력과 잘못된 추정을 구분할 수 있습니다.</p>
@@ -56,9 +56,7 @@
 <p>원하는 열 이름이나 문단 순서를 먼저 정하고 가상의 한 줄 예시를 붙입니다. 예시는 답변의 구조를 설명하는 용도이므로 실제 고객 이름이나 자료를 사용할 필요가 없습니다. 모델이 예시 속 내용을 실제 사실로 옮기지 않는지도 확인하세요.</p>
 <h3>수정할 항목만 다시 요청</h3>
 <p>답변 전체를 다시 쓰게 하기보다 “숫자 세 개를 원문과 대조하고 잘못된 항목만 수정하라”처럼 범위를 정해 보세요. 개선된 요청서에는 왜 그 조건을 넣었는지 한 줄을 남깁니다. 다음 담당자가 조건을 지우거나 과하게 늘리는 일을 줄일 수 있습니다.</p>
-        <aside class="blog-worked-example" aria-label="설명용 예시"><h3>점검 메모를 안내문으로</h3><p>장비 점검 메모를 고객 안내문으로 바꾼다면 “비전문가가 읽는 300자 이내 안내문, 확인된 상태와 다음 일정 두 구역, 원문에 없는 원인 추정 제외”라고 정할 수 있습니다. 초안 검토 때는 문장 표현보다 상태·일정의 사실 보존부터 확인합니다.</p></aside>
-        <h3>요청서에 들어갈 내용</h3>
-        <ul><li>누가 읽는 결과인지 설명했는가</li><li>원문에 없는 값의 처리 규칙이 있는가</li><li>완료 여부를 사람이 확인할 수 있는가</li></ul>
+        <p>“비전문가가 읽을 300자 안내문으로 써 줘. 확인된 장비 상태와 다음 일정을 나눠 줘”처럼 요청해 볼 수 있습니다. 원인을 모르는 메모라면 원인 추정은 넣지 말라고 덧붙입니다.</p>
         <p class="blog-sources">기술 참고: <a href="https://platform.claude.com/docs/en/build-with-claude/prompt-engineering/claude-prompting-best-practices">Anthropic 명확한 지시와 예시 작성 안내</a>. 문서 확인: 2026.10.19.</p>
         <p class="blog-related"><a href="../blogs.html#ai-guides">전체 목차로 돌아가기</a></p>
       </article>

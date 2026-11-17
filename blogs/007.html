@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Claude 07. CSV 합계 맡기기: 매출과 환불의 부호부터 설명하기 - 솔루션 비제트 IT 정보글">
-  <title>Claude 07. CSV 합계 맡기기: 매출과 환불의 부호부터 설명하기 - 솔루션 비제트</title>
+  <meta name="description" content="매출 CSV에서 환불액을 양수로 적어 두었다면 합계를 낼 때 빼야 합니다. 이미 음수로 기록했다면 그대로 더해야 하고요. 파일을 건넬 때 이 규칙을 적지 않으면 같은 숫자로도 전혀 다른 매출이 나올 수 있습니다.">
+  <title>Claude 07. CSV 매출 합계가 맞지 않는 이유 - 솔루션 비제트</title>
   <link rel="stylesheet" href="../style.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
   <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
@@ -46,9 +46,9 @@
       <article class="blog-post" id="post-claude-07">
         <a class="blog-post-back" href="../blogs.html#post-claude-07">목록으로 돌아가기</a>
         <span class="blog-post-category">Claude 활용 시리즈 · 07/13</span>
-        <h2>Claude 07. CSV 합계 맡기기: 매출과 환불의 부호부터 설명하기</h2>
+        <h2>Claude 07. CSV 매출 합계가 맞지 않는 이유</h2>
         <p class="blog-post-meta">솔루션 비제트 · Anthropic 공식 문서 참고 가이드 · <time datetime="2026-10-28">2026.10.28</time></p>
-        <p>표의 합계가 틀렸을 때 계산 능력보다 열의 뜻이 문제인 경우가 있습니다. 환불액을 음수로 저장한 자료와 양수로 저장한 자료는 합산 방식이 다릅니다. Claude에 파일을 주기 전에 한 행이 무엇을 나타내는지, 어떤 값을 빼야 하는지부터 적어 주세요.</p>
+        <p>매출 CSV에서 환불액을 양수로 적어 두었다면 합계를 낼 때 빼야 합니다. 이미 음수로 기록했다면 그대로 더해야 하고요. 파일을 건넬 때 이 규칙을 적지 않으면 같은 숫자로도 전혀 다른 매출이 나올 수 있습니다.</p>
 <h3>세 줄짜리 표로 계산 규칙 시험하기</h3>
 <p>아래 CSV는 설명을 위한 작은 자료입니다. 금액 열에는 이미 환불의 마이너스 부호가 들어 있습니다. 따라서 종류가 환불이라는 이유로 다시 빼면 합계가 부풀어 오릅니다.</p>
 <pre tabindex="0" aria-label="가상 매출 CSV"><code>거래번호,종류,금액,상태
@@ -66,7 +66,7 @@ T003,환불,-20000,확정</code></pre>
 <h3>빈칸을 0으로 볼 것인가</h3>
 <p>금액이 비어 있는 행은 합계에 0으로 넣어도 되는지, 입력 누락으로 따로 처리해야 하는지 정합니다. 숫자 열에 “미확정”이라는 문자가 섞였을 때도 마찬가지입니다. 조용히 제외한 뒤 합계만 보고하면 누락을 알아차리기 어렵습니다.</p>
 <p>최종 결과는 원본 행 수와 포함·제외 행 수를 대조합니다. 기간 필터를 썼다면 첫날과 마지막 날이 포함됐는지도 봅니다. 합계 하나만 맞추기보다 어떤 행을 계산했는지 남기는 편이 다음 달 자료에도 같은 규칙을 적용하기 쉽습니다.</p>
-<p>공유할 표를 따로 만들 때는 고객 연락처처럼 계산에 필요 없는 열을 제거할 수 있습니다. 금액 결과와 개인정보가 담긴 원본을 같은 파일로 전달해야 하는지 한 번 더 판단하세요.</p>
+<p>합계 옆에는 집계 기간과 제외한 행을 같이 받아 두세요. 빈칸이 있으면 그 행을 뺐는지도 적도록 합니다. 다음 달 자료를 넣을 때 지난달과 같은 기준으로 계산했는지 비교할 수 있습니다.</p>
         <p class="blog-sources">공식 참고: <a href="https://support.claude.com/en/articles/8241126-what-kinds-of-documents-can-i-upload-to-claude">첨부 파일과 PDF 처리</a>. 문서 확인: 2026.10.28.</p>
         <nav class="blog-related" aria-label="Claude 07편 탐색"><a rel="prev" href="006.html#post-claude-06">이전 편</a> · <a href="../blogs.html#claude-series">시리즈 목차</a> · <a rel="next" href="008.html#post-claude-08">다음 편</a> · <a href="../blogs.html#ai-guides">전체 목차</a></nav>
       </article>

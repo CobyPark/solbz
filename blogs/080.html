@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="사이트를 수정했는데 예전 화면이 보일 때: 배포와 캐시를 나누어 확인하기 - 솔루션 비제트 IT 정보글">
-  <title>사이트를 수정했는데 예전 화면이 보일 때: 배포와 캐시를 나누어 확인하기 - 솔루션 비제트</title>
+  <meta name="description" content="파일을 고쳐 푸시했는데 사이트는 그대로라면 먼저 배포 결과를 보세요. 저장소 반영이 끝나도 공개 사이트 배포가 아직 진행 중일 수 있습니다. 배포가 성공했다면 HTML과 CSS 중 어느 쪽이 예전 것인지 살펴봅니다.">
+  <title>수정한 사이트에 예전 화면이 보일 때 - 솔루션 비제트</title>
   <link rel="stylesheet" href="../style.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
   <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
@@ -46,9 +46,9 @@
       <article class="blog-post" id="post-web-cache-check">
         <a class="blog-post-back" href="../blogs.html#post-web-cache-check">목록으로 돌아가기</a>
         <span class="blog-post-category">웹사이트 운영·접근성</span>
-        <h2>사이트를 수정했는데 예전 화면이 보일 때: 배포와 캐시를 나누어 확인하기</h2>
+        <h2>수정한 사이트에 예전 화면이 보일 때</h2>
         <p class="blog-post-meta">솔루션 비제트 · 활용 가이드 · <time datetime="2026-10-19">2026.10.19</time></p>
-        <p>문구를 고쳐 올렸는데 예전 화면이 보인다면 파일부터 다시 수정하지 마세요. 푸시가 됐는지, 배포가 끝났는지, 브라우저가 어떤 파일을 받았는지를 순서대로 보면 됩니다. HTML과 CSS가 서로 다른 시점의 파일일 수도 있습니다.</p>
+        <p>파일을 고쳐 푸시했는데 사이트는 그대로라면 먼저 배포 결과를 보세요. 저장소 반영이 끝나도 공개 사이트 배포가 아직 진행 중일 수 있습니다. 배포가 성공했다면 HTML과 CSS 중 어느 쪽이 예전 것인지 살펴봅니다.</p>
         <h3>수정·푸시·배포 상태</h3>
 <p>내 컴퓨터에서 저장한 상태와 원격 저장소에 올라간 상태는 다릅니다. 배포 서비스가 어느 브랜치와 폴더를 읽는지도 확인해야 합니다. 배포 기록의 커밋이 기대한 변경과 같은지 대조한 뒤 공개 주소를 확인하세요.</p>
 <h3>HTML과 CSS를 따로 확인</h3>
@@ -56,9 +56,7 @@
 <p>파일 이름에 버전이나 내용 해시를 넣는 방식은 자산 변경을 구분하는 데 도움이 될 수 있습니다. 모든 방문자가 같은 캐시 정책을 쓴다고 가정하지 말고 실제 응답 헤더와 배포 환경의 기능을 확인하세요.</p>
 <h3>공개 화면에서 찾을 변경 표시</h3>
 <p>수정한 문장이나 버전 표시처럼 변경 전후를 구분할 항목을 하나 고릅니다. 홈페이지와 직접 파일 주소를 모두 확인하고, 광고나 외부 스크립트 로딩을 내용 배포 성공과 혼동하지 않습니다. 배포 완료 기록과 실제 공개 응답이 함께 맞아야 확인이 끝납니다.</p>
-        <aside class="blog-worked-example" aria-label="설명용 예시"><h3>안내문 날짜를 바꿨을 때</h3><p>가상 안내문의 날짜를 바꿨다면 저장소의 해당 줄, 배포 커밋, 공개 HTML의 날짜를 차례로 비교합니다. 공개 HTML은 새것인데 화면이 다르면 CSS와 브라우저 캐시를 점검합니다. 같은 코드를 여러 번 다시 올리기 전에 실패한 단계를 찾습니다.</p></aside>
-        <h3>재배포하기 전에</h3>
-        <ul><li>배포 대상 커밋이 기대한 변경인가</li><li>HTML과 CSS 주소가 모두 맞는가</li><li>실제 공개 응답에서 변경을 확인했는가</li></ul>
+
         <p class="blog-sources">기술 참고: <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Guides/Caching">MDN HTTP 캐싱 안내</a>. 문서 확인: 2026.10.19.</p>
         <p class="blog-related"><a href="../blogs.html#ai-guides">전체 목차로 돌아가기</a></p>
       </article>

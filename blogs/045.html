@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="OpenClaw 04. 초기 설정: 온보딩에서 모델 연결과 Gateway 실행 확인하기 - 솔루션 비제트 IT 정보글">
-  <title>OpenClaw 04. 초기 설정: 온보딩에서 모델 연결과 Gateway 실행 확인하기 - 솔루션 비제트</title>
+  <meta name="description" content="설치 다음에는 모델 인증과 Gateway 실행을 설정합니다. 우선 대화형 온보딩을 따라가며 사용할 계정과 모델을 정해 보세요. 대시보드가 열리면 짧은 질문을 보내 응답까지 받아 봅니다.">
+  <title>OpenClaw 04. 초기 설정 후 첫 답변 받기 - 솔루션 비제트</title>
   <link rel="stylesheet" href="../style.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
   <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
@@ -46,9 +46,9 @@
       <article class="blog-post" id="post-openclaw-04">
         <a class="blog-post-back" href="../blogs.html#post-openclaw-04">목록으로 돌아가기</a>
         <span class="blog-post-category">OpenClaw 입문 시리즈 · 04/14</span>
-        <h2>OpenClaw 04. 초기 설정: 온보딩에서 모델 연결과 Gateway 실행 확인하기</h2>
+        <h2>OpenClaw 04. 초기 설정 후 첫 답변 받기</h2>
         <p class="blog-post-meta">솔루션 비제트 · 공식 문서 기반 사용 안내 · <time datetime="2026-10-19">2026.10.19</time></p>
-        <p>설치 뒤에는 온보딩에서 모델 계정과 작업 환경을 연결합니다. 설정이 저장됐다고 모델 응답까지 된 것은 아닐 수 있습니다. 모델 검증 결과를 보고 Gateway가 실행 중인지 확인한 다음 대시보드를 열어보겠습니다.</p>
+        <p>설치 다음에는 모델 인증과 Gateway 실행을 설정합니다. 우선 대화형 온보딩을 따라가며 사용할 계정과 모델을 정해 보세요. 대시보드가 열리면 짧은 질문을 보내 응답까지 받아 봅니다.</p>
         <h3>대화형 초기 설정</h3>
 <pre tabindex="0" aria-label="명령어 또는 설정 예제"><code>openclaw onboard</code></pre>
 <p>새 환경에서 Quick start와 Custom setup 같은 선택지가 나오면 필요한 설정 범위에 맞게 고릅니다. 자동 감지된 연결도 어떤 계정과 서비스인지 확인한 뒤 선택하세요. 접근 범위 등을 검토하고 싶다면 상세 설정을 따라가는 편이 좋습니다. 기존 설정이 있으면 화면 흐름이 다를 수 있습니다.</p>
@@ -62,9 +62,7 @@ openclaw gateway status</code></pre>
 <pre tabindex="0" aria-label="명령어 또는 설정 예제"><code>openclaw dashboard</code></pre>
 <p>대시보드가 열리고 짧은 질문에 답변이 오면 기본 경로를 확인한 것입니다. 채팅이 실패하면 모델 인증 문제인지 Gateway 연결 문제인지 나누어 봅니다. 공급자 변경은 온보딩으로, 추가 설정은 현재 버전의 configure 안내로 진행하며 설정을 통째로 지우지 않습니다.</p>
 
-        <aside class="blog-worked-example" aria-label="설명용 실습 예시"><h3>외부 도구 없이 질문 하나</h3><p>외부 도구 없이 “한국어로 두 문장 인사를 작성해 줘” 같은 가상 요청을 한 번 보냅니다. 모델 답변, Gateway 상태, 종료·재시작 방법을 확인하고 기록합니다. 파일 작업이나 메신저 채널 추가는 아직 하지 않아도 됩니다.</p></aside>
-        <h3>첫 대화가 끝났다면</h3>
-        <ul><li>설정 저장과 모델 응답 검증을 구분했는가</li><li>전경 프로세스와 서비스 중 무엇을 쓰는지 아는가</li><li>대시보드에서 첫 응답을 확인했는가</li></ul>
+        <p>첫 요청은 “한국어로 인사를 두 문장 써 줘”처럼 짧게 보낼 수 있습니다. 답이 오면 모델 연결이 됐다는 것을 확인할 수 있고, 실패하면 입력 파일 문제를 함께 조사할 필요가 없어집니다.</p>
         <p class="blog-sources">공식 참고: <a href="https://docs.openclaw.ai/start/wizard">CLI 온보딩</a> · <a href="https://docs.openclaw.ai/start/getting-started">서비스 설치와 첫 대화</a>. 문서 확인: 2026.10.19.</p>
         <nav class="blog-related" aria-label="OpenClaw 04편 탐색"><a rel="prev" href="044.html#post-openclaw-03">이전 편</a> · <a href="../blogs.html#openclaw-series">시리즈 목차</a> · <a rel="next" href="046.html#post-openclaw-05">다음 편</a> · <a href="../blogs.html#ai-guides">전체 목차</a></nav>
       </article>

@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="OpenClaw 08. Telegram 연결: 봇 생성부터 첫 DM 페어링까지 - 솔루션 비제트 IT 정보글">
-  <title>OpenClaw 08. Telegram 연결: 봇 생성부터 첫 DM 페어링까지 - 솔루션 비제트</title>
+  <meta name="description" content="Telegram 봇을 만들었다면 토큰을 OpenClaw에 등록하고 본인 계정으로 DM을 보내 봅니다. 처음에는 페어링 승인이 필요할 수 있습니다. 개인 DM이 되는지 본 뒤 그룹 사용 설정으로 넘어가면 막힌 지점을 구별하기 쉽습니다.">
+  <title>OpenClaw 08. Telegram 봇과 첫 대화 연결하기 - 솔루션 비제트</title>
   <link rel="stylesheet" href="../style.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
   <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
@@ -46,9 +46,9 @@
       <article class="blog-post" id="post-openclaw-08">
         <a class="blog-post-back" href="../blogs.html#post-openclaw-08">목록으로 돌아가기</a>
         <span class="blog-post-category">OpenClaw 입문 시리즈 · 08/14</span>
-        <h2>OpenClaw 08. Telegram 연결: 봇 생성부터 첫 DM 페어링까지</h2>
+        <h2>OpenClaw 08. Telegram 봇과 첫 대화 연결하기</h2>
         <p class="blog-post-meta">솔루션 비제트 · 공식 문서 기반 사용 안내 · <time datetime="2026-10-19">2026.10.19</time></p>
-        <p>대시보드에서 답변을 받았다면 Telegram 봇을 연결해 볼 차례입니다. 토큰은 봇을 연결하는 값이고, 페어링은 대화 상대를 승인하는 절차입니다. 처음에는 본인 DM만 열고 그룹 설정은 나중에 다루겠습니다.</p>
+        <p>Telegram 봇을 만들었다면 토큰을 OpenClaw에 등록하고 본인 계정으로 DM을 보내 봅니다. 처음에는 페어링 승인이 필요할 수 있습니다. 개인 DM이 되는지 본 뒤 그룹 사용 설정으로 넘어가면 막힌 지점을 구별하기 쉽습니다.</p>
         <h3>BotFather에서 토큰 받기</h3>
 <p>Telegram에서 계정명이 정확히 @BotFather인지 확인하고 /newbot을 실행해 안내에 따라 이름과 사용자명을 정합니다. 발급된 토큰은 봇 제어에 필요한 비밀 값이므로 채팅 기록이나 화면 캡처로 공개하지 않습니다. 유출했다면 BotFather에서 교체 절차를 진행해야 합니다.</p>
 <p>OpenClaw의 채널 추가 흐름을 열어 Telegram을 선택하고 로컬 설정 단계에서 토큰을 등록합니다. 현재 버전의 입력 옵션은 도움말과 공식 설정 문서를 확인하세요. Telegram은 QR 로그인 채널처럼 channels login telegram을 사용하는 방식이 아닙니다.</p>
@@ -62,9 +62,7 @@ openclaw pairing approve telegram &lt;CODE&gt;</code></pre>
 <h3>그룹에 넣을 때의 별도 설정</h3>
 <p>개인 DM 승인만으로 모든 그룹을 허용한 것은 아닙니다. 그룹 ID, 허용 사용자, 멘션 조건과 Telegram Privacy Mode를 공식 문서에서 확인하세요. 모든 메시지를 읽게 하려고 바로 관리자 권한을 주기보다 필요한 대화 범위부터 정합니다. 처음 실습에서는 그룹 연결을 생략해도 됩니다.</p>
 
-        <aside class="blog-worked-example" aria-label="설명용 실습 예시"><h3>본인 DM으로 메모 보내기</h3><p>본인 DM에서 작업 메모 두 문장을 정리하도록 요청합니다. 대시보드에서도 해당 실행의 결과를 확인하고, 허용하지 않은 계정의 요청은 처리되지 않는지 별도 시험할 수 있습니다. 그 시험에 실제 고객이나 제삼자의 자료를 사용하지 않습니다.</p></aside>
-        <h3>Telegram 연결 후</h3>
-        <ul><li>봇 토큰과 페어링 코드를 구분했는가</li><li>본인 요청만 승인했는가</li><li>DM과 그룹 허용 범위를 별도로 관리하는가</li></ul>
+        <p>본인 DM에서 응답을 받은 뒤 대시보드의 같은 실행 기록을 찾아보세요. Telegram 수신과 모델 처리가 어느 단계까지 이어졌는지 볼 수 있습니다. 접근 제한을 시험할 때는 시험 계정과 더미 자료를 사용합니다.</p>
         <p class="blog-sources">공식 참고: <a href="https://docs.openclaw.ai/channels/telegram/setup">Telegram 설정 절차</a> · <a href="https://docs.openclaw.ai/channels/pairing">페어링 개요</a>. 문서 확인: 2026.10.19.</p>
         <nav class="blog-related" aria-label="OpenClaw 08편 탐색"><a rel="prev" href="048.html#post-openclaw-07">이전 편</a> · <a href="../blogs.html#openclaw-series">시리즈 목차</a> · <a rel="next" href="050.html#post-openclaw-09">다음 편</a> · <a href="../blogs.html#ai-guides">전체 목차</a></nav>
       </article>

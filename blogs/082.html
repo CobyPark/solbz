@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="웹사이트 접속 오류를 설명할 때: 도메인·연결·인증서·페이지 구분하기 - 솔루션 비제트 IT 정보글">
-  <title>웹사이트 접속 오류를 설명할 때: 도메인·연결·인증서·페이지 구분하기 - 솔루션 비제트</title>
+  <meta name="description" content="“사이트가 안 열려요”라는 문의를 받으면 어느 주소에서 어떤 오류가 나오는지부터 알아야 합니다. 첫 화면은 열리는데 설명서만 404가 나는 경우와 도메인 전체가 연결되지 않는 경우는 살펴볼 곳이 다릅니다.">
+  <title>사이트 접속 오류를 전달하는 방법 - 솔루션 비제트</title>
   <link rel="stylesheet" href="../style.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
   <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
@@ -46,9 +46,9 @@
       <article class="blog-post" id="post-domain-connection-triage">
         <a class="blog-post-back" href="../blogs.html#post-domain-connection-triage">목록으로 돌아가기</a>
         <span class="blog-post-category">웹사이트 운영·접근성</span>
-        <h2>웹사이트 접속 오류를 설명할 때: 도메인·연결·인증서·페이지 구분하기</h2>
+        <h2>사이트 접속 오류를 전달하는 방법</h2>
         <p class="blog-post-meta">솔루션 비제트 · 활용 가이드 · <time datetime="2026-10-19">2026.10.19</time></p>
-        <p>“사이트가 안 열려요”라고만 들으면 확인할 곳이 너무 많습니다. 도메인을 못 찾는지, 연결이 안 되는지, 인증서 경고인지, 404인지부터 나눠보세요. 같은 주소를 다른 기기에서도 열어본 결과가 있으면 도움이 됩니다.</p>
+        <p>“사이트가 안 열려요”라는 문의를 받으면 어느 주소에서 어떤 오류가 나오는지부터 알아야 합니다. 첫 화면은 열리는데 설명서만 404가 나는 경우와 도메인 전체가 연결되지 않는 경우는 살펴볼 곳이 다릅니다.</p>
         <h3>정확한 주소와 오류 문구</h3>
 <p>입력한 도메인, www 유무, 경로, 발생 시각을 기록합니다. 화면의 오류 문구를 그대로 남기되 개인정보나 로그인 정보가 들어간 주소는 가립니다. 특정 경로만 실패하는지 첫 화면도 실패하는지 확인하세요.</p>
 <h3>이름 해석과 서버 응답</h3>
@@ -56,9 +56,7 @@
 <p>인증서 경고는 도메인 이름, 유효 기간, PC의 시간, 조직의 연결 환경 등과 관련될 수 있습니다. 경고를 무시하고 로그인하기보다 운영 담당자에게 상태를 전달하세요. 내부 주소나 보안 장비 설정은 임의로 바꾸지 않습니다.</p>
 <h3>조건 하나씩 바꿔 보기</h3>
 <p>같은 주소를 다른 기기나 승인된 다른 회선에서 확인하면 영향 범위를 볼 수 있습니다. 한 PC에서만 실패하는지 여러 사용자가 같은 증상을 겪는지 기록하세요. 여러 설정을 동시에 초기화하면 원인을 찾을 단서가 사라질 수 있습니다.</p>
-        <aside class="blog-worked-example" aria-label="설명용 예시"><h3>첫 화면은 되는데 설명서만 404</h3><p>회사 페이지에서 첫 화면은 열리고 /manual.html만 404라면 전체 인터넷 장애보다 파일 경로와 배포 여부를 먼저 확인합니다. 반대로 도메인 이름 자체를 찾지 못하면 해당 경로의 HTML을 다시 올리기 전에 DNS와 연결 범위를 점검합니다.</p></aside>
-        <h3>접속 장애를 전달할 때</h3>
-        <ul><li>실패한 정확한 주소와 시각이 있는가</li><li>오류가 발생한 단계를 구분했는가</li><li>한 기기와 여러 기기의 결과를 비교했는가</li></ul>
+        <p>첫 화면은 열리고 manual.html만 404가 나온다면 파일 경로와 배포 여부를 봅니다. 도메인 이름 자체를 찾지 못하는 오류라면 DNS와 연결 상태를 먼저 확인할 수 있습니다. 오류가 가리키는 단계에 따라 조사할 곳이 달라집니다.</p>
         <p class="blog-sources">기술 참고: <a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Howto/Web_mechanics/What_is_a_domain_name">MDN 도메인 이름과 DNS 설명</a>. 문서 확인: 2026.10.19.</p>
         <p class="blog-related"><a href="../blogs.html#ai-guides">전체 목차로 돌아가기</a></p>
       </article>

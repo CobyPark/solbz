@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="OmniRoute는 무엇을 연결할까: 로컬 AI 게이트웨이의 역할과 점검 순서 - 솔루션 비제트 IT 정보글">
-  <title>OmniRoute는 무엇을 연결할까: 로컬 AI 게이트웨이의 역할과 점검 순서 - 솔루션 비제트</title>
+  <meta name="description" content="여러 AI 공급자의 주소와 키를 프로그램마다 관리하면 설정을 바꿀 곳이 늘어납니다. 로컬 게이트웨이는 그 사이에서 요청을 받아 공급자로 보내는 역할을 합니다. 이 글에서는 diegosouzapw/OmniRoute 저장소를 기준으로 연결 구성을 살펴봅니다.">
+  <title>OmniRoute로 AI API 연결 모으기 - 솔루션 비제트</title>
   <link rel="stylesheet" href="../style.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
   <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
@@ -46,9 +46,9 @@
       <article class="blog-post" id="post-omniroute-basics">
         <a class="blog-post-back" href="../blogs.html#post-omniroute-basics">목록으로 돌아가기</a>
         <span class="blog-post-category">AI 활용 · 게이트웨이</span>
-        <h2>OmniRoute는 무엇을 연결할까: 로컬 AI 게이트웨이의 역할과 점검 순서</h2>
+        <h2>OmniRoute로 AI API 연결 모으기</h2>
         <p class="blog-post-meta">솔루션 비제트 · 문서 기반 활용 가이드 · <time datetime="2026-10-19">2026.10.19</time></p>
-        <p>여러 AI 도구의 주소와 키를 관리하다 보면 설정이 뒤섞일 수 있습니다. 게이트웨이는 그 사이에 공통 연결 지점을 둡니다. 여기서는 <a href="https://github.com/diegosouzapw/OmniRoute">diegosouzapw/OmniRoute</a>를 다룹니다. 비슷한 이름의 다른 서비스와 혼동하지 않도록 저장소 주소를 먼저 보세요.</p>
+        <p>여러 AI 공급자의 주소와 키를 프로그램마다 관리하면 설정을 바꿀 곳이 늘어납니다. 로컬 게이트웨이는 그 사이에서 요청을 받아 공급자로 보내는 역할을 합니다. 이 글에서는 <a href="https://github.com/diegosouzapw/OmniRoute">diegosouzapw/OmniRoute 저장소</a>를 기준으로 연결 구성을 살펴봅니다.</p>
         <h3>클라이언트·게이트웨이·공급자의 연결</h3>
         <p><strong>내 프로그램 → OmniRoute → 연결한 모델 공급자</strong> 순서로 요청이 이동합니다. 공급자 키는 게이트웨이가 공급자에 접근할 때 쓰고, 클라이언트용 키는 내 프로그램이 게이트웨이에 접근할 때 씁니다. 두 키를 같은 칸에 무작정 넣으면 인증 오류의 위치를 파악하기 어렵습니다. 설정 메모에는 키 원문 대신 “어느 구간의 키인가”를 적어두세요.</p>
         <p>여러 공급자를 연결하기 전에 한 공급자의 모델 한 개로 기본 동작을 확인해 두세요. 자동 전환을 처음부터 켜면 응답이 어느 공급자에서 왔는지와 실패한 연결이 무엇인지 함께 추적해야 합니다. 연결 하나가 검증된 뒤 대체 경로를 추가하면 점검할 조합을 줄일 수 있습니다.</p>
@@ -60,7 +60,7 @@
         <p>대시보드는 열리는데 답변이 없으면 게이트웨이 실행 자체보다 공급자 인증이나 모델 설정을 살펴볼 단계일 수 있습니다. 반대로 대시보드도 열리지 않으면 포트 충돌과 프로세스 종료부터 봅니다. 재설치에 앞서 어느 구간에서 막혔는지 찾아보세요.</p>
         <h3>자동 전환의 비용과 데이터 경로</h3>
         <p>무료 모델이 막혔을 때 유료 모델로 전환하도록 설정하면 실제 비용이 발생할 수 있습니다. 무료 실험에서는 무료 조건을 확인한 연결만 선택하고, 대체 경로도 같은 기준으로 검토하세요. 게이트웨이가 외부 공급자의 한도를 없애주는 것은 아닙니다. 공급자가 허용한 사용 범위 안에서 대기와 재시도를 설계해야 합니다.</p>
-        <p>외부로 전송할 수 없는 문서를 넣기 전에는 선택한 공급자와 저장되는 로그를 확인해야 합니다. 로컬 대시보드를 인터넷에 공개할 필요가 없는 개인 실습이라면 외부 포트 개방 없이 진행하세요. 연결이 정상이라는 확인과 조직의 문서 취급 기준을 충족한다는 판단은 각각 기록하는 것이 좋습니다.</p>
+        <p>연결이 실패하면 클라이언트에서 게이트웨이까지, 게이트웨이에서 공급자까지 나눠 시험해 보세요. 자동 전환을 설정했다면 실패할 때 선택되는 모델과 비용도 기록합니다. 평소 쓰던 경로가 바뀌는 순간을 알아볼 수 있어야 합니다.</p>
         <p class="blog-sources">프로젝트 원문: <a href="https://github.com/diegosouzapw/OmniRoute">OmniRoute README 및 설치·연결 안내</a>. 확인: 2026.10.19. 화면 구성과 요구 버전은 설치할 릴리스 문서를 따르세요.</p>
         <p class="blog-related">함께 읽기: <a href="101.html#post-ai-key-safety">키와 데이터 경로 확인</a> · <a href="100.html#post-ai-api-errors">API 오류 점검</a> · <a href="../blogs.html#ai-guides">목차로 돌아가기</a></p>
       </article>

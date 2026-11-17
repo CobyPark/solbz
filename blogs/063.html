@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="AI API 비용표 만들기: 호출 수보다 입력·출력·재시도를 함께 계산하기 - 솔루션 비제트 IT 정보글">
-  <title>AI API 비용표 만들기: 호출 수보다 입력·출력·재시도를 함께 계산하기 - 솔루션 비제트</title>
+  <meta name="description" content="하루 호출 수에 단가만 곱하면 실제 API 비용과 차이가 날 수 있습니다. 입력 문서 길이와 출력량이 매번 다르고 실패한 요청을 다시 보내기도 합니다. 비용표에는 정상 요청과 재처리 건을 나눠 넣어 보세요.">
+  <title>AI API 비용표에 재시도도 넣어야 하는 이유 - 솔루션 비제트</title>
   <link rel="stylesheet" href="../style.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
   <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
@@ -46,9 +46,9 @@
       <article class="blog-post" id="post-ai-cost-sheet">
         <a class="blog-post-back" href="../blogs.html#post-ai-cost-sheet">목록으로 돌아가기</a>
         <span class="blog-post-category">AI 문서·업무 활용</span>
-        <h2>AI API 비용표 만들기: 호출 수보다 입력·출력·재시도를 함께 계산하기</h2>
+        <h2>AI API 비용표에 재시도도 넣어야 하는 이유</h2>
         <p class="blog-post-meta">솔루션 비제트 · 활용 가이드 · <time datetime="2026-10-19">2026.10.19</time></p>
-        <p>API를 하루 몇 번 호출하는지만으로는 비용을 계산하기 어렵습니다. 짧은 질문과 긴 문서 처리의 사용량이 다르고, 실패한 작업을 다시 돌릴 수도 있습니다. 입력·출력·후속 호출을 문서 한 건 기준으로 적어보세요.</p>
+        <p>하루 호출 수에 단가만 곱하면 실제 API 비용과 차이가 날 수 있습니다. 입력 문서 길이와 출력량이 매번 다르고 실패한 요청을 다시 보내기도 합니다. 비용표에는 정상 요청과 재처리 건을 나눠 넣어 보세요.</p>
         <h3>가격표의 단위 읽기</h3>
 <p>입력과 출력 가격이 따로 있는지, 백만 토큰 기준인지, 요청이나 이미지 단위의 추가 요금이 있는지 확인합니다. 무료 모델이라도 유료 대체 경로나 부가 기능을 사용하면 비용 구조가 달라질 수 있습니다. 사용 시점의 모델 상세 화면과 계정 기록을 기준으로 삼으세요.</p>
 <h3>정상 처리와 재처리</h3>
@@ -56,9 +56,7 @@
 <p>출력 상한은 가능한 최대 생성량을 제어하는 설정이지 매번 그만큼 생성된다는 뜻은 아닙니다. 처음에는 짧은 작업으로 실제 사용량 기록을 모으고 예상치와 비교하세요. 숫자를 줄이기 위해 필요한 검토 단계를 생략하지는 않습니다.</p>
 <h3>사람이 고치는 시간까지</h3>
 <p>API 비용이 낮아도 잘못된 초안을 고치는 데 시간이 오래 걸리면 총비용이 더 들 수 있습니다. 작업 완료까지 걸린 시간과 검토 횟수를 함께 기록하세요. 예산은 한 번의 측정으로 확정하기보다 문서 길이가 다른 표본으로 보완하는 편이 좋습니다.</p>
-        <aside class="blog-worked-example" aria-label="설명용 예시"><h3>임의 단가로 한 건 계산</h3><p>가상 단가가 백만 입력 토큰당 1달러, 출력당 2달러이고 한 건이 입력 2,000·출력 500토큰이라면 토큰 비용은 0.003달러입니다. 이는 계산법을 위한 임의 숫자이며 실제 요금이 아닙니다. 추가 호출·부가 요금·세금 등은 별도 항목으로 확인합니다.</p></aside>
-        <h3>예산표에 빠뜨리기 쉬운 값</h3>
-        <ul><li>단가의 단위를 맞춰 계산했는가</li><li>재시도와 후속 단계의 요청을 포함했는가</li><li>가상 추정과 실제 청구 기록이 구분되는가</li></ul>
+        <p>계산 예시로 입력 100만 토큰당 1달러, 출력 100만 토큰당 2달러를 가정하겠습니다. 입력 2,000토큰과 출력 500토큰 한 건의 비용은 0.003달러입니다. 실제 서비스 단가를 넣을 때는 추가 호출료와 세금 등 별도 항목도 반영합니다.</p>
         <p class="blog-sources">기술 참고: <a href="https://openrouter.ai/pricing">OpenRouter 가격·모델 요금 안내</a>. 문서 확인: 2026.10.19.</p>
         <p class="blog-related"><a href="../blogs.html#ai-guides">전체 목차로 돌아가기</a></p>
       </article>

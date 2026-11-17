@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="태양광 자료의 kW와 kWh: 순간 출력과 누적 발전량을 구분하기 - 솔루션 비제트 IT 정보글">
-  <title>태양광 자료의 kW와 kWh: 순간 출력과 누적 발전량을 구분하기 - 솔루션 비제트</title>
+  <meta name="description" content="모니터에 표시된 kW는 그 시점의 출력을 나타내고, kWh는 일정 시간 동안 생산한 에너지입니다. 시간 간격 없이 kW 값을 단순히 더하면 발전량이 되지 않습니다. 수집 값이 순간값인지 구간 평균인지부터 확인해야 합니다.">
+  <title>태양광 자료의 kW와 kWh 읽기 - 솔루션 비제트</title>
   <link rel="stylesheet" href="../style.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
   <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
@@ -46,9 +46,9 @@
       <article class="blog-post" id="post-power-energy-units">
         <a class="blog-post-back" href="../blogs.html#post-power-energy-units">목록으로 돌아가기</a>
         <span class="blog-post-category">데이터·파일 정리</span>
-        <h2>태양광 자료의 kW와 kWh: 순간 출력과 누적 발전량을 구분하기</h2>
+        <h2>태양광 자료의 kW와 kWh 읽기</h2>
         <p class="blog-post-meta">솔루션 비제트 · 활용 가이드 · <time datetime="2026-10-19">2026.10.19</time></p>
-        <p>태양광 화면에 10이라고 나와도 단위를 모르면 해석할 수 없습니다. 지금의 출력인지 하루 동안 쌓인 발전량인지부터 봐야 합니다. 자료를 옮길 때 자주 섞이는 kW와 kWh, 순간값과 누적값을 정리하겠습니다.</p>
+        <p>모니터에 표시된 kW는 그 시점의 출력을 나타내고, kWh는 일정 시간 동안 생산한 에너지입니다. 시간 간격 없이 kW 값을 단순히 더하면 발전량이 되지 않습니다. 수집 값이 순간값인지 구간 평균인지부터 확인해야 합니다.</p>
         <h3>출력과 에너지를 다른 열에</h3>
 <p>kW는 전력의 단위이고 kWh는 일정 시간 동안의 전기에너지를 나타냅니다. 10kW가 한 시간 동안 일정하게 유지된다면 10kWh라는 계산을 할 수 있지만 순간값 한 번만으로 하루 발전량을 알 수는 없습니다. 표 제목에 단위만 적지 말고 열 이름에도 명확히 표시하세요.</p>
 <h3>측정 간격과 값의 정의</h3>
@@ -56,9 +56,7 @@
 <p>W와 kW, Wh와 kWh를 섞으면 천 배 차이가 생길 수 있습니다. 수집 단계에서 단위를 통일하되 원본 단위와 변환 계수를 기록하면 문제를 되짚기 쉽습니다. 장비별 설명서에서 제공 값의 정의를 확인하는 것이 우선입니다.</p>
 <h3>누적값이 작아졌을 때</h3>
 <p>장비 재시작, 계량기 교체, 카운터 초기화가 있으면 누적값이 작아질 수 있습니다. 해당 시점의 장비 상태를 확인하고 집계 처리 규칙을 따로 정하세요. 누락 구간이 있으면 완전한 발전량인지 추정치인지 결과에 표시합니다.</p>
-        <aside class="blog-worked-example" aria-label="설명용 예시"><h3>10분 평균 출력으로 계산</h3><p>구간 평균 출력 6kW가 10분 동안 유지됐다면 에너지는 6×(10/60)=1kWh입니다. 이는 일정 평균값을 가정한 계산 예시입니다. 실제 장비의 기록 간격과 측정 방식이 다르면 같은 공식을 기계적으로 적용하지 않습니다.</p></aside>
-        <h3>발전 자료를 합치기 전에</h3>
-        <ul><li>각 열에 물리량과 단위가 표시되는가</li><li>순간·평균·누적값 중 무엇인지 아는가</li><li>초기화와 누락 구간의 집계 규칙이 있는가</li></ul>
+        <p>구간 평균 출력이 6kW이고 구간이 10분이라면 에너지는 6×(10/60)=1kWh입니다. 순간값을 기록한 장비에는 같은 계산을 그대로 쓰기 어려울 수 있습니다. 기록 방식과 측정 간격을 확인한 뒤 계산법을 정합니다.</p>
         <p class="blog-sources">기술 참고: <a href="https://www.eia.gov/energyexplained/electricity/measuring-electricity.php">미국 EIA 전력·전기에너지 단위 설명</a>. 문서 확인: 2026.10.19.</p>
         <p class="blog-related"><a href="../blogs.html#ai-guides">전체 목차로 돌아가기</a></p>
       </article>

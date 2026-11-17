@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="주소의 물음표와 샵은 어떻게 다를까: 검색 조건과 본문 목차 링크 - 솔루션 비제트 IT 정보글">
-  <title>주소의 물음표와 샵은 어떻게 다를까: 검색 조건과 본문 목차 링크 - 솔루션 비제트</title>
+  <meta name="description" content="검색 결과 주소에는 ?q= 같은 값이 붙고, 본문의 특정 위치로 가는 주소에는 #이 붙습니다. 둘 다 주소 뒤에 있지만 서버에 전달되는 방식과 쓰임이 다릅니다. 검색 조건과 목차 링크를 예로 살펴봅니다.">
+  <title>URL의 물음표와 #은 어디에 쓰일까 - 솔루션 비제트</title>
   <link rel="stylesheet" href="../style.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
   <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
@@ -46,9 +46,9 @@
       <article class="blog-post" id="post-query-fragment-links">
         <a class="blog-post-back" href="../blogs.html#post-query-fragment-links">목록으로 돌아가기</a>
         <span class="blog-post-category">웹사이트 운영·접근성</span>
-        <h2>주소의 물음표와 샵은 어떻게 다를까: 검색 조건과 본문 목차 링크</h2>
+        <h2>URL의 물음표와 #은 어디에 쓰일까</h2>
         <p class="blog-post-meta">솔루션 비제트 · 활용 가이드 · <time datetime="2026-10-19">2026.10.19</time></p>
-        <p>주소 끝의 ? 뒤와 # 뒤는 역할이 다릅니다. 검색 조건을 전달하는 주소와 본문의 특정 제목으로 이동하는 주소를 만들 때 이 차이를 알아두면 편합니다. 긴 안내문의 목차 링크를 예로 살펴보겠습니다.</p>
+        <p>검색 결과 주소에는 ?q= 같은 값이 붙고, 본문의 특정 위치로 가는 주소에는 #이 붙습니다. 둘 다 주소 뒤에 있지만 서버에 전달되는 방식과 쓰임이 다릅니다. 검색 조건과 목차 링크를 예로 살펴봅니다.</p>
         <h3>쿼리와 프래그먼트</h3>
 <p>물음표 뒤의 쿼리는 요청 주소의 일부로 서버에 전달될 수 있고, 샵 뒤의 프래그먼트는 일반적인 HTTP 요청에서 서버로 전송되지 않습니다. HTML 문서에서는 일치하는 id를 가진 위치로 이동하는 데 프래그먼트를 사용할 수 있습니다.</p>
 <h3>목차 링크와 대상 ID</h3>
@@ -56,9 +56,7 @@
 <p>고정 헤더가 있는 페이지에서는 이동한 제목이 가려질 수 있으므로 스크롤 여백을 검토하세요. 링크를 클릭하는 시험과 해당 해시가 포함된 주소를 직접 여는 시험을 모두 해보는 편이 좋습니다.</p>
 <h3>주소에 넣지 않을 값</h3>
 <p>주소는 방문 기록, 화면 캡처, 분석 도구 등에 남을 수 있습니다. 프래그먼트가 서버에 자동 전송되지 않는다고 완전한 비밀 저장 공간이 되는 것은 아닙니다. 페이지의 스크립트도 해당 값을 읽을 수 있으므로 키나 개인 자료는 주소로 전달하지 않도록 설계하세요.</p>
-        <aside class="blog-worked-example" aria-label="설명용 예시"><h3>복구 절차로 바로 가는 링크</h3><p>긴 점검 가이드에서 “백업 복구” 절로 보내려면 guide.html#restore-check 같은 링크를 쓸 수 있습니다. 본문의 ID를 restore-check로 맞추고 모바일에서 열었을 때 제목이 고정 헤더 아래에 보이는지 확인합니다.</p></aside>
-        <h3>링크를 공유하기 전에</h3>
-        <ul><li>링크의 해시와 본문 ID가 같은가</li><li>ID가 한 문서에서 유일한가</li><li>공유 주소에 비밀 값이 포함되지 않았는가</li></ul>
+        <p>guide.html#restore-check라는 링크를 만들었다면 본문에도 restore-check ID가 있어야 합니다. 휴대전화에서 링크를 열어 해당 제목이 고정 헤더에 가리지 않는지 살펴보세요.</p>
         <p class="blog-sources">기술 참고: <a href="https://developer.mozilla.org/en-US/docs/Web/URI/Reference/Fragment">MDN URI 프래그먼트 설명</a>. 문서 확인: 2026.10.19.</p>
         <p class="blog-related"><a href="../blogs.html#ai-guides">전체 목차로 돌아가기</a></p>
       </article>

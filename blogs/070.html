@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="파일명 규칙 만들기: 최종·진짜최종 대신 날짜와 버전으로 찾기 - 솔루션 비제트 IT 정보글">
-  <title>파일명 규칙 만들기: 최종·진짜최종 대신 날짜와 버전으로 찾기 - 솔루션 비제트</title>
+  <meta name="description" content="같은 보고서에 최종, 수정, 진짜최종이 붙기 시작하면 열어 보기 전에는 구별하기 어렵습니다. 날짜와 대상, 버전을 정해진 위치에 넣으면 파일 목록에서 찾을 수 있습니다. 팀에서 실제로 검색하는 정보가 무엇인지부터 골라 보세요.">
+  <title>‘진짜최종’ 대신 찾기 쉬운 파일명 쓰기 - 솔루션 비제트</title>
   <link rel="stylesheet" href="../style.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
   <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
@@ -46,9 +46,9 @@
       <article class="blog-post" id="post-file-naming-rules">
         <a class="blog-post-back" href="../blogs.html#post-file-naming-rules">목록으로 돌아가기</a>
         <span class="blog-post-category">데이터·파일 정리</span>
-        <h2>파일명 규칙 만들기: 최종·진짜최종 대신 날짜와 버전으로 찾기</h2>
+        <h2>‘진짜최종’ 대신 찾기 쉬운 파일명 쓰기</h2>
         <p class="blog-post-meta">솔루션 비제트 · 활용 가이드 · <time datetime="2026-10-19">2026.10.19</time></p>
-        <p>“최종”, “최종2”, “진짜최종” 파일이 함께 있으면 배포한 문서를 찾기 어렵습니다. 파일명에는 검색에 쓸 날짜와 버전을 넣고 승인 상태는 따로 관리해 보세요. 팀에서 꾸준히 지킬 수 있을 만큼 짧은 규칙이면 됩니다.</p>
+        <p>같은 보고서에 최종, 수정, 진짜최종이 붙기 시작하면 열어 보기 전에는 구별하기 어렵습니다. 날짜와 대상, 버전을 정해진 위치에 넣으면 파일 목록에서 찾을 수 있습니다. 팀에서 실제로 검색하는 정보가 무엇인지부터 골라 보세요.</p>
         <h3>파일명에 넣을 정보</h3>
 <p>업무 ID, 문서 종류, 기준 날짜, 버전 정도를 기본 항목으로 정할 수 있습니다. 날짜가 작성일인지 대상 기간인지 먼저 합의하세요. 같은 날짜 문자열을 두 의미로 쓰면 정렬은 잘돼도 문서를 잘못 고를 수 있습니다.</p>
 <h3>쓸 수 없는 문자와 이름</h3>
@@ -56,9 +56,7 @@
 <p>한글 사용 자체를 일괄 금지할 필요는 없지만 외부 시스템과의 호환 요구는 확인해야 합니다. 대소문자만 다른 이름이나 끝의 공백으로 파일을 구분하지 않고, 전체 경로가 지나치게 길어지지 않게 폴더 깊이도 검토하세요.</p>
 <h3>일괄 변경 전에 대응표</h3>
 <p>기존 이름과 새 이름을 나란히 적고 중복 여부를 확인합니다. 링크나 자동화가 옛 경로를 참조한다면 파일명 변경이 다른 작업을 깨뜨릴 수 있습니다. 복사본에서 시험하고 배포본과 작업본을 나눠 적용하세요.</p>
-        <aside class="blog-worked-example" aria-label="설명용 예시"><h3>월별 점검 보고서 이름</h3><p>10월 점검 보고서를 JOB-0042_점검보고_2026-10_v03처럼 이름 붙일 수 있습니다. 2026-10은 대상 월, v03은 내용 버전으로 정하고 승인 여부는 배포 목록에서 관리합니다. 팀의 실제 검색 방식에 맞춰 항목 수를 줄여도 됩니다.</p></aside>
-        <h3>이름을 한꺼번에 바꾸기 전에</h3>
-        <ul><li>날짜가 뜻하는 기준이 합의됐는가</li><li>금지 문자와 예약 이름을 피했는가</li><li>이름 변경으로 깨질 참조가 없는가</li></ul>
+        <p>JOB-0042_점검보고_2026-10_v03이라는 이름에서는 대상, 문서 종류, 기준 월, 버전을 읽을 수 있습니다. 2026-10을 작성 월로 쓸지 대상 월로 쓸지는 팀에서 정해야 합니다. 승인 상태는 별도 배포 목록에서 관리할 수도 있습니다.</p>
         <p class="blog-sources">기술 참고: <a href="https://learn.microsoft.com/en-us/windows/win32/fileio/naming-a-file">Microsoft Windows 파일·경로 이름 규칙</a>. 문서 확인: 2026.10.19.</p>
         <p class="blog-related"><a href="../blogs.html#ai-guides">전체 목차로 돌아가기</a></p>
       </article>

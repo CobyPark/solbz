@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="자동화 검증용 샘플 데이터 만들기: 정상·경계·실패 사례를 나누기 - 솔루션 비제트 IT 정보글">
-  <title>자동화 검증용 샘플 데이터 만들기: 정상·경계·실패 사례를 나누기 - 솔루션 비제트</title>
+  <meta name="description" content="정상 자료 한 개가 잘 처리됐다고 모든 입력을 처리할 수 있는 것은 아닙니다. 빈 파일, 누락된 열, 아주 긴 이름처럼 실제로 들어올 법한 입력을 준비해 보세요. 각 자료를 어떻게 처리해야 하는지도 실행 전에 적어 둡니다.">
+  <title>자동화 시험에 쓸 샘플 데이터 고르기 - 솔루션 비제트</title>
   <link rel="stylesheet" href="../style.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
   <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
@@ -46,9 +46,9 @@
       <article class="blog-post" id="post-evaluation-samples">
         <a class="blog-post-back" href="../blogs.html#post-evaluation-samples">목록으로 돌아가기</a>
         <span class="blog-post-category">데이터·파일 정리</span>
-        <h2>자동화 검증용 샘플 데이터 만들기: 정상·경계·실패 사례를 나누기</h2>
+        <h2>자동화 시험에 쓸 샘플 데이터 고르기</h2>
         <p class="blog-post-meta">솔루션 비제트 · 활용 가이드 · <time datetime="2026-10-19">2026.10.19</time></p>
-        <p>정상 파일 하나를 처리했다고 자동화 검증이 끝나지는 않습니다. 빈값, 중복, 경계값을 따로 준비해 예상 결과를 적어두세요. 통과해야 할 자료뿐 아니라 거절해야 할 자료가 제대로 걸리는지도 볼 수 있어야 합니다.</p>
+        <p>정상 자료 한 개가 잘 처리됐다고 모든 입력을 처리할 수 있는 것은 아닙니다. 빈 파일, 누락된 열, 아주 긴 이름처럼 실제로 들어올 법한 입력을 준비해 보세요. 각 자료를 어떻게 처리해야 하는지도 실행 전에 적어 둡니다.</p>
         <h3>정상·경계·실패 입력</h3>
 <p>필수 항목이 있는 정상 입력, 항목이 비어 있는 입력, 허용 범위의 경계값을 각각 만듭니다. 처리해야 할 입력과 거절해야 할 입력도 구분하세요. 거절해야 하는 파일이 오류 없이 통과하는 것도 실패로 기록해야 합니다.</p>
 <h3>실행 전에 적는 기대 결과</h3>
@@ -56,9 +56,7 @@
 <p>데이터를 보고 규칙을 계속 조정했다면 그 자료만으로 최종 품질을 판단하지 않습니다. 규칙을 만드는 데 쓰지 않은 별도 표본으로 다시 확인하세요. 학습·검증 자료를 나누는 원칙처럼, 자동화 규칙도 보지 않은 입력에서 동작을 살펴볼 필요가 있습니다.</p>
 <h3>표본으로 못 보는 범위</h3>
 <p>가상 데이터는 개인정보를 줄이고 재현을 쉽게 하지만 실제 파일의 모든 복잡성을 대표하지는 않습니다. 승인된 실제 표본을 추가할 때는 취급 범위와 삭제 시점을 정합니다. 오류가 발견되면 작은 재현 입력으로 바꿔 검증 목록에 남겨두세요.</p>
-        <aside class="blog-worked-example" aria-label="설명용 예시"><h3>품목 변환의 시험 입력 다섯 개</h3><p>품목 변환 프로그램에는 “정상 코드”, “앞자리 0”, “중복 코드”, “누락 수량”, “음수 수량” 다섯 입력을 준비합니다. 음수를 허용하지 않는 업무라면 실패 처리와 오류 설명까지 기대 결과로 적습니다. 자동 수정할지 거절할지는 사전에 정합니다.</p></aside>
-        <h3>검증 자료를 만들 때</h3>
-        <ul><li>통과와 거절 사례가 모두 있는가</li><li>기대 결과가 실행 전에 정해졌는가</li><li>규칙을 조정하지 않은 별도 표본이 있는가</li></ul>
+        <p>품목 변환이라면 정상 코드와 함께 앞자리 0, 중복 코드, 누락 수량, 음수 수량이 든 입력을 준비해 보세요. 음수 수량을 허용하지 않는다면 오류가 나야 정상입니다. 자동으로 고칠 값과 거절할 값도 미리 정합니다.</p>
         <p class="blog-sources">기술 참고: <a href="https://scikit-learn.org/stable/modules/generated/sklearn.model_selection.train_test_split.html">scikit-learn 학습·시험 표본 분리 도구 설명</a>. 문서 확인: 2026.10.19.</p>
         <p class="blog-related"><a href="../blogs.html#ai-guides">전체 목차로 돌아가기</a></p>
       </article>

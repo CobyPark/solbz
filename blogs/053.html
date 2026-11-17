@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="OpenClaw 12. 예약 실행: 일회 알림부터 만들고 실행 이력 확인하기 - 솔루션 비제트 IT 정보글">
-  <title>OpenClaw 12. 예약 실행: 일회 알림부터 만들고 실행 이력 확인하기 - 솔루션 비제트</title>
+  <meta name="description" content="반복 일정을 등록하기 전에는 몇 분 뒤 알림 하나를 예약해 보세요. 설정한 시각과 실제 도착 시각을 비교하면 시간대나 전송 경로가 맞는지 알 수 있습니다. 작업 ID도 같이 남겨 둡니다.">
+  <title>OpenClaw 12. 일회 알림으로 예약 실행 시험하기 - 솔루션 비제트</title>
   <link rel="stylesheet" href="../style.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
   <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
@@ -46,9 +46,9 @@
       <article class="blog-post" id="post-openclaw-12">
         <a class="blog-post-back" href="../blogs.html#post-openclaw-12">목록으로 돌아가기</a>
         <span class="blog-post-category">OpenClaw 입문 시리즈 · 12/14</span>
-        <h2>OpenClaw 12. 예약 실행: 일회 알림부터 만들고 실행 이력 확인하기</h2>
+        <h2>OpenClaw 12. 일회 알림으로 예약 실행 시험하기</h2>
         <p class="blog-post-meta">솔루션 비제트 · 공식 문서 기반 사용 안내 · <time datetime="2026-10-19">2026.10.19</time></p>
-        <p>예약 기능은 반복 작업보다 일회 알림으로 시작하겠습니다. 등록 목록에 보이는 것과 실제 실행·전달이 끝나는 것은 다르기 때문입니다. 알림 하나의 실행 이력을 읽어본 뒤 시간대와 반복 조건을 붙여 보세요.</p>
+        <p>반복 일정을 등록하기 전에는 몇 분 뒤 알림 하나를 예약해 보세요. 설정한 시각과 실제 도착 시각을 비교하면 시간대나 전송 경로가 맞는지 알 수 있습니다. 작업 ID도 같이 남겨 둡니다.</p>
         <h3>일회 알림 등록</h3>
 <p>현재 공식 문서는 openclaw automations를 기본 관리 명령으로 안내하고 cron을 별칭으로 유지합니다. 설치한 버전에서 명령과 옵션을 먼저 확인하세요. 아래 예시는 약 10분 뒤 메인 세션에 실습 알림 이벤트를 넣는 한 줄 명령이며, 실제 고객 메시지를 발송하는 설정은 아닙니다.</p>
 <pre tabindex="0" aria-label="명령어 또는 설정 예제"><code>openclaw automations --help
@@ -62,9 +62,6 @@ openclaw automations runs &lt;job-id&gt;</code></pre>
 <p>정해진 일정의 작업과 대화 맥락을 보며 주기적으로 확인하는 Heartbeat는 사용 목적과 실행 조건이 다를 수 있습니다. 반복 작업에서는 시간대, 실행 빈도, 결과를 보낼 곳, 중복 실행 방지와 중단 조건을 정하세요. 오래된 HEARTBEAT.md 중심 설명을 그대로 적용하기보다 현재 문서를 확인합니다.</p>
 <p>한국 기준 일정을 원한다면 Asia/Seoul 같은 시간대를 명시할 수 있는지 확인합니다. 처음부터 짧은 간격의 무한 반복을 만들지 말고 일회 시험과 사용량 확인 뒤 필요한 빈도로 확대하세요. PC가 꺼지거나 Gateway가 중단된 동안의 처리도 운영 조건에 포함합니다.</p>
 
-        <aside class="blog-worked-example" aria-label="설명용 실습 예시"><h3>알림 한 번의 시각 기록</h3><p>개인 실습에서는 일회 알림 하나를 만들고 생성 ID, 예정 시각, 실제 처리 시각을 기록합니다. 알림이 끝나면 남아 있는 반복 작업이 없는지 확인합니다. 반복 보고서로 확대할 때는 결과 저장과 전송을 별도 시험합니다.</p></aside>
-        <h3>반복 일정을 만들기 전에</h3>
-        <ul><li>설치 버전의 예약 명령을 확인했는가</li><li>등록·실행·전달 상태를 구분했는가</li><li>시간대와 중단 조건을 정했는가</li></ul>
         <p class="blog-sources">공식 참고: <a href="https://docs.openclaw.ai/automation/cron-jobs/managing-jobs">예약 작업 관리 명령</a> · <a href="https://docs.openclaw.ai/gateway/heartbeat">Heartbeat 동작</a>. 문서 확인: 2026.10.19.</p>
         <nav class="blog-related" aria-label="OpenClaw 12편 탐색"><a rel="prev" href="052.html#post-openclaw-11">이전 편</a> · <a href="../blogs.html#openclaw-series">시리즈 목차</a> · <a rel="next" href="054.html#post-openclaw-13">다음 편</a> · <a href="../blogs.html#ai-guides">전체 목차</a></nav>
       </article>

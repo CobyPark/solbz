@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Codex 09. 코드 리뷰 요청하기: 변경 요약보다 재현 가능한 문제 찾기 - 솔루션 비제트 IT 정보글">
-  <title>Codex 09. 코드 리뷰 요청하기: 변경 요약보다 재현 가능한 문제 찾기 - 솔루션 비제트</title>
+  <meta name="description" content="코드 리뷰를 맡길 때는 비교할 브랜치나 커밋을 알려 주세요. 발견한 문제에는 실패하는 입력과 영향을 받는 호출부를 함께 설명해 달라고 요청할 수 있습니다. 그러면 지적한 내용을 직접 확인하기 쉬워집니다.">
+  <title>Codex 09. 코드 리뷰에서 근거를 받는 방법 - 솔루션 비제트</title>
   <link rel="stylesheet" href="../style.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
   <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
@@ -46,9 +46,9 @@
       <article class="blog-post" id="post-codex-09">
         <a class="blog-post-back" href="../blogs.html#post-codex-09">목록으로 돌아가기</a>
         <span class="blog-post-category">Codex 활용 시리즈 · 09/13</span>
-        <h2>Codex 09. 코드 리뷰 요청하기: 변경 요약보다 재현 가능한 문제 찾기</h2>
+        <h2>Codex 09. 코드 리뷰에서 근거를 받는 방법</h2>
         <p class="blog-post-meta">솔루션 비제트 · OpenAI 공식 문서 기반 가이드 · <time datetime="2026-10-19">2026.10.19</time></p>
-        <p>변경 내용을 요약하는 일과 버그를 찾는 리뷰는 다릅니다. Codex에 리뷰를 맡길 때는 비교할 브랜치나 커밋을 정하고, 어떤 입력에서 문제가 생기는지 근거를 달라고 요청하세요. 파일 수정이나 외부 댓글 게시도 함께 할지는 따로 정하면 됩니다.</p>
+        <p>코드 리뷰를 맡길 때는 비교할 브랜치나 커밋을 알려 주세요. 발견한 문제에는 실패하는 입력과 영향을 받는 호출부를 함께 설명해 달라고 요청할 수 있습니다. 그러면 지적한 내용을 직접 확인하기 쉬워집니다.</p>
         <h3>어떤 변경을 리뷰할지</h3>
 <p>커밋되지 않은 변경, 특정 커밋, 기준 브랜치와의 차이 중 무엇을 볼지 정합니다. PR을 검토한다면 실제 링크와 현재 변경 상태를 확인하세요. 로컬 검토와 외부 PR 댓글 게시를 별도 행동으로 구분할 수 있습니다.</p>
 <h3>조건과 영향이 있는 지적</h3>
@@ -60,8 +60,7 @@
 <p>각 발견 사항이 실제 코드에서 성립하는지 확인한 뒤 수정 여부를 정합니다. 수정 후에는 해당 문제가 해결됐는지와 다른 경로에 영향이 없는지를 다시 검증하세요. 처음 리뷰와 다른 커밋을 보고 있다면 비교 대상을 갱신해야 합니다.</p>
 <p>공식 Code Review 기능과 외부 저장소 연동은 계정·연결·저장소 접근 권한이 필요할 수 있습니다. 자동 리뷰가 활성화됐는지와 요청한 채팅 리뷰가 실행됐는지도 구분해서 확인합니다.</p>
 
-        <aside class="blog-worked-example" aria-label="설명용 적용 과제"><h3>날짜 필터 리뷰의 질문</h3><p>날짜 필터 변경을 리뷰하며 “시간대 경계의 누락”을 중점으로 봅니다. 발견 사항이 나오면 자정 전후 입력으로 재현하고, 수정 뒤 같은 표본으로 확인합니다. 재현되지 않는 지적은 근거를 추가로 확인합니다.</p></aside>
-        <h3>발견 사항을 읽는 기준</h3><ul><li>현재 비교 기준과 대상 커밋이 명확한가</li><li>발견 사항에 조건·영향·위치가 있는가</li><li>리뷰 결과와 수정 후 검증을 구분했는가</li></ul>
+        <p>날짜 필터를 고친 변경이라면 자정 직전과 직후의 입력을 넣어 보세요. 시간대가 다른 기록을 같은 날짜로 묶고 있지 않은지, 종료일을 포함하는 조건이 맞는지 구체적으로 물어볼 수 있습니다.</p>
         <p class="blog-sources">공식 참고: <a href="https://learn.chatgpt.com/docs/code-review">Code Review 공식 안내</a>. 문서 확인: 2026.10.19.</p>
         <nav class="blog-related" aria-label="Codex 09편 탐색"><a rel="prev" href="021.html#post-codex-08">이전 편</a> · <a href="../blogs.html#codex-series">시리즈 목차</a> · <a rel="next" href="023.html#post-codex-10">다음 편</a> · <a href="../blogs.html#ai-guides">전체 목차</a></nav>
       </article>

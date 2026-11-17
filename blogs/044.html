@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="OpenClaw 03. macOS·Linux 설치: 런타임 확인부터 CLI 준비까지 - 솔루션 비제트 IT 정보글">
-  <title>OpenClaw 03. macOS·Linux 설치: 런타임 확인부터 CLI 준비까지 - 솔루션 비제트</title>
+  <meta name="description" content="macOS나 Linux에서 설치를 시작할 때는 현재 Node.js 버전과 공식 문서의 요구 버전을 맞춰 보세요. 설치 스크립트가 끝난 뒤에도 셸에서 명령을 찾지 못할 수 있어, 새 터미널에서 버전을 확인하는 과정이 필요합니다.">
+  <title>OpenClaw 03. macOS·Linux에 CLI 설치하기 - 솔루션 비제트</title>
   <link rel="stylesheet" href="../style.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
   <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
@@ -46,9 +46,9 @@
       <article class="blog-post" id="post-openclaw-03">
         <a class="blog-post-back" href="../blogs.html#post-openclaw-03">목록으로 돌아가기</a>
         <span class="blog-post-category">OpenClaw 입문 시리즈 · 03/14</span>
-        <h2>OpenClaw 03. macOS·Linux 설치: 런타임 확인부터 CLI 준비까지</h2>
+        <h2>OpenClaw 03. macOS·Linux에 CLI 설치하기</h2>
         <p class="blog-post-meta">솔루션 비제트 · 공식 문서 기반 사용 안내 · <time datetime="2026-10-19">2026.10.19</time></p>
-        <p>macOS나 Linux에서는 공식 설치 스크립트로 CLI를 준비할 수 있습니다. 직접 관리하는 Node.js를 쓸 수도 있으니 현재 버전부터 보세요. Windows에서 WSL2를 골랐다면 아래 명령은 PowerShell이 아니라 Linux 터미널에서 실행합니다.</p>
+        <p>macOS나 Linux에서 설치를 시작할 때는 현재 Node.js 버전과 공식 문서의 요구 버전을 맞춰 보세요. 설치 스크립트가 끝난 뒤에도 셸에서 명령을 찾지 못할 수 있어, 새 터미널에서 버전을 확인하는 과정이 필요합니다.</p>
         <h3>Node.js 버전부터 확인</h3>
 <p>터미널에서 Node.js 버전을 확인합니다. 문서 확인일 기준 공식 설치 안내는 Node 24.16 이상 또는 26.1 이상 경로를 제시하고 Node 26을 권장합니다. 오래된 글의 “Node 22면 충분” 같은 조건을 그대로 적용하지 말고 설치할 릴리스의 요구사항을 다시 확인하세요.</p>
 <pre tabindex="0" aria-label="명령어 또는 설정 예제"><code>node --version</code></pre>
@@ -61,9 +61,6 @@ openclaw --version</code></pre>
 <h3>설치됐는데 명령을 못 찾을 때</h3>
 <p>openclaw를 찾지 못한다면 PATH와 새 터미널 적용 여부, 어떤 Node 환경에 설치했는지 확인합니다. 명령은 실행되는데 Gateway가 멈추는 경우는 다른 단계의 문제입니다. 무조건 관리자 권한으로 다시 설치하기보다 나온 오류와 설치 경로를 기록해 원인을 좁히세요.</p>
 
-        <aside class="blog-worked-example" aria-label="설명용 실습 예시"><h3>새 터미널에서 버전 확인</h3><p>설치 전후 Node 버전과 OpenClaw 버전을 작은 메모에 남깁니다. 가상 실습에서 터미널을 다시 열어도 명령을 찾을 수 있는지 확인하고, 초기 설정을 시작할 준비가 되면 다음 편으로 넘어갑니다. 설치 과정에서 발생한 오류는 비밀 값을 제외하고 기록합니다.</p></aside>
-        <h3>온보딩 전에 확인</h3>
-        <ul><li>사용할 릴리스의 Node 요구사항을 확인했는가</li><li>선택한 설치 방식이 하나로 정리됐는가</li><li>새 터미널에서도 CLI 버전을 확인할 수 있는가</li></ul>
         <p class="blog-sources">공식 참고: <a href="https://docs.openclaw.ai/install">공식 설치·npm 안내</a> · <a href="https://docs.openclaw.ai/install/node">Node.js 설정·문제 해결</a>. 문서 확인: 2026.10.19.</p>
         <nav class="blog-related" aria-label="OpenClaw 03편 탐색"><a rel="prev" href="043.html#post-openclaw-02">이전 편</a> · <a href="../blogs.html#openclaw-series">시리즈 목차</a> · <a rel="next" href="045.html#post-openclaw-04">다음 편</a> · <a href="../blogs.html#ai-guides">전체 목차</a></nav>
       </article>

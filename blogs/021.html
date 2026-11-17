@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Codex 08. 버그 수정 뒤 검증하기: 재현 입력·관련 테스트·실제 화면 - 솔루션 비제트 IT 정보글">
-  <title>Codex 08. 버그 수정 뒤 검증하기: 재현 입력·관련 테스트·실제 화면 - 솔루션 비제트</title>
+  <meta name="description" content="코드를 수정했다는 답변을 받으면 처음 실패했던 입력부터 다시 넣어 보세요. 검색 오류였다면 같은 검색어와 같은 조작을 재현합니다. 그다음 빈 입력이나 결과가 없는 경우처럼 가까운 조건을 더 시험해 볼 수 있습니다.">
+  <title>Codex 08. 버그를 고친 뒤 어디까지 시험할까 - 솔루션 비제트</title>
   <link rel="stylesheet" href="../style.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
   <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
@@ -46,9 +46,9 @@
       <article class="blog-post" id="post-codex-08">
         <a class="blog-post-back" href="../blogs.html#post-codex-08">목록으로 돌아가기</a>
         <span class="blog-post-category">Codex 활용 시리즈 · 08/13</span>
-        <h2>Codex 08. 버그 수정 뒤 검증하기: 재현 입력·관련 테스트·실제 화면</h2>
+        <h2>Codex 08. 버그를 고친 뒤 어디까지 시험할까</h2>
         <p class="blog-post-meta">솔루션 비제트 · OpenAI 공식 문서 기반 가이드 · <time datetime="2026-10-19">2026.10.19</time></p>
-        <p>코드가 바뀐 뒤에도 처음 실패했던 입력을 다시 넣어봐야 합니다. 테스트가 통과했다면 무엇을 검사한 테스트인지도 살펴보세요. 화면 수정이라면 브라우저에서 보고, 데이터 처리라면 실제 결과 값을 대조하는 확인이 남아 있습니다.</p>
+        <p>코드를 수정했다는 답변을 받으면 처음 실패했던 입력부터 다시 넣어 보세요. 검색 오류였다면 같은 검색어와 같은 조작을 재현합니다. 그다음 빈 입력이나 결과가 없는 경우처럼 가까운 조건을 더 시험해 볼 수 있습니다.</p>
         <h3>재현 입력을 남겨 두기</h3>
 <p>버그가 발생한 입력과 실행 순서를 작은 형태로 남깁니다. 실제 개인정보가 필요한 문제라면 가상 데이터로 줄일 수 있는지 검토하세요. 수정 전 실패와 수정 후 성공을 같은 조건에서 비교할 수 있어야 원인과 해결을 설명하기 쉽습니다.</p>
 <h3>프로젝트에 있는 검사 명령</h3>
@@ -58,8 +58,6 @@
 <p>UI 변경은 실제 화면과 상호작용을, 데이터 변환은 원본과 결과 값을 확인합니다. 테스트가 통과해도 사용자에게 보이는 내용이 잘리거나 링크가 틀릴 수 있습니다. 반대로 단순 문구 변경에 불필요하게 전체 시스템 검사를 반복할 필요는 없습니다.</p>
 <p>완료 보고는 재현 결과, 실행한 검사, 남은 제한을 분리해 읽습니다. 새 실패가 발견되면 변경과 관련된 것인지 기존 문제인지 확인한 뒤 수정 범위를 정하세요.</p>
 
-        <aside class="blog-worked-example" aria-label="설명용 적용 과제"><h3>검색 버튼을 고친 뒤</h3><p>검색 버튼 오류를 고쳤다면 빈 입력과 정상 입력을 각각 시험합니다. 관련 테스트 결과를 확인하고 실제 화면에서 오류 안내와 검색 결과가 의도대로 보이는지 비교합니다. 실행하지 못한 브라우저 환경은 아직 시험하지 못했다고 적어둡니다.</p></aside>
-        <h3>검증 보고에서 읽을 것</h3><ul><li>수정 전후에 같은 재현 입력을 사용했는가</li><li>검사가 현재 작업 폴더와 변경에 대응하는가</li><li>실제 사용자 결과와 미검증 범위를 확인했는가</li></ul>
         <p class="blog-sources">공식 참고: <a href="https://learn.chatgpt.com/docs/integrated-terminal">통합 터미널에서 프로젝트 검증</a> · <a href="https://learn.chatgpt.com/docs/long-running-work">명확한 완료 기준</a>. 문서 확인: 2026.10.19.</p>
         <nav class="blog-related" aria-label="Codex 08편 탐색"><a rel="prev" href="020.html#post-codex-07">이전 편</a> · <a href="../blogs.html#codex-series">시리즈 목차</a> · <a rel="next" href="022.html#post-codex-09">다음 편</a> · <a href="../blogs.html#ai-guides">전체 목차</a></nav>
       </article>

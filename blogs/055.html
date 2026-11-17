@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="OpenClaw 14. 운영 마무리: 백업·업데이트·오류 진단 순서 정리 - 솔루션 비제트 IT 정보글">
-  <title>OpenClaw 14. 운영 마무리: 백업·업데이트·오류 진단 순서 정리 - 솔루션 비제트</title>
+  <meta name="description" content="지금 연결이 잘 된다면 버전과 설정 위치를 남겨 두세요. 업데이트 후 응답이 멈췄을 때 비교할 기준이 됩니다. 백업에는 인증 정보와 작업 폴더 중 무엇이 들어가는지 먼저 읽어 보아야 합니다.">
+  <title>OpenClaw 14. 백업과 업데이트 기록 남기기 - 솔루션 비제트</title>
   <link rel="stylesheet" href="../style.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
   <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
@@ -46,9 +46,9 @@
       <article class="blog-post" id="post-openclaw-14">
         <a class="blog-post-back" href="../blogs.html#post-openclaw-14">목록으로 돌아가기</a>
         <span class="blog-post-category">OpenClaw 입문 시리즈 · 14/14</span>
-        <h2>OpenClaw 14. 운영 마무리: 백업·업데이트·오류 진단 순서 정리</h2>
+        <h2>OpenClaw 14. 백업과 업데이트 기록 남기기</h2>
         <p class="blog-post-meta">솔루션 비제트 · 공식 문서 기반 사용 안내 · <time datetime="2026-10-19">2026.10.19</time></p>
-        <p>처음 연결한 상태가 잘 동작할 때 버전과 백업 위치를 남겨두세요. 업데이트 뒤 문제가 생기면 비교할 기준이 됩니다. 백업 파일이 만들어졌는지, 인증과 작업 공간이 어디까지 포함됐는지부터 확인하겠습니다.</p>
+        <p>지금 연결이 잘 된다면 버전과 설정 위치를 남겨 두세요. 업데이트 후 응답이 멈췄을 때 비교할 기준이 됩니다. 백업에는 인증 정보와 작업 폴더 중 무엇이 들어가는지 먼저 읽어 보아야 합니다.</p>
         <h3>백업에 들어갈 자료</h3>
 <p>현재 CLI의 백업 기능을 지원하는지 확인하고 포함될 경로를 미리 봅니다. OpenClaw 상태 백업에는 설정과 인증 정보, 세션, 작업 공간이 포함될 수 있으므로 공개 저장소나 일반 공유 폴더에 그대로 올리지 마세요. 보관 위치와 접근 권한을 따로 정합니다.</p>
 <pre tabindex="0" aria-label="명령어 또는 설정 예제"><code>openclaw backup create --dry-run --json
@@ -65,9 +65,6 @@ openclaw doctor
 openclaw channels status --probe</code></pre>
 <p>Gateway가 멈췄는지, 모델 인증이 실패했는지, 채널만 연결되지 않는지 구분합니다. 필요하면 logs --follow로 발생 시점의 오류를 확인하되 원문·토큰이 포함될 수 있는 로그를 그대로 공개하지 않습니다. doctor의 점검과 --fix 같은 변경 작업도 구분해 사용하세요.</p>
 
-        <aside class="blog-worked-example" aria-label="설명용 실습 예시"><h3>업데이트 전후 같은 항목 점검</h3><p>운영 점검표에 버전, 백업 파일, 첫 대화, 연결 채널 한 건, 예약 작업 상태를 적습니다. 업데이트 뒤 동일 항목을 다시 확인하고 실패한 항목만 원인 분석을 이어갑니다. 모든 점검이 끝나면 실습용 예약과 불필요한 연결도 정리합니다.</p></aside>
-        <h3>운영 기록에 남길 것</h3>
-        <ul><li>백업에 비밀 값이 포함될 수 있음을 이해했는가</li><li>업데이트 전 계획과 복구 경로를 확인했는가</li><li>기본 대화·도구·채널을 같은 기준으로 재확인했는가</li></ul>
         <p class="blog-sources">공식 참고: <a href="https://docs.openclaw.ai/cli/backup">백업 CLI</a> · <a href="https://docs.openclaw.ai/install/updating">업데이트와 복구</a> · <a href="https://docs.openclaw.ai/gateway/troubleshooting">오류 진단 순서</a>. 문서 확인: 2026.10.19.</p>
         <nav class="blog-related" aria-label="OpenClaw 14편 탐색"><a rel="prev" href="054.html#post-openclaw-13">이전 편</a> · <a href="../blogs.html#openclaw-series">시리즈 목차</a> · <a href="../blogs.html#ai-guides">전체 목차</a></nav>
       </article>

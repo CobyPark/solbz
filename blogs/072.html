@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Python 자동화마다 환경을 나누는 이유와 가상환경 시작 순서 - 솔루션 비제트 IT 정보글">
-  <title>Python 자동화마다 환경을 나누는 이유와 가상환경 시작 순서 - 솔루션 비제트</title>
+  <meta name="description" content="한 자동화에 맞춰 라이브러리를 업데이트했더니 다른 스크립트가 안 돌아갈 수 있습니다. 프로젝트마다 가상환경을 만들면 필요한 패키지 버전을 따로 관리할 수 있습니다. 설치할 때와 실행할 때 같은 Python을 쓰는지도 확인하세요.">
+  <title>Python 자동화용 가상환경 만들기 - 솔루션 비제트</title>
   <link rel="stylesheet" href="../style.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
   <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
@@ -46,9 +46,9 @@
       <article class="blog-post" id="post-python-venv">
         <a class="blog-post-back" href="../blogs.html#post-python-venv">목록으로 돌아가기</a>
         <span class="blog-post-category">Python·업무 자동화</span>
-        <h2>Python 자동화마다 환경을 나누는 이유와 가상환경 시작 순서</h2>
+        <h2>Python 자동화용 가상환경 만들기</h2>
         <p class="blog-post-meta">솔루션 비제트 · 활용 가이드 · <time datetime="2026-10-19">2026.10.19</time></p>
-        <p>패키지를 업데이트한 뒤 다른 프로그램이 멈췄다면 실행 환경이 섞였을 수 있습니다. 프로젝트별 가상환경을 만들고 설치와 실행에 같은 Python을 쓰면 이런 혼선을 줄일 수 있습니다. 활성화 표시보다 실제 실행 경로를 보겠습니다.</p>
+        <p>한 자동화에 맞춰 라이브러리를 업데이트했더니 다른 스크립트가 안 돌아갈 수 있습니다. 프로젝트마다 가상환경을 만들면 필요한 패키지 버전을 따로 관리할 수 있습니다. 설치할 때와 실행할 때 같은 Python을 쓰는지도 확인하세요.</p>
         <h3>프로젝트 폴더에 환경 만들기</h3>
 <p>Python의 venv는 가상환경을 만드는 표준 기능입니다. Windows에서 사용할 Python을 확인한 뒤 프로젝트 폴더에서 py -m venv .venv 같은 명령으로 만들 수 있습니다. 여러 Python이 설치돼 있다면 생성에 사용한 버전도 기록하세요.</p>
 <h3>설치와 실행에 같은 Python 사용</h3>
@@ -56,9 +56,7 @@
 <p>PowerShell의 활성화 스크립트가 정책으로 막혔다면 무조건 보안 정책부터 바꾸지 않습니다. 필요한 경우 가상환경의 Python 경로를 직접 지정해 실행할 수 있습니다. 조직 관리 PC에서는 승인된 설치·실행 기준을 따르세요.</p>
 <h3>복사보다 재생성 준비</h3>
 <p>가상환경 폴더 자체를 다른 컴퓨터로 옮기는 방식에 의존하지 않습니다. Python 버전과 의존성 목록, 실행 명령을 문서화해 새 환경에서 재구성할 수 있게 하세요. 비밀 값과 실제 입력 자료는 환경 설정 목록과 별도로 관리합니다.</p>
-        <aside class="blog-worked-example" aria-label="설명용 예시"><h3>CSV 정리 프로젝트의 환경</h3><p>CSV 정리 프로젝트에 .venv를 만들고 그 안의 Python으로 패키지 설치와 실행을 통일합니다. 동료에게는 프로그램, 의존성 목록, 실행 설명을 전달하고 .venv 전체는 전달 대상에서 제외합니다. 새 환경에서 예제 입력이 처리되는지 확인합니다.</p></aside>
-        <h3>새 PC로 옮기기 전에</h3>
-        <ul><li>생성과 실행에 쓴 Python 버전을 아는가</li><li>예약 작업도 같은 실행기를 사용하는가</li><li>새 PC에서 환경을 재생성할 설명이 있는가</li></ul>
+        <p>CSV 정리 프로젝트에서 .venv의 Python으로 패키지를 설치했다면 실행할 때도 같은 Python을 지정하세요. 다른 사람에게는 코드와 의존성 목록, 실행 방법을 전달합니다. 가상환경 폴더를 통째로 복사하기보다 새로 만드는 편이 경로 차이를 다루기 쉽습니다.</p>
         <p class="blog-sources">기술 참고: <a href="https://docs.python.org/3/library/venv.html">Python venv 가상환경 문서</a>. 문서 확인: 2026.10.19.</p>
         <p class="blog-related"><a href="../blogs.html#ai-guides">전체 목차로 돌아가기</a></p>
       </article>

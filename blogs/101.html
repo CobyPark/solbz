@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="AI API 실습 파일을 공유하기 전에: 키·입력 자료·로그 점검하기 - 솔루션 비제트 IT 정보글">
-  <title>AI API 실습 파일을 공유하기 전에: 키·입력 자료·로그 점검하기 - 솔루션 비제트</title>
+  <meta name="description" content="소스에서 API 키를 지워도 설정 파일이나 오류 로그에 남아 있을 수 있습니다. 예제 폴더를 공유하기 전에 숨김 파일과 출력물까지 열어 보세요. 받는 사람이 자기 키로 실행할 수 있도록 변수 이름과 준비 방법을 적어 둡니다.">
+  <title>API 예제를 공유할 때 빠뜨리기 쉬운 파일 - 솔루션 비제트</title>
   <link rel="stylesheet" href="../style.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
   <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
@@ -46,9 +46,9 @@
       <article class="blog-post" id="post-ai-key-safety">
         <a class="blog-post-back" href="../blogs.html#post-ai-key-safety">목록으로 돌아가기</a>
         <span class="blog-post-category">AI 활용 · 데이터 관리</span>
-        <h2>AI API 실습 파일을 공유하기 전에: 키·입력 자료·로그 점검하기</h2>
+        <h2>API 예제를 공유할 때 빠뜨리기 쉬운 파일</h2>
         <p class="blog-post-meta">솔루션 비제트 · 실습 관리 노트 · <time datetime="2026-10-19">2026.10.19</time></p>
-        <p>예제 폴더를 공유하기 전에 설정 파일과 로그도 열어보세요. 코드에는 키가 없어도 .env나 오류 출력에 남아 있을 수 있습니다. 실제 입력 자료와 공유할 예제를 처음부터 따로 두면 나중에 걸러내는 수고가 줄어듭니다.</p>
+        <p>소스에서 API 키를 지워도 설정 파일이나 오류 로그에 남아 있을 수 있습니다. 예제 폴더를 공유하기 전에 숨김 파일과 출력물까지 열어 보세요. 받는 사람이 자기 키로 실행할 수 있도록 변수 이름과 준비 방법을 적어 둡니다.</p>
         <h3>키 이름과 실제 키를 따로</h3>
         <p>공유할 설정 예제에는 변수 이름과 설명만 적습니다. 예를 들어 <code>OPENROUTER_API_KEY=본인_키_입력</code>처럼 대체 문구를 쓰고, 실제 값은 개인 환경에서 관리합니다. 환경변수나 <code>.env</code> 파일을 사용한다고 자동으로 안전해지는 것은 아닙니다. 파일을 읽는 라이브러리의 동작과 저장 위치도 확인해야 합니다.</p>
         <p>Git을 사용한다면 다음과 같은 제외 규칙을 검토할 수 있습니다. 프로젝트에 따라 폴더 이름은 조정하세요. 이 예제는 새 실습 프로젝트에 적용할 기본 아이디어이며, 기존 프로젝트에 그대로 덮어쓰는 설정은 아닙니다.</p>
@@ -66,7 +66,7 @@ private-logs/</code></pre>
         <p>OpenRouter는 자체 입력·출력 저장 설정과 공급자 측 처리를 구분해 설명합니다. 한 서비스의 저장 옵션을 껐다고 모든 경로에서 저장이 사라졌다고 해석하지 마세요. 계정의 관측·개인정보 설정과 공급자 정책을 각각 확인하고, 조직의 문서 취급 기준에 맞는지 판단해야 합니다.</p>
         <h3>공유 전에 열어볼 파일</h3>
         <ol><li>실행 파일과 설정 예제에 실제 키가 없는지 확인합니다.</li><li>입력·출력·스크린샷이 모두 가상 데이터인지 확인합니다.</li><li>Git 변경 목록과 로그 파일을 확인합니다.</li><li>키 없는 새 폴더에서 설정 설명만 보고 실행 준비가 가능한지 점검합니다.</li></ol>
-        <p>예제의 재현성을 높이려면 사용한 언어 버전, 모델 선택 방법, 필요한 변수 이름을 함께 적습니다. 실제 비밀 값을 넘기지 않고도 받는 사람이 자신의 계정으로 준비할 수 있는 형태가 좋은 공유 예제입니다.</p>
+        <p>키 없이 새 폴더를 만들어 설명대로 준비해 보세요. 빠진 변수나 설치 단계가 드러납니다. 그 폴더에 가상 입력과 설정 예제만 넣으면 실제 자료를 뒤늦게 걸러 내는 수고도 줄일 수 있습니다.</p>
         <p class="blog-sources">공식 참고: <a href="https://openrouter.ai/docs/guides/privacy/data-collection">OpenRouter 데이터 수집 안내</a> · <a href="https://openrouter.ai/docs/guides/privacy/logging">공급자 로그 정책 안내</a>. 문서 확인: 2026.10.19. 이 글의 파일 분리·점검 순서는 실습 관리 제안입니다.</p>
         <p class="blog-related">함께 읽기: <a href="097.html#post-openrouter-first-call">환경변수를 쓰는 호출 예제</a> · <a href="102.html#post-ai-model-evaluation">가상 데이터로 모델 비교하기</a> · <a href="../blogs.html#ai-guides">목차로 돌아가기</a></p>
       </article>

@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="OpenClaw 06. 작업 공간과 메모리: AGENTS.md·SOUL.md를 관리하는 방법 - 솔루션 비제트 IT 정보글">
-  <title>OpenClaw 06. 작업 공간과 메모리: AGENTS.md·SOUL.md를 관리하는 방법 - 솔루션 비제트</title>
+  <meta name="description" content="AGENTS.md와 SOUL.md를 고치기 전에는 현재 쓰는 작업 폴더를 찾으세요. 이름이 같은 파일이 여러 곳에 있으면 수정한 내용이 대화에 반영되지 않을 수 있습니다. 작업 규칙과 말투 설정도 각각 어디에 적는지 알아두면 편합니다.">
+  <title>OpenClaw 06. 작업 폴더와 지침 파일 관리하기 - 솔루션 비제트</title>
   <link rel="stylesheet" href="../style.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
   <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
@@ -46,9 +46,9 @@
       <article class="blog-post" id="post-openclaw-06">
         <a class="blog-post-back" href="../blogs.html#post-openclaw-06">목록으로 돌아가기</a>
         <span class="blog-post-category">OpenClaw 입문 시리즈 · 06/14</span>
-        <h2>OpenClaw 06. 작업 공간과 메모리: AGENTS.md·SOUL.md를 관리하는 방법</h2>
+        <h2>OpenClaw 06. 작업 폴더와 지침 파일 관리하기</h2>
         <p class="blog-post-meta">솔루션 비제트 · 공식 문서 기반 사용 안내 · <time datetime="2026-10-19">2026.10.19</time></p>
-        <p>반복해서 설명하는 보고서 규칙은 작업 공간의 지침 파일에 적을 수 있습니다. 먼저 현재 Gateway가 어느 폴더를 쓰는지 찾아보세요. 예전에 만든 비슷한 폴더를 고치면 규칙을 적어도 반영되지 않을 수 있습니다.</p>
+        <p>AGENTS.md와 SOUL.md를 고치기 전에는 현재 쓰는 작업 폴더를 찾으세요. 이름이 같은 파일이 여러 곳에 있으면 수정한 내용이 대화에 반영되지 않을 수 있습니다. 작업 규칙과 말투 설정도 각각 어디에 적는지 알아두면 편합니다.</p>
         <h3>지금 쓰는 작업 공간 찾기</h3>
 <p>기본 작업 공간은 보통 ~/.openclaw/workspace이지만 프로필이나 환경변수, 에이전트 설정에 따라 달라집니다. Windows Hub·WSL2·원격 Gateway를 쓴다면 해당 Gateway 쪽의 경로를 확인하세요. 비슷한 이름의 예전 폴더를 수정해도 현재 에이전트에 반영되지 않을 수 있습니다.</p>
 <p>작업 공간은 도구가 사용하는 기본 폴더이며 그 자체가 강제 격리 경계는 아닙니다. 다른 폴더 접근을 기술적으로 제한하려면 샌드박스와 도구 정책을 별도로 설정해야 합니다. 지침 파일에 금지 문장을 쓰는 것만으로 파일 권한이 바뀌지는 않습니다.</p>
@@ -61,9 +61,7 @@
 <h3>기억할 정보와 남기지 않을 정보</h3>
 <p>MEMORY.md와 일별 메모 같은 파일은 목적에 맞게 관리하고, 비밀 키를 업무 지침에 적지 않습니다. 모든 대화가 영구적으로 완전하게 저장되거나 자동으로 회상된다고 가정하지 마세요. 메모리 기능과 저장 위치는 사용하는 버전의 공식 안내를 확인하고 오래된 규칙의 폐기 여부도 기록합니다.</p>
 
-        <aside class="blog-worked-example" aria-label="설명용 실습 예시"><h3>보고서 규칙 한 줄 추가</h3><p>점검 보고서 규칙으로 “완료·예정·미확인 세 구역을 유지”라는 한 항목을 추가합니다. 새 대화에서 가상 메모를 주고 규칙이 적용되는지 확인합니다. 적용되지 않으면 다른 폴더에 썼는지와 파일 로딩 범위를 먼저 점검합니다.</p></aside>
-        <h3>지침 파일을 고친 뒤</h3>
-        <ul><li>현재 Gateway의 활성 작업 공간을 확인했는가</li><li>지침과 기술적 접근 제한을 구분했는가</li><li>비밀 값 없이 간결한 운영 규칙을 관리하는가</li></ul>
+        <p>보고서 지침에 “완료, 예정, 미확인 항목을 구별한다”는 규칙을 넣었다면 세 상태가 섞인 메모를 주어 보세요. 적용이 안 되면 파일 위치와 현재 세션에서 읽은 지침부터 살펴봅니다.</p>
         <p class="blog-sources">공식 참고: <a href="https://docs.openclaw.ai/concepts/agent-workspace">작업 공간과 파일 역할</a> · <a href="https://docs.openclaw.ai/concepts/memory">메모리 개요</a>. 문서 확인: 2026.10.19.</p>
         <nav class="blog-related" aria-label="OpenClaw 06편 탐색"><a rel="prev" href="046.html#post-openclaw-05">이전 편</a> · <a href="../blogs.html#openclaw-series">시리즈 목차</a> · <a rel="next" href="048.html#post-openclaw-07">다음 편</a> · <a href="../blogs.html#ai-guides">전체 목차</a></nav>
       </article>

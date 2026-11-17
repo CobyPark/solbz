@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="자동화 로그를 남길 때: 성공 기록·오류 정보·보관 크기 정하기 - 솔루션 비제트 IT 정보글">
-  <title>자동화 로그를 남길 때: 성공 기록·오류 정보·보관 크기 정하기 - 솔루션 비제트</title>
+  <meta name="description" content="스크립트가 멈췄는데 마지막 줄에 “처리 실패”만 있으면 어떤 파일을 다시 돌려야 할지 알기 어렵습니다. 실행마다 작업 ID를 붙이고 처리 대상과 결과를 남겨 보세요. 성공, 건너뜀, 실패를 구별하면 재실행할 범위도 찾기 쉽습니다.">
+  <title>자동화 로그에 남길 내용 고르기 - 솔루션 비제트</title>
   <link rel="stylesheet" href="../style.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
   <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
@@ -46,9 +46,9 @@
       <article class="blog-post" id="post-log-rotation">
         <a class="blog-post-back" href="../blogs.html#post-log-rotation">목록으로 돌아가기</a>
         <span class="blog-post-category">Python·업무 자동화</span>
-        <h2>자동화 로그를 남길 때: 성공 기록·오류 정보·보관 크기 정하기</h2>
+        <h2>자동화 로그에 남길 내용 고르기</h2>
         <p class="blog-post-meta">솔루션 비제트 · 활용 가이드 · <time datetime="2026-10-19">2026.10.19</time></p>
-        <p>자동화가 실패했는데 로그가 없으면 같은 작업을 다시 돌려야 할 수 있습니다. 반대로 모든 내용을 남기면 파일이 커지고 비밀 값까지 섞입니다. 어느 단계에서 몇 건이 처리됐는지 알 수 있을 만큼만 기록해 보겠습니다.</p>
+        <p>스크립트가 멈췄는데 마지막 줄에 “처리 실패”만 있으면 어떤 파일을 다시 돌려야 할지 알기 어렵습니다. 실행마다 작업 ID를 붙이고 처리 대상과 결과를 남겨 보세요. 성공, 건너뜀, 실패를 구별하면 재실행할 범위도 찾기 쉽습니다.</p>
         <h3>실행마다 작업 ID</h3>
 <p>시작·종료 시각, 작업 ID, 처리 건수, 실패 건수를 같은 실행 단위로 묶습니다. 파일 이름에 개인정보가 있다면 로그에는 별도 식별자만 남기는 방식을 검토하세요. 여러 실행이 동시에 돌 때도 같은 작업의 기록을 모아볼 수 있어야 합니다.</p>
 <h3>성공·건너뜀·실패의 구분</h3>
@@ -56,9 +56,7 @@
 <p>예외를 잡은 뒤 성공 메시지를 출력하는 구조는 피합니다. 실패한 작업은 종료 코드나 결과 요약에도 반영해야 예약 실행 시스템이 이상을 알 수 있습니다. “프로세스 종료”와 “업무 완료”를 별도 상태로 보는 것이 좋습니다.</p>
 <h3>로그 크기와 보관 개수</h3>
 <p>Python logging.handlers에는 크기나 시간 기준으로 로그 파일을 나누는 기능이 있습니다. 파일 개수와 보관 기간은 필요한 조사 범위와 저장 공간을 고려해 정하세요. 교체된 파일이 실제로 열리는지, 한글이 깨지지 않는지도 확인합니다.</p>
-        <aside class="blog-worked-example" aria-label="설명용 예시"><h3>20건 처리 결과를 남기는 법</h3><p>변환 작업 20건에서 18건 성공, 1건 형식 오류, 1건 중복 제외라면 이 숫자를 마지막 요약에 각각 적습니다. 오류 파일은 작업 ID로 추적하고 로그에는 원문 전체 대신 실패 단계와 오류 종류를 남깁니다.</p></aside>
-        <h3>로그 설정을 볼 때</h3>
-        <ul><li>실행별 시작과 종료를 연결할 수 있는가</li><li>일부 실패가 최종 상태에 드러나는가</li><li>보관 크기와 민감 정보 제외 규칙이 있는가</li></ul>
+        <p>20건 중 18건 성공, 1건 형식 오류, 1건 중복 제외였다면 마지막 요약에 각각 적어 주세요. 실패 파일을 작업 ID로 찾을 수 있으면 그 한 건을 다시 처리할 수 있습니다. 로그에는 실패 단계와 오류 종류를 남겨 두면 됩니다.</p>
         <p class="blog-sources">기술 참고: <a href="https://docs.python.org/3/library/logging.handlers.html">Python logging.handlers 로그 순환 기능</a>. 문서 확인: 2026.10.19.</p>
         <p class="blog-related"><a href="../blogs.html#ai-guides">전체 목차로 돌아가기</a></p>
       </article>

@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="수동 실행은 되는데 예약 실행은 실패할 때: 상대경로와 작업 폴더 점검 - 솔루션 비제트 IT 정보글">
-  <title>수동 실행은 되는데 예약 실행은 실패할 때: 상대경로와 작업 폴더 점검 - 솔루션 비제트</title>
+  <meta name="description" content="터미널에서 잘 읽던 input.csv를 예약 작업이 못 찾는다면 현재 작업 폴더가 달라졌을 수 있습니다. 상대경로는 프로그램을 저장한 위치와 항상 같지 않습니다. 오류가 난 실행에서 기준 폴더를 기록해 보세요.">
+  <title>예약 실행에서만 파일을 못 찾는 이유 - 솔루션 비제트</title>
   <link rel="stylesheet" href="../style.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
   <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
@@ -46,9 +46,9 @@
       <article class="blog-post" id="post-pathlib-working-folder">
         <a class="blog-post-back" href="../blogs.html#post-pathlib-working-folder">목록으로 돌아가기</a>
         <span class="blog-post-category">Python·업무 자동화</span>
-        <h2>수동 실행은 되는데 예약 실행은 실패할 때: 상대경로와 작업 폴더 점검</h2>
+        <h2>예약 실행에서만 파일을 못 찾는 이유</h2>
         <p class="blog-post-meta">솔루션 비제트 · 활용 가이드 · <time datetime="2026-10-19">2026.10.19</time></p>
-        <p>터미널에서 되던 스크립트가 예약 실행에서는 파일을 못 찾는다면 작업 폴더가 달라졌는지 보세요. 스크립트가 있는 곳과 상대경로를 해석하는 기준이 같지 않을 수 있습니다. 입력과 출력 경로를 정하는 기준부터 맞춰보겠습니다.</p>
+        <p>터미널에서 잘 읽던 input.csv를 예약 작업이 못 찾는다면 현재 작업 폴더가 달라졌을 수 있습니다. 상대경로는 프로그램을 저장한 위치와 항상 같지 않습니다. 오류가 난 실행에서 기준 폴더를 기록해 보세요.</p>
         <h3>상대경로의 출발점</h3>
 <p>input/data.csv 같은 상대경로는 일반적으로 현재 작업 폴더를 기준으로 해석됩니다. 스크립트가 저장된 폴더와 반드시 같지 않습니다. 실행 시 현재 폴더와 입력 경로를 확인하되 실제 문서 내용이나 키가 로그에 나오지 않도록 합니다.</p>
 <h3>내장 자료와 업무 입력 경로</h3>
@@ -56,9 +56,7 @@
 <p>원본을 읽을 경로와 결과를 쓸 경로도 별도 값으로 둡니다. 입력 경로가 없을 때 빈 폴더를 자동 생성해 성공처럼 처리하지 말고, 예상한 위치와 오류를 알려주도록 하세요. 결과 폴더 생성은 해당 목적에 맞게 별도로 수행합니다.</p>
 <h3>다른 폴더에서 실행 시험</h3>
 <p>다른 폴더에서 명령을 실행해도 동작하는지 확인하고 공백·한글이 있는 경로도 표본에 넣습니다. 예약 작업에는 실행기와 스크립트 경로, 작업 기준 폴더를 명시하세요. 실패 시 어떤 경로를 읽으려 했는지 알 수 있어야 합니다.</p>
-        <aside class="blog-worked-example" aria-label="설명용 예시"><h3>바탕화면에서 실행한 보고서</h3><p>보고서 프로그램이 현재 폴더의 input을 찾는다면 바탕화면에서 실행했을 때 다른 위치를 볼 수 있습니다. 설정 파일의 기준 폴더를 명시하고 입력은 절대경로 인자로 전달하도록 바꾼 뒤, 두 위치에서 같은 표본을 처리해 비교합니다.</p></aside>
-        <h3>경로 오류를 찾을 때</h3>
-        <ul><li>상대경로의 기준이 문서에 적혀 있는가</li><li>입력과 출력 경로가 분리됐는가</li><li>다른 작업 폴더에서도 시험했는가</li></ul>
+        <p>현재 폴더에서 input을 찾는 보고서 프로그램은 바탕화면에서 실행하면 다른 곳을 볼 수 있습니다. 입력 경로를 절대경로 인자로 받고 설정 파일의 기준 위치를 정해 보세요. 두 위치에서 같은 표본을 처리하면 바뀐 동작을 비교할 수 있습니다.</p>
         <p class="blog-sources">기술 참고: <a href="https://docs.python.org/3/library/pathlib.html">Python pathlib 경로 처리 문서</a>. 문서 확인: 2026.10.19.</p>
         <p class="blog-related"><a href="../blogs.html#ai-guides">전체 목차로 돌아가기</a></p>
       </article>

@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="파일 해시로 복사 결과 확인하기: 같다는 것과 안전하다는 것의 차이 - 솔루션 비제트 IT 정보글">
-  <title>파일 해시로 복사 결과 확인하기: 같다는 것과 안전하다는 것의 차이 - 솔루션 비제트</title>
+  <meta name="description" content="큰 파일을 복사한 뒤 정상으로 옮겨졌는지 궁금하다면 원본과 사본의 해시를 비교할 수 있습니다. 같은 알고리즘으로 계산한 값이 일치하는지 보면 됩니다. 배포 파일을 확인할 때는 비교할 해시를 어디서 받았는지도 중요합니다.">
+  <title>복사한 파일의 SHA-256 비교하기 - 솔루션 비제트</title>
   <link rel="stylesheet" href="../style.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
   <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
@@ -46,9 +46,9 @@
       <article class="blog-post" id="post-file-checksums">
         <a class="blog-post-back" href="../blogs.html#post-file-checksums">목록으로 돌아가기</a>
         <span class="blog-post-category">Python·업무 자동화</span>
-        <h2>파일 해시로 복사 결과 확인하기: 같다는 것과 안전하다는 것의 차이</h2>
+        <h2>복사한 파일의 SHA-256 비교하기</h2>
         <p class="blog-post-meta">솔루션 비제트 · 활용 가이드 · <time datetime="2026-10-19">2026.10.19</time></p>
-        <p>복사한 파일의 이름과 크기가 같아도 내용이 같은지는 별도 확인이 필요합니다. 해시값을 비교하면 도움이 되지만, 비교 기준을 어디서 가져왔는지도 봐야 합니다. 내용 일치와 파일의 안전성은 같은 판단이 아닙니다.</p>
+        <p>큰 파일을 복사한 뒤 정상으로 옮겨졌는지 궁금하다면 원본과 사본의 해시를 비교할 수 있습니다. 같은 알고리즘으로 계산한 값이 일치하는지 보면 됩니다. 배포 파일을 확인할 때는 비교할 해시를 어디서 받았는지도 중요합니다.</p>
         <h3>원본과 사본을 같은 알고리즘으로</h3>
 <p>SHA-256 같은 해시 알고리즘을 정하고 두 파일을 같은 방식으로 계산합니다. Python hashlib은 이런 해시 계산 기능을 제공합니다. 큰 파일은 한 번에 모두 메모리에 읽기보다 일정 크기로 나눠 처리할 수 있습니다.</p>
 <h3>믿을 수 있는 비교 기준</h3>
@@ -56,9 +56,7 @@
 <p>원본이 계산 중 변경되면 일관된 기준을 만들기 어렵습니다. 복사 전에 변경을 멈추거나 버전이 고정된 사본에서 계산하는 방법을 검토하세요. 파일명과 해시만이 아니라 크기·버전·계산 시각을 함께 남기면 추적하기 쉽습니다.</p>
 <h3>해시가 다르게 나왔을 때</h3>
 <p>전송 손상, 다른 버전, 줄바꿈이나 인코딩 변환이 원인일 수 있습니다. 문서가 화면상 같아도 바이트가 다르면 해시가 달라질 수 있으므로 곧바로 악성 변조로 단정하지 않습니다. 원본 버전과 전송 과정의 변환 여부부터 확인하세요.</p>
-        <aside class="blog-worked-example" aria-label="설명용 예시"><h3>배포 파일의 SHA-256 비교</h3><p>프로그램 배포 파일을 복사한 뒤 공식 릴리스의 SHA-256과 비교합니다. 값이 다르면 실행하기 전에 버전과 다운로드 상태를 확인합니다. 자체 생성 문서의 복사 검증이라면 원본을 고정한 뒤 원본·복사본의 해시를 같은 기록에 남깁니다.</p></aside>
-        <h3>해시 결과를 해석할 때</h3>
-        <ul><li>같은 알고리즘과 동일한 원본 버전을 쓰는가</li><li>해시 기준을 얻은 경로가 신뢰할 만한가</li><li>일치 확인을 보안 보증으로 과장하지 않는가</li></ul>
+        <p>공식 릴리스의 SHA-256을 받아 사본과 비교한다면 같은 버전의 값인지 먼저 보세요. 자체 문서를 복사하는 작업은 원본을 고정하고 원본과 사본의 해시를 같은 기록에 남기면 됩니다.</p>
         <p class="blog-sources">기술 참고: <a href="https://docs.python.org/3/library/hashlib.html">Python hashlib 해시 계산 문서</a>. 문서 확인: 2026.10.19.</p>
         <p class="blog-related"><a href="../blogs.html#ai-guides">전체 목차로 돌아가기</a></p>
       </article>

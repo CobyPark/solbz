@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Codex 12. codex exec로 반복 실행하기: 대화형 작업과 스크립트 구분 - 솔루션 비제트 IT 정보글">
-  <title>Codex 12. codex exec로 반복 실행하기: 대화형 작업과 스크립트 구분 - 솔루션 비제트</title>
+  <meta name="description" content="정해진 요청을 스크립트에서 반복하려면 codex exec를 사용할 수 있습니다. 입력 파일, 실행 폴더, 결과를 받을 위치를 미리 정해 두세요. 대화 중 조건을 보충하기 어려운 실행일수록 이런 준비가 필요합니다.">
+  <title>Codex 12. codex exec로 반복 요청 실행하기 - 솔루션 비제트</title>
   <link rel="stylesheet" href="../style.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
   <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
@@ -46,9 +46,9 @@
       <article class="blog-post" id="post-codex-12">
         <a class="blog-post-back" href="../blogs.html#post-codex-12">목록으로 돌아가기</a>
         <span class="blog-post-category">Codex 활용 시리즈 · 12/13</span>
-        <h2>Codex 12. codex exec로 반복 실행하기: 대화형 작업과 스크립트 구분</h2>
+        <h2>Codex 12. codex exec로 반복 요청 실행하기</h2>
         <p class="blog-post-meta">솔루션 비제트 · OpenAI 공식 문서 기반 가이드 · <time datetime="2026-10-19">2026.10.19</time></p>
-        <p>README 점검처럼 같은 분석을 자주 한다면 codex exec로 한 번의 실행을 구성할 수 있습니다. 대화 중간에 설명을 보태기 어려운 방식인 만큼 입력 위치와 출력 형식을 먼저 정하세요. 예약 실행은 단발 명령을 확인한 다음의 일입니다.</p>
+        <p>정해진 요청을 스크립트에서 반복하려면 codex exec를 사용할 수 있습니다. 입력 파일, 실행 폴더, 결과를 받을 위치를 미리 정해 두세요. 대화 중 조건을 보충하기 어려운 실행일수록 이런 준비가 필요합니다.</p>
         <h3>한 번에 끝낼 요청</h3>
 <p>codex exec는 대화형 터미널 화면을 열지 않고 요청을 실행하는 방식입니다. 현재 작업 폴더와 필요한 입력이 준비됐는지 확인하세요. 기본 권한과 승인 동작은 설치 버전·설정·관리 정책을 확인해야 하며 무제한 접근을 자동화의 기본으로 두지 않습니다.</p>
 <pre tabindex="0" aria-label="실습용 명령 또는 요청 예시"><code>codex exec &quot;이 저장소의 최상위 폴더 역할을 설명하고 파일은 수정하지 마세요.&quot;</code></pre>
@@ -60,8 +60,7 @@
 <p>명령 한 번이 동작한다고 매시간 실행해도 안정적이라는 뜻은 아닙니다. 실행 간격, 동시 실행 방지, 사용량, 결과 보관을 정합니다. CLI의 단발 실행과 앱·웹의 Scheduled 관리 화면은 다른 기능이며 필요한 경우 실행 환경에 맞게 연결합니다.</p>
 <p>설정 파일이나 인증 경로가 달라지는 CI 환경에서도 같은 조건이 성립하는지 확인하세요. 사람이 개입할 수 없는 실행에서는 필요한 도구가 없을 때 어떻게 실패할지 정해두는 것이 중요합니다.</p>
 
-        <aside class="blog-worked-example" aria-label="설명용 적용 과제"><h3>README 점검을 한 번 실행하기</h3><p>README 점검을 단발 실행으로 시험합니다. 결과에 현재 저장소의 파일을 인용하는지 확인한 뒤 정상 출력과 의존성 누락 사례를 비교합니다. 실제 예약 등록은 별도의 요청과 운영 조건을 정한 뒤 진행합니다.</p></aside>
-        <h3>스크립트에 넣기 전에</h3><ul><li>입력 경로·권한·실행 환경이 명확한가</li><li>이벤트 로그와 최종 결과를 구분했는가</li><li>반복 전 실패·중복 실행 조건을 정했는가</li></ul>
+        <p>README 점검을 자동화한다면 설명에 적힌 경로가 현재 저장소에 있는지부터 검사할 수 있습니다. 출력에 어느 줄을 근거로 삼았는지 남기면 사람이 수정할 위치를 찾기 편합니다.</p>
         <p class="blog-sources">공식 참고: <a href="https://learn.chatgpt.com/docs/non-interactive-mode">비대화형 실행 공식 문서</a>. 문서 확인: 2026.10.19.</p>
         <nav class="blog-related" aria-label="Codex 12편 탐색"><a rel="prev" href="024.html#post-codex-11">이전 편</a> · <a href="../blogs.html#codex-series">시리즈 목차</a> · <a rel="next" href="026.html#post-codex-13">다음 편</a> · <a href="../blogs.html#ai-guides">전체 목차</a></nav>
       </article>

@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="장애를 다른 담당자에게 넘길 때 필요한 기록: 사실·가설·조치 분리하기 - 솔루션 비제트 IT 정보글">
-  <title>장애를 다른 담당자에게 넘길 때 필요한 기록: 사실·가설·조치 분리하기 - 솔루션 비제트</title>
+  <meta name="description" content="“통신 불량으로 재부팅함”만 남으면 다음 담당자는 처음부터 물어봐야 합니다. 어떤 장비에서 언제 끊겼고, 재부팅 뒤 무엇이 달라졌는지 적어 주세요. 아직 추측인 원인도 확인한 사실과 구별해 남기는 편이 좋습니다.">
+  <title>장애를 넘겨받는 사람이 필요한 기록 - 솔루션 비제트</title>
   <link rel="stylesheet" href="../style.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
   <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
@@ -46,9 +46,9 @@
       <article class="blog-post" id="post-incident-handoff">
         <a class="blog-post-back" href="../blogs.html#post-incident-handoff">목록으로 돌아가기</a>
         <span class="blog-post-category">IT 운영·장비 관리</span>
-        <h2>장애를 다른 담당자에게 넘길 때 필요한 기록: 사실·가설·조치 분리하기</h2>
+        <h2>장애를 넘겨받는 사람이 필요한 기록</h2>
         <p class="blog-post-meta">솔루션 비제트 · 활용 가이드 · <time datetime="2026-10-19">2026.10.19</time></p>
-        <p>“안 돼서 재부팅했다”는 기록만으로는 다음 담당자가 이어받기 어렵습니다. 언제부터 누가 무엇을 못 했는지, 어떤 조치 후에도 같은 오류가 났는지를 적어 주세요. 확인한 사실과 추정 원인을 나누면 같은 점검을 덜 반복하게 됩니다.</p>
+        <p>“통신 불량으로 재부팅함”만 남으면 다음 담당자는 처음부터 물어봐야 합니다. 어떤 장비에서 언제 끊겼고, 재부팅 뒤 무엇이 달라졌는지 적어 주세요. 아직 추측인 원인도 확인한 사실과 구별해 남기는 편이 좋습니다.</p>
         <h3>영향을 받은 업무와 시각</h3>
 <p>발생 시각, 대상 서비스, 영향을 받은 사용자나 장비 범위를 기록합니다. 정확히 모르는 최초 발생 시각은 추정임을 표시하세요. 전체 장애인지 일부 기능 장애인지 알 수 있어야 우선순위를 정할 수 있습니다.</p>
 <h3>시도한 조치와 결과</h3>
@@ -56,9 +56,7 @@
 <p>가설은 별도 구역에 적고 아직 확인하지 못한 항목도 표시합니다. 증거 자료에는 비밀 키나 고객 문서가 섞이지 않도록 필요한 부분만 수집합니다. 보안 사고가 의심되는 경우 조직의 사고 대응 절차에 따라 기록과 증거를 보존해야 합니다.</p>
 <h3>다음 확인과 담당자</h3>
 <p>누가 어떤 확인을 이어갈지, 언제 상태를 다시 볼지 정합니다. 임시 복구와 근본 원인 해결을 구분하고 재발 시 참고할 기록 위치를 남기세요. NIST 사고 대응 자료는 조직의 준비·대응 체계를 설명하므로 실제 절차는 조직 환경에 맞게 정리해야 합니다.</p>
-        <aside class="blog-worked-example" aria-label="설명용 예시"><h3>장비 한 대의 통신 장애 전달</h3><p>통신 장애 전달문은 “10:20부터 장비 A만 수집 실패, B는 정상, 10:25 재연결 후 변화 없음, 회선 문제는 미확인, 다음 담당자가 현장 전원 상태 확인”처럼 쓸 수 있습니다. 원인을 “회선 불량”으로 확정해 적지 않습니다.</p></aside>
-        <h3>장애를 넘기기 전에</h3>
-        <ul><li>관측 사실과 원인 가설이 구분됐는가</li><li>각 조치의 시각과 결과가 있는가</li><li>현재 상태와 다음 담당자를 알 수 있는가</li></ul>
+        <p>인계 메모는 이렇게 쓸 수 있습니다. “10:20부터 장비 A만 수집 실패. B는 정상. 10:25 재연결 후 변화 없음. 회선 원인은 미확인. 다음 담당자가 현장 전원 확인.” 짧아도 시도한 조치와 남은 일이 보입니다.</p>
         <p class="blog-sources">기술 참고: <a href="https://csrc.nist.gov/pubs/sp/800/61/r3/final">NIST SP 800-61 Rev.3 사고 대응 권고</a>. 문서 확인: 2026.10.19.</p>
         <p class="blog-related"><a href="../blogs.html#ai-guides">전체 목차로 돌아가기</a></p>
       </article>
